@@ -1,0 +1,15 @@
+{
+  "command": [
+    "env",
+    "Y3GYM_HOME_AUDIT_RESULTS=semantics-rerun",
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "review/home-news-independent/audit_semantics.py"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {},
+  "exit_code": 0,
+  "elapsed_seconds": 24.84
+}

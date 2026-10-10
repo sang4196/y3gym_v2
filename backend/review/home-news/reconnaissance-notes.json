@@ -1,0 +1,9 @@
+{
+  "read_only_path_corrections": [
+    "backend/news/urls.py does not exist; routes are in backend/config/urls.py",
+    "backend/news/tests/browser_fixtures.py does not exist; existing common fixture is review_fixtures.py",
+    "backend/review/trainers-repair/run_checks.py does not exist; read existing documented runners instead"
+  ],
+  "product_execution_from_missing_paths": false,
+  "large_read_outputs": "Some initial batch reads were truncated; implementation-relevant blocks were reread with bounded targeted reads."
+}

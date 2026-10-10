@@ -1,0 +1,157 @@
+{
+  "origin": "http://localhost:8768",
+  "readOnly": true,
+  "isolatedTestDatabase": false,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "desktop: 공개 목록과 같은 최근 글·최대 5건·A 행 간격/글꼴·넘침 없음",
+      "detail": {
+        "count": 5,
+        "ids": [
+          21,
+          22,
+          17,
+          18,
+          2
+        ],
+        "geometry": [
+          {
+            "padding": "10px",
+            "border": "1px",
+            "titleSize": "18px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "76px 1028px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "10px",
+            "border": "1px",
+            "titleSize": "18px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "76px 1028px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "10px",
+            "border": "1px",
+            "titleSize": "18px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "76px 1028px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "10px",
+            "border": "1px",
+            "titleSize": "18px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "76px 1028px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "10px",
+            "border": "1px",
+            "titleSize": "18px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "76px 1028px 64px",
+            "category": "rgb(49, 94, 131)"
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "mobile: 공개 목록과 같은 최근 글·최대 5건·A 행 간격/글꼴·넘침 없음",
+      "detail": {
+        "count": 5,
+        "ids": [
+          21,
+          22,
+          17,
+          18,
+          2
+        ],
+        "geometry": [
+          {
+            "padding": "8px",
+            "border": "1px",
+            "titleSize": "16px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "267px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "8px",
+            "border": "1px",
+            "titleSize": "16px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "267px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "8px",
+            "border": "1px",
+            "titleSize": "16px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "267px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "8px",
+            "border": "1px",
+            "titleSize": "16px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "267px 64px",
+            "category": "rgb(49, 94, 131)"
+          },
+          {
+            "padding": "8px",
+            "border": "1px",
+            "titleSize": "16px",
+            "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+            "titleWeight": "600",
+            "columns": "267px 64px",
+            "category": "rgb(49, 94, 131)"
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "본점↔예시점 전환·새로고침·공통 소식 동일·branch 중복 없음",
+      "result": "PASS"
+    },
+    {
+      "name": "실제 글 상세→목록 기본 all/1→홈·모두 보기·뒤로가기 지점 유지",
+      "result": "PASS"
+    },
+    {
+      "name": "JavaScript 없는 모바일: 서버 상세·모두 보기·홈 왕복 링크 유효",
+      "detail": [
+        "/news/?branch=second",
+        "/news/21/?branch=second",
+        "/news/22/?branch=second",
+        "/news/17/?branch=second",
+        "/news/18/?branch=second",
+        "/news/2/?branch=second"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "desktop-actual-full.png",
+    "desktop-actual-news.png",
+    "mobile-actual-full.png",
+    "mobile-actual-news.png"
+  ]
+}

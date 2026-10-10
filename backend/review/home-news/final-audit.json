@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "document_links": 298,
+  "anchors": 24,
+  "errors": [],
+  "current_files_equal_final_snapshot": true,
+  "index_unchanged": true,
+  "git_diff_check": "PASS",
+  "existing_secrets_absent_from_final_evidence": true,
+  "preservation_evidence": "preservation-report-final.json",
+  "product_tests_or_capture_regeneration_after_report_cleanup": false,
+  "actual_database_writes": false,
+  "git_mutations": false,
+  "UTC": "2026-10-10T09:30:56.410268+00:00"
+}

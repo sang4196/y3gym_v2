@@ -1,0 +1,3 @@
+50 objects imported automatically (use -v 2 for details).
+
+PASS 6 public posts; home [21, 22, 17, 18, 2] popup [17, 18, 21, 22]

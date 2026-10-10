@@ -1,0 +1,18 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "manage.py",
+    "test",
+    "news.tests.test_home_news",
+    "--noinput",
+    "--verbosity",
+    "1"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "started": "2026-10-10T09:16:43.366674+00:00",
+  "exit_code": 0,
+  "ended": "2026-10-10T09:17:13.543475+00:00"
+}

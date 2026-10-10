@@ -1,0 +1,58 @@
+[
+  {
+    "evidence": "home-server-first-command.json",
+    "result": "FAIL: 6 pass / 2 fail",
+    "cause": "New fixture edited the mutable first_published_at model field while trying to forge only a draft revision; selector also counted the existing inert popup JSON script.",
+    "repair": "Forge only revision JSON and scope executable/image escaping assertion to news rows. Product code unchanged.",
+    "follow_up": "home-server-second-command.json: 8 PASS"
+  },
+  {
+    "evidence": "lint-first-command.json",
+    "result": "FAIL: I001",
+    "cause": "New test import order.",
+    "repair": "Sort only the new test imports.",
+    "follow_up": "lint-second-command.json: PASS"
+  },
+  {
+    "evidence": "format-global-command.json",
+    "result": "Known warning / exit 1",
+    "cause": "Existing review/workflow-01/verify.py formatting.",
+    "repair": "Preserved old review unchanged; scoped format passes.",
+    "resolved": false
+  },
+  {
+    "evidence": "live-home-command.json",
+    "result": "FAIL after 5 successful flows",
+    "cause": "Screenshot init script accessed localStorage inside an opaque about:blank document.",
+    "repair": "Restrict the init script to this CMS origin. No application changes.",
+    "follow_up": "live-home-second-command.json: 5 PASS; live-home-third-command.json: 7 PASS"
+  },
+  {
+    "evidence": "browser-first-command.json",
+    "result": "2 tests PASS / home test FAIL before popup launch",
+    "cause": "Copied popup review tool had an incorrect relative Playwright import path.",
+    "repair": "Correct the new copy path only; original popup scripts untouched.",
+    "follow_up": "home-browser-second-command.json: popup revisit 8 and edges 3 PASS"
+  },
+  {
+    "evidence": "home-browser-second-command.json",
+    "result": "FAIL in home expected-title comparison; popup regressions PASS",
+    "cause": "Wagtail get_latest_revision_as_object returned the same mutable fixture object, changing the expected public title when drafting. Application displayed the correct public title.",
+    "repair": "Freeze public expected fields before draft mutation.",
+    "follow_up": "home-browser-third-command.json: 1 test PASS, home 8/popup revisit 8/edges 3 flows PASS"
+  },
+  {
+    "evidence": "live-second/home/mobile-actual-news.png",
+    "result": "Capture limitation, not a product defect",
+    "cause": "Element screenshot included a fixed contact bar over the last summary.",
+    "repair": "Assert scroll/readability/click at 375x812 and add long-viewport section capture without UI changes. Original captures preserved.",
+    "follow_up": "live-third/home/checks.json: 7 PASS"
+  },
+  {
+    "evidence": "preservation-command.json",
+    "result": "12 checks PASS / 2 document semantics FAIL; all files/DB/media/index/server preservation PASS",
+    "cause": "backend README did not explicitly say M2-4 independent verification pending; backend README and DESIGN omitted the first 46ef checkpoint when replacing the current Git paragraph.",
+    "repair": "Restore explicit historical checkpoint references in both current docs and add explicit pending status. Preserve first evidence/snapshots and verify.py/snapshot.py copies.",
+    "follow_up": "preservation-final-command.json: 14 PASS; after historical-heading clarification preservation-report-final-command.json: 14 PASS. Both earlier raw reports retained."
+  }
+]

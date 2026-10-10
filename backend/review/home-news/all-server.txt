@@ -1,0 +1,15 @@
+Creating test database for alias 'default'...
+...................................................................................ss......s.s................
+----------------------------------------------------------------------
+Ran 110 tests in 138.020s
+
+OK (skipped=4)
+Destroying test database for alias 'default'...
+Found 110 test(s).
+System check identified no issues (0 silenced).
+Created and published two TEST branches and shared facility images. Existing brand/news/popups/accounts/credentials preserved.
+Existing branch revisions and media preserved. Local permissions updated.
+Created and published the approved local brand fixture. Prototype files and credentials unchanged.
+Existing brand revisions, files and credentials preserved. Local permissions updated.
+Created two approved temporary trainers A/B. No position/biography claims added. Existing content/accounts/credentials preserved.
+Existing trainer content/revisions/media preserved. Local review permissions updated.

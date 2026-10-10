@@ -1,0 +1,62 @@
+{
+  "run": "2026-10-10T09:24:07.350Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "PC 일반 닫기 후 같은 탭 새로고침 전체 재노출·과거 탭 플래그 무시·등록 순서",
+      "detail": [
+        "post-3",
+        "post-4"
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "열린 상태에서 새로고침: 글별 기존 창 재사용·중복 창 없음",
+      "detail": 2,
+      "result": "PASS"
+    },
+    {
+      "name": "소식 이동 후 홈 재방문·브라우저 뒤로가기 재노출",
+      "detail": [
+        "post-3",
+        "post-4"
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "캐시 복원 pageshow 분기: 서버 재조회 후 재노출",
+      "detail": "persisted event injected; actual OS BFCache not asserted",
+      "result": "PASS"
+    },
+    {
+      "name": "PC 오늘 숨김: 선택한 글만 새로고침·재방문·새 탭에서 제외·한국 시간 다음 날 00시",
+      "detail": {
+        "id": "post-3",
+        "hiddenUntil": "2026-10-10T15:00:00.000Z"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "숨김 기록 만료 후 전체 다시 노출",
+      "detail": [
+        "post-3",
+        "post-4"
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "모바일 일반 닫기 후 새로고침·재방문 순차 재노출, 오늘 숨김은 선택 글만 제외",
+      "detail": {
+        "count": 2,
+        "hiddenUntil": "2026-10-10T15:00:00.000Z"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "자동 차단도 새로고침 시 재시도·글별 수동 복구 유지",
+      "detail": 2,
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

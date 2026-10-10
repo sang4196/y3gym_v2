@@ -1,0 +1,15 @@
+{
+  "read_only": true,
+  "processes": {
+    "8768": {
+      "pid": 1280529,
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "command": ".venv/bin/python manage.py runserver 127.0.0.1:8768 --noreload --insecure"
+    },
+    "8767": {
+      "pid": 714159,
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+      "command": "python3 backend/scripts/serve-prototype.py"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "work_unit": "M2-4 closeout documents only",
+  "changed_existing_documents": [
+    "README.md",
+    "backend/README.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/PRD.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md"
+  ],
+  "new_evidence_directory": "backend/review/m2-4-closeout/",
+  "independent_product_verdict": "PASS_WITH_WARNINGS; read from home-news-independent, not rerun",
+  "blocking_findings": [],
+  "remaining_warning": "W01 existing workflow-01/verify.py global format; original preserved and not rerun",
+  "approval": {
+    "date": "2026-10-10",
+    "response": "이 배치로 유지",
+    "source": "Explicit human response relayed in design closeout instruction; not inferred from automated checks",
+    "captures": [
+      "backend/review/home-news/live-third/home/desktop-actual-news.png",
+      "backend/review/home-news/live-third/home/mobile-actual-news-unobscured.png"
+    ],
+    "scope": "Recent news five-row layout and existing A colors/font/row spacing only",
+    "not_approved": [
+      "administrator usability",
+      "real devices/Whale/Korean IME",
+      "operational approval"
+    ],
+    "old_pending_JSON_and_captures": "Historical records unchanged"
+  },
+  "document_preservation_checks": {
+    "status": "PASS",
+    "checks": 21,
+    "local_links_at_check": 284,
+    "anchors": 24,
+    "before_files": 2237,
+    "after_files": 2237,
+    "database_tables": 58,
+    "protected": {
+      "all_previous_reviews": {
+        "files": 1804,
+        "unchanged": true
+      },
+      "prototype_UI_except_design_document": {
+        "files": 185,
+        "unchanged": true
+      },
+      "private_media": {
+        "files": 145,
+        "unchanged": true
+      },
+      "secrets": {
+        "files": 2,
+        "unchanged": true
+      },
+      "common_browser_fixtures": {
+        "files": 3,
+        "unchanged": true
+      },
+      "all_product_source_tests_scripts_config_dependencies": {
+        "files": 90,
+        "unchanged": true
+      }
+    },
+    "evidence": "checks.json"
+  },
+  "product_tests_or_checks_rerun": false,
+  "capture_regeneration": false,
+  "HTTP_requests": false,
+  "actual_DB_writes": false,
+  "DB_queries": "SET TRANSACTION READ ONLY; SELECT row hashes only",
+  "product_code_UI_config_changes": false,
+  "Git_mutations": false,
+  "server_restarts": false,
+  "Git_state_time_boundary": "At closeout writing M2-4 is uncommitted; subsequent Git results are separate",
+  "previous_pushed_checkpoint": "b517cc209f0f3ac66d7b602450cf5d9dca16d58c",
+  "next_feature_or_operational_design_started": false,
+  "preparation_failure_notes": "preparation-notes.json",
+  "final_audit": "final-audit.json"
+}

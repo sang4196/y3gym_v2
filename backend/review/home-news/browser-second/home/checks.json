@@ -1,0 +1,10 @@
+{
+  "origin": "http://localhost:44197",
+  "readOnly": false,
+  "isolatedTestDatabase": true,
+  "status": "FAIL",
+  "checks": [],
+  "errors": [],
+  "screenshots": [],
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '[TEST] 공개 소식 6 · 홈과 소식 목록 연결 확인',\n-   '[TEST] 비공개 수정 초안',\n    '[TEST] 공개 소식 5 · 홈과 소식 목록 연결 확인',\n    '[TEST] 공개 소식 4 · 홈과 소식 목록 연결 확인',\n    '[TEST] 공개 소식 3 · 홈과 소식 목록 연결 확인',\n    '[TEST] 공개 소식 2 · 홈과 소식 목록 연결 확인'\n  ]\n\n    at file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-home-news.mjs:57:12"
+}

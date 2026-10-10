@@ -1,0 +1,18 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "ruff",
+    "format",
+    "--check",
+    "news",
+    "config",
+    "scripts",
+    "review/home-news"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "started": "2026-10-10T09:25:55.422394+00:00",
+  "exit_code": 0,
+  "ended": "2026-10-10T09:25:55.456124+00:00"
+}

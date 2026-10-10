@@ -1,0 +1,7 @@
+{% if posts %}<div class="news-list">
+  {% for post in posts %}<article class="news-item" aria-labelledby="news-{{ post.pk }}-title">
+    <span class="news-category">{{ post.get_category_display }}</span>
+    <div class="news-copy"><h3 id="news-{{ post.pk }}-title"><a class="news-title-link" href="{{ post.get_absolute_url }}{% if branch %}?branch={{ branch }}{% endif %}" data-news-link>{{ post.title }}</a></h3>{% if post.summary %}<p>{{ post.summary }}</p>{% endif %}</div>
+    <time datetime="{{ post.first_published_at|date:'Y-m-d' }}">{{ post.first_published_at|date:'Y.m.d' }}</time>
+  </article>{% endfor %}
+</div>{% else %}<div class="news-empty-state"><h2>등록된 소식이 없습니다.</h2><p>새로운 소식이 등록되면 이곳에서 확인할 수 있습니다.</p></div>{% endif %}

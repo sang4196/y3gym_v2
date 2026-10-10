@@ -1,0 +1,509 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "work_unit": "M2-4 home recent news independent verification",
+  "date": "2026-10-10",
+  "root": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+  "basis": [
+    "AGENTS.md",
+    "README.md",
+    "docs/PRD.md FR-05",
+    "docs/IMPLEMENTATION-PLAN.md M2-4",
+    "prototype/DESIGN.md M2-4",
+    "backend/README.md",
+    "docs/WORKFLOW.md"
+  ],
+  "product_code_modified_by_verifier": false,
+  "home_server_rerun": {
+    "collected": 8,
+    "passed": 8
+  },
+  "whole_server_rerun": {
+    "collected": 110,
+    "passed": 106,
+    "skipped_opt_in": 4
+  },
+  "independent_new_server_final": {
+    "collected": 3,
+    "passed": 3,
+    "initial_failures": 2
+  },
+  "opt_in_browser_django_cases": {
+    "brand_branch": 2,
+    "home_with_new_popup_case": 1
+  },
+  "browser_flows": {
+    "brand": {
+      "status": "PASS",
+      "flows": 7,
+      "errors": [],
+      "evidence": "browser/brand/result.json"
+    },
+    "branches": {
+      "status": "PASS",
+      "flows": 11,
+      "errors": [],
+      "evidence": "browser/branches/checks.json"
+    },
+    "home": {
+      "status": "PASS",
+      "flows": 8,
+      "errors": [],
+      "evidence": "browser/home/checks.json"
+    },
+    "popup_revisit": {
+      "status": "PASS",
+      "flows": 8,
+      "errors": [],
+      "evidence": "browser/popup-revisit/checks.json"
+    },
+    "popup_edges": {
+      "status": "PASS",
+      "flows": 3,
+      "errors": [],
+      "evidence": "browser/popup-edges/edge-checks.json"
+    },
+    "independent_all_six_popups": {
+      "status": "PASS",
+      "flows": 2,
+      "errors": [],
+      "evidence": "browser/all-popups/checks.json"
+    },
+    "live_anonymous": {
+      "status": "PASS",
+      "flows": 7,
+      "errors": [],
+      "evidence": "live/home/checks.json"
+    }
+  },
+  "order_oracle": "scalar seed manifest / independent Python timestamp descending then ID ascending; production helper and rendered list never used as sole expected oracle",
+  "critical_popup_boundary": {
+    "server": "8 public and 8 active popups; home 5; omitted home 3 remain eligible and data route 200",
+    "browser": "6 public and 6 active popups; home 5; oldest omitted but PC opens all 6 / mobile shows and closes all 6 in registration order"
+  },
+  "actual_db_and_http_manifest": "live-state.json",
+  "documents_and_historical_comparison": "documents-history.json",
+  "preservation": {
+    "status": "PASS",
+    "before_files": 2101,
+    "after_files": 2101,
+    "changed_existing_or_added_outside_audit": [],
+    "database_tables": 58,
+    "changed_database_tables": [],
+    "index_unchanged": true,
+    "head_unchanged": true,
+    "head": "b517cc209f0f3ac66d7b602450cf5d9dca16d58c",
+    "processes": {
+      "8768": {
+        "unchanged": true,
+        "pid": 1280529,
+        "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+        "command": ".venv/bin/python manage.py runserver 127.0.0.1:8768 --noreload --insecure"
+      },
+      "8767": {
+        "unchanged": true,
+        "pid": 714159,
+        "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+        "command": "python3 backend/scripts/serve-prototype.py"
+      }
+    },
+    "scopes": {
+      "private_media": {
+        "files": 145,
+        "unchanged": true
+      },
+      "all_existing_backend_reviews": {
+        "files": 1668,
+        "unchanged": true
+      },
+      "developer_home_news_evidence": {
+        "files": 166,
+        "unchanged": true
+      },
+      "prototype_including_design": {
+        "files": 186,
+        "unchanged": true
+      },
+      "secrets": {
+        "files": 2,
+        "unchanged": true
+      },
+      "common_browser_fixtures": {
+        "files": 3,
+        "unchanged": true
+      },
+      "dependency_and_config": {
+        "files": 8,
+        "unchanged": true
+      }
+    },
+    "actual_database_writes": false,
+    "real_database_logins_or_posts": false,
+    "server_restarts": false,
+    "commit_push_deploy": false
+  },
+  "commands": {
+    "capture-before": {
+      "command": [
+        "env",
+        "Y3GYM_INDEPENDENT_SNAPSHOT=before",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "shell",
+        "-c",
+        "exec(open(\"review/home-news-independent/snapshot.py\").read())"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 2.468
+    },
+    "home-server": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests.test_home_news",
+        "--noinput",
+        "--verbosity",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 20.578
+    },
+    "all-server": {
+      "command": [
+        "env",
+        "Y3GYM_WITHDRAWAL_REVIEW_DIR=review/home-news-independent/server-concurrency",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests",
+        "--noinput",
+        "--verbosity",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 151.693
+    },
+    "live-state": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "shell",
+        "-c",
+        "exec(open(\"review/home-news-independent/live_state.py\").read())"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 1.735
+    },
+    "live-browser": {
+      "command": [
+        "env",
+        "Y3GYM_HOME_NEWS_REVIEW_DIR=review/home-news-independent/live",
+        "node",
+        "scripts/review-home-news.mjs",
+        "--live-read-only"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 8.509
+    },
+    "independent-semantics": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "review/home-news-independent/audit_semantics.py"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "elapsed_seconds": 27.988
+    },
+    "independent-semantics-rerun": {
+      "command": [
+        "env",
+        "Y3GYM_HOME_AUDIT_RESULTS=semantics-rerun",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "review/home-news-independent/audit_semantics.py"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 24.84
+    },
+    "related-brand-branch": {
+      "command": [
+        "env",
+        "Y3GYM_RUN_BRAND_BROWSER=1",
+        "Y3GYM_RUN_BRANCH_BROWSER=1",
+        "Y3GYM_BRAND_REVIEW_DIR=review/home-news-independent/browser/brand",
+        "Y3GYM_BRANCH_REVIEW_DIR=review/home-news-independent/browser/branches",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests.test_brand_browser",
+        "news.tests.test_branch_browser",
+        "--noinput",
+        "-v",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 97.479
+    },
+    "home-browser-and-popups": {
+      "command": [
+        "env",
+        "Y3GYM_RUN_HOME_NEWS_BROWSER=1",
+        "Y3GYM_HOME_NEWS_REVIEW_DIR=review/home-news-independent/browser",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "review/home-news-independent/browser_home.py"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 92.298
+    },
+    "documents-history": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "review/home-news-independent/verify_documents_history.py",
+        "--archive",
+        "/tmp/y3gym-m2-4-chvghqww",
+        "--output",
+        "review/home-news-independent/documents-history.json"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 1.578
+    },
+    "system-check": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "check"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 1.749
+    },
+    "migration-check": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 1.882
+    },
+    "lint": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "check",
+        "."
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.08
+    },
+    "scoped-format": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "news/home.py",
+        "news/tests/test_home_news.py",
+        "news/tests/test_home_news_browser.py",
+        "review/home-news-independent"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.065
+    },
+    "global-format": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "elapsed_seconds": 0.085
+    },
+    "lint-final": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "check",
+        "."
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.076
+    },
+    "scoped-format-final": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "news/home.py",
+        "news/tests/test_home_news.py",
+        "news/tests/test_home_news_browser.py",
+        "review/home-news-independent"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.049
+    },
+    "global-format-final": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "elapsed_seconds": 0.064
+    },
+    "diff-check": {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.013
+    },
+    "capture-after": {
+      "command": [
+        "env",
+        "Y3GYM_INDEPENDENT_SNAPSHOT=after",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "shell",
+        "-c",
+        "exec(open(\"review/home-news-independent/snapshot.py\").read())"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 3.005
+    }
+  },
+  "warnings": [
+    {
+      "id": "W01",
+      "priority": "P3",
+      "title": "기존 전체 Ruff 포맷 경고",
+      "requirement": "AGENTS.md 검증과 보고: 남은 경고를 통과 검사와 구분; 기존 검수 이력 보존",
+      "file": "backend/review/workflow-01/verify.py",
+      "reproduction": "cd backend && uv run --locked ruff format --check .",
+      "expected": "포맷 검사 exit 0",
+      "actual": "exit 1: review/workflow-01/verify.py 1개 파일 재포맷 필요",
+      "scope": "기존 검수 도구이며 이번 제품 변경 밖. 전후 해시 동일. 수정하지 않음",
+      "evidence": [
+        "global-format.txt",
+        "global-format-command.json",
+        "preservation-result.json"
+      ]
+    }
+  ],
+  "unverified": [
+    "실제 DB에 로그인/POST/초기화/seed/공개/철회/업로드를 실행하지 않음; 해당 쓰기는 격리 test_y3gym_m1과 임시 미디어/계정에 한정",
+    "트레이너 opt-in 브라우저와 브랜드/지점 역순·단독 조합 전체는 이번에 재실행하지 않음",
+    "기존 native 팝업 전체 위치/크기 브라우저 검사는 재실행하지 않음",
+    "실제 휴대폰·Whale 및 Chromium 이외 브라우저·한국어 IME 조합",
+    "OS 실제 BFCache 복원을 입증하지 않음; persisted pageshow 이벤트 분기는 주입해 검사",
+    "새 M2-4 화면 사용자 시각 승인·관리자 사용성 승인을 자동 검사로 확정하지 않음",
+    "실제 브랜드/지점/트레이너 자료·전화/카카오톡/지도 외부 연동·운영 배포/스토리지/CDN/캐시/백업",
+    "개발자 과거 실패 명령/서버 재시작/원격 push 자체는 독립 재현하지 않음; 기록 및 현재 해시/로컬 refs 확인만 수행"
+  ],
+  "prior_developer_or_independent_reports_counted_as_rerun": false,
+  "visual_images_opened": [
+    "live/home/desktop-actual-news.png",
+    "live/home/mobile-actual-last-row-visible.png",
+    "live/home/mobile-actual-news-unobscured.png",
+    "browser/home/desktop-five-news.png",
+    "browser/home/mobile-five-news-unobscured.png",
+    "browser/home/mobile-empty-news.png",
+    "browser/all-popups/mobile-oldest-outside-home.png"
+  ],
+  "visual_user_approval": "NOT_ESTABLISHED_BY_AUTOMATED_CHECKS"
+}

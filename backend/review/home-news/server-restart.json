@@ -1,0 +1,14 @@
+{
+  "previous_pid": 1221566,
+  "reason": "Load changed home.py under existing --noreload server",
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "command": [
+    "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+    "manage.py",
+    "runserver",
+    "127.0.0.1:8768",
+    "--noreload",
+    "--insecure"
+  ],
+  "8767_preserved": true
+}

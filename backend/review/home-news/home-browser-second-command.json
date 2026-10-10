@@ -1,0 +1,21 @@
+{
+  "command": [
+    "env",
+    "Y3GYM_RUN_HOME_NEWS_BROWSER=1",
+    "Y3GYM_HOME_NEWS_REVIEW_DIR=review/home-news/browser-second",
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "manage.py",
+    "test",
+    "news.tests.test_home_news_browser",
+    "--noinput",
+    "--verbosity",
+    "1"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "started": "2026-10-10T09:21:25.334903+00:00",
+  "exit_code": 1,
+  "ended": "2026-10-10T09:22:40.261843+00:00"
+}

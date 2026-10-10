@@ -1,0 +1,6 @@
+PASS desktop: 공개 목록과 같은 최근 글·최대 5건·A 행 간격/글꼴·넘침 없음
+PASS mobile: 공개 목록과 같은 최근 글·최대 5건·A 행 간격/글꼴·넘침 없음
+PASS 본점↔예시점 전환·새로고침·공통 소식 동일·branch 중복 없음
+PASS 실제 글 상세→목록 기본 all/1→홈·모두 보기·뒤로가기 지점 유지
+PASS JavaScript 없는 모바일: 서버 상세·모두 보기·홈 왕복 링크 유효
+{"status":"FAIL","checks":5,"failure":"AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   \"Failed to read the 'localStorage' property from 'Window': Access is denied for this document.\"\n+ ]\n- []\n\n    at file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-home-news.mjs:131:10"}

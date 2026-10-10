@@ -40,7 +40,11 @@ Django/Wagtail과 전체 콘텐츠 초안·미리보기·공개 정책은 후속
 
 [이번 자체 검사와 새 캡처](../backend/review/trainers/README.md)는 실제 A/B와 별도 테스트 DB의 짧은 약력/직급·사진 없음·긴 이름/12항목 약력을 구분한다. **2026-10-10 후속 사용자 시각 승인:** 사용자가 [PC 직급·짧은 약력 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)과 [모바일 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)을 검토하고 “이 배치로 유지”로 승인했다. 이 선택정보 배치에 한정된 승인이다. [초기 독립 FAIL](../backend/review/trainers-independent/README.md) → [R1 자체 보완](../backend/review/trainers-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md)를 완료했고 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했다. 기존 포맷 W01은 유지한다. 관리자 사용성·실제 기기/배포 승인은 별도로 남으며, 촬영 당시 JSON·캡처를 승인 이후 상태로 재작성하지 않는다. 홈 트레이너·새 고객 메뉴/프로필 페이지는 추가하지 않았다.
 
-[이번 종료 문서 검사](../backend/review/m2-3-closeout/README.md)는 상태/링크와 보존만 확인했다. 제품 UI·캡처는 재생성하지 않았고 실제 기기/Whale/한국어 IME·관리자 사용성·운영 승인은 미검증이다. 첫 체크포인트 `46ef337`은 push 완료, 현재 M2-3 변경은 미커밋이다. 홈 최대 5건/최초 공개 최신순·수정/재공개 순위 유지와 팝업 최초 등록 빠른순은 M2-4 확정 계획으로만 남기며 해당 기능은 미착수다.
+[당시 종료 문서 검사](../backend/review/m2-3-closeout/README.md)는 당시 상태/링크와 보존만 확인했다. 제품 UI·캡처는 재생성하지 않았고 실제 기기/Whale/한국어 IME·관리자 사용성·운영 승인은 미검증이다. 첫 체크포인트 `46ef337` push 이후 M2-3·R1/종료 문서는 설계 검토와 Git 담당 반영을 거쳐 `b517cc209f0f3ac66d7b602450cf5d9dca16d58c`으로 main → origin/main push 완료했다. 이는 설계가 전달한 Git 결과이며 개발에서 Git 쓰기·인증/영구 설정 변경을 수행하지 않았다. 이 종료 문서 작성 시점의 M2-4 변경은 미커밋이며 이후 Git 반영 결과와 구분한다. 홈 최대 5건/최초 공개 최신순·수정/재공개 순위 유지와 팝업 최초 등록 빠른순은 아래 M2-4에서 적용했다.
+
+**2026-10-10 M2-4 홈 최근 소식:** 승인된 A 행의 분류·h3 제목·선택 요약·최초 공개 날짜·구분선·PC/모바일 밀도·색상/Pretendard/간격을 유지하면서 데이터만 실제 공개 글 최대 5건으로 교체했다. 0건은 기존 “등록된 소식이 없습니다.” 안내를 재사용한다. 실제 상세/모두 보기 링크와 선택 지점/JS 없는 탐색을 연결하고 수정 초안은 노출하지 않는다. 관련 안내는 로컬 CMS 검토 자료로 표시한다. [개발 자체 검수·캡처](../backend/review/home-news/README.md) 뒤 [독립 검증 PASS_WITH_WARNINGS](../backend/review/home-news-independent/README.md)를 완료했다. 요구사항 위반·새 제품 결함 없이 기존 W01만 남는다. 2026-10-10 사용자는 [PC 최근 소식 5건](../backend/review/home-news/live-third/home/desktop-actual-news.png)·[모바일 5건 전체](../backend/review/home-news/live-third/home/mobile-actual-news-unobscured.png)를 보고 “이 배치로 유지”로 승인했다. 이 승인은 최근 소식 5건 배치와 기존 A 색상·폰트·행 간격 유지에 한정하며 관리자 사용성·실제 기기·Whale·한국어 IME·운영 승인은 아니다. 검수 당시 자체/독립 JSON의 승인 대기는 당시 기록으로 보존한다. 기존 A 디자인/트레이너 배치 승인도 그대로 유지한다. 원본 HTML/CSS/JS·기존 검수와 팝업 정책은 유지한다.
+
+[이번 M2-4 종료 문서·보존 검사](../backend/review/m2-4-closeout/README.md)는 상태·승인 근거·경로/앵커·보존만 확인했다. 제품 테스트·캡처를 재실행하지 않았고 이 종료 문서 작성 시점의 M2-4 변경은 미커밋이며 이후 Git 반영 결과와 구분한다. 실제 자료·지도/전화/카카오톡·운영/배포는 미확정/미구현으로 남기며 이후 기술·운영을 구체화하지 않는다.
 
 ## 지점 통합 탭과 정보 구조
 
@@ -66,7 +70,7 @@ Django/Wagtail과 전체 콘텐츠 초안·미리보기·공개 정책은 후속
 - 상세는 최대 800px의 본문 폭과 기존 글자 위계로 읽기 편하게 구성한다. 분류·제목·등록일·문단·강조·소제목·목록을 제공한다. 사용자 요청으로 본문 아래의 ‘지점 위치와 문의 보기’와 ‘목록으로 돌아가기’를 제거했다. 공통 메뉴와 현재 위치의 ‘소식’ 링크는 유지한다.
 - 목록에서 상세로 이동할 때 분류와 페이지를 전달해 복귀한다. 선택 지점도 문의·홈·지점 안내까지 유지한다. 지정 지점이나 저장된 선택이 없으면 지점 선택으로 안내한다.
 - JavaScript가 없어도 목록 분류·상세·메뉴가 남으며 기본 복귀 링크는 전체 목록으로 연결한다. 전체 목록이 비어도 분류와 안내·탐색을 제공한다.
-- 정적 프로토타입은 `news-data.js`와 `templates/content.html`, `scripts/render-news.mjs`로 목록·상세를 생성한다. 이 정적 예시와 별도로 M1의 [서버 소식 템플릿](../backend/news/templates/news/list.html)은 실제 공개 리비전을 렌더링한다. 후속에서 팝업만 실제 DB·공개 홈과 연결했으며 홈 최근 소식은 정적 예시다.
+- 정적 프로토타입은 `news-data.js`와 `templates/content.html`, `scripts/render-news.mjs`로 목록·상세를 생성한다. 이 정적 예시와 별도로 M1의 [서버 소식 템플릿](../backend/news/templates/news/list.html)은 실제 공개 리비전을 렌더링한다. 후속에서 팝업을 실제 DB·공개 홈과 연결했고 M2-4에서 홈 최근 소식도 같은 공개 리비전 조회에 연결했다. 정적 원본은 이력으로 보존한다.
 
 ## 지점 안내 시설 자동 슬라이드
 

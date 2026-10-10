@@ -1,0 +1,17 @@
+{
+  "HEAD": "b517cc209f0f3ac66d7b602450cf5d9dca16d58c",
+  "local_origin_main": "b517cc209f0f3ac66d7b602450cf5d9dca16d58c",
+  "status": " M README.md\n M backend/README.md\n M backend/news/home.py\n M docs/IMPLEMENTATION-PLAN.md\n M docs/PRD.md\n M docs/WORKFLOW.md\n M prototype/DESIGN.md\n?? backend/news/templates/news/home_news.html\n?? backend/news/tests/test_home_news.py\n?? backend/news/tests/test_home_news_browser.py\n?? backend/review/home-news-independent/\n?? backend/review/home-news/\n?? backend/review/m2-4-closeout/\n?? backend/scripts/review-home-news.mjs\n",
+  "servers": [
+    {
+      "pid": 714159,
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+      "command": "python3 backend/scripts/serve-prototype.py"
+    },
+    {
+      "pid": 1280529,
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "command": ".venv/bin/python manage.py runserver 127.0.0.1:8768 --noreload --insecure"
+    }
+  ]
+}

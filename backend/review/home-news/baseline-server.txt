@@ -1,0 +1,11 @@
+Creating test database for alias 'default'...
+................................................
+----------------------------------------------------------------------
+Ran 48 tests in 33.889s
+
+OK
+Destroying test database for alias 'default'...
+Found 48 test(s).
+System check identified no issues (0 silenced).
+Created and published the approved local brand fixture. Prototype files and credentials unchanged.
+Existing brand revisions, files and credentials preserved. Local permissions updated.

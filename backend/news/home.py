@@ -7,7 +7,7 @@ from django.views.decorators.cache import never_cache
 
 from .branches import branch_browser, request_navigation
 from .popups import eligible_popups, popup_content
-from .publication import published_brand
+from .publication import published_brand, published_posts
 
 
 @never_cache
@@ -88,11 +88,25 @@ def render_home(request, branding, is_preview=False):
     # Read the approved generated home; do not regenerate or edit prototype
     # sources/evidence. Adapt assets, brand, news navigation and popup entry.
     # The brand uses a live revision (or protected preview).
-    # Branch/gallery use live clustered revisions. Recent-news stays a fixture.
+    # Branch/gallery and recent news use their current public revisions.
     document = BeautifulSoup(
         (settings.PROTOTYPE_DIR / "index.html").read_text(), "html.parser"
     )
     navigation = request_navigation(request)
+    recent_news = document.select_one("#news")
+    recent_news.select_one(".news-list").replace_with(
+        BeautifulSoup(
+            render_to_string(
+                "news/home_news.html",
+                {"posts": published_posts()[:5], "branch": navigation["branch"]},
+                request=request,
+            ),
+            "html.parser",
+        )
+    )
+    recent_news.select_one(
+        ".content-example"
+    ).string = "로컬 CMS 검토용 · 등록된 제목·내용·사진은 테스트 자료입니다."
     document.select_one("[data-branch-browser]").replace_with(
         BeautifulSoup(
             branch_browser(request, navigation["public_branches"], home=True),

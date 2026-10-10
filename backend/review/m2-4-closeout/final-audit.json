@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "document_links": 289,
+  "anchors": 24,
+  "errors": [],
+  "current_files_equal_final_snapshot": true,
+  "unexpected_files_outside_closeout": [],
+  "Git_index_unchanged": true,
+  "HEAD_unchanged": true,
+  "existing_secret_values_absent_from_new_evidence": true,
+  "product_tests_or_captures_rerun": false,
+  "HTTP_or_DB_writes": false,
+  "Git_mutations": false,
+  "evidence": "checks.json",
+  "UTC": "2026-10-10T09:52:01.220199+00:00"
+}

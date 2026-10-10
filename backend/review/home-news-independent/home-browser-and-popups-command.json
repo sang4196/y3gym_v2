@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "Y3GYM_RUN_HOME_NEWS_BROWSER=1",
+    "Y3GYM_HOME_NEWS_REVIEW_DIR=review/home-news-independent/browser",
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "review/home-news-independent/browser_home.py"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {},
+  "exit_code": 0,
+  "elapsed_seconds": 92.298
+}
