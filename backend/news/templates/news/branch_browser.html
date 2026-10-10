@@ -26,6 +26,10 @@
       </dl>
     </div></div>
     {% if item.gallery %}<section class="facilities" id="{{ item.key }}-facilities" data-branch-section="facilities" aria-labelledby="{{ item.key }}-facilities-title"><div class="container"><div class="section-heading"><div><h3 class="branch-section-title" id="{{ item.key }}-facilities-title">시설 둘러보기</h3><p class="section-description">시설 사진 · 로컬 CMS 임시 자료</p></div></div>{% include 'news/facility_gallery.html' %}</div></section>{% endif %}
+    {% if item.trainer_cards %}<section class="trainers surface-section" id="{{ item.key }}-trainers" data-branch-section="trainers" aria-labelledby="{{ item.key }}-trainers-title"><div class="container">
+      <div class="section-heading"><div><h3 class="branch-section-title" id="{{ item.key }}-trainers-title">함께할 트레이너</h3><p class="section-description">{{ item }} 소속 트레이너입니다.</p><p class="content-example">로컬 CMS 검토 · 사진과 인물·소개는 임시 자료입니다.</p></div></div>
+      <div class="trainer-grid{% if item.trainer_cards|length == 1 %} trainer-grid--single{% endif %}">{% for trainer in item.trainer_cards %}{% include 'news/trainer_card.html' %}{% endfor %}</div>
+    </div></section>{% endif %}
     <section class="location" id="contact-{{ item.key }}" data-branch-section="contact" aria-labelledby="{{ item.key }}-location-title"><div class="container">
       <div class="section-heading"><div><h3 class="branch-section-title" id="{{ item.key }}-location-title">위치와 문의</h3><p class="section-description">{{ item }}의 주소와 운영시간을 확인하세요.</p></div></div>
       <div class="location-layout branch-contact">

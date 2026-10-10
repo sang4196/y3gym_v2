@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "documents": [
+    "README.md",
+    "backend/README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md"
+  ],
+  "local_links": 194,
+  "anchors": 20,
+  "checks": [
+    {
+      "name": "Local paths and Markdown anchors",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Current document whitespace and conflict markers",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "M2-3 actual implementation and independent review separated",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "No stale M2-3 not-started or trainer-CMS-unimplemented status",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Confirmed required/optional fields and single-list manual order",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Dual publication and draft affiliation isolation",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Specific visual approval and pending independent/usability review separated",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Excluded scope remains unimplemented",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Checkpoint push recovery is separate from current uncommitted work",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "New documented commands and implementation paths exist",
+      "result": "PASS",
+      "detail": [
+        "backend/news/trainers.py",
+        "backend/news/migrations/0005_trainer_trainerbiography.py",
+        "backend/news/management/commands/bootstrap_trainer_review.py",
+        "backend/news/tests/test_trainer_browser.py",
+        "backend/news/tests/test_trainers.py",
+        "backend/scripts/review-trainers.mjs",
+        "backend/review/trainers/run_checks.py",
+        "backend/news/templates/news/trainer_card.html",
+        "backend/news/static/news/trainers.css"
+      ]
+    },
+    {
+      "name": "git diff --check",
+      "result": "PASS",
+      "detail": {
+        "exit_code": 0,
+        "output": ""
+      }
+    }
+  ],
+  "errors": [],
+  "http_or_db_access": false
+}

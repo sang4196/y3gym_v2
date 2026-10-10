@@ -1,0 +1,120 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "kind": "M2-3-R1 developer self-verification",
+  "initial_independent_status": "FAIL",
+  "independent_recheck_status": "PENDING",
+  "F01_original_reproduction_after_fix": "PASS (byte-identical copy)",
+  "W02_three_shared_fixtures": "PASS in preservation-final.json; old mismatching subgroup kept as history",
+  "W03_read_only_label": "PASS in live-branches/checks.json; zero-trainer write fixture preserved",
+  "W04_current_PRD_table": "Updated; direct section/table check in verify_documents.py",
+  "W01_existing_global_format_warning": "review/workflow-01/verify.py unchanged",
+  "runs": [
+    {
+      "name": "original-reproduction-fixed",
+      "status": "PASS",
+      "discovered": 1,
+      "passed": 1,
+      "skipped": 0,
+      "django_elapsed_seconds": 3.181,
+      "log": "original-reproduction-fixed.txt"
+    },
+    {
+      "name": "search-tests-second",
+      "status": "PASS",
+      "discovered": 4,
+      "passed": 4,
+      "skipped": 0,
+      "django_elapsed_seconds": 16.21,
+      "log": "search-tests-second.txt"
+    },
+    {
+      "name": "trainer-server",
+      "status": "PASS",
+      "discovered": 13,
+      "passed": 13,
+      "skipped": 0,
+      "django_elapsed_seconds": 18.86,
+      "log": "trainer-server.txt"
+    },
+    {
+      "name": "all-server",
+      "status": "PASS",
+      "discovered": 101,
+      "passed": 98,
+      "skipped": 3,
+      "django_elapsed_seconds": 121.724,
+      "log": "all-server.txt"
+    },
+    {
+      "name": "trainer-browser",
+      "status": "PASS",
+      "discovered": 1,
+      "passed": 1,
+      "skipped": 0,
+      "django_elapsed_seconds": 40.521,
+      "log": "trainer-browser.txt"
+    },
+    {
+      "name": "search-browser-second",
+      "status": "PASS",
+      "discovered": 1,
+      "passed": 1,
+      "skipped": 0,
+      "django_elapsed_seconds": 25.223,
+      "log": "search-browser-second.txt"
+    }
+  ],
+  "browser_flows": [
+    {
+      "name": "existing-trainer-browser",
+      "status": "PASS",
+      "flows": 10,
+      "evidence": "trainer-browser/checks.json"
+    },
+    {
+      "name": "new-search-browser",
+      "status": "PASS",
+      "flows": 7,
+      "evidence": "search-browser-second/checks.json"
+    },
+    {
+      "name": "actual-read-only-branch",
+      "status": "PASS",
+      "flows": 5,
+      "evidence": "live-branches/checks.json"
+    },
+    {
+      "name": "actual-admin-search-get",
+      "status": "PASS",
+      "flows": 4,
+      "evidence": "live-admin-search.json"
+    }
+  ],
+  "new_browser_search_responses": 13,
+  "new_browser_js_errors": 0,
+  "static_checks": "static-checks.json",
+  "document_checks": "document-checks-final.json",
+  "preservation": "preservation-final.json",
+  "specific_position_biography_visual_approval": "Preserved as granted; not administrator usability approval",
+  "M2-4_status": "PLAN_ONLY_NOT_STARTED; explicit next implementation instruction required",
+  "actual_schema_seed_user_content_account_media_mutations": false,
+  "git_or_deployment_mutations": false,
+  "combined_reverse_native_popup_repeated": false,
+  "reason_for_not_repeating": "No shared fixture/layout/news-public code changed; directed scope used existing trainer browser and full server regressions.",
+  "counts_not_summed_across_repeated_runs": true,
+  "initial_document_checker_failure_preserved": "document-checks.json",
+  "final_audit": "final-audit.json",
+  "document_result_counts": {
+    "links": 273,
+    "anchors": 25,
+    "checks": 14
+  },
+  "protected_counts": {
+    "all_prior_backend_reviews_including_trainer_and_independent_FAIL": 1262,
+    "all_prototype_including_design": 186,
+    "private_media": 145,
+    "secrets": 2,
+    "dependency_and_compose_files": 5,
+    "common_browser_fixture": 3
+  }
+}

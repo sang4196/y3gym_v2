@@ -1,0 +1,27 @@
+.trainer-grid,
+.trainer--with-biography {
+  align-items: start;
+}
+
+.trainer-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trainer--text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.trainer-position,
+.trainer-biography {
+  margin-top: 12px;
+  color: var(--color-muted);
+}
+
+.trainer-biography {
+  padding-left: 1.25em;
+}
+
+.trainer-biography li + li {
+  margin-top: 6px;
+}

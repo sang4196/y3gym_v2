@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "real_password_login": true,
+  "denied_location": "/admin/",
+  "denial_messages": [
+    "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+  ],
+  "ajax": 403,
+  "csrf": 403,
+  "get_unlocked_unchanged": true,
+  "delete_denied_even_for_admin": true,
+  "stale_and_locked_preserve_all_fields_children_images": true
+}

@@ -175,12 +175,22 @@ try {
       await noOverflow(visitor);
       await capture(visitor, `${kind}-${device}-first`);
       await capture(visitor, `${kind}-${device}-full`, true);
-      assert.equal(await visitor.locator('.trainers').count(), 0);
+      if (!readOnly || kind === 'home') {
+        // Existing isolated fixtures still explicitly verify zero trainers.
+        assert.equal(await visitor.locator('.trainers').count(), 0);
+      } else {
+        assert.equal(await visitor.locator('.trainers:not([data-branch-section="trainers"])').count(), 0);
+        for (const key of ['main', 'second']) {
+          assert.equal(await visitor.locator(`#branch-${key} [data-trainer-id]`).count(), 1, 'Approved live A/B seed: one trainer per branch.');
+        }
+      }
       const loaded = await visitor.locator('[data-gallery-slide] img').evaluateAll(images => images.every(image => image.complete && image.naturalWidth > 0));
       assert(loaded);
     }
   }
-  check('PC 1440×900·모바일 375×812 홈/상세 첫 화면·전체 캡처, 이미지 준비·0명 트레이너 숨김');
+  check(readOnly
+    ? 'PC 1440×900·모바일 375×812 홈/상세 첫 화면·전체 캡처, 이미지 준비·홈 트레이너 숨김·실제 지점별 A/B 각 1명'
+    : 'PC 1440×900·모바일 375×812 홈/상세 첫 화면·전체 캡처, 이미지 준비·0명 트레이너 숨김');
   await visitor.setViewportSize({ width: 1440, height: 900 });
   await visitor.goto(`${origin}/branches/?branch=second`);
   const gallery = visitor.locator('#branch-second [data-facility-gallery]');

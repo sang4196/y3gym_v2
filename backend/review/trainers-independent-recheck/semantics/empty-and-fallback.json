@@ -1,0 +1,321 @@
+{
+  "status": "PASS",
+  "isolated_test_database": true,
+  "requests": [
+    {
+      "query": {
+        "q": "공개 이름",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "공개 소개",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "독립 새 이름",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "독립 새 소개",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        59
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        59
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "   ",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        59
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "공개 이름",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "공개 소개",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "독립 새 이름",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "독립 새 소개",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        59
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        59
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "   ",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        59
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "미저장",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "미저장",
+        "branch": "3"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FALLBACKalpha",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FALLBACKalpha",
+        "branch": "3"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "fallbackBETA",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "fallbackBETA",
+        "branch": "3"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "미저장",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "미저장",
+        "branch": "3"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FALLBACKalpha",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FALLBACKalpha",
+        "branch": "3"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "fallbackBETA",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "fallbackBETA",
+        "branch": "3"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FallbackAlpha",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FallbackBeta",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "revisionNAME",
+        "branch": "4"
+      },
+      "fragment": false,
+      "ids": [
+        60
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FallbackAlpha",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "FallbackBeta",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [],
+      "status": 200
+    },
+    {
+      "query": {
+        "q": "revisionNAME",
+        "branch": "4"
+      },
+      "fragment": true,
+      "ids": [
+        60
+      ],
+      "status": 200
+    }
+  ],
+  "fallback_only_without_revision": true
+}

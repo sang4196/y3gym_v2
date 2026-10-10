@@ -1,0 +1,65 @@
+{
+  "status": "FAIL",
+  "isolated_test_database": true,
+  "save_status": 302,
+  "actual_editor_login": true,
+  "mutable_name": "공개 이름",
+  "mutable_intro": "공개 소개",
+  "latest_name": "독립 새 이름",
+  "latest_intro": "독립 새 소개",
+  "cases": {
+    "unsearched": {
+      "query": null,
+      "rows": [
+        {
+          "href": "/admin/snippets/news/trainer/edit/1/",
+          "displayed_name": "독립 새 이름"
+        },
+        {
+          "href": "/admin/snippets/news/trainer/edit/1/",
+          "displayed_name": "수정"
+        }
+      ]
+    },
+    "draft_name": {
+      "query": "독립 새 이름",
+      "rows": []
+    },
+    "draft_intro": {
+      "query": "독립 새 소개",
+      "rows": []
+    },
+    "old_name": {
+      "query": "공개 이름",
+      "rows": [
+        {
+          "href": "/admin/snippets/news/trainer/edit/1/",
+          "displayed_name": "독립 새 이름"
+        },
+        {
+          "href": "/admin/snippets/news/trainer/edit/1/",
+          "displayed_name": "수정"
+        }
+      ]
+    },
+    "old_intro": {
+      "query": "공개 소개",
+      "rows": [
+        {
+          "href": "/admin/snippets/news/trainer/edit/1/",
+          "displayed_name": "독립 새 이름"
+        },
+        {
+          "href": "/admin/snippets/news/trainer/edit/1/",
+          "displayed_name": "수정"
+        }
+      ]
+    }
+  },
+  "expected": "Searching the latest draft name/intro shown in the administrator list returns this profile.",
+  "file": "news/wagtail_hooks.py",
+  "search_fields": [
+    "name",
+    "intro"
+  ]
+}

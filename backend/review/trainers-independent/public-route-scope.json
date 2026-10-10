@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "read_only": true,
+  "routes": [
+    {
+      "route": "/trainers/",
+      "status": 404
+    },
+    {
+      "route": "/trainers/1/",
+      "status": 404
+    },
+    {
+      "route": "/news/?branch=second",
+      "status": 200
+    },
+    {
+      "route": "/branches/?branch=main",
+      "status": 200
+    }
+  ]
+}

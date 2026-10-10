@@ -1,0 +1,174 @@
+--- closeout-before/README.md
++++ closeout-after/README.md
+@@ -16,7 +16,7 @@
+ - **M2-1 브랜드·홈 소개:** 관리자 ‘브랜드·홈’에서 공통 브랜드명·선택 로고·소개 제목/설명·선택 대표 사진과 중심을 초안 저장 → 미리보기 → 공개·철회한다. 공개 필수값은 사용자 확인으로 브랜드명·소개 제목이며 미완성 초안 저장을 허용한다. 실제 홈과 실제 소식/팝업의 브랜드 표시에 공개본을 연결했다. [이번 검수·캡처·한계](backend/review/brand-home/README.md).
+ - **M2-2 지점·시설:** 관리자에서 지점과 시설 사진을 한 단위로 초안 저장·미리보기·공개/철회하고 실제 홈·[지점 안내](http://localhost:8768/branches/?branch=second)에 공개 리비전을 연결했다. 공개 본점 우선·동적 지점 선택·0곳 안내·선택 연락수단 숨김과 기존 미디어/저장 경계를 적용했다. [자체 검수·캡처·한계](backend/review/branches/README.md). 독립 검증과 사용자 시각 승인은 별도다.
+ - **M2-2 종료 상태:** [초기 독립 검증 FAIL](backend/review/branches-independent/README.md) → 공통 철회 잠금·테스트 fixture의 [R1 보완](backend/review/branches-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](backend/review/branches-independent-recheck/README.md). F01·F02·W01 해결과 차단 결함 없음을 확인했으며 기존 `backend/review/workflow-01/verify.py`의 전역 포맷 경고는 남아 있다. 이전 FAIL·R1 보고·전환 중 모바일 캡처는 당시 기록으로 보존한다. 사용자 시각·관리자 사용성 승인이나 운영 배포 완료를 뜻하지 않는다.
+-- **M2-3 트레이너 관리:** 지점 편집에서 별도 저장 단위의 프로필·단일 약력을 등록·편집하고 초안 → 권한 미리보기 → 명시적 공개·철회한다. 이름·소속 지점만 공개 필수이며 선택 정보·사진은 없으면 숨긴다. 현재 공개 리비전의 소속·수동 순서·약력·사진과 공개 지점 조건으로 실제 지점 상세에 연결했다. 이동 초안은 현재 공개 소속을 바꾸지 않는다. [초기 자체 검사](backend/review/trainers/README.md) 후 [독립 검증 FAIL](backend/review/trainers-independent/README.md)의 최신 초안 검색 결함을 [M2-3-R1](backend/review/trainers-repair/README.md)에서 보완했다. R1 자체 검사와 독립 재검증·관리자 사용성 승인은 구분하며 독립 재검증은 대기 중이다. 2026-10-10 사용자가 검토한 PC/모바일 캡처의 직급·약력 배치는 “이 배치로 유지”로 승인했다.
++- **M2-3 트레이너 관리:** 지점 편집에서 별도 저장 단위의 프로필·단일 약력을 등록·편집하고 초안 → 권한 미리보기 → 명시적 공개·철회한다. 이름·소속 지점만 공개 필수이며 선택 정보·사진은 없으면 숨긴다. 현재 공개 리비전의 소속·수동 순서·약력·사진과 공개 지점 조건으로 실제 지점 상세에 연결했다. 이동 초안은 현재 공개 소속을 바꾸지 않는다. [초기 자체 검사](backend/review/trainers/README.md) 후 [독립 검증 FAIL](backend/review/trainers-independent/README.md)의 최신 초안 검색 결함을 [M2-3-R1](backend/review/trainers-repair/README.md)에서 보완했다. 이후 [독립 재검증 PASS_WITH_WARNINGS](backend/review/trainers-independent-recheck/README.md)로 F01/P2·W02~W04 해결과 새 차단 결함 없음을 확인했다. 기존 전역 포맷 경고 W01은 유지하며 관리자 사용성 승인은 별개다. 2026-10-10 사용자가 검토한 PC/모바일 캡처의 직급·약력 배치는 “이 배치로 유지”로 승인했다.
+ - **다음 계획 M2-4 — 미착수:** 홈 최근 소식을 실제 공개 글 최대 5건과 연결한다. 홈·소식 목록은 최초 공개 최신순이며 수정·재공개로 순위를 올리지 않는다. 팝업의 최초 등록 빠른순은 유지한다. [첫 구현 단위·완료 기준](docs/IMPLEMENTATION-PLAN.md#다음-미완료-단위-m2-4-홈-최근-소식-실제-공개-글-연결)만 기록했으며 별도 구현 지시 전 시작하지 않는다.
+ - **미구현:** 홈 최근 소식 연결, 실제 지도·전화·카카오톡, 운영 자료·배포·운영 환경, 프로필 삭제/복원·운영 계정 확대. `prototype/` 원본은 계속 정적 참고 자료이며 보존한다.
+ - 기존 Chromium 프로토타입 검수 자료를 보존했다. 이번 소식 CMS의 실제 검증·새 캡처는 [별도 기록](backend/review/README.md)에 두며, 관리자 사용성의 사용자 승인·실제 기기 검증·출시 완료와 구분한다.
+@@ -25,7 +25,9 @@
+ 
+ 본점은 1곳이며 공개 상태일 때 첫 순서·새 방문 기본값이다. 명시된 지점 선택을 유지하고 본점 비공개 시 첫 유효 공개 지점을 선택한다. 미완성 초안을 허용하며 공개 필수값은 지점명·주소·운영시간이다. 마지막 공개 지점도 철회 가능하고 0곳이면 준비 중 안내와 문의 버튼 숨김을 적용한다. 트레이너 CMS는 M2-3에서 연결했으며 실서비스 연결·사용자 사용성 확인은 후속 범위다. 전체 콘텐츠의 초안 → 미리보기 → 공개와 팝업의 별도 적용 정책은 유지한다.
+ 
+-첫 체크포인트 `46ef337423fb89c1eb7f9000762f32e67802bc57`은 깃노예가 로컬 커밋 후 기존 원격에 push했다. 최초 HTTPS 인증 실패 후 기존 인증을 명령 단위로 재사용해 성공한 Git 담당 결과다. 이번 M2-3 변경은 이 커밋에 포함되지 않으며 개발에서 stage·commit·push·인증/전역 설정 변경을 수행하지 않는다.
++첫 체크포인트 `46ef337423fb89c1eb7f9000762f32e67802bc57`은 깃노예가 로컬 커밋 후 기존 원격에 push했다. 최초 HTTPS 인증 실패 후 기존 인증을 명령 단위로 재사용해 성공한 Git 담당 결과다. 이번 M2-3·R1 및 종료 문서 변경은 아직 미커밋이며 이 체크포인트에 포함되지 않는다. 개발은 stage·commit·push·인증/전역 설정 변경을 수행하지 않았고 설계 검토 후 Git 담당이 별도 반영한다.
++
++이번 M2-3 종료 작업은 [문서 정합성·보존 검사](backend/review/m2-3-closeout/README.md)만 수행했다. 위 독립 제품 검사 결과는 보고서 확인이며 이번에 제품 테스트나 캡처를 재실행한 것이 아니다.
+ 
+ ## 제품 범위와 공개 화면
+ 
+@@ -37,7 +39,7 @@
+ | 별도 지점 안내 | 선택 지점 요약·시설·트레이너·위치·문의. 탭 수는 지점 데이터에 따라 증가 |
+ | 소식 목록·상세 | 전체·공지·이벤트, 촘촘한 목록과 본문 읽기 |
+ | 팝업 | 실제 공개 글·기간과 연결. PC 별도 창 요청, 모바일 순차 레이어. 자동 차단 시 수동 진입 |
+-| 콘텐츠 관리 | 소식·팝업 설정·브랜드/홈·지점/시설·소속 트레이너·이미지의 로컬 Wagtail 관리자 구현. 독립 검증과 사용자 사용성 승인은 별도 단계 |
++| 콘텐츠 관리 | 소식·팝업 설정·브랜드/홈·지점/시설·소속 트레이너·이미지의 로컬 Wagtail 관리자 구현. M2-3 독립 재검증 PASS_WITH_WARNINGS. 사용자 사용성 승인은 별도 단계 |
+ 
+ 헤더는 지점 안내·소식·문의하기, 푸터는 지점 안내·소식이다. 트레이너 독립 메뉴는 없으며 홈에는 트레이너·위치 상세를 표시하지 않는다. 문의 대상 지점을 명시한다. 고객 회원가입·결제·예약·PT 연계·자체 상담 폼·자유 페이지 빌더는 범위에 포함하지 않는다. 전체 요구와 미결정 사항은 [최신 PRD](docs/PRD.md)를 따른다.
+ 
+--- closeout-before/backend/README.md
++++ closeout-after/backend/README.md
+@@ -4,7 +4,9 @@
+ 
+ 제품 기준은 [PRD](../docs/PRD.md), 승인된 공개 UI는 [디자인 문서](../prototype/DESIGN.md), 마일스톤과 미결정 사항은 [구현 계획](../docs/IMPLEMENTATION-PLAN.md)을 따른다.
+ 
+-**M2-2 종료 상태:** [초기 독립 검증 FAIL](review/branches-independent/README.md) → [R1 보완·자체 검사](review/branches-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](review/branches-independent-recheck/README.md). F01·F02·W01은 해결됐고 차단 결함은 없다. 기존 전역 포맷 경고 1개와 사용자 시각·관리자 사용성 미승인은 구분해 남긴다. M2-3 트레이너는 [범위·완료 기준](../docs/IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리)에 따라 로컬 구현했고 [이번 자체 검사·캡처·보존](review/trainers/README.md)에 기록한다. 이후 [초기 독립 검증 FAIL](review/trainers-independent/README.md)에서 최신 초안 이름/소개 검색 불일치를 확인해 [M2-3-R1 검색·기록 보완](review/trainers-repair/README.md)을 수행했다. R1 자체 검사 후 독립 재검증 대기이며 관리자 사용성 승인은 별개다. 2026-10-10 사용자가 검토한 PC/모바일 캡처의 직급·약력 배치는 “이 배치로 유지”로 승인했다.
++**M2-2 종료 상태:** [초기 독립 검증 FAIL](review/branches-independent/README.md) → [R1 보완·자체 검사](review/branches-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](review/branches-independent-recheck/README.md). F01·F02·W01은 해결됐고 차단 결함은 없다. 기존 전역 포맷 경고 1개와 사용자 시각·관리자 사용성 미승인은 구분해 남긴다. M2-3 트레이너는 [범위·완료 기준](../docs/IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리)에 따라 로컬 구현했고 [이번 자체 검사·캡처·보존](review/trainers/README.md)에 기록한다. 이후 [초기 독립 검증 FAIL](review/trainers-independent/README.md)에서 최신 초안 이름/소개 검색 불일치를 확인해 [M2-3-R1 검색·기록 보완](review/trainers-repair/README.md)을 수행했다. 이후 [독립 재검증 PASS_WITH_WARNINGS](review/trainers-independent-recheck/README.md)로 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했다. W01 기존 전역 format 경고 1개는 유지하며 관리자 사용성 승인은 별개다. 2026-10-10 사용자가 검토한 PC/모바일 캡처의 직급·약력 배치는 “이 배치로 유지”로 승인했다.
++
++**M2-3 종료 문서:** [독립 재검증 결과](review/trainers-independent-recheck/verification.json)는 전체 101개 중 98 PASS·3 opt-in SKIP, 트레이너 13 PASS, 원 재현 재사용 1 PASS, 신규 독립 의미 검사 3 PASS·검색 응답 81건·다음 링크 4건, 브라우저 기존 10/검색 7흐름, 실제 지점 5/관리자 GET 4건이다. 이번 [종료 문서 검사](review/m2-3-closeout/README.md)는 이 결과를 읽고 경로·상태·보존만 확인하며 제품 검사·캡처·DB 쓰기를 수행하지 않았다. 첫 체크포인트 `46ef337`은 push 완료지만 현재 M2-3·R1/종료 문서는 아직 미커밋이다. M2-4는 별도 다음 구현 지시 전 미착수다.
+ 
+ ## 범위와 구현 구조
+ 
+--- closeout-before/docs/PRD.md
++++ closeout-after/docs/PRD.md
+@@ -29,7 +29,7 @@
+ | 공개 화면 | A 방향 디자인 검토 완료. 정적 홈·별도 지점 안내·소식·팝업·상태별 화면 존재 |
+ | 검수 자료 | 기존 `prototype/review/` 보존. 이번 실제 소식 CMS 검증·캡처는 `backend/review/`에 분리 |
+ | 기술 선택 | Django/Wagtail + PostgreSQL, 콘텐츠 초안·미리보기·공개 방식 선택 |
+-| 실제 CMS·DB | 소식·팝업에 이어 M2-1 브랜드·홈 소개 관리와 공개 홈 연결 구현. 별도 로컬 PostgreSQL·리비전·보호된 미디어 사용. M2-2 지점·시설과 실제 지점 안내·홈 연결 구현. M2-3 트레이너 관리·실제 지점 상세 연결 구현. [초기 독립 FAIL](../backend/review/trainers-independent/README.md)의 관리자 최신 초안 검색을 [R1](../backend/review/trainers-repair/README.md)에서 보완했고 독립 재검증 대기 |
++| 실제 CMS·DB | 소식·팝업에 이어 M2-1 브랜드·홈 소개 관리와 공개 홈 연결 구현. 별도 로컬 PostgreSQL·리비전·보호된 미디어 사용. M2-2 지점·시설과 실제 지점 안내·홈 연결 구현. M2-3 트레이너 관리·실제 지점 상세 연결 구현. [초기 독립 FAIL](../backend/review/trainers-independent/README.md)의 관리자 최신 초안 검색을 [R1](../backend/review/trainers-repair/README.md)에서 보완한 뒤 [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md). F01/P2·W02~W04 해결·새 차단 결함 없음, W01 기존 포맷 경고 유지 |
+ | 게시글 연동 팝업 | 글 편집 화면에서 사용·기간 별도 적용, 실제 DB·공개 홈 연결. 복수 중첩 전체 자동 노출·등록 순서·전 지점 공통. [실제 검수](../backend/review/popups/README.md) |
+ | 지도·문의 | 예시 영역·안내만 구현. 실제 지도·전화·카카오톡 연결 없음 |
+ | 운영 준비 | 실제 자료·호스팅·저장소·도메인·백업·배포 미확정/미구현 |
+@@ -45,7 +45,7 @@
+ | 공통 소식 목록 | [news.html](../prototype/news.html), [공지](../prototype/news-notices.html), [이벤트](../prototype/news-events.html) | 전체·공지·이벤트 분류, 촘촘한 행 목록, 필요한 경우 페이지 이동 |
+ | 소식 상세 | [공지 예시](../prototype/news/visit.html), [이벤트 예시](../prototype/news/event.html) | 제목·분류·날짜·본문. 공통 메뉴와 현재 위치의 소식 링크 유지 |
+ | 팝업 | [popup.html](../prototype/popup.html), 홈의 모바일 레이어 | PC 별도 창 요청 / 768px 미만 같은 페이지 레이어 |
+-| 관리자 | [관리자 구성](../backend/news/wagtail_hooks.py) | 소식·팝업 설정·브랜드/홈·지점/시설·트레이너·이미지의 로컬 관리자 구현. M2-3 독립 검증과 사용자 사용성 검토는 후속 단계 |
++| 관리자 | [관리자 구성](../backend/news/wagtail_hooks.py) | 소식·팝업 설정·브랜드/홈·지점/시설·트레이너·이미지의 로컬 관리자 구현. M2-3 독립 재검증 PASS_WITH_WARNINGS. 관리자 사용성 사용자 검토는 별도 단계 |
+ 
+ 헤더는 **지점 안내·소식·문의하기**, 푸터는 **지점 안내·소식**이다. 별도 트레이너 메뉴·페이지를 두지 않는다. 지점 안내 메뉴와 첫 소개의 ‘지점 안내’ 링크는 별도 페이지로 이동한다. 홈에는 트레이너·주소·운영시간·지도 상세를 표시하지 않는다.
+ 
+@@ -72,7 +72,7 @@
+ 
+ ### FR-03 트레이너
+ 
+-- 트레이너는 한 지점에 소속되며 **지점 안내에서만** 소개한다. CMS와 실제 지점 상세 연결은 **M2-3 로컬 구현**이며 범위·완료 기준은 [구현 계획](IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리), 실제 자체 검사·새 캡처·보존과 한계는 [트레이너 검수](../backend/review/trainers/README.md)에 둔다. [초기 독립 검증 FAIL](../backend/review/trainers-independent/README.md)의 최신 초안 검색 불일치를 [M2-3-R1](../backend/review/trainers-repair/README.md)에서 보완했다. R1 자체 검사 후 독립 재검증 대기이며 관리자 사용성 승인은 별개다. **2026-10-10 사용자 시각 승인:** 검토한 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)의 직급·약력 배치를 “이 배치로 유지”로 확정했다. 이 선택정보 배치 승인과 관리자 사용성·실제 기기·배포 승인은 별개다.
++- 트레이너는 한 지점에 소속되며 **지점 안내에서만** 소개한다. CMS와 실제 지점 상세 연결은 **M2-3 로컬 구현**이며 범위·완료 기준은 [구현 계획](IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리), 실제 자체 검사·새 캡처·보존과 한계는 [트레이너 검수](../backend/review/trainers/README.md)에 둔다. [초기 독립 검증 FAIL](../backend/review/trainers-independent/README.md)의 최신 초안 검색 불일치를 [M2-3-R1](../backend/review/trainers-repair/README.md)에서 보완했다. 이후 [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md)로 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했다. W01 기존 포맷 경고는 유지하며 관리자 사용성 승인은 별개다. **2026-10-10 사용자 시각 승인:** 검토한 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)의 직급·약력 배치를 “이 배치로 유지”로 확정했다. 이 선택정보 배치 승인과 관리자 사용성·실제 기기·배포 승인은 별개다.
+ - **사용자 확정:** 공개 시 **이름·소속 지점만 필수**다. 사진·한줄 소개·직급·약력은 선택이며 미완성 초안 저장을 허용한다. 비어 있는 선택 영역은 고객 화면에서 숨긴다.
+ - **약력은 항목을 나열하는 단일 목록**으로 관리한다. 경력·자격·수상 등으로 분류하지 않는다. **같은 지점의 트레이너 표시 순서는 CMS에서 수동 지정**한다.
+ - 관리자 목록의 이름·소속과 검색의 이름·소개는 최신 초안 기준이다. 검색은 최신 리비전이 없을 때만 현재 모델 값을 사용하며 최신 초안의 빈 값으로 이전 공개 값을 검색하지 않는다. 소속 필터·검색·공개 상태 필터·페이지 이동을 함께 유지한다.
+@@ -151,9 +151,11 @@
+ | 소식 운영 규칙 | 홈 최대 5건·홈/목록 최초 공개 최신순·수정/재공개 순위 유지와 팝업 최초 등록 빠른순은 FR-05에 확정 반영. 공개일 편집·목록 페이지당 10건 운영 확정·삭제/복원·운영자 권한은 미결정 |
+ | 팝업 별도 콘텐츠 | 현재는 연결 글 공개본의 제목·짧은 설명·대표 사진 사용. 팝업용 별도 문구/사진 입력은 이번 범위 밖이며 요구 구체화·사용성 확인 전 |
+ | 지도 | 제공자·등록/확인 방식·외부 연결 경험·실제 위치 검증 |
+-| 후속 기술 구현 | 트레이너 모델·공개 경계는 M2-3 로컬 구현, 초기 독립 FAIL 후 R1 보완·독립 재검증 대기. 홈 최근 소식 연결은 M2-4 계획만 기록·미착수이며 운영 저장소/캐시는 미구현. 로컬 DB/미디어 검증을 배포 검증으로 확대하지 않음 |
++| 후속 기술 구현 | 트레이너 모델·공개 경계는 M2-3 로컬 구현, 초기 독립 FAIL → R1 보완 → 독립 재검증 PASS_WITH_WARNINGS. 홈 최근 소식 연결은 M2-4 계획만 기록·미착수이며 운영 저장소/캐시는 미구현. 로컬 DB/미디어 검증을 배포 검증으로 확대하지 않음 |
+ | 배포·운영 | 호스팅·예산·도메인·운영 책임·업로드 저장소·백업/복구・배포/롤백 |
+ | 최종 검수 | 실제 콘텐츠 교체, 실제 기기·다른 브라우저·문의/지도 연동·관리자·운영 검증 |
++
++**M2-3 종료 상태:** 개발 자체 검사와 독립 재검증은 각각의 보고 근거로 구분하며 최종 독립 판정은 PASS_WITH_WARNINGS다. 직급/약력 배치만 사용자 승인 범위이며 관리자 사용성·실제 기기/Whale/한국어 IME·운영 환경은 미검증이다. 첫 체크포인트 `46ef337` push는 완료됐고 현재 M2-3·R1/종료 문서는 미커밋이다. 이번 [종료 문서 검사](../backend/review/m2-3-closeout/README.md)는 제품 테스트를 재실행하지 않았다.
+ 
+ ## 7. 이전 요구와 현재 결정의 차이
+ 
+--- closeout-before/docs/IMPLEMENTATION-PLAN.md
++++ closeout-after/docs/IMPLEMENTATION-PLAN.md
+@@ -124,7 +124,7 @@
+ | M1 후속: 게시글 연동 팝업 | 로컬 구현·실제 홈 연결. [검수 기록](../backend/review/popups/README.md) | 글 편집에서 별도 설정 적용·DB 유지·공개본 보호·서버 기간 경계·중첩 전체 자동 노출·차단 복구·한국 시간 오늘 숨김 |
+ | M2-1 브랜드·홈 소개 관리 | 로컬 구현·검증 완료, 사용자 사용성 확인 전 | 공통 한 묶음, 초안·권한 미리보기·명시적 공개·철회, 공개본/이미지 경계·저장 충돌, 승인 UI 유지. [이번 검수 기록](../backend/review/brand-home/README.md) |
+ | M2-2 지점·시설 관리 | 로컬 구현·R1 보완 후 독립 재검증 PASS_WITH_WARNINGS. 사용자 확인 전 | 지점+시설 리비전, 권한 미리보기, 실제 홈/지점 안내, 동적 선택·0곳/선택 채널·미디어/저장 경계. [초기 자체 검사](../backend/review/branches/README.md)·[최종 독립 재검증](../backend/review/branches-independent-recheck/README.md). 기존 전역 포맷 경고 유지 |
+-| M2-3 트레이너 관리 | 초기 독립 FAIL → R1 검색·기록 보완/자체 검사, 독립 재검증 대기. 직급/약력 배치 시각 승인·관리자 사용성 별도 | FR-03 확정 기준과 아래 [M2-3](#다음-단위-m2-3-트레이너-관리). [실행·새 캡처·보존·한계](../backend/review/trainers/README.md) |
++| M2-3 트레이너 관리 | 초기 독립 FAIL → R1 보완/자체 검사 → [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md). F01/P2·W02~W04 해결·W01 유지. 직급/약력 배치 승인·관리자 사용성 별도 | FR-03 확정 기준과 아래 [M2-3](#다음-단위-m2-3-트레이너-관리). [실행·새 캡처·보존·한계](../backend/review/trainers/README.md) |
+ | M2-4 홈 최근 소식 실제 공개 글 연결 | 후속 계획만·미착수 | [첫 단계·완료 기준](#다음-미완료-단위-m2-4-홈-최근-소식-실제-공개-글-연결). 명시적 다음 구현 지시 전 시작하지 않음 |
+ | 이후 실서비스·운영 | 미착수 | 기존 범위 유지. 앞 단계를 확인한 후 필요한 단위만 구체화 |
+ 
+@@ -186,13 +186,13 @@
+ 
+ ### 다음 단위: M2-3 트레이너 관리
+ 
+-**현재 M2-3 초기 독립 FAIL → R1 보완·자체 검사, 독립 재검증 대기.** 기존 제목/앵커는 과거 링크를 위해 보존하며 다음 미완료 단위는 아래 M2-4다. 이 절은 처음 다음 단위로 정의한 기준과 실제 구현을 함께 관리하며 기존 링크 앵커를 유지한다. M2-2 종료 문서 검토와 첫 체크포인트 `46ef337` 확보 후 설계의 별도 지시로 착수했다. 체크포인트의 최초 HTTPS push 실패는 Git 담당이 기존 인증을 명령 단위로 재사용해 해결했으며 이번 M2-3 변경의 Git 반영·배포를 뜻하지 않는다.
++**현재 M2-3 초기 독립 FAIL → R1 보완·자체 검사 → 독립 재검증 PASS_WITH_WARNINGS.** [최종 독립 보고](../backend/review/trainers-independent-recheck/README.md)에서 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했고 기존 전역 포맷 경고 W01은 유지한다. 기존 제목/앵커는 과거 링크를 위해 보존하며 다음 미완료 단위는 아래 M2-4다. 이 절은 처음 다음 단위로 정의한 기준과 실제 구현을 함께 관리하며 기존 링크 앵커를 유지한다. M2-2 종료 문서 검토와 첫 체크포인트 `46ef337` 확보 후 설계의 별도 지시로 착수했다. 체크포인트의 최초 HTTPS push 실패는 Git 담당이 기존 인증을 명령 단위로 재사용해 해결했으며 이번 M2-3 변경의 Git 반영·배포를 뜻하지 않는다.
+ 
+ **실제 구현:** `Trainer` + `TrainerBiography(Orderable, ParentalKey)`·`0005_trainer_trainerbiography`, 지점 편집의 관리/등록 패널과 현재 지점 미리 선택, 별도 프로필 편집·리비전, 실제 지점 카드·안전한 프로필 미리보기, 기존 행 잠금/철회 뷰와 이미지 사용처 경계, 멱등 `bootstrap_trainer_review`를 추가했다. 관리자 목록은 최신 초안의 이름·소속·순서를, 고객 화면은 같은 공개 리비전의 소속·순서·약력·사진을 사용한다. 실제 DB에는 승인된 임시 A/B 각 1명·사진/소개만 준비했고 직급/약력 검수 사례는 별도 테스트 DB에서만 만들었다. 원본 프로토타입·기존 검수는 재생성하지 않았다.
+ 
+-[이번 실제 검사·캡처·보존과 실패 이력](../backend/review/trainers/README.md)은 이전 결과 인용과 구분한다. 2026-10-10 사용자는 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)에서 확인한 직급·약력 배치를 “이 배치로 유지”로 승인했다. 관리자 사용성·독립 검증·실제 기기·배포 승인은 별도로 남는다. 촬영 당시 검수 JSON은 이 후속 승인과 구분해 그대로 보존한다.
+-
+-**M2-3-R1:** [초기 독립 FAIL·F01/W01~W04](../backend/review/trainers-independent/findings.json)을 읽고 관리자 검색만 최신 리비전의 이름/소개로 맞췄다. 최신 리비전이 없을 때만 모델 값으로 검색하며 빈 초안 값은 이전 공개 값으로 되돌리지 않는다. Wagtail 검색 처리 지점에서 기존 정렬/공개 필터/페이지 이동을 유지하고 현재 소속을 숨은 검색 필드로 전달한다. 공개 리비전·모델 내용·스택·검색 입력 UI는 바꾸지 않았다. 읽기 검수의 A/B 라벨과 PRD 현재 상태를 정정하고 공통 fixture 3파일의 보존 범위를 새 근거에 명시했다. [R1 실제 검사·보존·남은 한계](../backend/review/trainers-repair/README.md)를 설계가 검토한 뒤 독립 재검증을 지시한다. 초기 FAIL/과거 검수·프로토타입은 그대로 보존한다.
++[이번 실제 검사·캡처·보존과 실패 이력](../backend/review/trainers/README.md)은 이전 결과 인용과 구분한다. 2026-10-10 사용자는 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)에서 확인한 직급·약력 배치를 “이 배치로 유지”로 승인했다. 독립 재검증은 완료했으며 관리자 사용성·실제 기기·배포 승인은 별도로 남는다. 촬영 당시 검수 JSON은 이 후속 승인과 구분해 그대로 보존한다.
++
++**M2-3-R1:** [초기 독립 FAIL·F01/W01~W04](../backend/review/trainers-independent/findings.json)을 읽고 관리자 검색만 최신 리비전의 이름/소개로 맞췄다. 최신 리비전이 없을 때만 모델 값으로 검색하며 빈 초안 값은 이전 공개 값으로 되돌리지 않는다. Wagtail 검색 처리 지점에서 기존 정렬/공개 필터/페이지 이동을 유지하고 현재 소속을 숨은 검색 필드로 전달한다. 공개 리비전·모델 내용·스택·검색 입력 UI는 바꾸지 않았다. 읽기 검수의 A/B 라벨과 PRD 현재 상태를 정정하고 공통 fixture 3파일의 보존 범위를 새 근거에 명시했다. [R1 실제 검사·보존·남은 한계](../backend/review/trainers-repair/README.md) 검토 뒤 [독립 재검증](../backend/review/trainers-independent-recheck/README.md)을 완료했다. 개발 자체 검사와 독립 실행 결과는 각 보고서에 구분하며 이번 종료 문서 작업에서는 제품 검사·캡처를 재실행하지 않았다. 초기 FAIL/과거 검수·프로토타입은 그대로 보존한다.
+ 
+ **구현 범위와 완료 기준**
+ 
+@@ -208,20 +208,22 @@
+ 
+ ### 다음 미완료 단위: M2-4 홈 최근 소식 실제 공개 글 연결
+ 
+-**후속 계획만 기록·미착수.** M2-3-R1 보완과 독립 재검증을 설계가 검토하고 **명시적으로 다음 구현을 지시하기 전에는 시작하지 않는다.** 이번 R1에서는 홈·소식 공개 코드를 수정하지 않았다.
++**후속 계획만 기록·미착수.** M2-3-R1 독립 재검증은 완료했다. 설계의 종료 문서 검토와 Git 담당의 별도 반영 후에도 **명시적으로 다음 구현을 지시하기 전에는 시작하지 않는다.** 이번 R1에서는 홈·소식 공개 코드를 수정하지 않았다.
+ 
+ - **확정 기준:** 홈 최근 소식은 최대 5건이며 홈과 소식 목록은 최초 공개 최신순이다. 수정·재공개는 최초 공개 시각/순위를 올리지 않는다. 팝업은 기존 최초 등록 빠른순을 유지한다.
+ - **첫 구현 범위:** 승인된 A 목록·홈 구조를 재사용해 현재 공개 리비전의 소식 최대 5건을 홈에 연결한다. 0건 상태, 실제 소식 상세 링크, 선택 지점 유지, JavaScript 없는 기본 탐색을 포함한다. 홈용 글을 중복 등록하거나 새 메뉴/화면을 추가하지 않는다.
+ - **완료 기준:** 초안 수정이 홈/목록 공개 이름·내용·정렬에 영향을 주지 않는지 확인한다. 최초 공개 최신순·최대 5/0건·철회 제거·재공개 시 최초 순위 유지, 실제 상세 링크·선택 지점·JS 없는 탐색과 기존 팝업 등록 순서를 검증한다. 새 캡처/자체 검사·독립 검증·사용자 승인을 구분한다.
+ - **확정하지 않는 범위:** 목록 페이지당 10건은 초기값이며 운영상의 페이지 크기·공개일 편집·삭제/복원·운영 계정/정책은 미결정이다. 실제 지도/문의·실서비스·운영 저장소/배포·새 비용/외부 서비스/스택은 이번 범위에서 확정·구현하지 않는다.
+ 
++**종료·Git 상태:** 첫 체크포인트 `46ef337` push는 완료됐으며 현재 M2-3·R1/종료 문서 변경은 미커밋이다. [이번 종료 문서 작업](../backend/review/m2-3-closeout/README.md)은 경로·앵커·현재 상태·보존만 검사했다. 실제 기기/Whale/한국어 IME·관리자 사용성·운영 승인은 완료가 아니다.
++
+ ## 7. 지금 결정할 항목과 나중에 확인할 항목
+ 
+ **사용자 확인으로 확정한 기준**
+ 
+ - CMS 기반: Django/Wagtail + PostgreSQL.
+ - 브랜드·지점·트레이너 반영: 소식과 함께 초안·미리보기 후 공개로 통일.
+-- 트레이너: 공개 필수 이름·소속 지점, 사진·한줄 소개·직급·약력 선택, 미완성 초안 허용, 분류 없는 단일 약력 목록, 지점 내 CMS 수동 표시 순서. M2-3에서 위 기준으로 로컬 구현했으며 독립 검증·사용자 승인은 별도다.
++- 트레이너: 공개 필수 이름·소속 지점, 사진·한줄 소개·직급·약력 선택, 미완성 초안 허용, 분류 없는 단일 약력 목록, 지점 내 CMS 수동 표시 순서. M2-3에서 위 기준으로 로컬 구현하고 독립 재검증 PASS_WITH_WARNINGS를 받았다. 직급/약력 배치 사용자 승인과 관리자 사용성·운영 승인은 별도다.
+ 
+ **해당 기능의 구현 전에 구체화할 사항**
+ 
+@@ -232,4 +234,4 @@
+ - 지도 제공자와 실제 지점별 전화/카카오톡 주소. 현재는 어떤 외부 서비스도 연결하지 않는다.
+ - 호스팅 예산, 운영 담당, 도메인, 업로드 저장소, 백업·복구 방식. CMS 사용 조건과 서버·DB·저장소의 운영 비용을 구분해 확인한다.
+ 
+-이 항목들은 기존 문서에서 임의로 승계하지 않는다. 소식 CMS의 로컬 구현이 공개일 변경·삭제/복원·최종 운영 권한이나 운영 배포 정책을 확정하지 않는다. 관리자 사용성·시각 확인은 구현·독립 검증·Git 반영과 구분한다. M2-3은 첫 Git 체크포인트와 설계 지시 이후 구현했다. 다음 미완료 단위는 위 M2-4이며 계획만 기록했다. R1 보고와 독립 재검증을 설계가 검토하고 명시적으로 다음 구현을 지시하기 전에는 미착수로 남긴다. 전체 제품의 미결정 사항은 [PRD](PRD.md#6-이후-진행과-미결정-사항)에 모은다.
++이 항목들은 기존 문서에서 임의로 승계하지 않는다. 소식 CMS의 로컬 구현이 공개일 변경·삭제/복원·최종 운영 권한이나 운영 배포 정책을 확정하지 않는다. 관리자 사용성·시각 확인은 구현·독립 검증·Git 반영과 구분한다. M2-3은 첫 Git 체크포인트와 설계 지시 이후 구현했다. 다음 미완료 단위는 위 M2-4이며 계획만 기록했다. R1 독립 재검증은 완료했으며 종료 문서·Git 반영과 명시적 다음 구현 지시는 별도다. 다음 구현 지시 전에는 M2-4를 미착수로 남긴다. 전체 제품의 미결정 사항은 [PRD](PRD.md#6-이후-진행과-미결정-사항)에 모은다.
+--- closeout-before/docs/WORKFLOW.md
++++ closeout-after/docs/WORKFLOW.md
+@@ -36,9 +36,11 @@
+ 
+ **첫 체크포인트와 이번 M2-3:** 설계가 종료 문서와 독립 검증을 검토한 뒤 깃노예가 `46ef337423fb89c1eb7f9000762f32e67802bc57`을 로컬 커밋했다. 최초 HTTPS 쓰기 인증 부재로 push가 실패했으나 사용자가 인증 준비를 선택했고 Git 담당이 기존 Windows 인증을 명령 단위로 재사용해 `origin/main` push와 원격 해시 일치를 확인했다. 새 commit/stage·영구 Git 설정 변경 없이 기존 완료 커밋만 push했으며 진행 중 M2-3은 제외했다.
+ 
+-이 체크포인트와 설계의 별도 구현 지시를 받아 [FR-03](PRD.md#fr-03-트레이너)·[M2-3 범위](IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리)만 로컬 구현했다. [개발 자체 검사·새 캡처·보존·실패 이력](../backend/review/trainers/README.md) 뒤 [초기 독립 검증 FAIL](../backend/review/trainers-independent/README.md)에서 최신 초안 이름/소개 검색 F01과 기록 경고 W02~W04를 확인했다. 설계 지시로 [M2-3-R1 보완·자체 검사](../backend/review/trainers-repair/README.md)를 수행했으며 설계 검토 후 테스트노예의 독립 재검증 대기다. 기존 FAIL·원 재현·캡처/JSON은 보존한다. **2026-10-10 사용자 시각 승인:** 사용자가 검토한 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)의 직급·약력 배치를 “이 배치로 유지”로 승인했다. 이 배치에 한정된 승인으로, **M2-3-R1 독립 재검증·관리자 사용성·실제 기기/배포 승인은 별도 대기**다. 촬영 당시 JSON·캡처는 보존하며 개발에서 commit·push·배포·인증/전역 설정 변경이나 다음 기능을 시작하지 않는다. Git ref 변화와 코드·index 보존을 구분한다.
++이 체크포인트와 설계의 별도 구현 지시를 받아 [FR-03](PRD.md#fr-03-트레이너)·[M2-3 범위](IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리)만 로컬 구현했다. [개발 자체 검사·새 캡처·보존·실패 이력](../backend/review/trainers/README.md) 뒤 [초기 독립 검증 FAIL](../backend/review/trainers-independent/README.md)에서 최신 초안 이름/소개 검색 F01과 기록 경고 W02~W04를 확인했다. 설계 지시로 [M2-3-R1 보완·자체 검사](../backend/review/trainers-repair/README.md)를 수행한 뒤 [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md)로 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했고 설계가 실제 보고/근거를 검토했다. W01 기존 전역 포맷 경고 1개는 유지한다. 기존 FAIL·원 재현·캡처/JSON은 보존한다. **2026-10-10 사용자 시각 승인:** 사용자가 검토한 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)의 직급·약력 배치를 “이 배치로 유지”로 승인했다. 이 배치에 한정된 승인으로, **M2-3-R1 독립 재검증은 완료했으며 관리자 사용성·실제 기기/배포 승인은 별도 대기**다. 촬영 당시 JSON·캡처는 보존하며 개발에서 commit·push·배포·인증/전역 설정 변경이나 다음 기능을 시작하지 않는다. Git ref 변화와 코드·index 보존을 구분한다.
+ 
+ **새 후속 결정·구현 대기:** 홈 최근 소식 최대 5건, 홈/소식 목록 최초 공개 최신순·수정/재공개 순위 유지, 팝업 최초 등록 빠른순 유지를 PRD에 기록했다. 다음 미완료 단위 [M2-4 홈 최근 소식 실제 공개 글 연결](IMPLEMENTATION-PLAN.md#다음-미완료-단위-m2-4-홈-최근-소식-실제-공개-글-연결)은 첫 단계 계획만 있으며 명시적 다음 구현 지시 전 미착수다. 이번 검색 보완을 홈 기능 구현 승인으로 확대하지 않는다.
++
++**M2-3 종료 문서·Git 대기:** [종료 문서와 보존 근거](../backend/review/m2-3-closeout/README.md)만 새로 작성했으며 제품 검사·캡처·DB 쓰기·코드/UI/설정 변경은 하지 않았다. 첫 체크포인트 `46ef337` push 완료와 현재 M2-3·R1/종료 문서의 미커밋 상태를 구분한다. 설계가 이번 문서를 검토한 뒤 Git 담당 반영을 지시하고 M2-4 구현은 별도 명시 지시로 진행한다.
+ 
+ ## 필요한 시점의 Git 반영
+ 
+--- closeout-before/prototype/DESIGN.md
++++ closeout-after/prototype/DESIGN.md
+@@ -38,7 +38,9 @@
+ 
+ **2026-10-10 M2-3 트레이너 연결:** 실제 지점 상세의 시설 다음·위치 이전에 현재 공개 프로필과 공개 소속 지점의 트레이너만 연결했다. 기존 카드·4:5 사진·PC/태블릿 2열·모바일 1열·색상/Pretendard/간격을 재사용하며 사진·직급·한줄 소개·약력이 없으면 해당 블록을 숨긴다. 약력은 분류 없는 단일 목록이다. 새로운 약력 카드의 사진/본문과 같은 행 카드의 시작 위치를 위로 맞추는 최소 CSS는 `backend/news/static/news/trainers.css`에만 두고 짧은 소개 카드의 기존 내부 정렬을 유지했다. 원본 프로토타입 HTML/CSS/자료·이전 캡처는 보존했다.
+ 
+-[이번 자체 검사와 새 캡처](../backend/review/trainers/README.md)는 실제 A/B와 별도 테스트 DB의 짧은 약력/직급·사진 없음·긴 이름/12항목 약력을 구분한다. **2026-10-10 후속 사용자 시각 승인:** 사용자가 [PC 직급·짧은 약력 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)과 [모바일 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)을 검토하고 “이 배치로 유지”로 승인했다. 이 선택정보 배치에 한정된 승인이다. 독립 검증·관리자 사용성·실제 기기/배포 승인은 별도로 남으며, 촬영 당시 JSON·캡처를 승인 이후 상태로 재작성하지 않는다. 홈 트레이너·새 고객 메뉴/프로필 페이지는 추가하지 않았다.
++[이번 자체 검사와 새 캡처](../backend/review/trainers/README.md)는 실제 A/B와 별도 테스트 DB의 짧은 약력/직급·사진 없음·긴 이름/12항목 약력을 구분한다. **2026-10-10 후속 사용자 시각 승인:** 사용자가 [PC 직급·짧은 약력 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)과 [모바일 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)을 검토하고 “이 배치로 유지”로 승인했다. 이 선택정보 배치에 한정된 승인이다. [초기 독립 FAIL](../backend/review/trainers-independent/README.md) → [R1 자체 보완](../backend/review/trainers-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md)를 완료했고 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했다. 기존 포맷 W01은 유지한다. 관리자 사용성·실제 기기/배포 승인은 별도로 남으며, 촬영 당시 JSON·캡처를 승인 이후 상태로 재작성하지 않는다. 홈 트레이너·새 고객 메뉴/프로필 페이지는 추가하지 않았다.
++
++[이번 종료 문서 검사](../backend/review/m2-3-closeout/README.md)는 상태/링크와 보존만 확인했다. 제품 UI·캡처는 재생성하지 않았고 실제 기기/Whale/한국어 IME·관리자 사용성·운영 승인은 미검증이다. 첫 체크포인트 `46ef337`은 push 완료, 현재 M2-3 변경은 미커밋이다. 홈 최대 5건/최초 공개 최신순·수정/재공개 순위 유지와 팝업 최초 등록 빠른순은 M2-4 확정 계획으로만 남기며 해당 기능은 미착수다.
+ 
+ ## 지점 통합 탭과 정보 구조
+ 

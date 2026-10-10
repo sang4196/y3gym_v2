@@ -36,6 +36,12 @@ Django/Wagtail과 전체 콘텐츠 초안·미리보기·공개 정책은 후속
 
 공개 본점 우선·명시 선택 유지·미완성 초안/공개 필수값·마지막 철회 정책은 [PRD](../docs/PRD.md#fr-02-지점시설)를 따른다. 시설 0장과 빈 이미지 항목은 갤러리를 만들지 않고, 1장은 정적으로 표시한다. 선택 연락수단이 없으면 해당 문의 버튼을 숨기며 공개 지점 0곳이면 준비 중 안내와 브랜드/소식 탐색을 남긴다. JavaScript가 없으면 모든 공개 지점의 이름·주소·운영시간·기본 링크를 제공한다. [새 지점 캡처·자체 검수](../backend/review/branches/README.md)는 독립 검증·사용자 시각 승인·실제 기기 검증 완료와 구분한다.
 
+**2026-10-10 M2-3 트레이너 연결:** 실제 지점 상세의 시설 다음·위치 이전에 현재 공개 프로필과 공개 소속 지점의 트레이너만 연결했다. 기존 카드·4:5 사진·PC/태블릿 2열·모바일 1열·색상/Pretendard/간격을 재사용하며 사진·직급·한줄 소개·약력이 없으면 해당 블록을 숨긴다. 약력은 분류 없는 단일 목록이다. 새로운 약력 카드의 사진/본문과 같은 행 카드의 시작 위치를 위로 맞추는 최소 CSS는 `backend/news/static/news/trainers.css`에만 두고 짧은 소개 카드의 기존 내부 정렬을 유지했다. 원본 프로토타입 HTML/CSS/자료·이전 캡처는 보존했다.
+
+[이번 자체 검사와 새 캡처](../backend/review/trainers/README.md)는 실제 A/B와 별도 테스트 DB의 짧은 약력/직급·사진 없음·긴 이름/12항목 약력을 구분한다. **2026-10-10 후속 사용자 시각 승인:** 사용자가 [PC 직급·짧은 약력 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)과 [모바일 구역](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)을 검토하고 “이 배치로 유지”로 승인했다. 이 선택정보 배치에 한정된 승인이다. [초기 독립 FAIL](../backend/review/trainers-independent/README.md) → [R1 자체 보완](../backend/review/trainers-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md)를 완료했고 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했다. 기존 포맷 W01은 유지한다. 관리자 사용성·실제 기기/배포 승인은 별도로 남으며, 촬영 당시 JSON·캡처를 승인 이후 상태로 재작성하지 않는다. 홈 트레이너·새 고객 메뉴/프로필 페이지는 추가하지 않았다.
+
+[이번 종료 문서 검사](../backend/review/m2-3-closeout/README.md)는 상태/링크와 보존만 확인했다. 제품 UI·캡처는 재생성하지 않았고 실제 기기/Whale/한국어 IME·관리자 사용성·운영 승인은 미검증이다. 첫 체크포인트 `46ef337`은 push 완료, 현재 M2-3 변경은 미커밋이다. 홈 최대 5건/최초 공개 최신순·수정/재공개 순위 유지와 팝업 최초 등록 빠른순은 M2-4 확정 계획으로만 남기며 해당 기능은 미착수다.
+
 ## 지점 통합 탭과 정보 구조
 
 - 홈 순서는 브랜드 소개 → 지점 둘러보기(지점 탭·지점명·상세 진입·시설 사진 슬라이드) → 공통 최근 소식 → 푸터다. 별도의 시설 둘러보기 구역과 제목·표면 경계를 두지 않는다. 홈에는 트레이너·주소·운영시간·지도 상세를 표시하지 않는다.

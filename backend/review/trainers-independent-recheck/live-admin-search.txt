@@ -1,0 +1,3 @@
+50 objects imported automatically (use -v 2 for details).
+
+PASS read-only live search GETs 4

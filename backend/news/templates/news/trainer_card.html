@@ -1,0 +1,11 @@
+<article class="trainer{% if not trainer.photo %} trainer--text-only{% endif %}{% if trainer.biography %} trainer--with-biography{% endif %}" data-trainer-id="{{ trainer.pk }}" aria-labelledby="trainer-{{ trainer.pk }}-name">
+  {% if trainer.photo %}<figure class="trainer-portrait"><div class="profile-image-frame"><img src="{{ trainer.photo.url }}" alt="{{ trainer.photo_alt }}" width="640" height="800" loading="lazy" decoding="async"></div><figcaption class="image-note">임시·검토용 사진</figcaption></figure>{% endif %}
+  <div class="trainer-copy">
+    {% if trainer.branch %}<p class="eyebrow">{{ trainer.branch }}</p>{% endif %}
+    <h4 id="trainer-{{ trainer.pk }}-name">{{ trainer.name }}</h4>
+    {% if trainer.position %}<p class="trainer-position" data-trainer-position>{{ trainer.position }}</p>{% endif %}
+    {% if trainer.intro %}<p class="trainer-description" data-trainer-intro>{{ trainer.intro|linebreaksbr }}</p>{% endif %}
+    {% if trainer.biography %}<ul class="trainer-biography" data-trainer-biography aria-label="{{ trainer.name }} 약력">{% for text in trainer.biography %}<li>{{ text|linebreaksbr }}</li>{% endfor %}</ul>{% endif %}
+    {% if trainer.branch.phone or trainer.branch.channel %}<a class="text-link" href="#contact-{{ trainer.branch.key }}">{{ trainer.branch }} 문의 <span aria-hidden="true">→</span></a>{% endif %}
+  </div>
+</article>

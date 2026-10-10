@@ -1,0 +1,40 @@
+{
+  "run": "2026-10-10T07:43:12.304Z",
+  "status": "FAIL",
+  "origin": "http://localhost:48939",
+  "readOnly": false,
+  "isolatedTestDatabase": true,
+  "checks": [
+    {
+      "name": "공개 지점별 가상 A/B 1명·선택 직급/약력 숨김·1440 화면",
+      "result": "PASS"
+    },
+    {
+      "name": "지점에서 등록·현재 지점 미리 선택·미완성 초안·공개·사진/선택 정보 숨김",
+      "result": "PASS"
+    },
+    {
+      "name": "이름/직급/단일 약력12항목 초안·재진입·권한 미리보기·공개본 분리·명시적 공개",
+      "result": "PASS"
+    },
+    {
+      "name": "긴 이름/약력과 사진4:5·태블릿2열/모바일1열·375 관리자 입력",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "initial-main-desktop.png",
+    "initial-second-desktop.png",
+    "optional-empty-desktop.png",
+    "trainer-editor-desktop.png",
+    "trainer-draft-preview.png",
+    "long-profile-desktop.png",
+    "long-profile-900.png",
+    "long-profile-375.png",
+    "trainer-editor-mobile.png",
+    "failure-editor.png",
+    "failure-visitor.png"
+  ],
+  "failure": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#id_photo-chooser [data-chooser-action-clear]')\u001b[22m\n\n    at /home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-trainers.mjs:139:75"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "env",
+    "Y3GYM_SEARCH_REVIEW_DIR=review/trainers-independent-recheck/search-browser",
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "review/trainers-independent-recheck/browser_search.py"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {},
+  "exit_code": 0,
+  "elapsed_seconds": 40.514
+}

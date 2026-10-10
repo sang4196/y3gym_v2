@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "document_links": 252,
+  "anchors": 24,
+  "errors": [],
+  "current_files_equal_final_snapshot": true,
+  "unexpected_files_outside_closeout": [],
+  "git_index_unchanged": true,
+  "HEAD_unchanged": true,
+  "product_checks_reexecuted": false,
+  "HTTP_or_database_writes": false,
+  "evidence": "checks.json"
+}

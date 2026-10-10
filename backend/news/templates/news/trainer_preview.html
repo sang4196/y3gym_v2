@@ -1,0 +1,5 @@
+{% extends 'news/base.html' %}
+{% block content %}
+<section class="page-intro"><div class="container"><h1>트레이너 미리보기</h1><p class="content-example">미리보기 · 저장·공개 전 내용입니다.</p><p role="status" data-affiliation-state>{{ affiliation_state }}</p></div></section>
+<section class="trainers surface-section"><div class="container"><div class="trainer-grid trainer-grid--single">{% include 'news/trainer_card.html' %}</div></div></section>
+{% endblock %}

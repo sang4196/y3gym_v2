@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "readOnly": true,
+  "checks": [
+    {
+      "width": 1440,
+      "key": "main",
+      "result": "PASS",
+      "measurement": {
+        "name": "트레이너 A",
+        "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "intro": "운동을 시작하기 전, 목표와 궁금한 점을 함께 이야기해보세요.",
+        "optional": 0,
+        "viewport": 1440,
+        "scrollWidth": 1440
+      },
+      "photoRatio": 0.8,
+      "contactHref": "#contact-main",
+      "lastTextAfterScroll": {
+        "x": 348,
+        "y": 384.109375,
+        "width": 143,
+        "height": 44
+      },
+      "mobileContactBar": null
+    },
+    {
+      "width": 1440,
+      "key": "second",
+      "result": "PASS",
+      "measurement": {
+        "name": "트레이너 B",
+        "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "intro": "시설 이용과 운동에 관해 궁금한 내용을 편하게 문의하세요.",
+        "optional": 0,
+        "viewport": 1440,
+        "scrollWidth": 1440
+      },
+      "photoRatio": 0.8,
+      "contactHref": "#contact-second",
+      "lastTextAfterScroll": {
+        "x": 348,
+        "y": 384.109375,
+        "width": 157,
+        "height": 44
+      },
+      "mobileContactBar": null
+    },
+    {
+      "width": 375,
+      "key": "main",
+      "result": "PASS",
+      "measurement": {
+        "name": "트레이너 A",
+        "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "intro": "운동을 시작하기 전, 목표와 궁금한 점을 함께 이야기해보세요.",
+        "optional": 0,
+        "viewport": 375,
+        "scrollWidth": 375
+      },
+      "photoRatio": 0.8,
+      "contactHref": "#contact-main",
+      "lastTextAfterScroll": {
+        "x": 148,
+        "y": 383.78125,
+        "width": 143,
+        "height": 44
+      },
+      "mobileContactBar": {
+        "x": 0,
+        "y": 740,
+        "width": 375,
+        "height": 72
+      }
+    },
+    {
+      "width": 375,
+      "key": "second",
+      "result": "PASS",
+      "measurement": {
+        "name": "트레이너 B",
+        "font": "Pretendard, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "intro": "시설 이용과 운동에 관해 궁금한 내용을 편하게 문의하세요.",
+        "optional": 0,
+        "viewport": 375,
+        "scrollWidth": 375
+      },
+      "photoRatio": 0.8,
+      "contactHref": "#contact-second",
+      "lastTextAfterScroll": {
+        "x": 148,
+        "y": 384.390625,
+        "width": 157,
+        "height": 44
+      },
+      "mobileContactBar": {
+        "x": 0,
+        "y": 740,
+        "width": 375,
+        "height": 72
+      }
+    }
+  ],
+  "errors": []
+}

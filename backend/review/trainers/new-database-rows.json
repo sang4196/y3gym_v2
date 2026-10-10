@@ -1,0 +1,218 @@
+{
+  "status": "PASS",
+  "database_read_only": true,
+  "new_rows_only": {
+    "auth_permission": [
+      {
+        "id": 209,
+        "content_type_id": 50,
+        "codename": "add_trainerbiography",
+        "content_type": "news.trainerbiography"
+      },
+      {
+        "id": 210,
+        "content_type_id": 50,
+        "codename": "change_trainerbiography",
+        "content_type": "news.trainerbiography"
+      },
+      {
+        "id": 211,
+        "content_type_id": 50,
+        "codename": "delete_trainerbiography",
+        "content_type": "news.trainerbiography"
+      },
+      {
+        "id": 212,
+        "content_type_id": 50,
+        "codename": "view_trainerbiography",
+        "content_type": "news.trainerbiography"
+      },
+      {
+        "id": 213,
+        "content_type_id": 51,
+        "codename": "add_trainer",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 214,
+        "content_type_id": 51,
+        "codename": "change_trainer",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 215,
+        "content_type_id": 51,
+        "codename": "delete_trainer",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 216,
+        "content_type_id": 51,
+        "codename": "view_trainer",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 217,
+        "content_type_id": 51,
+        "codename": "publish_trainer",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 218,
+        "content_type_id": 51,
+        "codename": "lock_trainer",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 219,
+        "content_type_id": 51,
+        "codename": "unlock_trainer",
+        "content_type": "news.trainer"
+      }
+    ],
+    "auth_group_permissions": [
+      {
+        "id": 35,
+        "permission_id": 216,
+        "group_id": 3
+      },
+      {
+        "id": 36,
+        "permission_id": 217,
+        "group_id": 3
+      },
+      {
+        "id": 37,
+        "permission_id": 213,
+        "group_id": 3
+      },
+      {
+        "id": 38,
+        "permission_id": 214,
+        "group_id": 3
+      }
+    ],
+    "wagtailcore_referenceindex": [
+      {
+        "id": 76,
+        "content_type_id": 29,
+        "base_content_type_id": 29,
+        "object_id": "40",
+        "to_content_type_id": 9,
+        "to_object_id": "1",
+        "model_path": "collection",
+        "content_type": "news.contentimage",
+        "base_content_type": "news.contentimage",
+        "to_content_type": "wagtailcore.collection"
+      },
+      {
+        "id": 77,
+        "content_type_id": 51,
+        "base_content_type_id": 51,
+        "object_id": "1",
+        "to_content_type_id": 29,
+        "to_object_id": "40",
+        "model_path": "photo",
+        "content_type": "news.trainer",
+        "base_content_type": "news.trainer",
+        "to_content_type": "news.contentimage"
+      },
+      {
+        "id": 78,
+        "content_type_id": 51,
+        "base_content_type_id": 51,
+        "object_id": "1",
+        "to_content_type_id": 48,
+        "to_object_id": "1",
+        "model_path": "branch",
+        "content_type": "news.trainer",
+        "base_content_type": "news.trainer",
+        "to_content_type": "news.branch"
+      },
+      {
+        "id": 79,
+        "content_type_id": 29,
+        "base_content_type_id": 29,
+        "object_id": "41",
+        "to_content_type_id": 9,
+        "to_object_id": "1",
+        "model_path": "collection",
+        "content_type": "news.contentimage",
+        "base_content_type": "news.contentimage",
+        "to_content_type": "wagtailcore.collection"
+      },
+      {
+        "id": 80,
+        "content_type_id": 51,
+        "base_content_type_id": 51,
+        "object_id": "2",
+        "to_content_type_id": 48,
+        "to_object_id": "2",
+        "model_path": "branch",
+        "content_type": "news.trainer",
+        "base_content_type": "news.trainer",
+        "to_content_type": "news.branch"
+      },
+      {
+        "id": 81,
+        "content_type_id": 51,
+        "base_content_type_id": 51,
+        "object_id": "2",
+        "to_content_type_id": 29,
+        "to_object_id": "41",
+        "model_path": "photo",
+        "content_type": "news.trainer",
+        "base_content_type": "news.trainer",
+        "to_content_type": "news.contentimage"
+      }
+    ],
+    "wagtailsearch_indexentry": [
+      {
+        "id": 75,
+        "content_type_id": 29,
+        "object_id": "40",
+        "content_type": "news.contentimage"
+      },
+      {
+        "id": 76,
+        "content_type_id": 29,
+        "object_id": "41",
+        "content_type": "news.contentimage"
+      }
+    ],
+    "wagtailcore_modellogentry": [
+      {
+        "id": 120,
+        "content_type_id": 51,
+        "object_id": "1",
+        "action": "wagtail.publish",
+        "content_type": "news.trainer"
+      },
+      {
+        "id": 121,
+        "content_type_id": 51,
+        "object_id": "2",
+        "action": "wagtail.publish",
+        "content_type": "news.trainer"
+      }
+    ],
+    "wagtailcore_revision": [
+      {
+        "id": 68,
+        "content_type_id": 51,
+        "base_content_type_id": 51,
+        "object_id": "1",
+        "content_type": "news.trainer",
+        "base_content_type": "news.trainer"
+      },
+      {
+        "id": 69,
+        "content_type_id": 51,
+        "base_content_type_id": 51,
+        "object_id": "2",
+        "content_type": "news.trainer",
+        "base_content_type": "news.trainer"
+      }
+    ]
+  }
+}

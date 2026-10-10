@@ -7,10 +7,72 @@ from django.db import close_old_connections
 from django.test import Client, TransactionTestCase
 from django.urls import reverse
 
-from news.models import Branch, BrandContent, Post
+from news.models import Branch, BrandContent, Post, Trainer, TrainerBiography
 
 
 class ConcurrentSaveTests(TransactionTestCase):
+    def trainer_race(self, publish):
+        from news.tests.test_trainers import TrainerTests
+
+        user = get_user_model().objects.create_superuser(
+            "trainer-race", password="test-password"
+        )
+        branch = Branch.objects.create(
+            key="main", name="검수 본점", address="주소", opening_hours="시간"
+        )
+        branch.save_revision().publish()
+        trainer = Trainer.objects.create(name="기존 프로필", branch=branch)
+        trainer.biography = [TrainerBiography(text="기존 약력", sort_order=0)]
+        trainer.save_revision().publish()
+        trainer.refresh_from_db()
+        old_public = trainer.live_revision_id
+        url = reverse("wagtailsnippets_news_trainer:edit", args=[trainer.pk])
+        self.edit_url = lambda instance: url
+        clients = [Client(), Client()]
+        payloads = []
+        for number, client in enumerate(clients):
+            client.force_login(user)
+            self.client = client
+            payload = TrainerTests.payload(self, trainer)
+            payload.update(name=f"동시 프로필 {number}", display_order=number)
+            payload["biography-0-text"] = f"동시 약력 {number}"
+            if publish:
+                payload["action-publish"] = "1"
+            payloads.append(payload)
+        barrier = Barrier(2)
+
+        def save(number):
+            close_old_connections()
+            try:
+                barrier.wait(timeout=10)
+                response = clients[number].post(url, payloads[number])
+                return response.status_code, "더 최근 내용" in response.content.decode()
+            finally:
+                close_old_connections()
+
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(save, [0, 1]))
+        self.assertEqual(sorted(status for status, _ in results), [200, 302])
+        self.assertEqual(sum(conflict for _, conflict in results), 1)
+        trainer = Trainer.objects.get(pk=trainer.pk)
+        self.assertEqual(trainer.revisions.count(), 2)
+        latest = trainer.get_latest_revision_as_object()
+        winner = int(latest.name.rsplit(" ", 1)[1])
+        self.assertEqual(latest.display_order, winner)
+        self.assertEqual(
+            [item.text for item in latest.biography.all()], [f"동시 약력 {winner}"]
+        )
+        if publish:
+            self.assertEqual(trainer.live_revision_id, trainer.latest_revision_id)
+        else:
+            self.assertEqual(trainer.live_revision_id, old_public)
+
+    def test_trainer_simultaneous_drafts_keep_one_complete_revision(self):
+        self.trainer_race(False)
+
+    def test_trainer_simultaneous_publications_keep_one_complete_revision(self):
+        self.trainer_race(True)
+
     def branch_race(self, publish):
         from news.tests.test_branches import BranchTests
 

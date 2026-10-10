@@ -1,0 +1,249 @@
+{
+  "status": "PASS",
+  "isolated_test_database": true,
+  "requests": [
+    {
+      "query": {
+        "live": "false",
+        "p": 1,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": false,
+      "ids": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "false",
+        "p": 2,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": false,
+      "ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "false",
+        "p": 3,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": false,
+      "ids": [
+        2,
+        3,
+        4
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "true",
+        "p": 1,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": false,
+      "ids": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "false",
+        "p": 1,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": true,
+      "ids": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "false",
+        "p": 2,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": true,
+      "ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "false",
+        "p": 3,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": true,
+      "ids": [
+        2,
+        3,
+        4
+      ],
+      "status": 200
+    },
+    {
+      "query": {
+        "live": "true",
+        "p": 1,
+        "q": "R1 공통조건",
+        "branch": "2"
+      },
+      "fragment": true,
+      "ids": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "status": 200
+    }
+  ],
+  "page_counts": [
+    {
+      "fragment": false,
+      "live": "false",
+      "pages": [
+        20,
+        20,
+        3
+      ]
+    },
+    {
+      "fragment": false,
+      "live": "true",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "fragment": true,
+      "live": "false",
+      "pages": [
+        20,
+        20,
+        3
+      ]
+    },
+    {
+      "fragment": true,
+      "live": "true",
+      "pages": [
+        13
+      ]
+    }
+  ],
+  "no_duplicates_or_missing": true
+}

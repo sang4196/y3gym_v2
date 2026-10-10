@@ -1,0 +1,165 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "kind": "developer_self_verification",
+  "independent_verification": "PENDING",
+  "specific_visual_approval": {
+    "date": "2026-10-10",
+    "user_decision": "이 배치로 유지",
+    "scope": "Position and single biography layout shown in combined trainer desktop/mobile section captures only",
+    "evidence": [
+      "regressions-final/combined/trainer/short-biography-desktop-section.png",
+      "regressions-final/combined/trainer/short-biography-mobile-section.png"
+    ],
+    "confirmed_via_design_instruction": true,
+    "original_capture_json_preserved": true
+  },
+  "admin_usability_real_device_deployment_approval": "NOT_COMPLETED",
+  "test_runs": [
+    {
+      "name": "baseline",
+      "status": "PASS",
+      "discovered": 81,
+      "passed": 79,
+      "skipped": 2,
+      "django_elapsed_seconds": 103.043,
+      "log": "baseline-server.txt"
+    },
+    {
+      "name": "trainer-server",
+      "status": "PASS",
+      "discovered": 9,
+      "passed": 9,
+      "skipped": 0,
+      "django_elapsed_seconds": 9.28,
+      "log": "trainer-server-second.txt"
+    },
+    {
+      "name": "targeted-concurrency",
+      "status": "PASS",
+      "discovered": 33,
+      "passed": 33,
+      "skipped": 0,
+      "django_elapsed_seconds": 82.681,
+      "log": "concurrency-final.txt"
+    },
+    {
+      "name": "trainer-browser",
+      "status": "PASS",
+      "discovered": 1,
+      "passed": 1,
+      "skipped": 0,
+      "django_elapsed_seconds": 37.9,
+      "log": "browser-second.txt"
+    },
+    {
+      "name": "final-server",
+      "status": "PASS",
+      "discovered": 97,
+      "passed": 94,
+      "skipped": 3,
+      "django_elapsed_seconds": 118.108,
+      "log": "regressions-final/server/output.txt"
+    },
+    {
+      "name": "combined",
+      "status": "PASS",
+      "discovered": 3,
+      "passed": 3,
+      "skipped": 0,
+      "django_elapsed_seconds": 122.754,
+      "log": "regressions-final/combined/output.txt"
+    },
+    {
+      "name": "reverse",
+      "status": "PASS",
+      "discovered": 3,
+      "passed": 3,
+      "skipped": 0,
+      "django_elapsed_seconds": 119.684,
+      "log": "regressions-final/reverse/output.txt"
+    }
+  ],
+  "browser_flows": [
+    {
+      "name": "trainer-standalone",
+      "status": "PASS",
+      "flows": 10,
+      "evidence": "browser-second/checks.json"
+    },
+    {
+      "name": "combined-brand",
+      "status": "PASS",
+      "flows": 7,
+      "evidence": "regressions-final/combined/brand/result.json"
+    },
+    {
+      "name": "combined-branch",
+      "status": "PASS",
+      "flows": 11,
+      "evidence": "regressions-final/combined/branch/checks.json"
+    },
+    {
+      "name": "combined-trainer",
+      "status": "PASS",
+      "flows": 10,
+      "evidence": "regressions-final/combined/trainer/checks.json"
+    },
+    {
+      "name": "reverse-brand",
+      "status": "PASS",
+      "flows": 7,
+      "evidence": "regressions-final/reverse/brand/result.json"
+    },
+    {
+      "name": "reverse-branch",
+      "status": "PASS",
+      "flows": 11,
+      "evidence": "regressions-final/reverse/branch/checks.json"
+    },
+    {
+      "name": "reverse-trainer",
+      "status": "PASS",
+      "flows": 10,
+      "evidence": "regressions-final/reverse/trainer/checks.json"
+    },
+    {
+      "name": "actual-trainer",
+      "status": "PASS",
+      "flows": 4,
+      "evidence": "live-trainers/checks.json"
+    },
+    {
+      "name": "actual-branch",
+      "status": "PASS",
+      "flows": 5,
+      "evidence": "live-branches/checks.json"
+    },
+    {
+      "name": "actual-popup-revisit",
+      "status": "PASS",
+      "flows": 8,
+      "evidence": "live-popup-revisit/checks.json"
+    }
+  ],
+  "command_metadata": [
+    "regressions-final/results.json",
+    "static-checks.json",
+    "live-commands.json",
+    "schema-seed.json"
+  ],
+  "preservation": "preservation-final.json",
+  "initial_failures_preserved": [
+    "trainer-server-first.txt",
+    "concurrency-first.txt",
+    "browser-first.txt",
+    "preservation.json",
+    "document-checks.json"
+  ],
+  "warnings": [
+    "Global format check still identifies only pre-existing review/workflow-01/verify.py; file preserved.",
+    "Independent review, administrator usability, real devices/Whale/Korean IME and operational deployment remain unverified."
+  ],
+  "counts_not_summed_across_repeated_runs": true,
+  "document_verification": "document-checks-final.json",
+  "report_tool_checks": "report-tool-checks.json"
+}

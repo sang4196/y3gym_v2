@@ -1,0 +1,34 @@
+{
+  "modified_existing_files": [
+    "README.md",
+    "backend/README.md",
+    "backend/news/branches.py",
+    "backend/news/models.py",
+    "backend/news/panels.py",
+    "backend/news/publication.py",
+    "backend/news/templates/news/base.html",
+    "backend/news/templates/news/branch_browser.html",
+    "backend/news/tests/test_concurrency.py",
+    "backend/news/tests/test_withdrawal_concurrency.py",
+    "backend/news/wagtail_hooks.py",
+    "backend/scripts/review-branches.mjs",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/PRD.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md"
+  ],
+  "new_implementation_files": [
+    "backend/news/management/commands/bootstrap_trainer_review.py",
+    "backend/news/migrations/0005_trainer_trainerbiography.py",
+    "backend/news/static/news/trainers.css",
+    "backend/news/templates/news/admin/trainer_management.html",
+    "backend/news/templates/news/trainer_card.html",
+    "backend/news/templates/news/trainer_preview.html",
+    "backend/news/tests/test_trainer_browser.py",
+    "backend/news/tests/test_trainers.py",
+    "backend/news/trainers.py",
+    "backend/scripts/review-trainers.mjs"
+  ],
+  "new_review_directory": "backend/review/trainers/",
+  "approved_actual_private_media_additions": 4
+}

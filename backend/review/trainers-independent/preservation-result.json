@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "before_files": 1446,
+  "after_files": 1446,
+  "changed_existing_or_added_outside_audit": [],
+  "db_tables_compared": 58,
+  "changed_db_tables": [],
+  "index_unchanged": true,
+  "secrets_unchanged": true,
+  "private_media_files_compared": 145
+}

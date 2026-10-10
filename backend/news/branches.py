@@ -34,7 +34,11 @@ def request_navigation(request):
     return request._branch_navigation
 
 
-def branch_browser(request, branches, home=False):
+def branch_browser(request, branches, home=False, trainer_preview=None):
+    if not home:
+        from .trainers import branch_trainer_cards
+
+        branch_trainer_cards(branches, preview=trainer_preview)
     for branch in branches:
         branch.gallery = []
         for item in branch.facilities.all():
@@ -53,7 +57,7 @@ def branches(request):
     return render_branches(request)
 
 
-def render_branches(request, preview=None):
+def render_branches(request, preview=None, trainer_preview=None):
     rows = request_navigation(request)["public_branches"]
     if preview is not None:
         rows = [branch for branch in rows if branch.pk != preview.pk] + [preview]
@@ -64,12 +68,17 @@ def render_branches(request, preview=None):
                 branch.pk or 0,
             )
         )
-    context = navigation_context(request, rows, selected=preview)
+    selected = preview
+    if trainer_preview is not None:
+        selected = next(
+            (branch for branch in rows if branch.pk == trainer_preview.branch_id), None
+        )
+    context = navigation_context(request, rows, selected=selected)
     context.update(
         title="지점 안내",
         page_kind="branches",
-        is_preview=preview is not None,
-        branch_browser=branch_browser(request, rows),
+        is_preview=preview is not None or trainer_preview is not None,
+        branch_browser=branch_browser(request, rows, trainer_preview=trainer_preview),
     )
     return HttpResponse(
         render_to_string("news/branches.html", context, request=request)

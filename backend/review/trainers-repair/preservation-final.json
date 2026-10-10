@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "checks": {
+    "changed_existing_files_exactly_seven_authorized": true,
+    "new_files_outside_R1_review_exactly_one_search_test": true,
+    "all_58_database_tables_and_rows_unchanged": true,
+    "git_index_unchanged": true,
+    "all_protected_file_hashes_unchanged": true,
+    "all_145_private_media_files_unchanged_no_additions": true,
+    "all_three_shared_browser_fixture_files_explicitly_compared": true
+  },
+  "before_files": 1690,
+  "after_files": 1691,
+  "modified_existing_files": [
+    "README.md",
+    "backend/README.md",
+    "backend/news/wagtail_hooks.py",
+    "backend/scripts/review-branches.mjs",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/PRD.md",
+    "docs/WORKFLOW.md"
+  ],
+  "new_files_outside_R1_review": [
+    "backend/news/tests/test_trainer_search.py"
+  ],
+  "protected": {
+    "all_prior_backend_reviews_including_trainer_and_independent_FAIL": {
+      "files": 1262,
+      "unchanged": true
+    },
+    "all_prototype_including_design": {
+      "files": 186,
+      "unchanged": true
+    },
+    "private_media": {
+      "files": 145,
+      "unchanged": true
+    },
+    "secrets": {
+      "files": 2,
+      "unchanged": true
+    },
+    "dependency_and_compose_files": {
+      "files": 5,
+      "unchanged": true
+    },
+    "common_browser_fixture": {
+      "files": 3,
+      "paths": [
+        "backend/news/tests/review_fixtures.py",
+        "backend/news/tests/test_brand_browser.py",
+        "backend/news/tests/test_branch_browser.py"
+      ],
+      "per_file": [
+        {
+          "path": "backend/news/tests/review_fixtures.py",
+          "before_sha256": "7fa45f9eabd7f898f7ee1e33aac33b4bf8ec1cd1e4123f0f4b94a8973f2405ab",
+          "after_sha256": "7fa45f9eabd7f898f7ee1e33aac33b4bf8ec1cd1e4123f0f4b94a8973f2405ab",
+          "unchanged": true
+        },
+        {
+          "path": "backend/news/tests/test_brand_browser.py",
+          "before_sha256": "ac1789bc38512e957de1e8979cc9ab782e0e84a37fde35fe2cb6d1e6f466ff91",
+          "after_sha256": "ac1789bc38512e957de1e8979cc9ab782e0e84a37fde35fe2cb6d1e6f466ff91",
+          "unchanged": true
+        },
+        {
+          "path": "backend/news/tests/test_branch_browser.py",
+          "before_sha256": "c0f7cceadca5c7977d3407656a81893028d35559e88aa26bff9d89c9fb7da1ce",
+          "after_sha256": "c0f7cceadca5c7977d3407656a81893028d35559e88aa26bff9d89c9fb7da1ce",
+          "unchanged": true
+        }
+      ],
+      "unchanged": true
+    }
+  },
+  "database_tables_compared": 58,
+  "changed_database_tables": [],
+  "W02_prior_scope_explanation": "The prior trainers README said three shared fixture files, while preservation-final.json counted two in its subgroup: its third path incorrectly named a nonexistent management command instead of tests/review_fixtures.py. The full old file comparison already covered the actual file. All prior artifacts remain unchanged; R1 explicitly lists and hashes the correct three files.",
+  "actual_schema_seed_content_account_or_media_writes": false
+}

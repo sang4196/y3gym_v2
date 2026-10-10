@@ -10,7 +10,7 @@ from django.urls import reverse
 from django.utils import timezone
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
-from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.admin.panels import FieldPanel, HelpPanel, InlinePanel, MultiFieldPanel
 from wagtail.fields import RichTextField
 from wagtail.images.models import AbstractImage, AbstractRendition
 from wagtail.models import (
@@ -21,7 +21,7 @@ from wagtail.models import (
     RevisionMixin,
 )
 
-from .panels import PopupSettingsPanel
+from .panels import PopupSettingsPanel, TrainerManagementPanel
 
 
 class ContentImage(AbstractImage):
@@ -385,6 +385,7 @@ class Branch(
             heading="시설 사진",
             help_text="지점과 함께 초안 저장·미리보기·공개합니다. 순서는 위/아래 이동으로 바꿀 수 있습니다. 이미지 없는 항목은 초안에 보관하고 공개 사진에서는 제외합니다.",
         ),
+        TrainerManagementPanel(heading="소속 트레이너 관리"),
     ]
 
     class Meta:
@@ -476,3 +477,121 @@ class FacilityImage(Orderable):
     class Meta(Orderable.Meta):
         verbose_name = "시설 사진"
         verbose_name_plural = "시설 사진"
+
+
+class Trainer(
+    PreviewableMixin, DraftStateMixin, LockableMixin, RevisionMixin, ClusterableModel
+):
+    live = models.BooleanField(default=False, editable=False)
+    name = models.CharField("이름", max_length=100, blank=True)
+    branch = models.ForeignKey(
+        Branch,
+        verbose_name="소속 지점",
+        null=True,
+        blank=True,
+        on_delete=models.PROTECT,
+        related_name="trainers",
+    )
+    display_order = models.PositiveIntegerField("지점 내 표시 순서", default=0)
+    photo = models.ForeignKey(
+        ContentImage,
+        verbose_name="프로필 사진",
+        null=True,
+        blank=True,
+        on_delete=models.PROTECT,
+        related_name="+",
+    )
+    photo_alt = models.CharField("사진 대체 설명", max_length=200, blank=True)
+    intro = models.TextField("한줄 소개", max_length=500, blank=True)
+    position = models.CharField("직급", max_length=100, blank=True)
+
+    panels = [
+        HelpPanel(
+            content="<p>트레이너 프로필과 약력은 지점·시설과 <strong>별도 저장 단위</strong>입니다. 초안 저장은 고객 화면을 바꾸지 않습니다. 이름·소속 지점만 공개 필수이며 나머지는 선택입니다. 자료가 없으면 입력하지 마세요.</p>"
+        ),
+        FieldPanel("name"),
+        FieldPanel(
+            "branch",
+            help_text="소속 이동 초안은 현재 공개 소속에 영향을 주지 않습니다. 프로필과 소속 지점이 모두 공개일 때만 고객 화면에 표시합니다.",
+        ),
+        FieldPanel(
+            "display_order",
+            help_text="같은 지점에서 작은 숫자부터 표시합니다. 같은 숫자는 등록 순서입니다. 순서 변경도 공개 후 반영합니다.",
+        ),
+        FieldPanel(
+            "photo",
+            help_text="선택 항목입니다. 기존 4:5 사진 배치로 표시하며 없으면 사진 영역을 숨깁니다.",
+        ),
+        FieldPanel("photo_alt"),
+        FieldPanel("intro"),
+        FieldPanel("position"),
+        InlinePanel(
+            "biography",
+            label="약력 항목",
+            heading="약력",
+            help_text="분류 없는 단일 목록입니다. 빈 항목은 공개 화면에서 숨기며 프로필과 함께 저장·공개합니다.",
+        ),
+    ]
+
+    class Meta:
+        verbose_name = "트레이너"
+        verbose_name_plural = "트레이너"
+
+    def __str__(self):
+        return self.name or "트레이너 (준비 초안)"
+
+    def editing_name(self):
+        return str(self.get_latest_revision_as_object())
+
+    editing_name.short_description = "이름 (최신 초안)"
+
+    def editing_branch(self):
+        return self.get_latest_revision_as_object().branch or "소속 미선택"
+
+    editing_branch.short_description = "소속 지점 (최신 초안)"
+
+    def editing_order(self):
+        return self.get_latest_revision_as_object().display_order
+
+    editing_order.short_description = "지점 내 순서 (최신 초안)"
+
+    def clean(self):
+        super().clean()
+        for field in ["name", "photo_alt", "intro", "position"]:
+            setattr(self, field, getattr(self, field).strip())
+
+    def validate_for_publication(self):
+        errors = {}
+        if not self.name.strip():
+            errors["name"] = (
+                "공개하려면 이름을 입력해 주세요. 미완성 상태는 초안 저장할 수 있습니다."
+            )
+        if not self.branch_id:
+            errors["branch"] = (
+                "공개하려면 소속 지점을 선택해 주세요. 미완성 상태는 초안 저장할 수 있습니다."
+            )
+        if errors:
+            raise ValidationError(errors)
+
+    def publish(self, revision, **kwargs):
+        revision.as_object().validate_for_publication()
+        return super().publish(revision, **kwargs)
+
+    def serve_preview(self, request, mode_name):
+        if not request.user.has_perm("news.change_trainer"):
+            raise PermissionDenied
+        from .trainers import render_trainer_preview
+
+        response = render_trainer_preview(request, self)
+        response["Cache-Control"] = "private, no-store"
+        return response
+
+
+class TrainerBiography(Orderable):
+    trainer = ParentalKey(Trainer, on_delete=models.CASCADE, related_name="biography")
+    text = models.TextField("약력 항목", max_length=500, blank=True)
+    panels = [FieldPanel("text")]
+
+    class Meta(Orderable.Meta):
+        verbose_name = "약력 항목"
+        verbose_name_plural = "약력 항목"

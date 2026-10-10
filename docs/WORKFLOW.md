@@ -32,9 +32,15 @@
 
 **진행 이력:** WORKFLOW-01 문서 작성 당시 M2-1은 구현돼 있었고 M2-2의 지점 정책 응답을 기다려 기능 구현을 시작하지 않았다. 이후 사용자가 본점 1곳·공개 본점 우선 표시/기본 선택, 미완성 초안 허용·지점명/주소/운영시간 공개 필수, 마지막 공개 지점 철회·0곳 준비 중 안내/문의 숨김을 확정했다. 설계가 WORKFLOW-01 독립 검증 보고를 검토한 뒤 M2-2 구현을 지시했다. 최신 상세 정책과 제외 범위는 [PRD](PRD.md#fr-02-지점시설)·[구현 계획](IMPLEMENTATION-PLAN.md)을 따른다. 깃노예는 같은 루트·local에서 읽기 전용 준비 검토를 맡았으며 개발과 독립 검증 완료 전 Git 반영을 시작하지 않는다.
 
-**현재 상태 — M2-2 종료 문서 정리:** [초기 독립 검증 FAIL](../backend/review/branches-independent/README.md) → [R1 보완·자체 검사](../backend/review/branches-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](../backend/review/branches-independent-recheck/README.md). F01·F02·W01 해결·차단 결함 없음을 확인했고 기존 `backend/review/workflow-01/verify.py`의 전역 포맷 경고 1개는 남는다. 초기 FAIL·R1·이전 캡처는 당시 기록으로 보존한다. 이번 종료 작업은 최신 문서·경로/앵커/내용 일치 검사만 수행하며 제품 검사를 재실행하지 않는다. 사용자 시각·관리자 사용성 승인, 실제 기기·Whale·한국어 IME·운영 환경 검증은 완료로 취급하지 않는다.
+**M2-2 종료 문서 이력:** [초기 독립 검증 FAIL](../backend/review/branches-independent/README.md) → [R1 보완·자체 검사](../backend/review/branches-repair/README.md) → [독립 재검증 PASS_WITH_WARNINGS](../backend/review/branches-independent-recheck/README.md). F01·F02·W01 해결·차단 결함 없음을 확인했고 기존 `backend/review/workflow-01/verify.py`의 전역 포맷 경고 1개는 남는다. 초기 FAIL·R1·이전 캡처는 당시 기록으로 보존한다. 당시 종료 작업은 최신 문서·경로/앵커/내용 일치만 검사했고 제품 검사는 재실행하지 않았다. 사용자 시각·관리자 사용성 승인, 실제 기기·Whale·한국어 IME·운영 환경 검증은 완료로 취급하지 않는다.
 
-**다음 진행 조건:** 개발의 종료 문서 보고를 설계가 검토한 뒤 깃노예에 첫 Git 체크포인트를 별도로 지시한다. 이 문서 정리는 commit·push·배포를 수행하지 않는다. 트레이너의 확정 입력 정책은 [FR-03](PRD.md#fr-03-트레이너), 다음 작은 단위는 [M2-3 트레이너 관리](IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리)에 기록했다. **M2-3은 미착수**이며 Git 체크포인트와 설계의 별도 구현 지시 이후 진행한다. 개발이 이번 문서 작업에 이어 자동으로 구현을 시작하지 않는다.
+**첫 체크포인트와 이번 M2-3:** 설계가 종료 문서와 독립 검증을 검토한 뒤 깃노예가 `46ef337423fb89c1eb7f9000762f32e67802bc57`을 로컬 커밋했다. 최초 HTTPS 쓰기 인증 부재로 push가 실패했으나 사용자가 인증 준비를 선택했고 Git 담당이 기존 Windows 인증을 명령 단위로 재사용해 `origin/main` push와 원격 해시 일치를 확인했다. 새 commit/stage·영구 Git 설정 변경 없이 기존 완료 커밋만 push했으며 진행 중 M2-3은 제외했다.
+
+이 체크포인트와 설계의 별도 구현 지시를 받아 [FR-03](PRD.md#fr-03-트레이너)·[M2-3 범위](IMPLEMENTATION-PLAN.md#다음-단위-m2-3-트레이너-관리)만 로컬 구현했다. [개발 자체 검사·새 캡처·보존·실패 이력](../backend/review/trainers/README.md) 뒤 [초기 독립 검증 FAIL](../backend/review/trainers-independent/README.md)에서 최신 초안 이름/소개 검색 F01과 기록 경고 W02~W04를 확인했다. 설계 지시로 [M2-3-R1 보완·자체 검사](../backend/review/trainers-repair/README.md)를 수행한 뒤 [독립 재검증 PASS_WITH_WARNINGS](../backend/review/trainers-independent-recheck/README.md)로 F01/P2·W02~W04 해결·새 차단 결함 없음을 확인했고 설계가 실제 보고/근거를 검토했다. W01 기존 전역 포맷 경고 1개는 유지한다. 기존 FAIL·원 재현·캡처/JSON은 보존한다. **2026-10-10 사용자 시각 승인:** 사용자가 검토한 [PC](../backend/review/trainers/regressions-final/combined/trainer/short-biography-desktop-section.png)·[모바일](../backend/review/trainers/regressions-final/combined/trainer/short-biography-mobile-section.png)의 직급·약력 배치를 “이 배치로 유지”로 승인했다. 이 배치에 한정된 승인으로, **M2-3-R1 독립 재검증은 완료했으며 관리자 사용성·실제 기기/배포 승인은 별도 대기**다. 촬영 당시 JSON·캡처는 보존하며 개발에서 commit·push·배포·인증/전역 설정 변경이나 다음 기능을 시작하지 않는다. Git ref 변화와 코드·index 보존을 구분한다.
+
+**새 후속 결정·구현 대기:** 홈 최근 소식 최대 5건, 홈/소식 목록 최초 공개 최신순·수정/재공개 순위 유지, 팝업 최초 등록 빠른순 유지를 PRD에 기록했다. 다음 미완료 단위 [M2-4 홈 최근 소식 실제 공개 글 연결](IMPLEMENTATION-PLAN.md#다음-미완료-단위-m2-4-홈-최근-소식-실제-공개-글-연결)은 첫 단계 계획만 있으며 명시적 다음 구현 지시 전 미착수다. 이번 검색 보완을 홈 기능 구현 승인으로 확대하지 않는다.
+
+**M2-3 종료 문서·Git 대기:** [종료 문서와 보존 근거](../backend/review/m2-3-closeout/README.md)만 새로 작성했으며 제품 검사·캡처·DB 쓰기·코드/UI/설정 변경은 하지 않았다. 첫 체크포인트 `46ef337` push 완료와 현재 M2-3·R1/종료 문서의 미커밋 상태를 구분한다. 설계가 이번 문서를 검토한 뒤 Git 담당 반영을 지시하고 M2-4 구현은 별도 명시 지시로 진행한다.
 
 ## 필요한 시점의 Git 반영
 

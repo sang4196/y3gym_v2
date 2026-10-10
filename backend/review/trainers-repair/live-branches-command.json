@@ -1,0 +1,14 @@
+{
+  "command": [
+    "node",
+    "scripts/review-branches.mjs",
+    "--live-read-only"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {
+    "Y3GYM_BRANCH_REVIEW_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/trainers-repair/live-branches"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 13.747,
+  "actual_app_http_read_only": true
+}

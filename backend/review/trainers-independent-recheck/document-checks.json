@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "documents": [
+    "README.md",
+    "backend/README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md",
+    "backend/review/trainers-repair/README.md"
+  ],
+  "local_links": 274,
+  "anchors": 25,
+  "checks": [
+    {
+      "name": "Local document/report paths and anchors",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Whitespace/conflict markers",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "W04 current CMS table agrees with implemented trainer/R1 state",
+      "result": "PASS",
+      "detail": "| 실제 CMS·DB | 소식·팝업에 이어 M2-1 브랜드·홈 소개 관리와 공개 홈 연결 구현. 별도 로컬 PostgreSQL·리비전·보호된 미디어 사용. M2-2 지점·시설과 실제 지점 안내·홈 연결 구현. M2-3 트레이너 관리·실제 지점 상세 연결 구현. [초기 독립 FAIL](../backend/review/trainers-independent/README.md)의 관리자 최신 초안 검색을 [R1](../backend/review/trainers-repair/README.md)에서 보완했고 독립 재검증 대기 |"
+    },
+    {
+      "name": "R1 draft search contract and independent review are explicit",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Confirmed profile requirements unchanged",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All five current operational docs link initial FAIL and R1",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Specific approved layout remains separate from administrator usability",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "New home/news ordering and limit decisions documented",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Remaining news operational decisions exclude newly confirmed policies",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "M2-4 is only the next unstarted plan with limited completion criteria",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Historical M1/M2 boundaries remain as historical records",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "W02 exact three shared fixture paths exist",
+      "result": "PASS",
+      "detail": [
+        "backend/news/tests/review_fixtures.py",
+        "backend/news/tests/test_brand_browser.py",
+        "backend/news/tests/test_branch_browser.py"
+      ]
+    },
+    {
+      "name": "R1 verification and implementation paths exist",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "name": "git diff --check",
+      "result": "PASS",
+      "detail": ""
+    }
+  ],
+  "http_or_database_writes": false,
+  "historical_documents_not_subject_to_current_status_regex": true
+}

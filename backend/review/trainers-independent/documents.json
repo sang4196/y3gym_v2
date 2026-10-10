@@ -1,0 +1,15 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "review/trainers-independent/verify_documents.py",
+    "--output",
+    "review/trainers-independent/document-checks.json"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {},
+  "exit_code": 0,
+  "elapsed_seconds": 0.156
+}

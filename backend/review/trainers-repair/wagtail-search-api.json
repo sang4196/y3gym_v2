@@ -1,0 +1,11 @@
+{
+  "installed_wagtail_source": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/lib/python3.13/site-packages/wagtail/admin/views/generic/base.py",
+  "sha256": "039059b0edb1e036b295caec2827c7a80b81b51887f83671a563d76febca3c80",
+  "query_flow": "def get_queryset(self):\n        # Instead of calling super().get_queryset(), we copy the initial logic from Django's\n        # MultipleObjectMixin into get_base_queryset(). This allows us to perform additional steps\n        # before the ordering step (such as annotations), and funnel the call to get_ordering()\n        # through the cached property self.ordering so that we don't have to worry about calling\n        # get_ordering() multiple times.\n        # https://github.com/django/django/blob/stable/4.1.x/django/views/generic/list.py#L22-L47\n\n        queryset = self.get_base_queryset()\n        queryset = self.order_queryset(queryset)\n        queryset = self.filter_queryset(queryset)\n        queryset = self.search_queryset(queryset)\n        return queryset",
+  "search_hook": "search_queryset uses SearchForm-cleaned search_query/is_searching and OR icontains on a non-indexed model. Trainer-specific override keeps this semantics while querying latest_revision JSON.",
+  "branch_search_context": "get_search_form adds only a hidden branch field to the existing Wagtail form; default live filters and pagination remain in Wagtail.",
+  "product_mutations": [
+    "news/wagtail_hooks.py: TrainerIndexView only"
+  ],
+  "no_model_or_public_revision_mutation": true
+}

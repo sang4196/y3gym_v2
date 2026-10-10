@@ -1,0 +1,31 @@
+{
+  "archive": "/tmp/y3gym-m2-3-r1-1zjwrh0h",
+  "existing_work_preserved": true,
+  "processes": {
+    "8767": {
+      "pid": 714159,
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+      "command": "python3 backend/scripts/serve-prototype.py"
+    },
+    "8768": {
+      "pid": 1149215,
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "command": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python manage.py runserver 127.0.0.1:8768 --noreload --insecure"
+    }
+  },
+  "original_reproduction_tools": [
+    {
+      "source": "backend/review/trainers-independent/audit_search.py",
+      "copy": "backend/review/trainers-repair/audit_search.py",
+      "sha256": "87501c58ae7db9126b69028cf705182a6069dff2a23c4d83836cf621b5f327b8",
+      "byte_identical": true
+    },
+    {
+      "source": "backend/review/trainers-independent/audit_trainers.py",
+      "copy": "backend/review/trainers-repair/audit_trainers.py",
+      "sha256": "7d50448973467529bdfe4b3447d2078db7ea2d575495657f2457a63906374975",
+      "byte_identical": true
+    }
+  ],
+  "git_index_sha256": "11609bd7956aff0b2256105b115a091c50abc547748d164eba6451271d171b81"
+}

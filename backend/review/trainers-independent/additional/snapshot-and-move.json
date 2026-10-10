@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "same_profile_id": 5,
+  "public_snapshot": {
+    "name": "공개 이름",
+    "branch": 9,
+    "order": 4,
+    "photo": 9,
+    "intro": "공개 소개",
+    "position": "공개 직급",
+    "biography": [
+      "공개 약력 하나",
+      "공개 약력 둘"
+    ]
+  },
+  "published_move": {
+    "name": "독립 새 이름",
+    "branch": 10,
+    "order": 1,
+    "photo": 10,
+    "intro": "독립 새 소개",
+    "position": "독립 새 직급",
+    "biography": [
+      "독립 새 약력"
+    ]
+  },
+  "authenticated_customer_url_matches": true
+}

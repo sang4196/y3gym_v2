@@ -1,0 +1,37 @@
+{
+  "publish": false,
+  "requests": [
+    {
+      "status": 200,
+      "conflict": true
+    },
+    {
+      "status": 302,
+      "conflict": false
+    }
+  ],
+  "winner": 1,
+  "latest_state": {
+    "name": "동시 독립 1",
+    "branch": 39,
+    "order": 1,
+    "photo": 27,
+    "intro": "짝 소개 1",
+    "position": "짝 직급 1",
+    "biography": [
+      "짝 약력 1"
+    ]
+  },
+  "expected": {
+    "name": "동시 독립 1",
+    "branch": 39,
+    "order": 1,
+    "photo": 27,
+    "intro": "짝 소개 1",
+    "position": "짝 직급 1",
+    "biography": [
+      "짝 약력 1"
+    ]
+  },
+  "revisions": 2
+}

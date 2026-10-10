@@ -1,0 +1,38 @@
+{
+  "model": "Trainer",
+  "publish": true,
+  "first": "withdraw",
+  "secondBlockedByFirst": true,
+  "requests": {
+    "withdraw": {
+      "status": 302,
+      "rowLock": true
+    },
+    "edit": {
+      "status": 302,
+      "rowLock": true
+    }
+  },
+  "latestRevision": 94,
+  "newestRevision": 94,
+  "live": true,
+  "liveRevision": 94,
+  "currentContent": "보존할 프로필 소개",
+  "draftContent": "보존할 프로필 소개",
+  "facilityTitles": null,
+  "isolatedTestDatabase": true,
+  "trainerDraft": {
+    "branch": 33,
+    "order": 17,
+    "photo": 31,
+    "biography": [
+      "보존할 약력 둘",
+      "보존할 약력 하나"
+    ]
+  },
+  "photoBytesUnchanged": true,
+  "photoAccess": {
+    "30": 404,
+    "31": 200
+  }
+}

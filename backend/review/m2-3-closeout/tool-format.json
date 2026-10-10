@@ -1,0 +1,16 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "ruff",
+    "format",
+    "review/m2-3-closeout/snapshot.py",
+    "review/m2-3-closeout/verify.py"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "exit_code": 0,
+  "elapsed_seconds": 0.03,
+  "output": "2 files reformatted\n",
+  "scope": "New closeout verification tools only; no product format check."
+}

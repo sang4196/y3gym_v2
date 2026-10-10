@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "protected": {
+    "all_previous_backend_reviews_including_initial_FAIL_and_repair": {
+      "recheck_files": 1366,
+      "R1_start_files": 1262,
+      "R1_start_files_unchanged": true
+    },
+    "prototype_including_DESIGN": {
+      "recheck_files": 186,
+      "R1_start_files": 186,
+      "R1_start_files_unchanged": true
+    },
+    "private_media": {
+      "recheck_files": 145,
+      "R1_start_files": 145,
+      "R1_start_files_unchanged": true
+    },
+    "secrets": {
+      "recheck_files": 2,
+      "R1_start_files": 2,
+      "R1_start_files_unchanged": true
+    },
+    "dependencies_and_config": {
+      "recheck_files": 5,
+      "R1_start_files": 5,
+      "R1_start_files_unchanged": true
+    }
+  },
+  "common_fixture": [
+    {
+      "path": "backend/news/tests/review_fixtures.py",
+      "R1_start_sha256": "7fa45f9eabd7f898f7ee1e33aac33b4bf8ec1cd1e4123f0f4b94a8973f2405ab",
+      "recheck_sha256": "7fa45f9eabd7f898f7ee1e33aac33b4bf8ec1cd1e4123f0f4b94a8973f2405ab",
+      "same": true
+    },
+    {
+      "path": "backend/news/tests/test_brand_browser.py",
+      "R1_start_sha256": "ac1789bc38512e957de1e8979cc9ab782e0e84a37fde35fe2cb6d1e6f466ff91",
+      "recheck_sha256": "ac1789bc38512e957de1e8979cc9ab782e0e84a37fde35fe2cb6d1e6f466ff91",
+      "same": true
+    },
+    {
+      "path": "backend/news/tests/test_branch_browser.py",
+      "R1_start_sha256": "c0f7cceadca5c7977d3407656a81893028d35559e88aa26bff9d89c9fb7da1ce",
+      "recheck_sha256": "c0f7cceadca5c7977d3407656a81893028d35559e88aa26bff9d89c9fb7da1ce",
+      "same": true
+    }
+  ],
+  "developer_W02_supplement_matches_own_hashes": true,
+  "old_fixture_count_two_retained": true
+}

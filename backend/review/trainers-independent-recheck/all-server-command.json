@@ -1,0 +1,20 @@
+{
+  "command": [
+    "env",
+    "Y3GYM_WITHDRAWAL_REVIEW_DIR=review/trainers-independent-recheck/server-concurrency",
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "manage.py",
+    "test",
+    "news.tests",
+    "--noinput",
+    "--verbosity",
+    "2"
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {},
+  "exit_code": 0,
+  "elapsed_seconds": 162.576
+}

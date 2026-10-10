@@ -1,0 +1,15 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "ruff",
+    "format",
+    "--check",
+    "."
+  ],
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "environment_overrides": {},
+  "exit_code": 1,
+  "elapsed_seconds": 0.049
+}

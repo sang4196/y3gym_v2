@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": {
+    "all_final_document_and_report_links_exist": true,
+    "current_files_equal_post_verification_snapshot": true,
+    "no_new_files_outside_verified_R1_scope": true,
+    "git_index_equal_R1_baseline": true,
+    "exact_trainer_view_and_branch_label_deltas": true,
+    "original_independent_reproduction_tools_byte_identical": true,
+    "all_58_tables_and_145_media_preservation_pass": true,
+    "all_final_document_checks_pass": true,
+    "final_report_tool_checks_pass": true,
+    "first_R1_failures_preserved": true,
+    "M2_4_product_files_unchanged": true
+  },
+  "local_links_checked": 274,
+  "anchors_checked": 25,
+  "errors": [],
+  "unexpected_new_files": [],
+  "R1_review_json_files_parsed": 47,
+  "new_review_files_only_under": "backend/review/trainers-repair/",
+  "product_delta_evidence": "product-delta.json",
+  "developer_self_verification": "PASS_WITH_WARNINGS",
+  "independent_recheck": "PENDING",
+  "M2-4": "PLAN_ONLY_NOT_STARTED",
+  "git_commit_push_or_deploy": false
+}

@@ -1,6 +1,6 @@
 from html.parser import HTMLParser
 
-from .models import Branch, BrandContent, Post
+from .models import Branch, BrandContent, Post, Trainer
 
 
 class ImageReferences(HTMLParser):
@@ -49,10 +49,28 @@ def published_branches():
     )
 
 
+def published_trainers(branches=None):
+    public_branch_ids = {
+        branch.pk for branch in (published_branches() if branches is None else branches)
+    }
+    rows = Trainer.objects.filter(
+        live=True, live_revision__isnull=False
+    ).select_related("live_revision")
+    trainers = [row.live_revision.as_object() for row in rows]
+    return sorted(
+        (trainer for trainer in trainers if trainer.branch_id in public_branch_ids),
+        key=lambda trainer: (trainer.display_order, trainer.pk),
+    )
+
+
 def published_image_ids():
     ids = set()
-    for branch in published_branches():
+    branches = published_branches()
+    for branch in branches:
         ids.update(item.image_id for item in branch.facilities.all() if item.image_id)
+    ids.update(
+        trainer.photo_id for trainer in published_trainers(branches) if trainer.photo_id
+    )
     brand = published_brand()
     if brand:
         ids.update(

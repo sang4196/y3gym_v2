@@ -1,4 +1,6 @@
+from django import forms
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.templatetags.static import static
 from django.urls import path
@@ -9,11 +11,12 @@ from wagtail.snippets.models import register_snippet
 from wagtail.snippets.views.snippets import (
     CreateView,
     EditView,
+    IndexView,
     SnippetViewSet,
     UnpublishView,
 )
 
-from .models import Branch, BrandContent, Post
+from .models import Branch, BrandContent, Post, Trainer
 
 
 class ConcurrentEditView(EditView):
@@ -146,6 +149,89 @@ class BranchViewSet(SnippetViewSet):
 
 
 register_snippet(BranchViewSet)
+
+
+class TrainerCreateView(BrandCreateView):
+    def get_initial_form_instance(self):
+        instance = super().get_initial_form_instance() or self.model()
+        branch_id = self.request.GET.get("branch", "")
+        if branch_id.isdigit():
+            instance.branch = Branch.objects.filter(pk=int(branch_id)).first()
+        return instance
+
+
+class TrainerIndexView(IndexView):
+    def get_search_form(self):
+        form = super().get_search_form()
+        branch_id = self.request.GET.get("branch", "")
+        if form and branch_id.isdigit():
+            # Wagtail submits the search and publication filters together.
+            # Keep the branch entry point in that form without adding visible UI.
+            form.fields["branch"] = forms.CharField(
+                required=False, initial=branch_id, widget=forms.HiddenInput
+            )
+        return form
+
+    def search_queryset(self, queryset):
+        if not self.is_searching:
+            return queryset
+        query = Q()
+        for field in self.search_fields:
+            # Match the revision shown in this list. Empty draft values must
+            # never fall back to the previously published model values.
+            query |= Q(
+                **{f"latest_revision__content__{field}__icontains": self.search_query}
+            ) | Q(
+                latest_revision__isnull=True,
+                **{f"{field}__icontains": self.search_query},
+            )
+        return queryset.filter(query)
+
+    def get_add_url(self):
+        url = super().get_add_url()
+        branch_id = self.request.GET.get("branch", "")
+        if url and branch_id.isdigit():
+            url += ("&" if "?" in url else "?") + "branch=" + branch_id
+        return url
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        branch_id = self.request.GET.get("branch")
+        if branch_id is not None:
+            if not branch_id.isdigit():
+                return queryset.none()
+            # Admin affiliation follows the newest draft, public affiliation
+            # follows live_revision. A move must be findable in its draft branch.
+            queryset = queryset.filter(
+                Q(latest_revision__content__branch=int(branch_id))
+                | Q(latest_revision__isnull=True, branch_id=int(branch_id))
+            )
+        return queryset
+
+
+class TrainerViewSet(SnippetViewSet):
+    model = Trainer
+    icon = "user"
+    add_to_admin_menu = False
+    list_display = [
+        "editing_name",
+        "editing_branch",
+        "editing_order",
+        "last_published_at",
+    ]
+    list_filter = ["live"]
+    search_fields = ["name", "intro"]
+    index_view_class = TrainerIndexView
+    add_view_class = TrainerCreateView
+    edit_view_class = BrandEditView
+    unpublish_view_class = ConcurrentUnpublishView
+
+    @property
+    def permission_policy(self):
+        return BranchPermissionPolicy(self.model)
+
+
+register_snippet(TrainerViewSet)
 
 
 @hooks.register("insert_global_admin_js")

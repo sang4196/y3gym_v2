@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "isolatedTestDatabase": true,
+  "checks": [
+    {
+      "width": 1440,
+      "result": "PASS",
+      "columns": 2,
+      "photoRatio": 0.8,
+      "lastBiography": {
+        "x": 368,
+        "y": 353.28125,
+        "width": 328,
+        "height": 105.5625
+      },
+      "contact": {
+        "x": 348,
+        "y": 383.84375,
+        "width": 143,
+        "height": 44
+      },
+      "mobileBar": null
+    },
+    {
+      "width": 900,
+      "result": "PASS",
+      "columns": 2,
+      "photoRatio": 0.8,
+      "lastBiography": {
+        "x": 192,
+        "y": 339.578125,
+        "width": 242,
+        "height": 131.953125
+      },
+      "contact": {
+        "x": 172,
+        "y": 383.53125,
+        "width": 143,
+        "height": 44
+      },
+      "mobileBar": null
+    },
+    {
+      "width": 375,
+      "result": "PASS",
+      "columns": 1,
+      "photoRatio": 0.8,
+      "lastBiography": {
+        "x": 168,
+        "y": 326.703125,
+        "width": 191,
+        "height": 158.34375
+      },
+      "contact": {
+        "x": 148,
+        "y": 384.046875,
+        "width": 143,
+        "height": 44
+      },
+      "mobileBar": {
+        "x": 0,
+        "y": 740,
+        "width": 375,
+        "height": 72
+      }
+    }
+  ]
+}

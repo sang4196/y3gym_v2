@@ -1,0 +1,86 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "blocking_findings": [],
+  "resolved_initial_findings": [
+    {
+      "id": "F01",
+      "priority": "P2",
+      "status": "RESOLVED",
+      "requirement": "docs/PRD.md FR-03: 관리자 이름/소개 검색과 소속은 최신 초안 기준, 리비전 없는 경우만 모델 fallback",
+      "file": "backend/news/wagtail_hooks.py",
+      "line": 175,
+      "reproduction": [
+        "공개 이름/소개를 가진 프로필 공개",
+        "실제 관리자 로그인 후 독립 새 이름/소개 및 두번째 지점으로 초안 저장",
+        "새 이름/소개와 이전 공개 이름/소개로 해당 소속 목록 검색"
+      ],
+      "expected": "새값으로 같은 프로필 검색, 이전값 제외, 공개 카드/리비전 보존",
+      "actual": "저장302/조회200; 새 이름/소개로 해당 프로필 링크 반환, 이전 이름/소개 링크0; 독립 의미검사와 실제 브라우저에서도 일치",
+      "evidence": [
+        "trainer-search-result.json",
+        "semantics/latest-and-public.json",
+        "search-browser/checks.json"
+      ]
+    },
+    {
+      "id": "W02",
+      "status": "RESOLVED_BY_SUPPLEMENT",
+      "file": "backend/review/trainers-repair/preservation-final.json",
+      "expected": "공통 fixture 3개 실제 경로와 전후 hash를 명시하고 초기기록 보존",
+      "actual": "3개 보충hash 모두 독립수집hash와 일치; 초기2개 카운터와 기존FAIL/원재현 보존",
+      "evidence": [
+        "scope-evidence.json",
+        "history-comparison.json",
+        "preservation-result.json"
+      ]
+    },
+    {
+      "id": "W03",
+      "status": "RESOLVED",
+      "file": "backend/scripts/review-branches.mjs",
+      "line": 191,
+      "expected": "실제 읽기 라벨은 홈숨김/A·B 지점당1명; 쓰기 fixture0명 검사 유지",
+      "actual": "새5흐름PASS/라벨일치; 소스의 모드별단언유지",
+      "evidence": [
+        "live-branches/checks.json",
+        "live-branches.txt"
+      ]
+    },
+    {
+      "id": "W04",
+      "status": "RESOLVED",
+      "file": "docs/PRD.md",
+      "line": 32,
+      "expected": "현재CMS표와FR03의 M2-3/R1 구현 및 독립재검증대기 상태 일치",
+      "actual": "현재CMS표 수정·FR03과일치, 새semantic문서14검사PASS",
+      "evidence": [
+        "document-checks.json"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "id": "W01",
+      "priority": "P3",
+      "status": "OPEN_EXISTING",
+      "title": "기존 전역 Ruff format 경고 1개",
+      "file": "backend/review/workflow-01/verify.py",
+      "requirement": "포맷 검사 결과와 기존 파일 보존을 구분",
+      "reproduction": "backend에서 uv run --locked ruff format --check .",
+      "expected": "전역 검사에서 포맷 필요 파일 없음",
+      "actual": "기존 review/workflow-01/verify.py 1개로 전역 format 종료1; 최종80개 formatted·범위65개PASS·전체lintPASS",
+      "impact": "기능 결함 아님; 전역format은 미통과이고 기존기록보존지시로수정하지않음",
+      "evidence": "final-format-global.txt"
+    }
+  ],
+  "unverified_or_not_repeated": [
+    "실제 휴대폰·Whale/Chromium 외 브라우저·한국어 IME",
+    "관리자 사용성 사용자 승인",
+    "운영 배포/캐시/저장소/백업·실제 지도/전화/카카오톡",
+    "기존 Wagtail 중복 이미지 업로드 오류 재검증",
+    "변경 없는 brand/branch/trainer 합동/역순 브라우저와 native 팝업 위치·크기 재실행 제외; 초기 독립 결과 인용",
+    "이번 R1에서 팝업 pageshow/BFCache 브라우저 재실행 제외",
+    "M2-4 기능 미착수; 이번에는 확정 정책과 계획의 문서 일치만 검토",
+    "과거 R1 시작/끝 snapshot 취득 자체는 개발 제공 보관자료; 현재 snapshot은 독립수집"
+  ]
+}

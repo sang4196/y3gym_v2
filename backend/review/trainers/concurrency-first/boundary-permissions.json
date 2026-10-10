@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "model": "Branch",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "54669a4ef820b2055c3ddc0fe1ef9ae90c01a9774b17d34578bec5f6503bd49c",
+      "contentRevisionFacilitiesAndImageHashAfter": "54669a4ef820b2055c3ddc0fe1ef9ae90c01a9774b17d34578bec5f6503bd49c"
+    },
+    {
+      "model": "BrandContent",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "baa5bd2123867fffca2a0d2a5f9044f844c28a23d58daa768462abc92fab0e9c",
+      "contentRevisionFacilitiesAndImageHashAfter": "baa5bd2123867fffca2a0d2a5f9044f844c28a23d58daa768462abc92fab0e9c"
+    },
+    {
+      "model": "Post",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "ea21fdbea5fc64c060a83619d1242534668757f5d8f9d78465734887f451be84",
+      "contentRevisionFacilitiesAndImageHashAfter": "ea21fdbea5fc64c060a83619d1242534668757f5d8f9d78465734887f451be84"
+    },
+    {
+      "model": "Trainer",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "947a9ea7c4b0f9e6e41eb3090890bccf19cace7d945b42a2e11393eab3c476f6",
+      "contentRevisionFacilitiesAndImageHashAfter": "947a9ea7c4b0f9e6e41eb3090890bccf19cace7d945b42a2e11393eab3c476f6"
+    }
+  ],
+  "isolatedTestDatabase": true
+}

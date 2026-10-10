@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "checks": {
+    "latest_documents_and_developer_report_links": true,
+    "current_source_docs_media_secrets_equal_final_preservation_snapshot": true,
+    "git_index_still_equal_baseline": true,
+    "tracked_change_set_exactly_16_expected_files": true,
+    "untracked_product_set_exactly_10_implementation_files": true,
+    "git_diff_check": true,
+    "document_checks_pass": true,
+    "preservation_checks_pass": true,
+    "report_tool_checks_pass": true,
+    "initial_failures_preserved": true
+  },
+  "local_links_checked": 277,
+  "anchors_checked": 21,
+  "errors": [],
+  "review_json_files_parsed": 79,
+  "current_capture_json_sha256": {
+    "backend/review/trainers/browser-first/checks.json": "8f8ba83799292e3a1b879ac70f468b7597364ab31b26b01a6285ba837161e87f",
+    "backend/review/trainers/live-popup-revisit/checks.json": "5991cabe65ac93b9d12029d1a1f25073a8f600bad78988d51db61f5bea411c3e",
+    "backend/review/trainers/live-branches/checks.json": "0d6443370c076492f8eeaf2f92096f94bd02d991a168c8085b4ec30d45d5c1a1",
+    "backend/review/trainers/live-trainers/checks.json": "ebfe4e7df2ecf0d891ad55f2584e101ec28d0a6231582dffda2731873f0d0999",
+    "backend/review/trainers/browser-second/checks.json": "8ed8eb5af32c254499e731b0c930754f6b9e152bec13fc1804d17fab58b174e5",
+    "backend/review/trainers/live-sections/captures.json": "7b2c8156d9ccd0c0863a90f46146be5c25fab06a6c3d1768b178b6381cf85bd0",
+    "backend/review/trainers/regressions-final/combined/command.json": "49572917af52e4005ded434f9129e17158e4f5b171bc3df247bdb4c6da3e808a",
+    "backend/review/trainers/regressions-final/reverse/command.json": "c4cbd327e2a82e1f0232e6d2a59f484b03615c1611f4976a647c39d2716687df",
+    "backend/review/trainers/regressions-final/reverse/branch/checks.json": "78a90e4cad1daa941bd53e06b747cb3a266fdabb31560814c2021191f47c16f1",
+    "backend/review/trainers/regressions-final/reverse/brand/result.json": "d81fb3acd022f6a944f9ff10479c86ea3e9826b9d3c91acc885baa66cf45b484",
+    "backend/review/trainers/regressions-final/reverse/trainer/checks.json": "280d8a817cc7031fbd90490e1ed918ef559265f75a9807ee14a8bb1bfaba622e",
+    "backend/review/trainers/regressions-final/combined/branch/checks.json": "f0ec43131e97a1ab9a3229b7187e621697f23e2284a53408c38f78e3b8b85a4b",
+    "backend/review/trainers/regressions-final/combined/brand/result.json": "c2365655a6d96baae1496be1773a366d2c5f72b18b3f7afeb454c0a7bf30870e",
+    "backend/review/trainers/regressions-final/combined/trainer/checks.json": "7d73e429f0db2c122d0c7501826e15c75aca5750c016671b9fbe3f4ee46bef8f"
+  },
+  "developer_report": "backend/review/trainers/README.md",
+  "independent_review": "PENDING",
+  "approval_scope": "User approved only the shown position/biography placement. Admin usability/real devices/deployment remain separate.",
+  "git_mutations_by_developer": false
+}

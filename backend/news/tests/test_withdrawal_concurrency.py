@@ -19,7 +19,15 @@ from django.test.utils import CaptureQueriesContext
 from django.urls import resolve, reverse
 from wagtail import hooks
 
-from news.models import Branch, BrandContent, ContentImage, FacilityImage, Post
+from news.models import (
+    Branch,
+    BrandContent,
+    ContentImage,
+    FacilityImage,
+    Post,
+    Trainer,
+    TrainerBiography,
+)
 from news.tests.review_fixtures import ensure_collection_root
 from news.tests.test_publication import picture
 
@@ -58,6 +66,33 @@ class WithdrawalConcurrencyTests(TransactionTestCase):
                 ),
             ]
             field, text = "address", "보존할 새 주소"
+        elif model is Trainer:
+            branches = []
+            for key in ["main", "second"]:
+                branch = Branch.objects.create(
+                    key=key, name=key, address="주소", opening_hours="시간"
+                )
+                branch.save_revision().publish()
+                branches.append(branch)
+            old_photo, new_photo = (
+                picture("trainer-race-old.png"),
+                picture("trainer-race-new.png"),
+            )
+            photo_hashes = {
+                image.pk: hashlib.sha256(Path(image.file.path).read_bytes()).hexdigest()
+                for image in [old_photo, new_photo]
+            }
+            obj = model.objects.create(
+                name="공개 트레이너",
+                branch=branches[0],
+                photo=old_photo,
+                intro="기존 소개",
+            )
+            obj.biography = [
+                TrainerBiography(text="기존 약력 하나", sort_order=0),
+                TrainerBiography(text="기존 약력 둘", sort_order=1),
+            ]
+            field, text = "intro", "보존할 프로필 소개"
         elif model is BrandContent:
             obj = model.objects.create(name="공개 브랜드", intro_title="공개 소개")
             field, text = "intro_text", "보존할 새 소개 본문"
@@ -85,6 +120,20 @@ class WithdrawalConcurrencyTests(TransactionTestCase):
                     "facilities-0-ORDER": "1",
                     "facilities-1-title": "보존할 시설 둘째",
                     "facilities-1-ORDER": "0",
+                }
+            )
+        elif model is Trainer:
+            from news.tests.test_trainers import TrainerTests
+
+            self.client = clients["edit"]
+            payload = TrainerTests.payload(self, obj)
+            payload.update(branch=branches[1].pk, display_order=17, photo=new_photo.pk)
+            payload.update(
+                {
+                    "biography-0-text": "보존할 약력 하나",
+                    "biography-0-ORDER": "1",
+                    "biography-1-text": "보존할 약력 둘",
+                    "biography-1-ORDER": "0",
                 }
             )
         else:
@@ -232,6 +281,25 @@ class WithdrawalConcurrencyTests(TransactionTestCase):
             "facilityTitles": facility_titles,
             "isolatedTestDatabase": True,
         }
+        if model is Trainer:
+            result["trainerDraft"] = {
+                "branch": draft.branch_id,
+                "order": draft.display_order,
+                "photo": draft.photo_id,
+                "biography": [item.text for item in draft.biography.all()],
+            }
+            result["photoBytesUnchanged"] = all(
+                hashlib.sha256(Path(image.file.path).read_bytes()).hexdigest()
+                == photo_hashes[image.pk]
+                for image in [old_photo, new_photo]
+            )
+            visitor = Client()
+            result["photoAccess"] = {
+                str(image.pk): visitor.get(
+                    image.get_rendition("fill-640x800").url
+                ).status_code
+                for image in [old_photo, new_photo]
+            }
         evidence = os.environ.get("Y3GYM_WITHDRAWAL_REVIEW_DIR")
         if evidence:
             output = Path(evidence)
@@ -269,6 +337,35 @@ class WithdrawalConcurrencyTests(TransactionTestCase):
             self.assertEqual(
                 str(getattr(obj.live_revision.as_object(), field)), text, result
             )
+        if model is Trainer:
+            self.assertEqual(
+                result["trainerDraft"],
+                {
+                    "branch": branches[1].pk,
+                    "order": 17,
+                    "photo": new_photo.pk,
+                    "biography": ["보존할 약력 둘", "보존할 약력 하나"],
+                },
+                result,
+            )
+            self.assertTrue(result["photoBytesUnchanged"], result)
+            self.assertEqual(
+                result["photoAccess"],
+                {str(old_photo.pk): 404, str(new_photo.pk): 200 if obj.live else 404},
+                result,
+            )
+
+    def test_trainer_withdraw_then_draft(self):
+        self.run_race(Trainer)
+
+    def test_trainer_draft_then_withdraw(self):
+        self.run_race(Trainer, withdraw_first=False)
+
+    def test_trainer_withdraw_then_publish(self):
+        self.run_race(Trainer, publish=True)
+
+    def test_trainer_publish_then_withdraw(self):
+        self.run_race(Trainer, publish=True, withdraw_first=False)
 
     def test_branch_withdraw_then_draft(self):
         self.run_race(Branch)
@@ -335,6 +432,8 @@ class WithdrawalBoundaryTests(TestCase):
                     "change_brandcontent",
                     "view_post",
                     "change_post",
+                    "view_trainer",
+                    "change_trainer",
                 ]
             )
         )
@@ -347,6 +446,9 @@ class WithdrawalBoundaryTests(TestCase):
             BrandContent.objects.create(name="브랜드", intro_title="소개"),
             Post.objects.create(title="소식", body="<p>권한 보호 본문</p>"),
         ]
+        objects.append(
+            Trainer.objects.create(name="권한 보호 트레이너", branch=objects[0])
+        )
         for obj in objects:
             image = picture(obj._meta.model_name + "-permission.png")
             if isinstance(obj, Branch):
@@ -355,6 +457,9 @@ class WithdrawalBoundaryTests(TestCase):
                 ]
             elif isinstance(obj, BrandContent):
                 obj.hero_image = image
+            elif isinstance(obj, Trainer):
+                obj.photo = image
+                obj.biography = [TrainerBiography(text="권한 보호 약력", sort_order=0)]
             else:
                 obj.cover_image = image
             obj.save()

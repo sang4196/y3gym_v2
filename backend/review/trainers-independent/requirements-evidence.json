@@ -1,0 +1,91 @@
+[
+  {
+    "id": "TR-01",
+    "requirement": "이름/소속 공개 필수, 미완성 초안 허용, 선택 블록 숨김",
+    "file": "news/models.py:482",
+    "evidence": "additional/required-and-entry.json",
+    "expected_and_actual": "각 필수값 공개 거부·입력/현재 공개본 유지, 미완성 저장 허용",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-02",
+    "requirement": "단일 약력+프로필 한 리비전, 공개 소속/순서/사진/이름/소개/직급 복원",
+    "file": "news/publication.py:52",
+    "evidence": "additional/snapshot-and-move.json",
+    "expected_and_actual": "mutable 행/자식 변조에도 익명·로그인 고객 URL은 같은 이전 공개본",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-03",
+    "requirement": "같은 ID의 이동 초안 격리, 공개 후 새 소속만",
+    "file": "news/trainers.py:23",
+    "evidence": "additional/snapshot-and-move.json",
+    "expected_and_actual": "프로필 개수1·ID유지, 이동 공개 후 새 소속만",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-04",
+    "requirement": "프로필 AND 지점 공개, 지점 철회시 프로필 원본/live 유지",
+    "file": "news/publication.py:52",
+    "evidence": "additional/media-boundaries.json",
+    "expected_and_actual": "비공개 지점으로 이동 공개시 프로필live유지·공개목록/변환본없음",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-05",
+    "requirement": "안전한 미리보기, 권한/private,no-store",
+    "file": "news/trainers.py:37",
+    "evidence": "additional/preview-branch-isolation.json",
+    "expected_and_actual": "공개지점 수정초안/비공개지점의 주소·시간·시설 미노출, 미지정소속상태",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-06",
+    "requirement": "미디어 이중 공개·공유 마지막 사용처·원본/초안/썸네일 보호",
+    "file": "news/publication.py:66",
+    "evidence": "additional/media-boundaries.json",
+    "expected_and_actual": "소식/브랜드/시설 마지막 사용처까지변환본200·이후404, 원본/초안404",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-07",
+    "requirement": "실제 역할권한/CSRF/GET/삭제거부/오래된폼/잠금",
+    "file": "news/wagtail_hooks.py:185",
+    "evidence": "additional/permissions-and-stale.json",
+    "expected_and_actual": "실제 제한계정 로그인, 302 Location/메시지와AJAX403구분·DB상태보존",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-08",
+    "requirement": "동시 저장/공개/철회 최신 한 리비전 보존",
+    "file": "news/wagtail_hooks.py:39",
+    "evidence": "additional/",
+    "expected_and_actual": "실제잠금대기4가지+동시저장2가지, 소속/순서/사진/약력/소개/직급완전성",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-09",
+    "requirement": "지점에서 별도 저장단위 안내·등록·미리선택·새지점 먼저저장",
+    "file": "news/panels.py:27",
+    "evidence": "additional/required-and-entry.json",
+    "expected_and_actual": "두 지점 미리선택·새 지점 저장 안내·실제 브라우저 등록 진입",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-10",
+    "requirement": "기존 카드/4:5/PC태블릿2열/모바일1열/홈제외·JS없음·문의대상",
+    "file": "news/static/news/trainers.css",
+    "evidence": "trainer-alone/trainer/checks.json",
+    "expected_and_actual": "공식10흐름·실제4흐름·추가4구역확인, 승인캡처2장바이트동일",
+    "result": "PASS"
+  },
+  {
+    "id": "TR-11",
+    "requirement": "추가 검증 지시: 목록에 표시된 최신 초안 이름 및 같은 편집본 소개의 검색 일치 확인",
+    "file": "news/wagtail_hooks.py:196",
+    "evidence": "trainer-search-result.json",
+    "expected_and_actual": "최신이름/소개로찾을수있어야하나새값은0대상·이전값으로찾음",
+    "result": "FAIL",
+    "finding": "F01/P2"
+  }
+]
