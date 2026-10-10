@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "report_links_checked": 83,
+  "failures": [],
+  "existing_files_changed_after_snapshot": [],
+  "index_still_unchanged": true,
+  "snapshot_modes": {
+    "snapshot-before.json": "0o600",
+    "snapshot-after.json": "0o600"
+  }
+}

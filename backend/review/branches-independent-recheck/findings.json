@@ -1,0 +1,55 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "blocking_findings": [],
+  "resolved": [
+    {
+      "id": "F01",
+      "evidence": [
+        "independent-concurrency/",
+        "original-repro-result.json"
+      ]
+    },
+    {
+      "id": "F02",
+      "evidence": [
+        "brand-alone/brand/result.json",
+        "reviewed-source.diff"
+      ]
+    },
+    {
+      "id": "W01",
+      "evidence": [
+        "combined.json",
+        "combined-reverse.json"
+      ]
+    },
+    {
+      "id": "W03",
+      "qualification": "Stable capture fixed; production UI unchanged. Previous transitional captures preserved.",
+      "evidence": [
+        "brand-alone/brand/result.json",
+        "branch-alone/branches/checks.json"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "id": "W02",
+      "priority": "P3",
+      "title": "Existing global format warning",
+      "file": "backend/review/workflow-01/verify.py",
+      "evidence": "global-format-final.txt",
+      "unchanged": true
+    }
+  ],
+  "unverified": [
+    "Whale / browsers other than Chromium",
+    "Physical phones and Korean IME composition",
+    "Unchanged native popup position and sizing tests not rerun",
+    "All six prior tablet/layout combinations not rerun; current PC/mobile flows executed",
+    "Prior Wagtail duplicate image upload error not retested",
+    "Production deployment, cache, storage and backups",
+    "User visual / administrator usability approval"
+  ],
+  "preservation": "preservation-result.json"
+}

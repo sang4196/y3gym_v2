@@ -1,0 +1,1050 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "date": "2026-10-10",
+  "work_unit": "M2-2-R1 independent recheck",
+  "server": {
+    "collected": 81,
+    "passed": 79,
+    "skipped_opt_in": 2
+  },
+  "independent_additional": {
+    "collected": 13,
+    "passed": 13
+  },
+  "original_reproduction": {
+    "collected": 1,
+    "passed": 1
+  },
+  "concurrency_cases": [
+    {
+      "model": "Branch",
+      "publish": false,
+      "first": "save",
+      "second": "withdraw",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/edit/2/",
+          "row_lock": true
+        },
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 5,
+      "newest_revision": 5,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "address": "이전 주소",
+        "facilities": [
+          [
+            "이전 하나",
+            10
+          ],
+          [
+            "이전 둘",
+            11
+          ]
+        ]
+      },
+      "latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            11
+          ],
+          [
+            "독립 새 하나",
+            12
+          ]
+        ]
+      },
+      "expected_latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            11
+          ],
+          [
+            "독립 새 하나",
+            12
+          ]
+        ]
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "10": 404,
+        "11": 404,
+        "12": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Branch",
+      "publish": false,
+      "first": "withdraw",
+      "second": "save",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/",
+          "row_lock": true
+        },
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/edit/3/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 7,
+      "newest_revision": 7,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            14
+          ],
+          [
+            "독립 새 하나",
+            15
+          ]
+        ]
+      },
+      "latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            14
+          ],
+          [
+            "독립 새 하나",
+            15
+          ]
+        ]
+      },
+      "expected_latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            14
+          ],
+          [
+            "독립 새 하나",
+            15
+          ]
+        ]
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "13": 404,
+        "14": 404,
+        "15": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Branch",
+      "publish": true,
+      "first": "save",
+      "second": "withdraw",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/",
+          "row_lock": true
+        },
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 9,
+      "newest_revision": 9,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            17
+          ],
+          [
+            "독립 새 하나",
+            18
+          ]
+        ]
+      },
+      "latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            17
+          ],
+          [
+            "독립 새 하나",
+            18
+          ]
+        ]
+      },
+      "expected_latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            17
+          ],
+          [
+            "독립 새 하나",
+            18
+          ]
+        ]
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "16": 404,
+        "17": 404,
+        "18": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Branch",
+      "publish": true,
+      "first": "withdraw",
+      "second": "save",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/",
+          "row_lock": true
+        },
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/branch/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 11,
+      "newest_revision": 11,
+      "revision_count": 2,
+      "live": true,
+      "live_revision": 11,
+      "current": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            20
+          ],
+          [
+            "독립 새 하나",
+            21
+          ]
+        ]
+      },
+      "latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            20
+          ],
+          [
+            "독립 새 하나",
+            21
+          ]
+        ]
+      },
+      "expected_latest": {
+        "address": "독립 새 주소",
+        "facilities": [
+          [
+            "독립 새 둘",
+            20
+          ],
+          [
+            "독립 새 하나",
+            21
+          ]
+        ]
+      },
+      "published_image_ids": [
+        20,
+        21
+      ],
+      "rendition_status": {
+        "19": 404,
+        "20": 200,
+        "21": 200
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "BrandContent",
+      "publish": false,
+      "first": "save",
+      "second": "withdraw",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/edit/1/",
+          "row_lock": true
+        },
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 13,
+      "newest_revision": 13,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "text": "이전 설명",
+        "hero": 22,
+        "logo": 23
+      },
+      "latest": {
+        "text": "독립 새 설명",
+        "hero": 24,
+        "logo": 23
+      },
+      "expected_latest": {
+        "text": "독립 새 설명",
+        "hero": 24,
+        "logo": 23
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "22": 404,
+        "23": 404,
+        "24": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "BrandContent",
+      "publish": false,
+      "first": "withdraw",
+      "second": "save",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/",
+          "row_lock": true
+        },
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/edit/1/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 15,
+      "newest_revision": 15,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "text": "독립 새 설명",
+        "hero": 27,
+        "logo": 26
+      },
+      "latest": {
+        "text": "독립 새 설명",
+        "hero": 27,
+        "logo": 26
+      },
+      "expected_latest": {
+        "text": "독립 새 설명",
+        "hero": 27,
+        "logo": 26
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "25": 404,
+        "26": 404,
+        "27": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "BrandContent",
+      "publish": true,
+      "first": "save",
+      "second": "withdraw",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/",
+          "row_lock": true
+        },
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 17,
+      "newest_revision": 17,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "text": "독립 새 설명",
+        "hero": 30,
+        "logo": 29
+      },
+      "latest": {
+        "text": "독립 새 설명",
+        "hero": 30,
+        "logo": 29
+      },
+      "expected_latest": {
+        "text": "독립 새 설명",
+        "hero": 30,
+        "logo": 29
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "28": 404,
+        "29": 404,
+        "30": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "BrandContent",
+      "publish": true,
+      "first": "withdraw",
+      "second": "save",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/",
+          "row_lock": true
+        },
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/brandcontent/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 19,
+      "newest_revision": 19,
+      "revision_count": 2,
+      "live": true,
+      "live_revision": 19,
+      "current": {
+        "text": "독립 새 설명",
+        "hero": 33,
+        "logo": 32
+      },
+      "latest": {
+        "text": "독립 새 설명",
+        "hero": 33,
+        "logo": 32
+      },
+      "expected_latest": {
+        "text": "독립 새 설명",
+        "hero": 33,
+        "logo": 32
+      },
+      "published_image_ids": [
+        32,
+        33
+      ],
+      "rendition_status": {
+        "31": 404,
+        "32": 200,
+        "33": 200
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Post",
+      "publish": false,
+      "first": "save",
+      "second": "withdraw",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/edit/2/",
+          "row_lock": true
+        },
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 21,
+      "newest_revision": 21,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "body": "<p>이전 본문</p>",
+        "cover": 34
+      },
+      "latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 36
+      },
+      "expected_latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 36
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "34": 404,
+        "35": 404,
+        "36": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Post",
+      "publish": false,
+      "first": "withdraw",
+      "second": "save",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/",
+          "row_lock": true
+        },
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/edit/3/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 23,
+      "newest_revision": 23,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 39
+      },
+      "latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 39
+      },
+      "expected_latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 39
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "37": 404,
+        "38": 404,
+        "39": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Post",
+      "publish": true,
+      "first": "save",
+      "second": "withdraw",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/",
+          "row_lock": true
+        },
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 25,
+      "newest_revision": 25,
+      "revision_count": 2,
+      "live": false,
+      "live_revision": null,
+      "current": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 42
+      },
+      "latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 42
+      },
+      "expected_latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 42
+      },
+      "published_image_ids": [],
+      "rendition_status": {
+        "40": 404,
+        "41": 404,
+        "42": 404
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    },
+    {
+      "model": "Post",
+      "publish": true,
+      "first": "withdraw",
+      "second": "save",
+      "actual_blocker_confirmed": true,
+      "requests": {
+        "withdraw": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/",
+          "row_lock": true
+        },
+        "save": {
+          "status": 302,
+          "location": "/admin/snippets/news/post/",
+          "row_lock": true
+        }
+      },
+      "latest_revision": 27,
+      "newest_revision": 27,
+      "revision_count": 2,
+      "live": true,
+      "live_revision": 27,
+      "current": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 45
+      },
+      "latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 45
+      },
+      "expected_latest": {
+        "body": "<p>독립 새 본문</p>",
+        "cover": 45
+      },
+      "published_image_ids": [
+        45
+      ],
+      "rendition_status": {
+        "43": 404,
+        "44": 404,
+        "45": 200
+      },
+      "original_images_unchanged": true,
+      "isolated_test_database": true
+    }
+  ],
+  "browser_matrix": [
+    {
+      "name": "brand-alone",
+      "exit_code": 0,
+      "flows": {
+        "brand": {
+          "status": "PASS",
+          "count": 7,
+          "errors": [],
+          "adminMobileNameBox": {
+            "x": 20,
+            "y": -178.546875,
+            "width": 335,
+            "height": 42.5
+          }
+        }
+      }
+    },
+    {
+      "name": "branch-alone",
+      "exit_code": 0,
+      "flows": {
+        "branches": {
+          "status": "PASS",
+          "count": 11,
+          "errors": [],
+          "adminMobileNameBox": {
+            "x": 20,
+            "y": 297.453125,
+            "width": 335,
+            "height": 42.5
+          }
+        }
+      }
+    },
+    {
+      "name": "combined",
+      "exit_code": 0,
+      "flows": {
+        "brand": {
+          "status": "PASS",
+          "count": 7,
+          "errors": [],
+          "adminMobileNameBox": {
+            "x": 20,
+            "y": -178.546875,
+            "width": 335,
+            "height": 42.5
+          }
+        },
+        "branches": {
+          "status": "PASS",
+          "count": 11,
+          "errors": [],
+          "adminMobileNameBox": {
+            "x": 20,
+            "y": 297.453125,
+            "width": 335,
+            "height": 42.5
+          }
+        }
+      }
+    },
+    {
+      "name": "combined-reverse",
+      "exit_code": 0,
+      "flows": {
+        "brand": {
+          "status": "PASS",
+          "count": 7,
+          "errors": [],
+          "adminMobileNameBox": {
+            "x": 20,
+            "y": -178.546875,
+            "width": 335,
+            "height": 42.5
+          }
+        },
+        "branches": {
+          "status": "PASS",
+          "count": 11,
+          "errors": [],
+          "adminMobileNameBox": {
+            "x": 20,
+            "y": 297.453125,
+            "width": 335,
+            "height": 42.5
+          }
+        }
+      }
+    }
+  ],
+  "read_only_live_flows": 5,
+  "popup_revisit_flows": 8,
+  "commands": {
+    "server-tests": {
+      "command": [
+        "env",
+        "Y3GYM_WITHDRAWAL_REVIEW_DIR=review/branches-independent-recheck/server-concurrency",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests",
+        "--noinput",
+        "--verbosity",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 100.113
+    },
+    "independent-concurrency": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "review/branches-independent-recheck/audit_concurrency.py"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 62.767
+    },
+    "original-reproduction": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "review/branches-independent-recheck/original_repro.py"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 23.576
+    },
+    "brand-alone": {
+      "command": [
+        "env",
+        "Y3GYM_RUN_BRAND_BROWSER=1",
+        "Y3GYM_RUN_BRANCH_BROWSER=1",
+        "Y3GYM_BRAND_REVIEW_DIR=review/branches-independent-recheck/brand-alone/brand",
+        "Y3GYM_BRANCH_REVIEW_DIR=review/branches-independent-recheck/brand-alone/branches",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests.test_brand_browser",
+        "--noinput",
+        "--verbosity",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 42.351
+    },
+    "branch-alone": {
+      "command": [
+        "env",
+        "Y3GYM_RUN_BRAND_BROWSER=1",
+        "Y3GYM_RUN_BRANCH_BROWSER=1",
+        "Y3GYM_BRAND_REVIEW_DIR=review/branches-independent-recheck/branch-alone/brand",
+        "Y3GYM_BRANCH_REVIEW_DIR=review/branches-independent-recheck/branch-alone/branches",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests.test_branch_browser",
+        "--noinput",
+        "--verbosity",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 68.899
+    },
+    "combined": {
+      "command": [
+        "env",
+        "Y3GYM_RUN_BRAND_BROWSER=1",
+        "Y3GYM_RUN_BRANCH_BROWSER=1",
+        "Y3GYM_BRAND_REVIEW_DIR=review/branches-independent-recheck/combined/brand",
+        "Y3GYM_BRANCH_REVIEW_DIR=review/branches-independent-recheck/combined/branches",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests.test_brand_browser",
+        "news.tests.test_branch_browser",
+        "--noinput",
+        "--verbosity",
+        "2"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 113.871
+    },
+    "combined-reverse": {
+      "command": [
+        "env",
+        "Y3GYM_RUN_BRAND_BROWSER=1",
+        "Y3GYM_RUN_BRANCH_BROWSER=1",
+        "Y3GYM_BRAND_REVIEW_DIR=review/branches-independent-recheck/combined-reverse/brand",
+        "Y3GYM_BRANCH_REVIEW_DIR=review/branches-independent-recheck/combined-reverse/branches",
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "test",
+        "news.tests.test_brand_browser",
+        "news.tests.test_branch_browser",
+        "--noinput",
+        "--verbosity",
+        "2",
+        "--reverse"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 95.135
+    },
+    "live-read-only": {
+      "command": [
+        "env",
+        "Y3GYM_BRANCH_REVIEW_DIR=review/branches-independent-recheck/live",
+        "node",
+        "scripts/review-branches.mjs",
+        "--live-read-only"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 11.212
+    },
+    "popup-revisit": {
+      "command": [
+        "env",
+        "Y3GYM_POPUP_REVIEW_DIR=review/branches-independent-recheck/popups/revisit",
+        "node",
+        "scripts/review-popup-revisit.mjs"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 41.612
+    },
+    "system-check": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "check"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 1.12
+    },
+    "migration-check": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "manage.py",
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 1.279
+    },
+    "lint-final": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "check",
+        "."
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.037
+    },
+    "scoped-format-final": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "news",
+        "config",
+        "scripts",
+        "review/branches-repair",
+        "review/branches-independent-recheck"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.031
+    },
+    "documents": {
+      "command": [
+        "node",
+        "review/branches-independent-recheck/verify-documents.mjs"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.669
+    },
+    "diff-check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "elapsed_seconds": 0.005
+    }
+  },
+  "preservation": {
+    "status": "PASS",
+    "before_files": 1019,
+    "after_files": 1019,
+    "changed_existing_or_added_outside_audit": [],
+    "db_tables_compared": 56,
+    "changed_db_tables": [],
+    "index_unchanged": true,
+    "secrets_unchanged": true,
+    "private_media_files_compared": 141
+  },
+  "global_format": {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+    "environment_overrides": {},
+    "exit_code": 1,
+    "elapsed_seconds": 0.039
+  },
+  "previous_results_counted_as_rerun": false,
+  "user_visual_approval": "NOT_ESTABLISHED_BY_AUTOMATED_CHECKS"
+}

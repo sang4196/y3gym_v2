@@ -1,0 +1,6 @@
+/* Let CMS names wrap within the approved layout, including unbroken text. */
+.branch-panel-name,
+.branch-preview-heading .text-link {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,18 @@
+{% load tz %}
+<div data-popup-settings{% if saved_post %} data-popup-settings-url="{{ popup_url }}" data-popup-version="{{ popup.version }}"{% endif %}>
+  <p>현재 게시글에 연결됩니다. 모든 지점 공통 · 한국 시간(Asia/Seoul, UTC+09:00) 기준입니다.</p>
+  {% if not saved_post %}
+    <p><strong>먼저 게시글을 초안 저장해 주세요.</strong> 저장 후 같은 편집 화면에서 팝업 사용 여부와 기간을 설정할 수 있습니다. 글을 공개할 필요는 없습니다.</p>
+  {% else %}
+    <p data-popup-state><strong>{{ popup_state.0 }}</strong> — {{ popup_state.1 }}</p>
+    <p>아래 설정은 본문 초안 저장·게시와 별도로 반영합니다. 작성 중인 제목·본문은 그대로 유지되며 자동 저장·게시되지 않습니다.</p>
+    <p><label><input type="checkbox" data-popup-field="enabled"{% if popup.enabled %} checked{% endif %}{% if not can_apply %} disabled{% endif %}> 팝업 사용</label></p>
+    <p><label for="popup-starts-at">시작 일시 (한국 시간)</label><br><input id="popup-starts-at" type="datetime-local" data-popup-field="starts_at" value="{{ popup.starts_at|localtime|date:'Y-m-d\TH:i' }}"{% if not can_apply %} disabled{% endif %}></p>
+    <p><label for="popup-ends-at">종료 일시 (한국 시간)</label><br><input id="popup-ends-at" type="datetime-local" data-popup-field="ends_at" value="{{ popup.ends_at|localtime|date:'Y-m-d\TH:i' }}"{% if not can_apply %} disabled{% endif %}></p>
+    <p>시작 시각을 포함하고 종료 시각은 제외합니다. 기간이 끝나도 게시글은 공개 상태를 유지합니다. 여러 대상은 게시글을 처음 초안 저장한 순서로 자동 노출합니다.</p>
+    {% if can_apply %}<button class="button button-secondary" type="button" data-apply-popup>팝업 설정 적용</button>{% else %}<p>팝업 설정 적용에는 게시 권한이 필요합니다.</p>{% endif %}
+    <p role="status" aria-live="polite" data-popup-result></p>
+    <p><a href="{{ popup_url }}" target="_blank" rel="noopener">저장된 팝업 설정 다시 확인 (새 탭)</a> · 본문 입력은 현재 탭에 남습니다.</p>
+    <noscript><p>JavaScript가 꺼져 있습니다. 위 새 탭에서 팝업 설정을 적용한 뒤 편집을 계속하세요.</p></noscript>
+  {% endif %}
+</div>

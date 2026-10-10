@@ -1,0 +1,19 @@
+name: y3gym-v2-m1
+services:
+  database:
+    image: postgres:17-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+    environment:
+      POSTGRES_DB: y3gym_m1
+      POSTGRES_USER: y3gym_m1
+      POSTGRES_PASSWORD: ${Y3GYM_DB_PASSWORD:?Run python3 scripts/prepare_local.py first}
+    ports:
+      - "127.0.0.1:55438:5432"
+    volumes:
+      - database-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U y3gym_m1 -d y3gym_m1"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+volumes:
+  database-data:

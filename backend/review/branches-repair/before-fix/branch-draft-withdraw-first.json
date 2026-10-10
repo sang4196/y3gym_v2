@@ -1,0 +1,27 @@
+{
+  "model": "Branch",
+  "publish": false,
+  "first": "withdraw",
+  "secondBlockedByFirst": false,
+  "requests": {
+    "withdraw": {
+      "status": 302,
+      "rowLock": false
+    },
+    "edit": {
+      "status": 302,
+      "rowLock": true
+    }
+  },
+  "latestRevision": 1,
+  "newestRevision": 2,
+  "live": false,
+  "liveRevision": null,
+  "currentContent": "공개 주소",
+  "draftContent": "공개 주소",
+  "facilityTitles": [
+    "기존 시설 1",
+    "기존 시설 2"
+  ],
+  "isolatedTestDatabase": true
+}

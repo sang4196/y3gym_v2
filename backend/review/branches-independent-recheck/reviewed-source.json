@@ -1,0 +1,22 @@
+[
+  {
+    "file": "backend/news/wagtail_hooks.py",
+    "archived_source_matches_previous_independent_hash": true
+  },
+  {
+    "file": "backend/news/tests/test_brand_browser.py",
+    "archived_source_matches_previous_independent_hash": true
+  },
+  {
+    "file": "backend/news/tests/test_branch_browser.py",
+    "archived_source_matches_previous_independent_hash": true
+  },
+  {
+    "file": "backend/scripts/review-brand-home.mjs",
+    "archived_source_matches_previous_independent_hash": true
+  },
+  {
+    "file": "backend/scripts/review-branches.mjs",
+    "archived_source_matches_previous_independent_hash": true
+  }
+]

@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "server": {
+    "collected": 81,
+    "passed": 79,
+    "skippedOptInBrowser": 2,
+    "log": "server-final/server/output.txt",
+    "exitCode": 0
+  },
+  "concurrency": [
+    {
+      "file": "server-final/server/concurrency/branch-draft-edit-first.json",
+      "model": "Branch",
+      "publish": false,
+      "first": "edit",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": [
+        "보존할 시설 둘째",
+        "보존할 시설 첫째"
+      ]
+    },
+    {
+      "file": "server-final/server/concurrency/branch-draft-withdraw-first.json",
+      "model": "Branch",
+      "publish": false,
+      "first": "withdraw",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": [
+        "보존할 시설 둘째",
+        "보존할 시설 첫째"
+      ]
+    },
+    {
+      "file": "server-final/server/concurrency/branch-publish-edit-first.json",
+      "model": "Branch",
+      "publish": true,
+      "first": "edit",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": [
+        "보존할 시설 둘째",
+        "보존할 시설 첫째"
+      ]
+    },
+    {
+      "file": "server-final/server/concurrency/branch-publish-withdraw-first.json",
+      "model": "Branch",
+      "publish": true,
+      "first": "withdraw",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": true,
+      "facilities": [
+        "보존할 시설 둘째",
+        "보존할 시설 첫째"
+      ]
+    },
+    {
+      "file": "server-final/server/concurrency/brandcontent-draft-edit-first.json",
+      "model": "BrandContent",
+      "publish": false,
+      "first": "edit",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/brandcontent-draft-withdraw-first.json",
+      "model": "BrandContent",
+      "publish": false,
+      "first": "withdraw",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/brandcontent-publish-edit-first.json",
+      "model": "BrandContent",
+      "publish": true,
+      "first": "edit",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/brandcontent-publish-withdraw-first.json",
+      "model": "BrandContent",
+      "publish": true,
+      "first": "withdraw",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": true,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/post-draft-edit-first.json",
+      "model": "Post",
+      "publish": false,
+      "first": "edit",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/post-draft-withdraw-first.json",
+      "model": "Post",
+      "publish": false,
+      "first": "withdraw",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/post-publish-edit-first.json",
+      "model": "Post",
+      "publish": true,
+      "first": "edit",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": false,
+      "facilities": null
+    },
+    {
+      "file": "server-final/server/concurrency/post-publish-withdraw-first.json",
+      "model": "Post",
+      "publish": true,
+      "first": "withdraw",
+      "rowLocksAndBlocking": "PASS",
+      "latestRevisionPointer": "PASS",
+      "live": true,
+      "facilities": null
+    }
+  ],
+  "permissionBoundary": {
+    "file": "server-final/server/concurrency/boundary-permissions.json",
+    "models": 3,
+    "normalDeniedLocation": "/admin/",
+    "ajax": 403,
+    "csrf": 403,
+    "contentRevisionFacilitiesImagesUnchanged": true
+  },
+  "browserRegressions": [
+    {
+      "name": "brand-alone",
+      "exitCode": 0
+    },
+    {
+      "name": "branch-alone",
+      "exitCode": 0
+    },
+    {
+      "name": "combined",
+      "exitCode": 0
+    },
+    {
+      "name": "combined-reverse",
+      "exitCode": 0
+    }
+  ],
+  "independentReverification": "PENDING",
+  "userApproval": "PENDING"
+}

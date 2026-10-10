@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="Y3GYM 공통 소식 시각 프로토타입. 모든 제목·본문·날짜는 임시 예시입니다.">
+    <title>소식 · Y3GYM</title>
+    <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <script src="post-context.js" type="module"></script>
+  </head>
+  <body class="content-page" data-page="news-list" data-site-root="">
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <header class="site-header"><div class="container header-inner">
+      <a class="wordmark" href="index.html" data-branch-page aria-label="Y3GYM 홈">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
+        <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span class="menu-toggle-label">메뉴</span>
+      </button>
+      <nav class="primary-navigation" id="primary-navigation" aria-label="주 메뉴">
+        <a class="nav-link" href="branches.html" data-branch-page>지점 안내</a>
+        <a class="nav-link" href="news.html" data-branch-page aria-current="page">소식</a>
+        <a class="button button--small button--primary header-contact" href="branches.html#contact" data-branch-page>문의하기</a>
+      </nav>
+    </div></header>
+
+    <main id="main"><section class="page-intro" aria-labelledby="page-title"><div class="container">
+      <nav class="breadcrumb" aria-label="현재 위치"><a href="index.html" data-branch-page>홈</a><span aria-hidden="true">/</span><span aria-current="page">소식</span></nav>
+      <h1 id="page-title">소식</h1><p class="section-description">모든 지점의 공지와 이벤트를 확인하세요.</p><p class="content-example">시각 검토용 · 제목·내용·날짜는 모두 임시 예시입니다.</p>
+    </div></section>
+    <section class="news-index container" aria-label="소식 목록">
+      <nav class="news-filters" aria-label="소식 분류"><a class="news-filter" href="news.html" data-news-link>전체</a><a class="news-filter" href="news-notices.html" data-news-link aria-current="page">공지</a><a class="news-filter" href="news-events.html" data-news-link>이벤트</a></nav>
+      <p class="news-result-count">공지 1건</p>
+      <div class="news-list"><article class="news-item" aria-labelledby="news-visit-title">
+      <span class="news-category">공지</span>
+      <div class="news-copy"><h2 id="news-visit-title"><a class="news-title-link" href="news/visit.html?category=notices&listPage=1" data-news-link>방문 전 확인해주세요</a></h2><p>운영시간과 위치, 문의 방법을 확인한 뒤 방문해주세요.</p></div>
+      <time datetime="2026-10-09">2026.10.09<span class="sr-only"> 날짜 예시</span></time>
+    </article></div>
+      
+    </section></main>
+
+    <footer class="site-footer"><div class="container">
+      <div class="footer-top">
+        <a class="wordmark" href="index.html" data-branch-page aria-label="Y3GYM 홈">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+        <nav class="footer-navigation" aria-label="하단 메뉴"><a href="branches.html" data-branch-page>지점 안내</a><a href="news.html" data-branch-page aria-current="page">소식</a></nav>
+      </div>
+      <p class="footer-description">시설과 이용 정보를 한눈에.</p>
+      <p class="footer-note">시각 프로토타입 · 사진과 운영 정보는 임시 자료입니다.</p>
+    </div></footer>
+
+    <aside class="mobile-contact-bar" aria-label="문의할 지점 안내"><div class="mobile-contact-inner"><a class="button button--primary" href="branches.html#contact" data-branch-page>전화 문의</a><a class="button button--secondary" href="branches.html#contact" data-branch-page>카카오톡 문의</a></div></aside>
+  </body>
+</html>

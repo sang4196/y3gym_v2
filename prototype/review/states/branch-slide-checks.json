@@ -1,0 +1,94 @@
+{
+  "reviewedAt": "2026-10-09T17:26:09.146Z",
+  "browser": "Chromium",
+  "fixedFixtureClock": "2026-10-09T03:00:00.000Z",
+  "homeDesignApproval": "APPROVED — previous home",
+  "popupDesignApproval": "APPROVED — user: 팝업창은 일단 이정도면 될 것 같음",
+  "branchTabDesignApproval": "APPROVED — user: 배치 합격",
+  "pageSeparationVisualApproval": "APPROVED — user: ㅇㅋ 이대로 가자",
+  "facilityCarouselVisualApproval": "APPROVED — user: ㅇㅋ 이대로 가자",
+  "scope": "Unified branch/facility carousel, separate details, data expansion, navigation, empty/failure/no-JS states",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "Grouped branch previews stay on home; detail page groups facilities, trainers and contact",
+      "status": "PASS"
+    },
+    {
+      "name": "Branch facility carousel orders photos, wraps, resets by branch, and supports keyboard and mobile swipes",
+      "status": "PASS"
+    },
+    {
+      "name": "Branch tab keyboard navigation, URL/session restore, direct links, and same-tab announcement return",
+      "status": "PASS"
+    },
+    {
+      "name": "Branch data expansion creates all tabs/panels and keeps many mobile tabs within horizontal scrolling",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty optional data hides photo/trainer blocks, shows news empty state, and preserves core inquiry",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed photographs and simulated unavailable map keep content, address, and inquiry readable",
+      "status": "PASS"
+    },
+    {
+      "name": "Blocked app script and disabled JavaScript retain mobile menu, content, addresses, and branch contact text",
+      "status": "PASS"
+    },
+    {
+      "name": "No unexpected script or resource failures outside deliberately broken fixtures",
+      "status": "PASS"
+    }
+  ],
+  "skipped": [
+    "Popup period boundaries, publication, activation, and Korean midnight",
+    "Separate popup, display acknowledgement, close, once per tab, manual reuse, and connected post",
+    "Blocked automatic popup is normal when manual entry succeeds; no false shown record",
+    "Mobile layer opens without a new tab; close restores scroll/focus, traps focus, and supports short screens",
+    "Mobile today hide, manual reopening, same-tab post, and unavailable storage",
+    "Today hide persists across tabs until Korean midnight and manual reopening remains available",
+    "Direct popup URLs enforce expired, future, disabled, unpublished, and missing-post fixture conditions",
+    "Popup content-loading failure is not counted as displayed; manual retry recovers the same window",
+    "Unavailable storage preserves manual entry and reports inability to save today hide"
+  ],
+  "browserErrors": [],
+  "resourceFailures": [
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-hero.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-trainer.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/app.js",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "url": "http://127.0.0.1:8767/app.js",
+      "error": "net::ERR_FAILED"
+    }
+  ],
+  "limitations": [
+    "No backend publication/access controls",
+    "No real map, telephone, or KakaoTalk integration",
+    "No physical device or other-browser verification",
+    "State screenshots still require user visual review"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "initial_revision": 1,
+  "newest_revision": 2,
+  "current_latest_revision": 2,
+  "current_address": "반드시 보존할 새 초안 주소",
+  "newest_revision_address": "반드시 보존할 새 초안 주소",
+  "live": false,
+  "withdrawal": {
+    "status": 302,
+    "branch_select_for_update": true
+  },
+  "draft_save_status": 302,
+  "expected": "Withdrawal keeps the committed newer draft and latest revision pointer.",
+  "isolated_test_database": true
+}

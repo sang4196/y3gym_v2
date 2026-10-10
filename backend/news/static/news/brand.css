@@ -1,0 +1,19 @@
+.wordmark .brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 180px;
+  max-height: 32px;
+}
+
+.wordmark .brand-name {
+  max-width: min(50vw, 320px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

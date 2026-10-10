@@ -1,0 +1,46 @@
+{
+  "baselineExisting": 588,
+  "modifiedExisting": [
+    "README.md",
+    "backend/README.md",
+    "backend/config/urls.py",
+    "backend/news/context.py",
+    "backend/news/home.py",
+    "backend/news/middleware.py",
+    "backend/news/models.py",
+    "backend/news/publication.py",
+    "backend/news/static/news/context.js",
+    "backend/news/templates/news/base.html",
+    "backend/news/templates/news/detail.html",
+    "backend/news/templates/news/list.html",
+    "backend/news/templates/news/popup.html",
+    "backend/news/templates/news/popup_entry.html",
+    "backend/news/tests/test_brand.py",
+    "backend/news/tests/test_concurrency.py",
+    "backend/news/tests/test_publication.py",
+    "backend/news/views.py",
+    "backend/news/wagtail_hooks.py",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/PRD.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md"
+  ],
+  "addedImplementation": [
+    "backend/news/branches.py",
+    "backend/news/management/commands/bootstrap_branch_review.py",
+    "backend/news/migrations/0004_branch_facility.py",
+    "backend/news/static/news/branches.css",
+    "backend/news/templates/news/branch_browser.html",
+    "backend/news/templates/news/branch_navigation.html",
+    "backend/news/templates/news/branches.html",
+    "backend/news/templates/news/facility_gallery.html",
+    "backend/news/tests/test_branch_browser.py",
+    "backend/news/tests/test_branches.py",
+    "backend/scripts/review-branches.mjs"
+  ],
+  "newReviewDirectory": "backend/review/branches/",
+  "notes": [
+    "docs/WORKFLOW.md includes the Git role ID assigned by the design chat during this unit.",
+    "Git status alone cannot identify this unit: most existing source was already untracked before work. Comparison uses a private pre-work hash/source snapshot."
+  ]
+}

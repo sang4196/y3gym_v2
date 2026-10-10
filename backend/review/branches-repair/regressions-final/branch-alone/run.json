@@ -1,0 +1,24 @@
+{
+  "name": "branch-alone",
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "python",
+    "manage.py",
+    "test",
+    "news.tests.test_branch_browser",
+    "--noinput",
+    "--verbosity",
+    "2"
+  ],
+  "environment": {
+    "Y3GYM_RUN_BRANCH_BROWSER": "1",
+    "Y3GYM_BRAND_REVIEW_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-repair/regressions-final/branch-alone/brand",
+    "Y3GYM_BRANCH_REVIEW_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-repair/regressions-final/branch-alone/branches",
+    "Y3GYM_WITHDRAWAL_REVIEW_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-repair/regressions-final/branch-alone/concurrency"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 67.668
+}

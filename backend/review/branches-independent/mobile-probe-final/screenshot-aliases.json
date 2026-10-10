@@ -1,0 +1,32 @@
+[
+  {
+    "original": "A%EB%AA%A8%EB%B0%94%EC%9D%BC%EA%B2%80%EC%88%98-image-chooser.png",
+    "alias": "A-image-chooser.png",
+    "sha256": "5114e406a444377f28e68727368aad3f61d54a3c1cf25e075110748ed067a769"
+  },
+  {
+    "original": "A%EB%AA%A8%EB%B0%94%EC%9D%BC%EA%B2%80%EC%88%98-publish-controls.png",
+    "alias": "A-publish-controls.png",
+    "sha256": "fb82d048176dfa2ca2456806427a60ad5a60dc9069fbd453cd49ef57624a89e6"
+  },
+  {
+    "original": "A%EB%AA%A8%EB%B0%94%EC%9D%BC%EA%B2%80%EC%88%98-save-controls.png",
+    "alias": "A-save-controls.png",
+    "sha256": "a933f00512a868716afa5792c0cc0b6dcafc1073ef481e2b34d1d1ca8eeb2db5"
+  },
+  {
+    "original": "B%EB%AA%A8%EB%B0%94%EC%9D%BC%EA%B2%80%EC%88%98-image-chooser.png",
+    "alias": "B-image-chooser.png",
+    "sha256": "4cd9ae982021b993fe432dbc9d5ff3d3a6c6a315c13cebbea896d8d2e153b3d8"
+  },
+  {
+    "original": "B%EB%AA%A8%EB%B0%94%EC%9D%BC%EA%B2%80%EC%88%98-publish-controls.png",
+    "alias": "B-publish-controls.png",
+    "sha256": "062eb132b12556f3e5fbb06af87c4785583c2b1c4de4984e2c2de67101115815"
+  },
+  {
+    "original": "B%EB%AA%A8%EB%B0%94%EC%9D%BC%EA%B2%80%EC%88%98-save-controls.png",
+    "alias": "B-save-controls.png",
+    "sha256": "3f067c5c1cb03cbce89dec557c87527822889179afe56b4ccc8f754b5e840800"
+  }
+]

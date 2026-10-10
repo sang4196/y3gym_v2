@@ -1,0 +1,110 @@
+{
+  "isolatedTestDatabase": true,
+  "origin": "http://localhost:51597",
+  "checks": [],
+  "measurements": [
+    {
+      "name": "A-fresh-mobile-direct",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "Y3GYM 본점"
+        },
+        {
+          "selector": "#id_name",
+          "x": 20,
+          "y": 297.453125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 20,
+          "y": 766.953125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 44,
+          "y": 1771.203125,
+          "width": 311,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 20,
+          "y": 3992.359375,
+          "width": 335,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "screenshots": [
+    "A-fresh-mobile-direct.png"
+  ],
+  "status": "FAIL",
+  "failure": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#id_facilities-0-image-chooser [data-chooser-action-choose]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-chooser-action-choose=\"\" class=\"button button-small button-secondary chooser__choose-button\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    19 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at saveAndPublish (/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-independent/probe-mobile.mjs:46:85)\n    at async file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-independent/probe-mobile.mjs:70:3"
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Y3GYM · 알림</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="popup.js" type="module"></script>
+  </head>
+  <body class="popup-page">
+    <main class="popup-document">
+      <a class="wordmark" href="index.html" target="_blank">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <p class="content-example">시각 검토용 · 임시 안내입니다.</p>
+      <section class="popup-unavailable" data-popup-unavailable>
+        <h1>알림을 표시할 수 없습니다.</h1>
+        <p>표시 기간이 아니거나 알림을 불러오지 못했습니다. 홈에서 공개 소식을 확인해주세요.</p>
+        <a class="text-link" href="index.html#news" target="_blank">홈 소식 보기</a>
+      </section>
+      <article class="popup-content" data-popup-content hidden>
+        <p class="eyebrow">공지 · 예시</p>
+        <h1 data-popup-title></h1>
+        <div class="popup-image-frame" data-popup-image-frame hidden>
+          <img alt="가상의 헬스장 시설 전경 — 임시 합성 이미지" data-popup-image>
+          <span class="image-fallback" data-popup-image-fallback hidden>사진을 불러오지 못했습니다.</span>
+        </div>
+        <p data-popup-description></p>
+        <a class="button button--primary" data-popup-post>소식 글 보기</a>
+        <div class="popup-controls">
+          <label class="checkbox-label"><input type="checkbox" data-hide-today>오늘 하루 보지 않기</label>
+          <button class="popup-close" type="button" aria-label="알림 닫기" data-close-popup>닫기 <span aria-hidden="true">×</span></button>
+        </div>
+        <p class="content-example" role="status" data-popup-feedback></p>
+      </article>
+    </main>
+  </body>
+</html>

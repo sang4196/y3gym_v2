@@ -1,0 +1,12 @@
+{% extends "wagtailadmin/base.html" %}
+{% block titletag %}팝업 설정 · {{ post }}{% endblock %}
+{% block content %}
+{% include "wagtailadmin/shared/header.html" with title="팝업 설정" icon="doc-full" %}
+<div class="nice-padding">
+  <h2>{{ post }}</h2><p>현재 게시글에 연결 · 전체 지점 공통 · 한국 시간(Asia/Seoul, UTC+09:00)</p>
+  <p><strong>{{ state }}</strong> — {{ reason }}</p>
+  <p>본문 저장·게시와 별도로 적용합니다. 본문 편집 탭의 입력은 저장하거나 변경하지 않습니다.</p>
+  {% if applied %}<p role="status">팝업 설정을 적용했습니다. 본문 공개본은 변경하지 않았습니다.</p>{% endif %}
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button class="button" type="submit">팝업 설정 적용</button></form>
+</div>
+{% endblock %}

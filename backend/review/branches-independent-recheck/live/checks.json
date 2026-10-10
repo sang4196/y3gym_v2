@@ -1,0 +1,40 @@
+{
+  "run": "2026-10-10T06:50:03.037Z",
+  "origin": "http://localhost:8768",
+  "readOnly": true,
+  "isolatedTestDatabase": false,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "PC 1440×900·모바일 375×812 홈/상세 첫 화면·전체 캡처, 이미지 준비·0명 트레이너 숨김",
+      "result": "PASS"
+    },
+    {
+      "name": "승인된 시설 자동 이동 실제 transform 변화",
+      "result": "PASS"
+    },
+    {
+      "name": "동작 줄이기·사진 영역 키보드 이동",
+      "result": "PASS"
+    },
+    {
+      "name": "모바일 가로 터치 스와이프의 시설 이동",
+      "result": "PASS"
+    },
+    {
+      "name": "JavaScript 없는 홈/상세의 모든 공개 지점·주소·운영시간·기본 메뉴 접근",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "home-desktop-first.png",
+    "home-desktop-full.png",
+    "branches-desktop-first.png",
+    "branches-desktop-full.png",
+    "home-mobile-first.png",
+    "home-mobile-full.png",
+    "branches-mobile-first.png",
+    "branches-mobile-full.png"
+  ]
+}

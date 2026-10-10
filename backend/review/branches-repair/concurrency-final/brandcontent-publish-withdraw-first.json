@@ -1,0 +1,24 @@
+{
+  "model": "BrandContent",
+  "publish": true,
+  "first": "withdraw",
+  "secondBlockedByFirst": true,
+  "requests": {
+    "withdraw": {
+      "status": 302,
+      "rowLock": true
+    },
+    "edit": {
+      "status": 302,
+      "rowLock": true
+    }
+  },
+  "latestRevision": 16,
+  "newestRevision": 16,
+  "live": true,
+  "liveRevision": 16,
+  "currentContent": "보존할 새 소개 본문",
+  "draftContent": "보존할 새 소개 본문",
+  "facilityTitles": null,
+  "isolatedTestDatabase": true
+}

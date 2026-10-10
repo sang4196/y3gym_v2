@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-10-10T06:44:38.055555+00:00",
+  "status": "PASS",
+  "baselineFiles": 849,
+  "protectedGroups": {
+    "prototype_including_design_and_prior_captures": {
+      "compared": 186,
+      "changedOrMissing": 0
+    },
+    "all_prior_backend_review_including_branches_and_independent": {
+      "compared": 437,
+      "changedOrMissing": 0
+    },
+    "private_media": {
+      "compared": 141,
+      "changedOrMissing": 0
+    },
+    "secrets": {
+      "compared": 2,
+      "changedOrMissing": 0
+    },
+    "dependency_and_version_files": {
+      "compared": 5,
+      "changedOrMissing": 0
+    }
+  },
+  "gitIndexUnchanged": true,
+  "databaseTables": {
+    "auth_group": {
+      "before": 3,
+      "after": 3,
+      "changedOrMissingExistingRows": 0
+    },
+    "auth_group_permissions": {
+      "before": 30,
+      "after": 30,
+      "changedOrMissingExistingRows": 0
+    },
+    "auth_user": {
+      "before": 2,
+      "after": 2,
+      "changedOrMissingExistingRows": 0
+    },
+    "auth_user_groups": {
+      "before": 1,
+      "after": 1,
+      "changedOrMissingExistingRows": 0
+    },
+    "auth_user_user_permissions": {
+      "before": 0,
+      "after": 0,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_branch": {
+      "before": 2,
+      "after": 2,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_brandcontent": {
+      "before": 1,
+      "after": 1,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_contentimage": {
+      "before": 39,
+      "after": 39,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_facilityimage": {
+      "before": 6,
+      "after": 6,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_popupsetting": {
+      "before": 10,
+      "after": 10,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_post": {
+      "before": 22,
+      "after": 22,
+      "changedOrMissingExistingRows": 0
+    },
+    "news_rendition": {
+      "before": 102,
+      "after": 102,
+      "changedOrMissingExistingRows": 0
+    },
+    "wagtailcore_collection": {
+      "before": 1,
+      "after": 1,
+      "changedOrMissingExistingRows": 0
+    },
+    "wagtailcore_groupcollectionpermission": {
+      "before": 15,
+      "after": 15,
+      "changedOrMissingExistingRows": 0
+    },
+    "wagtailcore_revision": {
+      "before": 67,
+      "after": 67,
+      "changedOrMissingExistingRows": 0
+    }
+  },
+  "scope": "Existing file bytes and all captured DB rows/counts match. Raw source and row hashes remain only in a private /tmp archive."
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Y3GYM · 홈과 지점 안내 검토</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+      .review-main { padding-block: 48px; }
+      .review-main h1 { font-size: 30px; }
+      .review-main h2 { margin-top: 40px; font-size: 24px; }
+      .review-main p { margin-top: 16px; }
+      .review-main li { margin-block: 10px; }
+      .review-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+      .review-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+      .review-previews img { height: auto; border: 1px solid var(--color-border); }
+      .review-previews figcaption { margin-top: 8px; color: var(--color-muted); }
+      .review-mobile { max-width: 800px; }
+      .review-table-wrap { overflow-x: auto; margin-top: 24px; }
+      .review-table { width: 100%; border-collapse: collapse; text-align: left; }
+      .review-table th, .review-table td { padding: 16px; border-bottom: 1px solid var(--color-border); }
+      .review-table th { background: var(--color-surface); }
+      @media (max-width: 600px) { .review-previews { grid-template-columns: minmax(0, 1fr); } .review-main { padding-block: 32px; } }
+    </style>
+  </head>
+  <body class="document-page">
+    <header class="site-header"><div class="container header-inner document-header"><a class="wordmark" href="../../index.html">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a><a class="text-link" href="../states/index.html">상태 검수 모음</a></div></header>
+    <main class="container review-main">
+      <h1>홈과 지점 안내를 나눴습니다.</h1>
+      <p>아래 캡처는 이전 분리 화면의 이력입니다. 후속 요청으로 홈의 지점·시설을 한 구역의 사진 슬라이드로 합쳤습니다.</p>
+      <p><a class="button button--primary" href="../branch-slides/index.html">최신 통합 지점·시설 슬라이드 보기</a></p>
+      <p>승인받은 A 방향과 지점 탭 배치를 유지했습니다. 홈에는 지점·시설 미리보기와 공통 소식을 남기고, 지점별 운영시간·트레이너·위치·문의 상세는 별도 페이지에 모았습니다.</p>
+      <ul>
+        <li>상단 ‘지점 안내’는 같은 탭의 새 페이지로 이동합니다. 트레이너 독립 메뉴는 헤더와 푸터에서 제거했습니다.</li>
+        <li>홈에서 예시점을 선택한 뒤 지점 안내·자세히 보기·문의로 이동하면 예시점이 이어집니다. 홈으로 돌아올 때도 선택을 유지합니다.</li>
+        <li>모바일 문의 바와 소식 글·팝업의 문의 링크도 선택한 지점의 상세 안내로 연결했습니다.</li>
+        <li>기본 예시는 본점·예시점 두 지점이며 모든 사진·이름·운영 정보는 임시 예시입니다. 실제 문의·지도 서비스는 연결하지 않았습니다.</li>
+      </ul>
+      <div class="review-links"><a class="button button--primary" href="../../index.html?branch=main">수정된 홈 보기</a><a class="button button--secondary" href="../../branches.html?branch=main">본점 지점 안내</a><a class="button button--secondary" href="../../branches.html?branch=second">예시점 지점 안내</a></div>
+      <p>아래는 실제 Chromium 캡처입니다. 자동 검사는 사용자 시각 승인을 대신하지 않습니다. 홈의 정보량과 별도 페이지의 구성을 확인해주세요.</p>
+
+      <h2>PC 첫 화면 · 1440×900</h2>
+      <div class="review-previews">
+        <figure><a href="home-desktop-main-first.png"><img src="home-desktop-main-first.png" alt="트레이너 메뉴를 제거한 홈 첫 화면" width="1440" height="900"></a><figcaption>홈 · 본점 선택</figcaption></figure>
+        <figure><a href="details-desktop-main-first.png"><img src="details-desktop-main-first.png" alt="별도 지점 안내 페이지의 제목과 지점 탭 및 본점 요약" width="1440" height="900"></a><figcaption>별도 지점 안내 · 본점 선택</figcaption></figure>
+      </div>
+      <h2>모바일 첫 화면 · 375×812</h2>
+      <div class="review-previews review-mobile">
+        <figure><a href="home-mobile-main-first.png"><img src="home-mobile-main-first.png" alt="모바일 홈 첫 화면" width="375" height="812" loading="lazy"></a><figcaption>홈</figcaption></figure>
+        <figure><a href="details-mobile-main-first.png"><img src="details-mobile-main-first.png" alt="모바일 지점 안내의 첫 화면과 고정 문의 바" width="375" height="812" loading="lazy"></a><figcaption>지점 안내</figcaption></figure>
+      </div>
+      <h2>홈의 지점 미리보기 · 예시점</h2>
+      <div class="review-previews">
+        <figure><a href="home-desktop-second-tabs.png"><img src="home-desktop-second-tabs.png" alt="홈 예시점 탭의 간단한 소개와 자세히 보기 및 시설 미리보기" width="1440" height="900" loading="lazy"></a><figcaption>PC · 트레이너와 위치 상세는 별도 페이지로 이동</figcaption></figure>
+        <figure><a href="home-mobile-second-tabs.png"><img src="home-mobile-second-tabs.png" alt="모바일 예시점 미리보기" width="375" height="812" loading="lazy" style="max-width:375px"></a><figcaption>모바일 · 예시점 자세히 보기로 진입</figcaption></figure>
+      </div>
+      <h2>전체 캡처</h2>
+      <div class="review-table-wrap"><table class="review-table">
+        <thead><tr><th scope="col">화면</th><th scope="col">PC · 1440px</th><th scope="col">모바일 · 375px</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">홈 · 본점</th><td><a href="home-desktop-main-full.png">전체 보기</a></td><td><a href="home-mobile-main-full.png">전체 보기</a></td></tr>
+          <tr><th scope="row">홈 · 예시점</th><td><a href="home-desktop-second-full.png">전체 보기</a></td><td><a href="home-mobile-second-full.png">전체 보기</a></td></tr>
+          <tr><th scope="row">지점 안내 · 본점</th><td><a href="details-desktop-main-full.png">전체 보기</a></td><td><a href="details-mobile-main-full.png">전체 보기</a></td></tr>
+          <tr><th scope="row">지점 안내 · 예시점</th><td><a href="details-desktop-second-full.png">전체 보기</a></td><td><a href="details-mobile-second-full.png">전체 보기</a></td></tr>
+        </tbody>
+      </table></div>
+      <p>전체 캡처는 같은 폭의 긴 뷰포트로 촬영해 고정 문의 바를 맨 아래에 표시합니다. 본문 가림은 실제 375×812 화면 높이에서 별도로 검사했습니다.</p>
+      <p><a href="checks.json">두 페이지 × 6개 화면 폭 및 이동 검사</a> · <a href="../states/checks.json">16개 상태·연결 동선 검사</a> · <a href="../branch-tabs/index.html">승인받은 이전 탭 배치 이력</a></p>
+    </main>
+  </body>
+</html>

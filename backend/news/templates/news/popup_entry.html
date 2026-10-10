@@ -1,0 +1,6 @@
+{{ popups|json_script:"home-popup-data" }}
+<div class="popup-entry" data-live-popup-entry{% if not popups %} hidden{% endif %}>
+  <p class="content-example" role="status" data-popup-status></p>
+  <div data-popup-recovery hidden></div>
+  <noscript>{% if popups %}<p>알림 창을 자동으로 열 수 없습니다. 공개 소식에서 확인해 주세요.</p><ul>{% for popup in popups %}<li><a class="text-link" href="{{ popup.post.url }}{% if branch %}?branch={{ branch }}{% endif %}">{{ popup.title }}</a></li>{% endfor %}</ul>{% endif %}</noscript>
+</div>

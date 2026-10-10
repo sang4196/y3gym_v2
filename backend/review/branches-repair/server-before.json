@@ -1,0 +1,13 @@
+{
+  "pid": 995435,
+  "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend",
+  "args": [
+    "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+    "manage.py",
+    "runserver",
+    "127.0.0.1:8768",
+    "--noreload",
+    "--insecure"
+  ],
+  "scope": "Only the confirmed local Django 8768 process in this checkout"
+}

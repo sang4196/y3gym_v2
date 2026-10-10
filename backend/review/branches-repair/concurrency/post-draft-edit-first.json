@@ -1,0 +1,24 @@
+{
+  "model": "Post",
+  "publish": false,
+  "first": "edit",
+  "secondBlockedByFirst": true,
+  "requests": {
+    "edit": {
+      "status": 302,
+      "rowLock": true
+    },
+    "withdraw": {
+      "status": 302,
+      "rowLock": true
+    }
+  },
+  "latestRevision": 12,
+  "newestRevision": 12,
+  "live": false,
+  "liveRevision": null,
+  "currentContent": "<p>기존 본문</p>",
+  "draftContent": "<p>보존할 새 소식 본문</p>",
+  "facilityTitles": null,
+  "isolatedTestDatabase": true
+}

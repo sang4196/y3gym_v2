@@ -1,0 +1,13 @@
+Creating test database for alias 'default'...
+...........................................................ss.....
+----------------------------------------------------------------------
+Ran 66 tests in 55.604s
+
+OK (skipped=2)
+Destroying test database for alias 'default'...
+Found 66 test(s).
+System check identified no issues (0 silenced).
+Created and published two TEST branches and shared facility images. Existing brand/news/popups/accounts/credentials preserved.
+Existing branch revisions and media preserved. Local permissions updated.
+Created and published the approved local brand fixture. Prototype files and credentials unchanged.
+Existing brand revisions, files and credentials preserved. Local permissions updated.

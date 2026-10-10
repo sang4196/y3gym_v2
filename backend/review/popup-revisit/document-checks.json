@@ -1,0 +1,21 @@
+{
+  "localLinksChecked": 234,
+  "missingLinks": [],
+  "reports": {
+    "revisit": {
+      "status": "PASS",
+      "checks": 8,
+      "errors": []
+    },
+    "edges": {
+      "status": "PASS",
+      "checks": 3,
+      "errors": []
+    },
+    "sizing": {
+      "status": "PASS",
+      "checks": 10,
+      "errors": []
+    }
+  }
+}

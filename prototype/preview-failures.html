@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="Y3GYM 홈 시각 프로토타입. 본점과 예시점 · 모든 자료는 검수용 예시입니다.">
+    <title>Y3GYM · 홈 시각 프로토타입</title>
+    <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <script src="facility-gallery.js" defer></script>
+    <script src="popup-launcher.js" type="module"></script>
+  </head>
+  <body data-demo-state="failures">
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="#main" aria-label="Y3GYM 홈">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+        <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
+          <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="menu-toggle-label">메뉴</span>
+        </button>
+        <nav class="primary-navigation" id="primary-navigation" aria-label="주 메뉴">
+          <a class="nav-link" href="branches-failures.html" data-branch-page>지점 안내</a>
+          <a class="nav-link" href="news.html" data-branch-page>소식</a>
+          <a class="button button--small button--primary header-contact" href="branches-failures.html#contact" data-branch-page>문의하기</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="container">
+          <p class="prototype-notice">시각 검토용 <span aria-hidden="true">·</span> 사진과 지점 정보는 임시 자료입니다.</p>
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <p class="eyebrow">Y3GYM · 브랜드 공통 안내</p>
+              <h1 id="intro-title">운동할 공간을<br>먼저 둘러보세요.</h1>
+              <p class="hero-description">시설과 위치, 이용 정보를 확인하고<br class="desktop-break"> 궁금한 점은 편한 방법으로 문의하세요.</p>
+            </div>
+
+            <figure class="hero-figure">
+              <div class="hero-image-frame">
+                <img src="assets/images/missing-hero.png" alt="창가와 근력 운동 기구가 보이는 가상의 헬스장 전경" width="1536" height="1024" fetchpriority="high" decoding="async">
+              </div>
+              <figcaption class="photo-caption"><span>브랜드 소개 이미지 · 예시</span><span>임시·합성 이미지</span></figcaption>
+            </figure>
+
+            <div class="hero-actions" id="intro-contact">
+              <div class="contact-buttons">
+                <a class="button button--primary" href="branches-failures.html#contact" data-branch-page>전화 문의</a>
+                <a class="button button--secondary" href="branches-failures.html#contact" data-branch-page>카카오톡 문의</a>
+              </div>
+              <p class="contact-note"><span data-selected-branch-name>선택한 지점</span>의 문의 안내로 이동합니다. 실제 서비스는 연결하지 않습니다.</p>
+              <a class="text-link" href="branches-failures.html" data-branch-page>지점 안내 <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="branch-browser branch-browser--preview" id="branch" aria-labelledby="branch-title" data-branch-browser>
+    <div class="branch-browser-heading"><div class="container" id="contact"><h2 id="branch-title">지점 둘러보기</h2><p class="section-description">지점을 선택해 운동 공간을 살펴보세요.</p><p class="content-example">지점 정보는 예시입니다.</p><nav class="branch-tab-list" aria-label="지점 선택" data-branch-tabs><a class="branch-tab" id="tab-main" href="#branch-main" data-branch-tab>Y3GYM 본점</a>
+<a class="branch-tab" id="tab-second" href="#branch-second" data-branch-tab>Y3GYM 예시점</a></nav></div></div>
+    <article class="branch-panel" id="branch-main" data-branch-panel data-branch-id="main" data-branch-name="Y3GYM 본점" aria-labelledby="main-branch-name">
+      <div class="container branch-preview">
+    <div class="branch-preview-heading"><div>
+      <h3 class="branch-panel-name" id="main-branch-name">Y3GYM 본점</h3>
+      <p class="content-example">본점 시설 배치 예시 · 합성 임시 사진</p>
+    </div><a class="text-link" href="branches-failures.html?branch=main">본점 자세히 보기 <span aria-hidden="true">→</span></a></div>
+    <div class="facility-gallery facility-gallery--preview" id="main-facilities" data-branch-section="facilities" data-facility-gallery aria-label="Y3GYM 본점 시설 사진">
+    
+    <div class="facility-gallery-viewport" data-gallery-viewport><div class="facility-grid" id="main-gallery-track" data-gallery-track>
+      <figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="assets/images/missing-strength.png" alt="Y3GYM 본점 · 덤벨과 벤치가 놓인 가상의 웨이트 운동 공간" width="1536" height="1024" loading="lazy" decoding="async"></div>
+        <figcaption><p class="image-note">임시·합성 이미지</p><h4>웨이트 공간</h4><p class="facility-description">덤벨과 벤치, 근력 운동 기구를 살펴볼 수 있는 공간입니다.</p></figcaption>
+      </figure>
+      <figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="assets/images/gym-cardio.png" alt="Y3GYM 본점 · 창가에 러닝머신과 실내 자전거가 배치된 가상의 유산소 운동 공간" width="1536" height="1024" loading="lazy" decoding="async"></div>
+        <figcaption><p class="image-note">임시·합성 이미지</p><h4>유산소 공간</h4><p class="facility-description">러닝머신과 실내 자전거가 배치된 운동 공간입니다.</p></figcaption>
+      </figure>
+      <figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="assets/images/gym-stretch.png" alt="Y3GYM 본점 · 운동 매트와 폼롤러가 준비된 가상의 스트레칭 공간" width="1536" height="1024" loading="lazy" decoding="async"></div>
+        <figcaption><p class="image-note">임시·합성 이미지</p><h4>스트레칭 공간</h4><p class="facility-description">운동 전후 스트레칭을 위한 매트와 소도구 공간입니다.</p></figcaption>
+      </figure></div></div>
+    <p class="sr-only" role="status" aria-live="polite" data-gallery-status></p>
+  </div>
+  </div>
+      
+      
+      
+    </article>
+<article class="branch-panel" id="branch-second" data-branch-panel data-branch-id="second" data-branch-name="Y3GYM 예시점" aria-labelledby="second-branch-name">
+      <div class="container branch-preview">
+    <div class="branch-preview-heading"><div>
+      <h3 class="branch-panel-name" id="second-branch-name">Y3GYM 예시점</h3>
+      <p class="content-example">예시점 시설 배치 예시 · 검수용 합성 사진을 재사용했습니다.</p>
+    </div><a class="text-link" href="branches-failures.html?branch=second">예시점 자세히 보기 <span aria-hidden="true">→</span></a></div>
+    <div class="facility-gallery facility-gallery--preview" id="second-facilities" data-branch-section="facilities" data-facility-gallery aria-label="Y3GYM 예시점 시설 사진">
+    
+    <div class="facility-gallery-viewport" data-gallery-viewport><div class="facility-grid" id="second-gallery-track" data-gallery-track>
+      <figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="assets/images/gym-strength.png" alt="Y3GYM 예시점 · 덤벨과 벤치가 놓인 가상의 웨이트 운동 공간" width="1536" height="1024" loading="lazy" decoding="async"></div>
+        <figcaption><p class="image-note">임시·합성 이미지</p><h4>웨이트 공간</h4><p class="facility-description">덤벨과 벤치, 근력 운동 기구를 살펴볼 수 있는 공간입니다.</p></figcaption>
+      </figure>
+      <figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="assets/images/gym-cardio.png" alt="Y3GYM 예시점 · 창가에 러닝머신과 실내 자전거가 배치된 가상의 유산소 운동 공간" width="1536" height="1024" loading="lazy" decoding="async"></div>
+        <figcaption><p class="image-note">임시·합성 이미지</p><h4>유산소 공간</h4><p class="facility-description">러닝머신과 실내 자전거가 배치된 운동 공간입니다.</p></figcaption>
+      </figure>
+      <figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="assets/images/gym-stretch.png" alt="Y3GYM 예시점 · 운동 매트와 폼롤러가 준비된 가상의 스트레칭 공간" width="1536" height="1024" loading="lazy" decoding="async"></div>
+        <figcaption><p class="image-note">임시·합성 이미지</p><h4>스트레칭 공간</h4><p class="facility-description">운동 전후 스트레칭을 위한 매트와 소도구 공간입니다.</p></figcaption>
+      </figure></div></div>
+    <p class="sr-only" role="status" aria-live="polite" data-gallery-status></p>
+  </div>
+  </div>
+      
+      
+      
+    </article>
+  </section>
+
+      <section class="news" id="news" aria-labelledby="news-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <h2 id="news-title">최근 소식</h2>
+              <p class="section-description">모든 지점의 공통 공지와 이벤트입니다.</p>
+              <p class="content-example">아래 제목·내용·날짜는 화면 검토용 예시입니다.</p>
+              <div class="popup-entry" data-popup-entry>
+                <a class="text-link" href="news/visit.html" data-popup-url="popup.html" data-open-popup>알림 보기 <span class="sr-only" data-popup-link-hint>관련 소식 글 보기</span><span aria-hidden="true" data-popup-link-icon>→</span></a>
+                <p class="content-example" role="status" data-popup-status>알림을 열 수 없으면 관련 소식 글로 이동합니다.</p>
+              </div>
+            </div>
+            <a class="text-link" href="news.html" data-branch-page>소식 모두 보기 <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="news-list">
+            <article class="news-item" aria-labelledby="news-visit-title">
+      <span class="news-category">공지</span>
+      <div class="news-copy"><h3 id="news-visit-title"><a class="news-title-link" href="news/visit.html" data-news-link>방문 전 확인해주세요</a></h3><p>운영시간과 위치, 문의 방법을 확인한 뒤 방문해주세요.</p></div>
+      <time datetime="2026-10-09">2026.10.09<span class="sr-only"> 날짜 예시</span></time>
+    </article>
+<article class="news-item" aria-labelledby="news-event-title">
+      <span class="news-category">이벤트</span>
+      <div class="news-copy"><h3 id="news-event-title"><a class="news-title-link" href="news/event.html" data-news-link>이벤트 소식 안내</a></h3><p>이벤트가 등록되면 진행 기간과 자세한 내용을 안내합니다.</p></div>
+      <time datetime="2026-10-01">2026.10.01<span class="sr-only"> 날짜 예시</span></time>
+    </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a class="wordmark" href="#main" aria-label="Y3GYM 홈">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+          <nav class="footer-navigation" aria-label="하단 메뉴">
+            <a href="branches-failures.html" data-branch-page>지점 안내</a>
+            <a href="news.html" data-branch-page>소식</a>
+          </nav>
+        </div>
+        <p class="footer-description">시설과 이용 정보를 한눈에.</p>
+        <p class="footer-note">시각 프로토타입 · 사진과 운영 정보는 임시 자료입니다.</p>
+      </div>
+    </footer>
+
+    <aside class="mobile-contact-bar" aria-label="선택한 지점 문의 안내"><div class="mobile-contact-inner"><a class="button button--primary" href="branches-failures.html#contact" data-branch-page>전화 문의</a><a class="button button--secondary" href="branches-failures.html#contact" data-branch-page>카카오톡 문의</a></div></aside>
+  </body>
+</html>

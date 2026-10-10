@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "model": "Branch",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "2009ac26c20f01842611c16bb35202c0a927d807813132c0d48b5ec5349bea09",
+      "contentRevisionFacilitiesAndImageHashAfter": "2009ac26c20f01842611c16bb35202c0a927d807813132c0d48b5ec5349bea09"
+    },
+    {
+      "model": "BrandContent",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "4e004dd4215c404b36bc00c952c4c8acad662bb9ccac4b1489ed4e8877c844ad",
+      "contentRevisionFacilitiesAndImageHashAfter": "4e004dd4215c404b36bc00c952c4c8acad662bb9ccac4b1489ed4e8877c844ad"
+    },
+    {
+      "model": "Post",
+      "passwordLogin": true,
+      "administratorHome": 200,
+      "publishPermission": false,
+      "normalDeniedStatus": 302,
+      "location": "/admin/",
+      "denialMessages": [
+        "죄송합니다, 해당 영역에 접근할 권한이 없습니다.\n\n\n\n\n"
+      ],
+      "ajaxStatus": 403,
+      "csrfStatus": 403,
+      "contentRevisionFacilitiesAndImageHashBefore": "bff019b456e0b21855817361d211887ad77ae4686e441e5d38f55099d178dc2b",
+      "contentRevisionFacilitiesAndImageHashAfter": "bff019b456e0b21855817361d211887ad77ae4686e441e5d38f55099d178dc2b"
+    }
+  ],
+  "isolatedTestDatabase": true
+}

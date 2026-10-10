@@ -1,0 +1,46 @@
+{
+  "model": "Post",
+  "publish": true,
+  "first": "withdraw",
+  "second": "save",
+  "actual_blocker_confirmed": true,
+  "requests": {
+    "withdraw": {
+      "status": 302,
+      "location": "/admin/snippets/news/post/",
+      "row_lock": true
+    },
+    "save": {
+      "status": 302,
+      "location": "/admin/snippets/news/post/",
+      "row_lock": true
+    }
+  },
+  "latest_revision": 27,
+  "newest_revision": 27,
+  "revision_count": 2,
+  "live": true,
+  "live_revision": 27,
+  "current": {
+    "body": "<p>독립 새 본문</p>",
+    "cover": 45
+  },
+  "latest": {
+    "body": "<p>독립 새 본문</p>",
+    "cover": 45
+  },
+  "expected_latest": {
+    "body": "<p>독립 새 본문</p>",
+    "cover": 45
+  },
+  "published_image_ids": [
+    45
+  ],
+  "rendition_status": {
+    "43": 404,
+    "44": 404,
+    "45": 200
+  },
+  "original_images_unchanged": true,
+  "isolated_test_database": true
+}

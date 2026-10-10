@@ -1,0 +1,44 @@
+{
+  "model": "Post",
+  "publish": false,
+  "first": "save",
+  "second": "withdraw",
+  "actual_blocker_confirmed": true,
+  "requests": {
+    "save": {
+      "status": 302,
+      "location": "/admin/snippets/news/post/edit/2/",
+      "row_lock": true
+    },
+    "withdraw": {
+      "status": 302,
+      "location": "/admin/snippets/news/post/",
+      "row_lock": true
+    }
+  },
+  "latest_revision": 21,
+  "newest_revision": 21,
+  "revision_count": 2,
+  "live": false,
+  "live_revision": null,
+  "current": {
+    "body": "<p>이전 본문</p>",
+    "cover": 34
+  },
+  "latest": {
+    "body": "<p>독립 새 본문</p>",
+    "cover": 36
+  },
+  "expected_latest": {
+    "body": "<p>독립 새 본문</p>",
+    "cover": 36
+  },
+  "published_image_ids": [],
+  "rendition_status": {
+    "34": 404,
+    "35": 404,
+    "36": 404
+  },
+  "original_images_unchanged": true,
+  "isolated_test_database": true
+}

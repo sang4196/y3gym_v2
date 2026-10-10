@@ -1,0 +1,18 @@
+{
+  "modifiedExisting": [
+    "README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "backend/README.md",
+    "backend/news/wagtail_hooks.py",
+    "backend/scripts/review-brand-home.mjs",
+    "backend/scripts/review-branches.mjs",
+    "backend/news/tests/test_branch_browser.py",
+    "backend/news/tests/test_brand_browser.py"
+  ],
+  "addedImplementation": [
+    "backend/news/tests/review_fixtures.py",
+    "backend/news/tests/test_withdrawal_concurrency.py"
+  ],
+  "newEvidenceDirectory": "backend/review/branches-repair/"
+}

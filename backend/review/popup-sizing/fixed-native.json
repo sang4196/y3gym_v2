@@ -1,0 +1,310 @@
+[
+  {
+    "url": "http://localhost:8768/popups/17/?branch=second",
+    "native": {
+      "windowId": 1176046020,
+      "bounds": {
+        "left": 6,
+        "top": 27,
+        "width": 480,
+        "height": 441,
+        "windowState": "normal"
+      }
+    },
+    "metrics": {
+      "inner": [
+        480,
+        406
+      ],
+      "outer": [
+        480,
+        441
+      ],
+      "screen": [
+        1920,
+        1080
+      ],
+      "frame": [
+        480,
+        405.359375
+      ],
+      "natural": 405.359375,
+      "controls": {
+        "x": 24,
+        "y": 336.359375,
+        "width": 432,
+        "height": 57,
+        "top": 336.359375,
+        "right": 456,
+        "bottom": 393.359375,
+        "left": 24
+      },
+      "history": [
+        {
+          "at": 14,
+          "inner": [
+            1440,
+            899
+          ],
+          "outer": [
+            0,
+            0
+          ]
+        },
+        {
+          "at": 799,
+          "inner": [
+            480,
+            419
+          ],
+          "outer": [
+            480,
+            454
+          ]
+        },
+        {
+          "at": 912,
+          "inner": [
+            480,
+            406
+          ],
+          "outer": [
+            480,
+            441
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "url": "http://localhost:8768/popups/18/?branch=second",
+    "native": {
+      "windowId": 1176046022,
+      "bounds": {
+        "left": 6,
+        "top": 27,
+        "width": 480,
+        "height": 408,
+        "windowState": "normal"
+      }
+    },
+    "metrics": {
+      "inner": [
+        480,
+        373
+      ],
+      "outer": [
+        480,
+        408
+      ],
+      "screen": [
+        1920,
+        1080
+      ],
+      "frame": [
+        480,
+        372.96875
+      ],
+      "natural": 372.96875,
+      "controls": {
+        "x": 24,
+        "y": 303.96875,
+        "width": 432,
+        "height": 57,
+        "top": 303.96875,
+        "right": 456,
+        "bottom": 360.96875,
+        "left": 24
+      },
+      "history": [
+        {
+          "at": 48,
+          "inner": [
+            1440,
+            899
+          ],
+          "outer": [
+            0,
+            0
+          ]
+        },
+        {
+          "at": 705,
+          "inner": [
+            480,
+            419
+          ],
+          "outer": [
+            480,
+            454
+          ]
+        },
+        {
+          "at": 829,
+          "inner": [
+            480,
+            373
+          ],
+          "outer": [
+            480,
+            408
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "url": "http://localhost:8768/popups/21/?branch=second",
+    "native": {
+      "windowId": 1176046024,
+      "bounds": {
+        "left": 6,
+        "top": 27,
+        "width": 480,
+        "height": 441,
+        "windowState": "normal"
+      }
+    },
+    "metrics": {
+      "inner": [
+        480,
+        406
+      ],
+      "outer": [
+        480,
+        441
+      ],
+      "screen": [
+        1920,
+        1080
+      ],
+      "frame": [
+        480,
+        405.359375
+      ],
+      "natural": 405.359375,
+      "controls": {
+        "x": 24,
+        "y": 336.359375,
+        "width": 432,
+        "height": 57,
+        "top": 336.359375,
+        "right": 456,
+        "bottom": 393.359375,
+        "left": 24
+      },
+      "history": [
+        {
+          "at": 42,
+          "inner": [
+            1440,
+            899
+          ],
+          "outer": [
+            0,
+            0
+          ]
+        },
+        {
+          "at": 547,
+          "inner": [
+            480,
+            419
+          ],
+          "outer": [
+            480,
+            454
+          ]
+        },
+        {
+          "at": 673,
+          "inner": [
+            480,
+            406
+          ],
+          "outer": [
+            480,
+            441
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "url": "http://localhost:8768/popups/22/?branch=second",
+    "native": {
+      "windowId": 1176046026,
+      "bounds": {
+        "left": 6,
+        "top": 27,
+        "width": 480,
+        "height": 408,
+        "windowState": "normal"
+      }
+    },
+    "metrics": {
+      "inner": [
+        480,
+        373
+      ],
+      "outer": [
+        480,
+        408
+      ],
+      "screen": [
+        1920,
+        1080
+      ],
+      "frame": [
+        480,
+        372.96875
+      ],
+      "natural": 372.96875,
+      "controls": {
+        "x": 24,
+        "y": 303.96875,
+        "width": 432,
+        "height": 57,
+        "top": 303.96875,
+        "right": 456,
+        "bottom": 360.96875,
+        "left": 24
+      },
+      "history": [
+        {
+          "at": 43,
+          "inner": [
+            1440,
+            899
+          ],
+          "outer": [
+            0,
+            0
+          ]
+        },
+        {
+          "at": 436,
+          "inner": [
+            480,
+            419
+          ],
+          "outer": [
+            480,
+            454
+          ]
+        },
+        {
+          "at": 552,
+          "inner": [
+            480,
+            373
+          ],
+          "outer": [
+            480,
+            408
+          ]
+        }
+      ]
+    }
+  }
+]

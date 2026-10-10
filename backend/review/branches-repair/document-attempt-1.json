@@ -1,0 +1,19 @@
+{
+  "run": "2026-10-10T06:44:11.076Z",
+  "status": "FAIL",
+  "documents": [
+    "README.md",
+    "backend/README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md",
+    "backend/review/branches-repair/README.md"
+  ],
+  "localLinks": 181,
+  "markdownAnchors": 12,
+  "checks": [],
+  "errors": [
+    "Error: ENOENT: no such file or directory, stat '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-repair/document-checks.json'\n    at async Object.stat (node:internal/fs/promises:1037:18)\n    at async file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-repair/verify-documents.mjs:19:20"
+  ]
+}

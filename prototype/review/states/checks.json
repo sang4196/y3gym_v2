@@ -1,0 +1,132 @@
+{
+  "reviewedAt": "2026-10-09T17:42:30.989Z",
+  "browser": "Chromium",
+  "fixedFixtureClock": "2026-10-09T03:00:00.000Z",
+  "homeDesignApproval": "APPROVED — previous home",
+  "popupDesignApproval": "APPROVED — user: 팝업창은 일단 이정도면 될 것 같음",
+  "branchTabDesignApproval": "APPROVED — user: 배치 합격",
+  "pageSeparationVisualApproval": "APPROVED — user: ㅇㅋ 이대로 가자",
+  "facilityCarouselVisualApproval": "APPROVED — user: 시설슬라이드 통과",
+  "scope": "Default two-branch home, desktop popup, mobile layer, empty content, and failure cases",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "Popup period boundaries, publication, activation, and Korean midnight",
+      "status": "PASS"
+    },
+    {
+      "name": "Separate popup, display acknowledgement, close, once per tab, manual reuse, and connected post",
+      "status": "PASS"
+    },
+    {
+      "name": "Blocked automatic popup is normal when manual entry succeeds; no false shown record",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile layer opens without a new tab; close restores scroll/focus, traps focus, and supports short screens",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile today hide, manual reopening, same-tab post, and unavailable storage",
+      "status": "PASS"
+    },
+    {
+      "name": "Today hide persists across tabs until Korean midnight and manual reopening remains available",
+      "status": "PASS"
+    },
+    {
+      "name": "Direct popup URLs enforce expired, future, disabled, unpublished, and missing-post fixture conditions",
+      "status": "PASS"
+    },
+    {
+      "name": "Popup content-loading failure is not counted as displayed; manual retry recovers the same window",
+      "status": "PASS"
+    },
+    {
+      "name": "Unavailable storage preserves manual entry and reports inability to save today hide",
+      "status": "PASS"
+    },
+    {
+      "name": "Grouped branch previews stay on home; detail page groups facilities, trainers and contact",
+      "status": "PASS"
+    },
+    {
+      "name": "Branch facility gallery shares the approved layout on home/details, wraps, resets and supports keyboard/mobile swipes",
+      "status": "PASS"
+    },
+    {
+      "name": "Branch tab keyboard navigation, URL/session restore, direct links, and same-tab announcement return",
+      "status": "PASS"
+    },
+    {
+      "name": "Branch data expansion creates all tabs/panels and keeps many mobile tabs within horizontal scrolling",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty optional data hides photo/trainer blocks, shows news empty state, and preserves core inquiry",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed photographs and simulated unavailable map keep content, address, and inquiry readable",
+      "status": "PASS"
+    },
+    {
+      "name": "Blocked app script and disabled JavaScript retain mobile menu, content, addresses, and branch contact text",
+      "status": "PASS"
+    },
+    {
+      "name": "No unexpected script or resource failures outside deliberately broken fixtures",
+      "status": "PASS"
+    }
+  ],
+  "skipped": [],
+  "browserErrors": [],
+  "resourceFailures": [
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-popup.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/popup.js",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-hero.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-trainer.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/images/missing-strength.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8767/app.js",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "url": "http://127.0.0.1:8767/app.js",
+      "error": "net::ERR_FAILED"
+    }
+  ],
+  "limitations": [
+    "No backend publication/access controls",
+    "No real map, telephone, or KakaoTalk integration",
+    "No physical device or other-browser verification",
+    "State screenshots still require user visual review"
+  ]
+}

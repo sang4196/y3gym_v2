@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="{{ branding.name|default:'Y3GYM' }} 로컬 CMS 소식 검토. 등록된 자료는 테스트 콘텐츠입니다.">
+    <title>{% firstof title post.title "소식" %} · {{ branding.name|default:"Y3GYM" }}</title>
+    <link rel="preload" href="{% static 'prototype/assets/fonts/PretendardVariable.woff2' %}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{% static 'prototype/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'news/content.css' %}">
+    <link rel="stylesheet" href="{% static 'news/brand.css' %}">
+    <link rel="stylesheet" href="{% static 'news/branches.css' %}">
+    <script src="{% static 'prototype/app.js' %}" defer></script>
+    <script src="{% static 'prototype/facility-gallery.js' %}" defer></script>
+    <script src="{% static 'news/context.js' %}" type="module"></script>
+  </head>
+  <body{% if page_kind != 'branches' %} class="content-page"{% endif %} data-page="{{ page_kind }}" data-site-root="/"{% if is_preview %} data-preview-branch="{{ branch }}"{% endif %}>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <header class="site-header"><div class="container header-inner">
+      <a class="wordmark" href="/{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
+        <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span class="menu-toggle-label">메뉴</span>
+      </button>
+      <nav class="primary-navigation" id="primary-navigation" aria-label="주 메뉴">
+        <a class="nav-link" href="{% url 'branches' %}{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page{% if page_kind == 'branches' %} aria-current="page"{% endif %}>지점 안내</a>
+        <a class="nav-link" href="{% url 'news:list' %}{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page{% if page_kind != 'branches' %} aria-current="page"{% endif %}>소식</a>
+        <a class="button button--small button--primary header-contact" href="{% url 'branches' %}{% if branch %}?branch={{ branch }}#contact-{{ branch }}{% else %}#branch{% endif %}" data-branch-page data-inquiry="any"{% if not selected_branch.phone and not selected_branch.channel %} hidden{% endif %}>문의하기</a>
+      </nav>
+    </div></header>
+
+    <main id="main">{% block content %}{% endblock %}</main>
+
+    <footer class="site-footer"><div class="container">
+      <div class="footer-top">
+        <a class="wordmark" href="/{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
+        <nav class="footer-navigation" aria-label="하단 메뉴"><a href="{% url 'branches' %}{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page>지점 안내</a><a href="{% url 'news:list' %}{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page>소식</a></nav>
+      </div>
+      <p class="footer-description">시설과 이용 정보를 한눈에.</p>
+      <p class="footer-note">로컬 CMS 검토 · 사진과 운영 정보는 임시 자료입니다.</p>
+    </div></footer>
+
+    <aside class="mobile-contact-bar" data-inquiry="any"{% if not selected_branch.phone and not selected_branch.channel %} hidden{% endif %} aria-label="{{ selected_branch }} 문의 안내"><div class="mobile-contact-inner"><a class="button button--primary" href="{% url 'branches' %}?branch={{ branch }}#contact-{{ branch }}" data-branch-page data-inquiry="phone"{% if not selected_branch.phone %} hidden{% endif %}>전화 문의</a><a class="button button--secondary" href="{% url 'branches' %}?branch={{ branch }}#contact-{{ branch }}" data-branch-page data-inquiry="channel"{% if not selected_branch.channel %} hidden{% endif %}>카카오톡 문의</a></div></aside>
+    {% include 'news/branch_navigation.html' %}
+  </body>
+</html>

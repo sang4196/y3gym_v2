@@ -1,0 +1,29 @@
+{
+  "run": "2026-10-10T06:16:58.239Z",
+  "origin": "http://localhost:55413",
+  "isolatedTestDatabase": true,
+  "liveReadOnly": false,
+  "status": "FAIL",
+  "checks": [
+    {
+      "name": "운영자 메뉴 → 브랜드·홈 입력 화면·기존 승인 콘텐츠",
+      "detail": {
+        "originalImage": "1"
+      },
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "brand-editor.png",
+    "brand-editor-photo.png",
+    "brand-editor-mobile.png",
+    "home-pc-first.png",
+    "home-pc-full.png",
+    "failure-editor.png"
+  ],
+  "failure": {
+    "message": "The expression evaluated to a falsy value:\n\n  assert(bar && bar.y + bar.height <= 813)\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(bar && bar.y + bar.height <= 813)\n\n    at file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-brand-home.mjs:118:3"
+  }
+}

@@ -1,0 +1,19 @@
+Creating test database for alias 'default'...
+.
+----------------------------------------------------------------------
+Ran 1 test in 23.543s
+
+OK
+Destroying test database for alias 'default'...
+Found 1 test(s).
+System check identified no issues (0 silenced).
+Created two local accounts and two test posts. Credentials saved privately; values not printed.
+Created and published the approved local brand fixture. Prototype files and credentials unchanged.
+PASS 운영자 메뉴 → 브랜드·홈 입력 화면·기존 승인 콘텐츠
+PASS 승인 홈 PC·모바일 글꼴·이미지 비율·가로 넘침·하단 문의 바
+PASS JavaScript 비활성 모바일: 서버 소개·두 지점 본문·기본 탐색 유지
+PASS 초안 저장·재진입·권한 미리보기: 공개 홈 유지·사진 중심·자동 팝업 없음
+PASS 명시적 공개 후에만 실제 홈 소개·사진 중심 변경
+PASS 대표 사진 제거도 초안·공개 분리·사진 없는 배치
+PASS 공개 철회 시 소개·사진 제외·지점과 소식 기본 탐색 유지
+

@@ -1,0 +1,5 @@
+/* CMS images carry width/height attributes. Keep their original aspect ratio
+   when the approved layout constrains their width on smaller screens. */
+.post-body img {
+  height: auto;
+}

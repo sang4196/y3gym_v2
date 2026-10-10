@@ -1,0 +1,612 @@
+{
+  "isolatedTestDatabase": true,
+  "origin": "http://localhost:46477",
+  "checks": [
+    {
+      "name": "A모바일검수",
+      "result": "PASS",
+      "detail": "Mobile input, facility chooser/reorder, save/reopen and publish performed in temporary DB."
+    }
+  ],
+  "measurements": [
+    {
+      "name": "A-fresh-mobile-direct",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "Y3GYM 본점"
+        },
+        {
+          "selector": "#id_name",
+          "x": 20,
+          "y": 297.453125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 20,
+          "y": 766.953125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 44,
+          "y": 1771.203125,
+          "width": 311,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 20,
+          "y": 3992.359375,
+          "width": 335,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    },
+    {
+      "name": "B-desktop-resize",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 193.40625,
+          "y": 0,
+          "width": 181.59375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 193.40625,
+          "y": 0,
+          "width": 181.59375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 193.40625,
+          "y": 0,
+          "width": 181.59375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "A모바일검수"
+        },
+        {
+          "selector": "#id_name",
+          "x": 213.40625,
+          "y": 354.640625,
+          "width": 141.59375,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 213.40625,
+          "y": 896.890625,
+          "width": 141.59375,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 237.40625,
+          "y": 2429.796875,
+          "width": 117.59375,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 213.40625,
+          "y": 5335.953125,
+          "width": 141.59375,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    },
+    {
+      "name": "B-desktop-resize-settled",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "A모바일검수"
+        },
+        {
+          "selector": "#id_name",
+          "x": 20,
+          "y": 297.453125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 20,
+          "y": 766.953125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 44,
+          "y": 1771.203125,
+          "width": 311,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 20,
+          "y": 3992.359375,
+          "width": 335,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    },
+    {
+      "name": "B-mobile-reload",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "A모바일검수"
+        },
+        {
+          "selector": "#id_name",
+          "x": 20,
+          "y": 297.453125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 20,
+          "y": 766.953125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 44,
+          "y": 1771.203125,
+          "width": 311,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 20,
+          "y": 3992.359375,
+          "width": 335,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    },
+    {
+      "name": "B-preview-open",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready side-panel-open",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "A모바일검수"
+        },
+        {
+          "selector": "#id_name",
+          "x": 20,
+          "y": 207.453125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 20,
+          "y": 676.953125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 44,
+          "y": 1681.203125,
+          "width": 311,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 20,
+          "y": 3902.359375,
+          "width": 335,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "true",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    },
+    {
+      "name": "B-preview-closed",
+      "width": 375,
+      "documentWidth": 375,
+      "bodyClasses": "editor-view ready",
+      "elements": [
+        {
+          "selector": "#main",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 812,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "#wagtail-sidebar",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 0,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block"
+        },
+        {
+          "selector": "header",
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 101,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "block",
+          "text": "A모바일검수"
+        },
+        {
+          "selector": "#id_name",
+          "x": 20,
+          "y": 297.453125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_address",
+          "x": 20,
+          "y": 766.953125,
+          "width": 335,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "#id_facilities-0-title",
+          "x": 44,
+          "y": 1771.203125,
+          "width": 311,
+          "height": 42.5,
+          "marginLeft": "0px",
+          "paddingLeft": "20px",
+          "display": "inline-block"
+        },
+        {
+          "selector": "footer",
+          "x": 20,
+          "y": 3992.359375,
+          "width": 335,
+          "height": 50,
+          "marginLeft": "0px",
+          "paddingLeft": "0px",
+          "display": "grid"
+        }
+      ],
+      "panels": [
+        {
+          "name": "status",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "preview",
+          "expanded": "false",
+          "pressed": null
+        },
+        {
+          "name": "checks",
+          "expanded": "false",
+          "pressed": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "name": "B-desktop-resize",
+      "problem": "Narrow mobile name field",
+      "x": 213.40625,
+      "width": 141.59375
+    }
+  ],
+  "screenshots": [
+    "A-fresh-mobile-direct.png",
+    "A모바일검수-image-chooser.png",
+    "A모바일검수-save-controls.png",
+    "A모바일검수-publish-controls.png",
+    "B-desktop-resize.png",
+    "B-desktop-resize-settled.png",
+    "B-mobile-reload.png",
+    "B-preview-open.png",
+    "B-preview-closed.png"
+  ],
+  "sidebarToggleCandidates": 1,
+  "status": "FAIL",
+  "failure": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button.sidebar__collapse-toggle, button.sidebar-menu-toggle, button[aria-controls=\"wagtail-sidebar\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"사이드 전환\" aria-expanded=\"true\" aria-keyshortcuts=\"[\" class=\"w-mr-4↵                button↵                sidebar__collapse-toggle↵                w-flex↵                w-justify-center↵                w-items-center↵                hover:w-bg-surface-menu-item-active↵                hover:text-white↵                hover:opacity-100↵                more-contrast:w-border-border-interactive-more-contrast-dark-bg↵                hover:more-contrast:w-border-border-inter…>…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    19 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at /home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches-independent/probe-mobile.mjs:89:33"
+}

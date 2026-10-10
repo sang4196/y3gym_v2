@@ -1,0 +1,531 @@
+{
+  "reviewedAt": "2026-10-09T17:39:43.731Z",
+  "browser": "Chromium",
+  "designApproval": "LIST_APPROVED — user: 글 목록 통과; detail reflects requested action removal",
+  "scope": "Shared news list, categories, static pagination, post reading and return, branch context, empty and no-JS states",
+  "tests": [
+    {
+      "name": "List and post layouts at six widths, images/fonts, menu, footer and contact bar remain readable",
+      "status": "PASS"
+    },
+    {
+      "name": "All/notice/event filters, event detail and return preserve category and selected branch",
+      "status": "PASS"
+    },
+    {
+      "name": "Home and branch-page menus and home previews enter news with the selected branch",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty lists keep categories and basic navigation; direct posts recover from unknown return context",
+      "status": "PASS"
+    },
+    {
+      "name": "Expanded fixture paginates 23 public examples without exposing an unpublished record and restores page after reading",
+      "status": "PASS"
+    },
+    {
+      "name": "Disabled JavaScript retains filters, post reading, menu, footer and branch information links",
+      "status": "PASS"
+    },
+    {
+      "name": "No unexpected script or resource errors in news review",
+      "status": "PASS"
+    }
+  ],
+  "widths": [
+    {
+      "name": "list",
+      "width": 320,
+      "content": 320,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title",
+        "news-visit-title",
+        "news-event-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "notice",
+      "width": 320,
+      "content": 320,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "event",
+      "width": 320,
+      "content": 320,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "empty",
+      "width": 320,
+      "content": 320,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "list",
+      "width": 375,
+      "content": 375,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title",
+        "news-visit-title",
+        "news-event-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "notice",
+      "width": 375,
+      "content": 375,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "event",
+      "width": 375,
+      "content": 375,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "empty",
+      "width": 375,
+      "content": 375,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "list",
+      "width": 768,
+      "content": 768,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title",
+        "news-visit-title",
+        "news-event-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "notice",
+      "width": 768,
+      "content": 768,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "event",
+      "width": 768,
+      "content": 768,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "empty",
+      "width": 768,
+      "content": 768,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "list",
+      "width": 1024,
+      "content": 1024,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title",
+        "news-visit-title",
+        "news-event-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "notice",
+      "width": 1024,
+      "content": 1024,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "event",
+      "width": 1024,
+      "content": 1024,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "empty",
+      "width": 1024,
+      "content": 1024,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "list",
+      "width": 1280,
+      "content": 1280,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title",
+        "news-visit-title",
+        "news-event-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "notice",
+      "width": 1280,
+      "content": 1280,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "event",
+      "width": 1280,
+      "content": 1280,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "empty",
+      "width": 1280,
+      "content": 1280,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "list",
+      "width": 1440,
+      "content": 1440,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title",
+        "news-visit-title",
+        "news-event-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "notice",
+      "width": 1440,
+      "content": 1440,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "event",
+      "width": 1440,
+      "content": 1440,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "post-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    },
+    {
+      "name": "empty",
+      "width": 1440,
+      "content": 1440,
+      "h1Count": 1,
+      "fontLoaded": true,
+      "ids": [
+        "primary-navigation",
+        "main",
+        "page-title"
+      ],
+      "overflowingControls": [],
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "list-mobile-first.png",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "full": false
+    },
+    {
+      "name": "list-mobile-full.png",
+      "viewport": {
+        "width": 375,
+        "height": 898
+      },
+      "full": true
+    },
+    {
+      "name": "notice-mobile-first.png",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "full": false
+    },
+    {
+      "name": "notice-mobile-full.png",
+      "viewport": {
+        "width": 375,
+        "height": 1027
+      },
+      "full": true
+    },
+    {
+      "name": "event-mobile-first.png",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "full": false
+    },
+    {
+      "name": "event-mobile-full.png",
+      "viewport": {
+        "width": 375,
+        "height": 935
+      },
+      "full": true
+    },
+    {
+      "name": "empty-mobile-first.png",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "full": false
+    },
+    {
+      "name": "empty-mobile-full.png",
+      "viewport": {
+        "width": 375,
+        "height": 919
+      },
+      "full": true
+    },
+    {
+      "name": "list-desktop-first.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "full": false
+    },
+    {
+      "name": "list-desktop-full.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "full": true
+    },
+    {
+      "name": "notice-desktop-first.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "full": false
+    },
+    {
+      "name": "notice-desktop-full.png",
+      "viewport": {
+        "width": 1440,
+        "height": 930
+      },
+      "full": true
+    },
+    {
+      "name": "event-desktop-first.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "full": false
+    },
+    {
+      "name": "event-desktop-full.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "full": true
+    },
+    {
+      "name": "empty-desktop-first.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "full": false
+    },
+    {
+      "name": "empty-desktop-full.png",
+      "viewport": {
+        "width": 1440,
+        "height": 912
+      },
+      "full": true
+    },
+    {
+      "name": "pagination-mobile.png",
+      "viewport": {
+        "width": 375,
+        "height": 1081
+      },
+      "full": true
+    }
+  ],
+  "status": "PASS",
+  "errors": [],
+  "limitations": [
+    "List visually approved by user; detail reflects requested removal without separate explicit approval",
+    "Static public examples, not backend publication or access controls",
+    "No administration, real inquiries/maps, physical-device or other-browser verification"
+  ]
+}

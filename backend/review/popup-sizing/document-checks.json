@@ -1,0 +1,12 @@
+{
+  "files": [
+    "README.md",
+    "backend/README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "prototype/DESIGN.md",
+    "backend/review/popup-sizing/README.md"
+  ],
+  "localLinksChecked": 128,
+  "missingLinks": []
+}

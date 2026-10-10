@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "unit": "M2-2-R1",
+  "implementation": "COMPLETE",
+  "developmentSelfVerification": "COMPLETE",
+  "independentReverification": "PENDING",
+  "userApproval": "PENDING",
+  "modifiedExistingFiles": 9,
+  "addedImplementationFiles": 2,
+  "serverCollected": 81,
+  "serverPassed": 79,
+  "serverSkippedOptIn": 2,
+  "actualConcurrencyScenarios": 12,
+  "browserStandaloneAndCombinedBothOrders": "PASS",
+  "documentLinks": 199,
+  "documentAnchors": 12,
+  "preservation": "PASS",
+  "liveServer": "RESTARTED_AND_GET_VERIFIED",
+  "globalFormat": "FAIL_PREEXISTING_WORKFLOW_REVIEW_FILE",
+  "gitIndex": "UNCHANGED",
+  "commitPushDeployment": "NOT_PERFORMED"
+}

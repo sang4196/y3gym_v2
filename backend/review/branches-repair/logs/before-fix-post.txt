@@ -1,0 +1,21 @@
+Creating test database for alias 'default'...
+F
+======================================================================
+FAIL: test_post_withdraw_then_draft (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_post_withdraw_then_draft)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/news/tests/test_withdrawal_concurrency.py", line 265, in test_post_withdraw_then_draft
+    self.run_race(Post)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/news/tests/test_withdrawal_concurrency.py", line 235, in run_race
+    self.assertTrue(blocked, result)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'model': 'Post', 'publish': False, 'first': 'withdraw', 'secondBlockedByFirst': False, 'requests': {'withdraw': {'status': 302, 'rowLock': False}, 'edit': {'status': 302, 'rowLock': True}}, 'latestRevision': 1, 'newestRevision': 2, 'live': False, 'liveRevision': None, 'currentContent': '<p>기존 본문</p>', 'draftContent': '<p>기존 본문</p>', 'facilityTitles': None, 'isolatedTestDatabase': True}
+
+----------------------------------------------------------------------
+Ran 1 test in 2.079s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+Found 1 test(s).
+System check identified no issues (0 silenced).

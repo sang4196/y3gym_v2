@@ -1,0 +1,19 @@
+{% extends "news/base.html" %}
+{% block content %}
+<section class="page-intro" aria-labelledby="page-title"><div class="container">
+  <nav class="breadcrumb" aria-label="현재 위치"><a href="/{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page>홈</a><span aria-hidden="true">/</span><span aria-current="page">소식</span></nav>
+  <h1 id="page-title">소식</h1><p class="section-description">모든 지점의 공지와 이벤트를 확인하세요.</p><p class="content-example">로컬 CMS 검토용 · 등록된 제목·내용·사진은 테스트 자료입니다.</p>
+</div></section>
+<section class="news-index container" aria-label="소식 목록">
+  <nav class="news-filters" aria-label="소식 분류">{% for key,label in categories %}<a class="news-filter" href="{% url 'news:list' %}?category={{ key }}{% if branch %}&amp;branch={{ branch }}{% endif %}" data-news-link{% if category == key %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}</nav>
+  <p class="news-result-count">{{ category_label }} {{ page.paginator.count }}건</p>
+  {% if page.object_list %}<div class="news-list">
+    {% for post in page %}<article class="news-item" aria-labelledby="news-{{ post.pk }}-title">
+      <span class="news-category">{{ post.get_category_display }}</span>
+      <div class="news-copy"><h2 id="news-{{ post.pk }}-title"><a class="news-title-link" href="{{ post.get_absolute_url }}?category={{ category }}&amp;page={{ page.number }}{% if branch %}&amp;branch={{ branch }}{% endif %}" data-news-link>{{ post.title }}</a></h2>{% if post.summary %}<p>{{ post.summary }}</p>{% endif %}</div>
+      <time datetime="{{ post.first_published_at|date:'Y-m-d' }}">{{ post.first_published_at|date:'Y.m.d' }}</time>
+    </article>{% endfor %}
+  </div>{% else %}<div class="news-empty-state"><h2>등록된 소식이 없습니다.</h2><p>새로운 소식이 등록되면 이곳에서 확인할 수 있습니다.</p></div>{% endif %}
+  {% if page.paginator.num_pages > 1 %}<nav class="news-pagination" aria-label="소식 페이지">{% for number in page.paginator.page_range %}<a class="news-page-link" href="?category={{ category }}&amp;page={{ number }}{% if branch %}&amp;branch={{ branch }}{% endif %}" data-news-link aria-label="{{ number }}페이지"{% if number == page.number %} aria-current="page"{% endif %}>{{ number }}</a>{% endfor %}</nav>{% endif %}
+</section>
+{% endblock %}

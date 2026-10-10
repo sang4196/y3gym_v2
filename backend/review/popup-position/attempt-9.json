@@ -1,0 +1,1256 @@
+{
+  "run": "2026-10-10T03:39:22.153Z",
+  "status": "FAIL",
+  "headed": true,
+  "checks": [
+    {
+      "name": "실제 복수 창 초기 좌표·중앙 랜덤 분산·최종 좌표·48px 가장자리 여백",
+      "detail": [
+        {
+          "left": 816,
+          "top": 381,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        },
+        {
+          "left": 686,
+          "top": 286,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        },
+        {
+          "left": 599,
+          "top": 401,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        },
+        {
+          "left": 634,
+          "top": 354,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "열린 창 재사용·일반 닫기 후 새로고침 전체 재노출·새 랜덤 위치",
+      "detail": 4,
+      "result": "PASS"
+    },
+    {
+      "name": "초기 보정 종료 후 사용자가 이동·크기 변경한 창을 다시 끌어오지 않음",
+      "detail": {
+        "left": 256,
+        "top": 147,
+        "width": 620,
+        "height": 650,
+        "windowState": "normal"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "사진 지연 후 높이가 커져도 같은 랜덤 기준점으로 중앙·가장자리 보정",
+      "detail": [
+        {
+          "left": 563,
+          "top": 77,
+          "width": 480,
+          "height": 743,
+          "windowState": "normal"
+        },
+        {
+          "left": 726,
+          "top": 138,
+          "width": 480,
+          "height": 710,
+          "windowState": "normal"
+        },
+        {
+          "left": 879,
+          "top": 145,
+          "width": 480,
+          "height": 743,
+          "windowState": "normal"
+        },
+        {
+          "left": 2499,
+          "top": 172,
+          "width": 480,
+          "height": 710,
+          "windowState": "normal"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "같은 난수값에서도 4개 실제 창 분산·첫 9개 중앙 구역 중복 선택 없음",
+      "detail": {
+        "actual": [
+          {
+            "x": 0,
+            "y": 0,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          {
+            "x": 0.72,
+            "y": 0.72,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          {
+            "x": -0.72,
+            "y": 0,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          {
+            "x": -0.72,
+            "y": 0.72,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          }
+        ],
+        "nine": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0.72,
+            "y": 0.72
+          },
+          {
+            "x": -0.72,
+            "y": 0
+          },
+          {
+            "x": -0.72,
+            "y": 0.72
+          },
+          {
+            "x": 0.72,
+            "y": -0.72
+          },
+          {
+            "x": 0,
+            "y": 0.72
+          },
+          {
+            "x": 0,
+            "y": -0.72
+          },
+          {
+            "x": 0.72,
+            "y": 0
+          },
+          {
+            "x": -0.72,
+            "y": -0.72
+          }
+        ]
+      },
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "batches": [
+    {
+      "name": "real-screen-normal",
+      "opens": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2728,top=298,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2598,top=186,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2511,top=318,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2546,top=254,resizable=yes,scrollbars=yes"
+        }
+      ],
+      "windows": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "native": {
+            "left": 816,
+            "top": 381,
+            "width": 480,
+            "height": 441,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0.5321837946476395,
+            "y": 0.6179922020705353,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 816,
+            "top": 381
+          },
+          "outer": {
+            "left": 816,
+            "top": 381,
+            "width": 480,
+            "height": 441
+          },
+          "inner": {
+            "width": 480,
+            "height": 406
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 336.359375,
+            "width": 432,
+            "height": 57,
+            "top": 336.359375,
+            "right": 456,
+            "bottom": 393.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "native": {
+            "left": 686,
+            "top": 286,
+            "width": 480,
+            "height": 408,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.18920047037231286,
+            "y": -0.5023383201231424,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 686,
+            "top": 286
+          },
+          "outer": {
+            "left": 686,
+            "top": 286,
+            "width": 480,
+            "height": 408
+          },
+          "inner": {
+            "width": 480,
+            "height": 373
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 303.96875,
+            "width": 432,
+            "height": 57,
+            "top": 303.96875,
+            "right": 456,
+            "bottom": 360.96875,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "native": {
+            "left": 599,
+            "top": 401,
+            "width": 480,
+            "height": 441,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.6737550136112872,
+            "y": 0.8194747480585554,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 599,
+            "top": 401
+          },
+          "outer": {
+            "left": 599,
+            "top": 401,
+            "width": 480,
+            "height": 441
+          },
+          "inner": {
+            "width": 480,
+            "height": 406
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 336.359375,
+            "width": 432,
+            "height": 57,
+            "top": 336.359375,
+            "right": 456,
+            "bottom": 393.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "native": {
+            "left": 634,
+            "top": 354,
+            "width": 480,
+            "height": 408,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.4800379581721158,
+            "y": 0.18406266303219027,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 634,
+            "top": 354
+          },
+          "outer": {
+            "left": 634,
+            "top": 354,
+            "width": 480,
+            "height": 408
+          },
+          "inner": {
+            "width": 480,
+            "height": 373
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 303.96875,
+            "width": 432,
+            "height": 57,
+            "top": 303.96875,
+            "right": 456,
+            "bottom": 360.96875,
+            "left": 24
+          }
+        }
+      ]
+    },
+    {
+      "name": "ordinary-close-and-reload",
+      "opens": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2791,top=180,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2613,top=237,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2649,top=326,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2476,top=294,resizable=yes,scrollbars=yes"
+        }
+      ],
+      "windows": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "native": {
+            "left": 879,
+            "top": 264,
+            "width": 480,
+            "height": 441,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0.8855705679157353,
+            "y": -0.5560319214722824,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 879,
+            "top": 264
+          },
+          "outer": {
+            "left": 879,
+            "top": 264,
+            "width": 480,
+            "height": 441
+          },
+          "inner": {
+            "width": 480,
+            "height": 406
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 336.359375,
+            "width": 432,
+            "height": 57,
+            "top": 336.359375,
+            "right": 456,
+            "bottom": 393.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "native": {
+            "left": 701,
+            "top": 337,
+            "width": 480,
+            "height": 408,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.10781349573227006,
+            "y": 0.012140171217614293,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 701,
+            "top": 337
+          },
+          "outer": {
+            "left": 701,
+            "top": 337,
+            "width": 480,
+            "height": 408
+          },
+          "inner": {
+            "width": 480,
+            "height": 373
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 303.96875,
+            "width": 432,
+            "height": 57,
+            "top": 303.96875,
+            "right": 456,
+            "bottom": 360.96875,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "native": {
+            "left": 2657,
+            "top": 410,
+            "width": 480,
+            "height": 441,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0.09208261724967348,
+            "y": 0.9048668218497042,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 2657,
+            "top": 410
+          },
+          "outer": {
+            "left": 2657,
+            "top": 410,
+            "width": 480,
+            "height": 441
+          },
+          "inner": {
+            "width": 480,
+            "height": 406
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 336.359375,
+            "width": 432,
+            "height": 57,
+            "top": 336.359375,
+            "right": 456,
+            "bottom": 393.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "native": {
+            "left": 564,
+            "top": 394,
+            "width": 480,
+            "height": 408,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.8662340987946062,
+            "y": 0.5803529915745429,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 564,
+            "top": 394
+          },
+          "outer": {
+            "left": 564,
+            "top": 394,
+            "width": 480,
+            "height": 408
+          },
+          "inner": {
+            "width": 480,
+            "height": 373
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 303.96875,
+            "width": 432,
+            "height": 57,
+            "top": 303.96875,
+            "right": 456,
+            "bottom": 360.96875,
+            "left": 24
+          }
+        }
+      ]
+    },
+    {
+      "name": "delayed-photo",
+      "opens": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2475,top=144,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2638,top=189,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2791,top=212,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2491,top=223,resizable=yes,scrollbars=yes"
+        }
+      ],
+      "windows": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "native": {
+            "left": 563,
+            "top": 77,
+            "width": 480,
+            "height": 743,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.8747739481245045,
+            "y": -0.9198468474147613,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 563,
+            "top": 77
+          },
+          "outer": {
+            "left": 563,
+            "top": 77,
+            "width": 480,
+            "height": 743
+          },
+          "inner": {
+            "width": 480,
+            "height": 708
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 638.359375,
+            "width": 432,
+            "height": 57,
+            "top": 638.359375,
+            "right": 456,
+            "bottom": 695.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "native": {
+            "left": 726,
+            "top": 138,
+            "width": 480,
+            "height": 710,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0.033833002679623914,
+            "y": -0.47431572279932027,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 726,
+            "top": 138
+          },
+          "outer": {
+            "left": 726,
+            "top": 138,
+            "width": 480,
+            "height": 710
+          },
+          "inner": {
+            "width": 480,
+            "height": 675
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 605.96875,
+            "width": 432,
+            "height": 57,
+            "top": 605.96875,
+            "right": 456,
+            "bottom": 662.96875,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "native": {
+            "left": 879,
+            "top": 145,
+            "width": 480,
+            "height": 743,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0.8850335702655537,
+            "y": -0.23831555918412217,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 879,
+            "top": 145
+          },
+          "outer": {
+            "left": 879,
+            "top": 145,
+            "width": 480,
+            "height": 743
+          },
+          "inner": {
+            "width": 480,
+            "height": 708
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 638.359375,
+            "width": 432,
+            "height": 57,
+            "top": 638.359375,
+            "right": 456,
+            "bottom": 695.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "native": {
+            "left": 2499,
+            "top": 172,
+            "width": 480,
+            "height": 710,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.7855192918011762,
+            "y": -0.13227919257195314,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 2499,
+            "top": 172
+          },
+          "outer": {
+            "left": 2499,
+            "top": 172,
+            "width": 480,
+            "height": 710
+          },
+          "inner": {
+            "width": 480,
+            "height": 675
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 605.96875,
+            "width": 432,
+            "height": 57,
+            "top": 605.96875,
+            "right": 456,
+            "bottom": 662.96875,
+            "left": 24
+          }
+        }
+      ]
+    },
+    {
+      "name": "fixed-random-stress",
+      "opens": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2632,top=236,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2762,top=308,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2502,top=236,resizable=yes,scrollbars=yes"
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "features": "popup=yes,width=480,height=520,left=2502,top=308,resizable=yes,scrollbars=yes"
+        }
+      ],
+      "windows": [
+        {
+          "url": "http://localhost:8768/popups/17/?branch=second",
+          "native": {
+            "left": 720,
+            "top": 320,
+            "width": 480,
+            "height": 441,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 720,
+            "top": 320
+          },
+          "outer": {
+            "left": 720,
+            "top": 320,
+            "width": 480,
+            "height": 441
+          },
+          "inner": {
+            "width": 480,
+            "height": 406
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 336.359375,
+            "width": 432,
+            "height": 57,
+            "top": 336.359375,
+            "right": 456,
+            "bottom": 393.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/18/?branch=second",
+          "native": {
+            "left": 850,
+            "top": 408,
+            "width": 480,
+            "height": 408,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": 0.72,
+            "y": 0.72,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 850,
+            "top": 408
+          },
+          "outer": {
+            "left": 850,
+            "top": 408,
+            "width": 480,
+            "height": 408
+          },
+          "inner": {
+            "width": 480,
+            "height": 373
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 303.96875,
+            "width": 432,
+            "height": 57,
+            "top": 303.96875,
+            "right": 456,
+            "bottom": 360.96875,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/21/?branch=second",
+          "native": {
+            "left": 590,
+            "top": 320,
+            "width": 480,
+            "height": 441,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 0,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.72,
+            "y": 0,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 590,
+            "top": 320
+          },
+          "outer": {
+            "left": 590,
+            "top": 320,
+            "width": 480,
+            "height": 441
+          },
+          "inner": {
+            "width": 480,
+            "height": 406
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 336.359375,
+            "width": 432,
+            "height": 57,
+            "top": 336.359375,
+            "right": 456,
+            "bottom": 393.359375,
+            "left": 24
+          }
+        },
+        {
+          "url": "http://localhost:8768/popups/22/?branch=second",
+          "native": {
+            "left": 2510,
+            "top": 408,
+            "width": 480,
+            "height": 408,
+            "windowState": "normal"
+          },
+          "area": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "initialArea": {
+            "left": 1920,
+            "top": 0,
+            "width": 1920,
+            "height": 1080,
+            "marginX": 48,
+            "marginY": 48
+          },
+          "anchor": {
+            "x": -0.72,
+            "y": 0.72,
+            "display": {
+              "availLeft": 1920,
+              "availTop": 0,
+              "availWidth": 1920,
+              "availHeight": 1080
+            }
+          },
+          "target": {
+            "left": 2510,
+            "top": 408
+          },
+          "outer": {
+            "left": 2510,
+            "top": 408,
+            "width": 480,
+            "height": 408
+          },
+          "inner": {
+            "width": 480,
+            "height": 373
+          },
+          "overflowX": false,
+          "controls": {
+            "x": 24,
+            "y": 303.96875,
+            "width": 432,
+            "height": 57,
+            "top": 303.96875,
+            "right": 456,
+            "bottom": 360.96875,
+            "left": 24
+          }
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "popup-1.png",
+    "popup-2.png",
+    "popup-3.png",
+    "popup-4.png",
+    "popup-photo.png"
+  ],
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(native.left >= area.left + area.marginX - 1)\n\n    at measure (file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:92:5)\n    at async file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:206:24"
+}

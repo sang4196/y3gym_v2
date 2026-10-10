@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="Y3GYM 지점 안내 시각 프로토타입. 시설·트레이너·위치·문의 정보는 검수용 예시입니다.">
+    <title>지점 안내 · Y3GYM</title>
+    <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <script src="facility-gallery.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="index.html" data-branch-page aria-label="Y3GYM 홈">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+        <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
+          <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="menu-toggle-label">메뉴</span>
+        </button>
+        <nav class="primary-navigation" id="primary-navigation" aria-label="주 메뉴">
+          <a class="nav-link" href="branches.html" data-branch-page aria-current="page">지점 안내</a>
+          <a class="nav-link" href="news.html" data-branch-page>소식</a>
+          <a class="button button--small button--primary header-contact" href="#{{contactHref}}" data-branch-jump="contact">문의하기</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-intro" aria-labelledby="page-title"><div class="container">
+        <nav class="breadcrumb" aria-label="현재 위치"><a href="index.html" data-branch-page>홈</a><span aria-hidden="true">/</span><span aria-current="page">지점 안내</span></nav>
+        <h1 id="page-title">지점 안내</h1>
+        <p class="section-description">방문할 지점의 시설과 트레이너를 살펴보고,<br class="desktop-break"> 운영시간·위치·문의 정보를 확인하세요.</p>
+        <p class="content-example">시각 검토용 · 사진과 모든 지점 정보는 임시 자료입니다.</p>
+      </div></section>
+
+      <!-- BRANCH_BROWSER -->
+    </main>
+
+    <footer class="site-footer"><div class="container">
+      <div class="footer-top">
+        <a class="wordmark" href="index.html" data-branch-page aria-label="Y3GYM 홈">Y3GYM<span class="wordmark-dot" aria-hidden="true">.</span></a>
+        <nav class="footer-navigation" aria-label="하단 메뉴">
+          <a href="branches.html" data-branch-page aria-current="page">지점 안내</a>
+          <a href="news.html" data-branch-page>소식</a>
+        </nav>
+      </div>
+      <p class="footer-description">시설과 이용 정보를 한눈에.</p>
+      <p class="footer-note">시각 프로토타입 · 사진과 운영 정보는 임시 자료입니다.</p>
+    </div></footer>
+
+    <aside class="mobile-contact-bar" aria-label="선택한 지점 문의 안내"><div class="mobile-contact-inner"><a class="button button--primary" href="#{{contactHref}}" data-branch-jump="contact">전화 문의</a><a class="button button--secondary" href="#{{contactHref}}" data-branch-jump="contact">카카오톡 문의</a></div></aside>
+  </body>
+</html>

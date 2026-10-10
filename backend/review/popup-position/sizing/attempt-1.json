@@ -1,0 +1,555 @@
+{
+  "run": "2026-10-10T03:36:43.228Z",
+  "status": "FAIL",
+  "headed": true,
+  "checks": [
+    {
+      "name": "실제 별도 창 전체 폭·내용 높이·하단 여백·중복 방지 1회",
+      "detail": [
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        },
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        },
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        },
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "실제 별도 창 전체 폭·내용 높이·하단 여백·중복 방지 2회",
+      "detail": [
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        },
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        },
+        {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        },
+        {
+          "left": 2406,
+          "top": 166,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      ],
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "popup-1.png",
+    "popup-2.png",
+    "popup-3.png",
+    "popup-4.png"
+  ],
+  "windows": [
+    {
+      "url": "http://localhost:8768/popups/17/?branch=second",
+      "native": {
+        "windowId": 283777919,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 406
+      },
+      "outer": {
+        "width": 480,
+        "height": 441
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 405.359375,
+        "top": 0,
+        "right": 480,
+        "bottom": 405.359375,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 336.359375,
+        "width": 432,
+        "height": 57,
+        "top": 336.359375,
+        "right": 456,
+        "bottom": 393.359375,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 406
+    },
+    {
+      "url": "http://localhost:8768/popups/18/?branch=second",
+      "native": {
+        "windowId": 283777921,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 373
+      },
+      "outer": {
+        "width": 480,
+        "height": 408
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 372.96875,
+        "top": 0,
+        "right": 480,
+        "bottom": 372.96875,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 303.96875,
+        "width": 432,
+        "height": 57,
+        "top": 303.96875,
+        "right": 456,
+        "bottom": 360.96875,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 373
+    },
+    {
+      "url": "http://localhost:8768/popups/21/?branch=second",
+      "native": {
+        "windowId": 283777923,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 406
+      },
+      "outer": {
+        "width": 480,
+        "height": 441
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 405.359375,
+        "top": 0,
+        "right": 480,
+        "bottom": 405.359375,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 336.359375,
+        "width": 432,
+        "height": 57,
+        "top": 336.359375,
+        "right": 456,
+        "bottom": 393.359375,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 406
+    },
+    {
+      "url": "http://localhost:8768/popups/22/?branch=second",
+      "native": {
+        "windowId": 283777925,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 373
+      },
+      "outer": {
+        "width": 480,
+        "height": 408
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 372.96875,
+        "top": 0,
+        "right": 480,
+        "bottom": 372.96875,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 303.96875,
+        "width": 432,
+        "height": 57,
+        "top": 303.96875,
+        "right": 456,
+        "bottom": 360.96875,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 373
+    },
+    {
+      "url": "http://localhost:8768/popups/17/?branch=second",
+      "native": {
+        "windowId": 283777929,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 406
+      },
+      "outer": {
+        "width": 480,
+        "height": 441
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 405.359375,
+        "top": 0,
+        "right": 480,
+        "bottom": 405.359375,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 336.359375,
+        "width": 432,
+        "height": 57,
+        "top": 336.359375,
+        "right": 456,
+        "bottom": 393.359375,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 406
+    },
+    {
+      "url": "http://localhost:8768/popups/18/?branch=second",
+      "native": {
+        "windowId": 283777931,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 373
+      },
+      "outer": {
+        "width": 480,
+        "height": 408
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 372.96875,
+        "top": 0,
+        "right": 480,
+        "bottom": 372.96875,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 303.96875,
+        "width": 432,
+        "height": 57,
+        "top": 303.96875,
+        "right": 456,
+        "bottom": 360.96875,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 373
+    },
+    {
+      "url": "http://localhost:8768/popups/21/?branch=second",
+      "native": {
+        "windowId": 283777933,
+        "bounds": {
+          "left": 6,
+          "top": 27,
+          "width": 480,
+          "height": 441,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 406
+      },
+      "outer": {
+        "width": 480,
+        "height": 441
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 405.359375,
+        "top": 0,
+        "right": 480,
+        "bottom": 405.359375,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 336.359375,
+        "width": 432,
+        "height": 57,
+        "top": 336.359375,
+        "right": 456,
+        "bottom": 393.359375,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 406
+    },
+    {
+      "url": "http://localhost:8768/popups/22/?branch=second",
+      "native": {
+        "windowId": 283777935,
+        "bounds": {
+          "left": 2406,
+          "top": 166,
+          "width": 480,
+          "height": 408,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 373
+      },
+      "outer": {
+        "width": 480,
+        "height": 408
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 372.96875,
+        "top": 0,
+        "right": 480,
+        "bottom": 372.96875,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 303.96875,
+        "width": 432,
+        "height": 57,
+        "top": 303.96875,
+        "right": 456,
+        "bottom": 360.96875,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 373
+    },
+    {
+      "url": "http://localhost:8768/popups/17/?branch=second",
+      "native": {
+        "windowId": 283777939,
+        "bounds": {
+          "left": 822,
+          "top": 188,
+          "width": 480,
+          "height": 743,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 708
+      },
+      "outer": {
+        "width": 480,
+        "height": 743
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 707.359375,
+        "top": 0,
+        "right": 480,
+        "bottom": 707.359375,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 638.359375,
+        "width": 432,
+        "height": 57,
+        "top": 638.359375,
+        "right": 456,
+        "bottom": 695.359375,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 708
+    },
+    {
+      "url": "http://localhost:8768/popups/18/?branch=second",
+      "native": {
+        "windowId": 283777941,
+        "bounds": {
+          "left": 2406,
+          "top": 173,
+          "width": 480,
+          "height": 710,
+          "windowState": "normal"
+        }
+      },
+      "inner": {
+        "width": 480,
+        "height": 675
+      },
+      "outer": {
+        "width": 480,
+        "height": 710
+      },
+      "available": {
+        "width": 1920,
+        "height": 1080
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 674.96875,
+        "top": 0,
+        "right": 480,
+        "bottom": 674.96875,
+        "left": 0
+      },
+      "controls": {
+        "x": 24,
+        "y": 605.96875,
+        "width": 432,
+        "height": 57,
+        "top": 605.96875,
+        "right": 456,
+        "bottom": 662.96875,
+        "left": 24
+      },
+      "overflowX": false,
+      "scrollHeight": 675
+    }
+  ],
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(Math.abs(result.inner.height - result.frame.height) <= 1)\n\n    at fitted (file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-sizing.mjs:63:5)\n    at runNextTicks (node:internal/process/task_queues:64:5)\n    at process.processImmediate (node:internal/timers:452:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async Promise.all (index 2)\n    at async file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-sizing.mjs:137:3"
+}

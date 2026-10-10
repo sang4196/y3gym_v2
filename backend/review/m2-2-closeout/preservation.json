@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "baseline_existing_files": 1194,
+  "changed_existing_files": [
+    "README.md",
+    "backend/README.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/PRD.md",
+    "docs/WORKFLOW.md"
+  ],
+  "unexpected_added_outside_closeout": [],
+  "unchanged_existing_files": 1189,
+  "protected": {
+    "prototype": {
+      "files_compared": 186,
+      "unchanged": true
+    },
+    "all_prior_backend_reviews": {
+      "files_compared": 780,
+      "unchanged": true
+    },
+    "product_sources": {
+      "files_compared": 57,
+      "unchanged": true
+    },
+    "app_config": {
+      "files_compared": 3,
+      "unchanged": true
+    },
+    "existing_scripts": {
+      "files_compared": 10,
+      "unchanged": true
+    },
+    "media": {
+      "files_compared": 141,
+      "unchanged": true
+    },
+    "secrets": {
+      "files_compared": 2,
+      "unchanged": true
+    },
+    "dependency_definitions": {
+      "files_compared": 5,
+      "unchanged": true
+    }
+  },
+  "git_index_unchanged": true,
+  "existing_bash_examples_unchanged": true,
+  "closeout_report_links": 12,
+  "closeout_report_anchors": 2,
+  "closeout_report_errors": [],
+  "database_checked_this_run": false,
+  "database_or_server_commands_executed": false,
+  "product_tests_executed": false,
+  "git_mutation_executed": false,
+  "excluded_directories": [
+    ".git",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules"
+  ]
+}

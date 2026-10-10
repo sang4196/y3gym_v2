@@ -1,0 +1,33 @@
+{
+  "developer_baseline_files": 588,
+  "actual_modified_existing": [
+    "README.md",
+    "backend/README.md",
+    "backend/config/urls.py",
+    "backend/news/context.py",
+    "backend/news/home.py",
+    "backend/news/middleware.py",
+    "backend/news/models.py",
+    "backend/news/publication.py",
+    "backend/news/static/news/context.js",
+    "backend/news/templates/news/base.html",
+    "backend/news/templates/news/detail.html",
+    "backend/news/templates/news/list.html",
+    "backend/news/templates/news/popup.html",
+    "backend/news/templates/news/popup_entry.html",
+    "backend/news/tests/test_brand.py",
+    "backend/news/tests/test_concurrency.py",
+    "backend/news/tests/test_publication.py",
+    "backend/news/views.py",
+    "backend/news/wagtail_hooks.py",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/PRD.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md"
+  ],
+  "matches_declared_modified": true,
+  "old_row_changes_against_developer_before": {},
+  "differences_from_developer_final": {},
+  "index_unchanged": true,
+  "historical_baseline_limitation": "Developer supplied pre-work hashes; current values independently recomputed. Current DB snapshot used a read-only transaction."
+}

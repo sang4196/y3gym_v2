@@ -1,0 +1,19 @@
+{
+  "run": "2026-10-10T06:10:33.697Z",
+  "status": "FAIL",
+  "documents": [
+    "README.md",
+    "backend/README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "docs/WORKFLOW.md",
+    "prototype/DESIGN.md",
+    "backend/review/branches/README.md"
+  ],
+  "localLinks": 27,
+  "markdownAnchors": 3,
+  "checks": [],
+  "errors": [
+    "AssertionError [ERR_ASSERTION]: README.md: missing docs/legacy/\n    at file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/branches/verify-documents.mjs:19:7"
+  ]
+}

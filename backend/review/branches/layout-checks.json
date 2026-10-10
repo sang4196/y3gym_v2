@@ -1,0 +1,87 @@
+{
+  "run": "2026-10-10T06:07:04.583Z",
+  "origin": "http://localhost:8768",
+  "readOnly": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "expectedColumns": 3,
+      "measuredColumns": 3,
+      "viewport": 1200,
+      "slide": 384,
+      "gap": 24,
+      "overflow": false,
+      "transitionDuration": "0s",
+      "result": "PASS"
+    },
+    {
+      "route": "/branches/",
+      "width": 1440,
+      "height": 900,
+      "expectedColumns": 3,
+      "measuredColumns": 3,
+      "viewport": 1200,
+      "slide": 384,
+      "gap": 24,
+      "overflow": false,
+      "transitionDuration": "0s",
+      "result": "PASS"
+    },
+    {
+      "route": "/",
+      "width": 900,
+      "height": 1000,
+      "expectedColumns": 2,
+      "measuredColumns": 2,
+      "viewport": 852,
+      "slide": 414,
+      "gap": 24,
+      "overflow": false,
+      "transitionDuration": "0s",
+      "result": "PASS"
+    },
+    {
+      "route": "/branches/",
+      "width": 900,
+      "height": 1000,
+      "expectedColumns": 2,
+      "measuredColumns": 2,
+      "viewport": 852,
+      "slide": 414,
+      "gap": 24,
+      "overflow": false,
+      "transitionDuration": "0s",
+      "result": "PASS"
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "height": 812,
+      "expectedColumns": 1,
+      "measuredColumns": 1,
+      "viewport": 343,
+      "slide": 343,
+      "gap": 32,
+      "overflow": false,
+      "transitionDuration": "0s",
+      "result": "PASS"
+    },
+    {
+      "route": "/branches/",
+      "width": 375,
+      "height": 812,
+      "expectedColumns": 1,
+      "measuredColumns": 1,
+      "viewport": 343,
+      "slide": 343,
+      "gap": 32,
+      "overflow": false,
+      "transitionDuration": "0s",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,304 @@
+Creating test database for alias 'default' ('test_y3gym_m1')...
+Found 81 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, modelcluster, staticfiles, wagtailsites, wagtailsnippets
+  Apply all migrations: admin, auth, contenttypes, news, sessions, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailimages, wagtailsearch, wagtailusers
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying wagtailcore.0001_squashed_0016_change_page_url_path_to_text_field... OK
+  Applying wagtailcore.0017_change_edit_page_permission_description... OK
+  Applying wagtailcore.0018_pagerevision_submitted_for_moderation_index... OK
+  Applying wagtailcore.0019_verbose_names_cleanup... OK
+  Applying wagtailcore.0020_add_index_on_page_first_published_at... OK
+  Applying wagtailcore.0021_capitalizeverbose... OK
+  Applying wagtailcore.0022_add_site_name... OK
+  Applying wagtailcore.0023_alter_page_revision_on_delete_behaviour... OK
+  Applying wagtailcore.0024_collection... OK
+  Applying wagtailcore.0025_collection_initial_data... OK
+  Applying wagtailcore.0026_group_collection_permission... OK
+  Applying wagtailcore.0027_fix_collection_path_collation... OK
+  Applying wagtailcore.0024_alter_page_content_type_on_delete_behaviour... OK
+  Applying wagtailcore.0028_merge... OK
+  Applying wagtailcore.0029_unicode_slugfield_dj19... OK
+  Applying wagtailcore.0030_index_on_pagerevision_created_at... OK
+  Applying wagtailcore.0031_add_page_view_restriction_types... OK
+  Applying wagtailcore.0032_add_bulk_delete_page_permission... OK
+  Applying wagtailcore.0033_remove_golive_expiry_help_text... OK
+  Applying wagtailcore.0034_page_live_revision... OK
+  Applying wagtailcore.0035_page_last_published_at... OK
+  Applying wagtailcore.0036_populate_page_last_published_at... OK
+  Applying wagtailcore.0037_set_page_owner_editable... OK
+  Applying wagtailcore.0038_make_first_published_at_editable... OK
+  Applying wagtailcore.0039_collectionviewrestriction... OK
+  Applying wagtailcore.0040_page_draft_title... OK
+  Applying wagtailcore.0041_group_collection_permissions_verbose_name_plural... OK
+  Applying wagtailcore.0042_index_on_pagerevision_approved_go_live_at... OK
+  Applying wagtailcore.0043_lock_fields... OK
+  Applying wagtailcore.0044_add_unlock_grouppagepermission... OK
+  Applying wagtailcore.0045_assign_unlock_grouppagepermission... OK
+  Applying wagtailcore.0046_site_name_remove_null... OK
+  Applying wagtailcore.0047_add_workflow_models... OK
+  Applying wagtailcore.0048_add_default_workflows... OK
+  Applying wagtailcore.0049_taskstate_finished_by... OK
+  Applying wagtailcore.0050_workflow_rejected_to_needs_changes... OK
+  Applying wagtailcore.0051_taskstate_comment... OK
+  Applying wagtailcore.0052_pagelogentry... OK
+  Applying wagtailcore.0053_locale_model... OK
+  Applying wagtailcore.0054_initial_locale... OK
+  Applying wagtailcore.0055_page_locale_fields... OK
+  Applying wagtailcore.0056_page_locale_fields_populate... OK
+  Applying wagtailcore.0057_page_locale_fields_notnull... OK
+  Applying wagtailcore.0058_page_alias_of... OK
+  Applying wagtailcore.0059_apply_collection_ordering... OK
+  Applying wagtailcore.0060_fix_workflow_unique_constraint... OK
+  Applying wagtailcore.0061_change_promote_tab_helpt_text_and_verbose_names... OK
+  Applying wagtailcore.0062_comment_models_and_pagesubscription... OK
+  Applying wagtailcore.0063_modellogentry... OK
+  Applying wagtailcore.0064_log_timestamp_indexes... OK
+  Applying wagtailcore.0065_log_entry_uuid... OK
+  Applying wagtailcore.0066_collection_management_permissions... OK
+  Applying wagtailcore.0067_alter_pagerevision_content_json... OK
+  Applying wagtailcore.0068_log_entry_empty_object... OK
+  Applying wagtailcore.0069_log_entry_jsonfield... OK
+  Applying wagtailcore.0070_rename_pagerevision_revision... OK
+  Applying wagtailcore.0071_populate_revision_content_type... OK
+  Applying wagtailcore.0072_alter_revision_content_type_notnull... OK
+  Applying wagtailcore.0073_page_latest_revision... OK
+  Applying wagtailcore.0074_revision_object_str... OK
+  Applying wagtailcore.0075_populate_latest_revision_and_revision_object_str... OK
+  Applying wagtailcore.0076_modellogentry_revision... OK
+  Applying wagtailcore.0077_alter_revision_user... OK
+  Applying wagtailcore.0078_referenceindex... OK
+  Applying wagtailcore.0079_rename_taskstate_page_revision... OK
+  Applying wagtailcore.0080_generic_workflowstate... OK
+  Applying wagtailcore.0081_populate_workflowstate_content_type... OK
+  Applying wagtailcore.0082_alter_workflowstate_content_type_notnull... OK
+  Applying wagtailcore.0083_workflowcontenttype... OK
+  Applying wagtailcore.0084_add_default_page_permissions... OK
+  Applying wagtailcore.0085_add_grouppagepermission_permission... OK
+  Applying wagtailcore.0086_populate_grouppagepermission_permission... OK
+  Applying wagtailcore.0087_alter_grouppagepermission_unique_together_and_more... OK
+  Applying wagtailcore.0088_fix_log_entry_json_timestamps... OK
+  Applying wagtailcore.0089_log_entry_data_json_null_to_object... OK
+  Applying wagtailcore.0090_remove_grouppagepermission_permission_type... OK
+  Applying wagtailcore.0091_remove_revision_submitted_for_moderation... OK
+  Applying wagtailcore.0092_alter_collectionviewrestriction_password_and_more... OK
+  Applying wagtailcore.0093_uploadedfile... OK
+  Applying wagtailcore.0094_alter_page_locale... OK
+  Applying wagtailcore.0095_groupsitepermission... OK
+  Applying wagtailcore.0096_referenceindex_referenceindex_source_object_and_more... OK
+  Applying wagtailcore.0097_baselogentry_uuid_action_timestamp_indexes... OK
+  Applying taggit.0001_initial... OK
+  Applying taggit.0002_auto_20150616_2121... OK
+  Applying taggit.0003_taggeditem_add_unique_index... OK
+  Applying taggit.0004_alter_taggeditem_content_type_alter_taggeditem_tag... OK
+  Applying taggit.0005_auto_20220424_2025... OK
+  Applying taggit.0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx... OK
+  Applying news.0001_initial... OK
+  Applying news.0002_popupsetting... OK
+  Applying news.0003_brandcontent... OK
+  Applying news.0004_branch_facility... OK
+  Applying sessions.0001_initial... OK
+  Applying wagtailadmin.0001_create_admin_access_permissions... OK
+  Applying wagtailadmin.0002_admin... OK
+  Applying wagtailadmin.0003_admin_managed... OK
+  Applying wagtailadmin.0004_editingsession... OK
+  Applying wagtailadmin.0005_editingsession_is_editing... OK
+  Applying wagtailadmin.0006_formstate... OK
+  Applying wagtaildocs.0001_initial... OK
+  Applying wagtaildocs.0002_initial_data... OK
+  Applying wagtaildocs.0003_add_verbose_names... OK
+  Applying wagtaildocs.0004_capitalizeverbose... OK
+  Applying wagtaildocs.0005_document_collection... OK
+  Applying wagtaildocs.0006_copy_document_permissions_to_collections... OK
+  Applying wagtaildocs.0005_alter_uploaded_by_user_on_delete_action... OK
+  Applying wagtaildocs.0007_merge... OK
+  Applying wagtaildocs.0008_document_file_size... OK
+  Applying wagtaildocs.0009_document_verbose_name_plural... OK
+  Applying wagtaildocs.0010_document_file_hash... OK
+  Applying wagtaildocs.0011_add_choose_permissions... OK
+  Applying wagtaildocs.0012_uploadeddocument... OK
+  Applying wagtaildocs.0013_delete_uploadeddocument... OK
+  Applying wagtaildocs.0014_alter_document_file_size... OK
+  Applying wagtailembeds.0001_initial... OK
+  Applying wagtailembeds.0002_add_verbose_names... OK
+  Applying wagtailembeds.0003_capitalizeverbose... OK
+  Applying wagtailembeds.0004_embed_verbose_name_plural... OK
+  Applying wagtailembeds.0005_specify_thumbnail_url_max_length... OK
+  Applying wagtailembeds.0006_add_embed_hash... OK
+  Applying wagtailembeds.0007_populate_hash... OK
+  Applying wagtailembeds.0008_allow_long_urls... OK
+  Applying wagtailembeds.0009_embed_cache_until... OK
+  Applying wagtailimages.0001_squashed_0021... OK
+  Applying wagtailimages.0022_uploadedimage... OK
+  Applying wagtailimages.0023_add_choose_permissions... OK
+  Applying wagtailimages.0024_index_image_file_hash... OK
+  Applying wagtailimages.0025_alter_image_file_alter_rendition_file... OK
+  Applying wagtailimages.0026_delete_uploadedimage... OK
+  Applying wagtailimages.0027_image_description... OK
+  Applying wagtailsearch.0001_initial... OK
+  Applying wagtailsearch.0002_add_verbose_names... OK
+  Applying wagtailsearch.0003_remove_editors_pick... OK
+  Applying wagtailsearch.0004_querydailyhits_verbose_name_plural... OK
+  Applying wagtailsearch.0005_create_indexentry... OK
+  Applying wagtailsearch.0006_customise_indexentry... OK
+  Applying wagtailsearch.0007_delete_editorspick... OK
+  Applying wagtailsearch.0008_remove_query_and_querydailyhits_models... OK
+  Applying wagtailsearch.0009_remove_ngram_autocomplete... OK
+  Applying wagtailsearch.0010_add_text_fields... OK
+  Applying wagtailusers.0001_initial... OK
+  Applying wagtailusers.0002_add_verbose_name_on_userprofile... OK
+  Applying wagtailusers.0003_add_verbose_names... OK
+  Applying wagtailusers.0004_capitalizeverbose... OK
+  Applying wagtailusers.0005_make_related_name_wagtail_specific... OK
+  Applying wagtailusers.0006_userprofile_prefered_language... OK
+  Applying wagtailusers.0007_userprofile_current_time_zone... OK
+  Applying wagtailusers.0008_userprofile_avatar... OK
+  Applying wagtailusers.0009_userprofile_verbose_name_plural... OK
+  Applying wagtailusers.0010_userprofile_updated_comments_notifications... OK
+  Applying wagtailusers.0011_userprofile_dismissibles... OK
+  Applying wagtailusers.0012_userprofile_theme... OK
+  Applying wagtailusers.0013_userprofile_density... OK
+  Applying wagtailusers.0014_userprofile_contrast... OK
+  Applying wagtailusers.0015_userprofile_keyboard_shortcuts...test_admin_incomplete_draft_and_invalid_publish_preserve_input (news.tests.test_branches.BranchTests.test_admin_incomplete_draft_and_invalid_publish_preserve_input) ... ok
+test_blank_draft_is_private_and_publication_checks_requested_revision (news.tests.test_branches.BranchTests.test_blank_draft_is_private_and_publication_checks_requested_revision) ... ok
+test_clustered_revision_preserves_deleted_children_order_images_and_parent (news.tests.test_branches.BranchTests.test_clustered_revision_preserves_deleted_children_order_images_and_parent) ... ok
+test_dynamic_new_branch_selection_and_invalid_or_withdrawn_fallback (news.tests.test_branches.BranchTests.test_dynamic_new_branch_selection_and_invalid_or_withdrawn_fallback) ... ok
+test_fixture_is_idempotent_and_keeps_existing_drafts_and_other_content (news.tests.test_branches.BranchTests.test_fixture_is_idempotent_and_keeps_existing_drafts_and_other_content) ... ok
+test_main_first_and_additional_order_use_public_snapshot_and_stable_id (news.tests.test_branches.BranchTests.test_main_first_and_additional_order_use_public_snapshot_and_stable_id) ... ok
+test_optional_photos_trainers_and_channels_hide_without_faking_content (news.tests.test_branches.BranchTests.test_optional_photos_trainers_and_channels_hide_without_faking_content) ... ok
+test_permission_csrf_lock_stale_form_and_delete_boundaries (news.tests.test_branches.BranchTests.test_permission_csrf_lock_stale_form_and_delete_boundaries) ... ok
+test_plain_text_escaping_and_focal_point_validation (news.tests.test_branches.BranchTests.test_plain_text_escaping_and_focal_point_validation) ... ok
+test_preview_uses_inline_draft_and_requires_editor_and_no_store (news.tests.test_branches.BranchTests.test_preview_uses_inline_draft_and_requires_editor_and_no_store) ... ok
+test_real_admin_inline_draft_reopen_preview_publish_and_reorder (news.tests.test_branches.BranchTests.test_real_admin_inline_draft_reopen_preview_publish_and_reorder) ... ok
+test_shared_image_survives_until_last_public_post_brand_or_branch_use (news.tests.test_branches.BranchTests.test_shared_image_survives_until_last_public_post_brand_or_branch_use) ... ok
+test_withdraw_and_republish_restore_only_the_requested_revision_and_media (news.tests.test_branches.BranchTests.test_withdraw_and_republish_restore_only_the_requested_revision_and_media) ... ok
+test_admin_draft_save_reopen_preview_and_publish_are_separate (news.tests.test_brand.BrandTests.test_admin_draft_save_reopen_preview_and_publish_are_separate) ... ok
+test_blank_draft_does_not_leak_and_empty_home_keeps_navigation (news.tests.test_brand.BrandTests.test_blank_draft_does_not_leak_and_empty_home_keeps_navigation) ... ok
+test_bootstrap_is_idempotent_and_keeps_drafts_permissions_and_credentials (news.tests.test_brand.BrandTests.test_bootstrap_is_idempotent_and_keeps_drafts_permissions_and_credentials) ... ok
+test_editor_cannot_save_locked_brand_or_publish_without_permission (news.tests.test_brand.BrandTests.test_editor_cannot_save_locked_brand_or_publish_without_permission) ... ok
+test_first_publish_is_validated_while_blank_new_draft_can_be_saved (news.tests.test_brand.BrandTests.test_first_publish_is_validated_while_blank_new_draft_can_be_saved) ... ok
+test_image_optional_layout_and_plain_text_escaping_and_focal_validation (news.tests.test_brand.BrandTests.test_image_optional_layout_and_plain_text_escaping_and_focal_validation) ... ok
+test_live_revision_used_on_home_news_and_popup_despite_new_draft (news.tests.test_brand.BrandTests.test_live_revision_used_on_home_news_and_popup_despite_new_draft) ... ok
+test_model_permission_and_csrf_are_required (news.tests.test_brand.BrandTests.test_model_permission_and_csrf_are_required) ... ok
+test_popup_keeps_post_publication_and_uses_only_live_brand (news.tests.test_brand.BrandTests.test_popup_keeps_post_publication_and_uses_only_live_brand) ... ok
+test_preview_uses_draft_and_private_images_without_automatic_popup (news.tests.test_brand.BrandTests.test_preview_uses_draft_and_private_images_without_automatic_popup) ... ok
+test_publish_requires_name_and_title_but_incomplete_draft_keeps_input (news.tests.test_brand.BrandTests.test_publish_requires_name_and_title_but_incomplete_draft_keeps_input) ... ok
+test_publishing_previous_blank_revision_is_rejected_in_history_editor (news.tests.test_brand.BrandTests.test_publishing_previous_blank_revision_is_rejected_in_history_editor) ... ok
+test_republish_replaces_brand_media_but_shared_post_image_remains (news.tests.test_brand.BrandTests.test_republish_replaces_brand_media_but_shared_post_image_remains) ... ok
+test_singleton_creation_and_delete_are_denied (news.tests.test_brand.BrandTests.test_singleton_creation_and_delete_are_denied) ... ok
+test_stale_editor_cannot_overwrite_newer_brand_draft (news.tests.test_brand.BrandTests.test_stale_editor_cannot_overwrite_newer_brand_draft) ... ok
+test_unpublish_removes_brand_and_image_but_preserves_news_and_branch_navigation (news.tests.test_brand.BrandTests.test_unpublish_removes_brand_and_image_but_preserves_news_and_branch_navigation) ... ok
+test_admin_panel_explains_draft_first_and_current_post_without_url_input (news.tests.test_popups.PopupTests.test_admin_panel_explains_draft_first_and_current_post_without_url_input) ... ok
+test_all_overlaps_use_registration_not_publication_order_and_common_branches (news.tests.test_popups.PopupTests.test_all_overlaps_use_registration_not_publication_order_and_common_branches) ... ok
+test_applied_dates_persist_as_korean_time_and_reopen (news.tests.test_popups.PopupTests.test_applied_dates_persist_as_korean_time_and_reopen) ... ok
+test_body_saved_from_pre_apply_form_then_published_keeps_popup_setting (news.tests.test_popups.PopupTests.test_body_saved_from_pre_apply_form_then_published_keeps_popup_setting) ... ok
+test_disable_and_unpublish_remove_both_popup_endpoints_and_home_data (news.tests.test_popups.PopupTests.test_disable_and_unpublish_remove_both_popup_endpoints_and_home_data) ... ok
+test_disabled_setting_can_have_no_period (news.tests.test_popups.PopupTests.test_disabled_setting_can_have_no_period) ... ok
+test_enabled_requires_both_dates_and_strict_increasing_period (news.tests.test_popups.PopupTests.test_enabled_requires_both_dates_and_strict_increasing_period) ... ok
+test_fallback_form_saves_without_javascript_and_json_rejects_malformed_data (news.tests.test_popups.PopupTests.test_fallback_form_saves_without_javascript_and_json_rejects_malformed_data) ... ok
+test_home_keeps_approved_assets_and_no_routine_alert_button (news.tests.test_popups.PopupTests.test_home_keeps_approved_assets_and_no_routine_alert_button) ... ok
+test_invalid_and_stale_changes_do_not_alter_saved_state (news.tests.test_popups.PopupTests.test_invalid_and_stale_changes_do_not_alter_saved_state) ... ok
+test_permission_csrf_and_existing_edit_lock_are_not_bypassed (news.tests.test_popups.PopupTests.test_permission_csrf_and_existing_edit_lock_are_not_bypassed) ... ok
+test_popup_uses_live_title_summary_and_image_with_unpublished_edits (news.tests.test_popups.PopupTests.test_popup_uses_live_title_summary_and_image_with_unpublished_edits) ... ok
+test_saved_status_distinguishes_all_required_conditions (news.tests.test_popups.PopupTests.test_saved_status_distinguishes_all_required_conditions) ... ok
+test_server_period_boundaries_and_expiration_leave_post_public (news.tests.test_popups.PopupTests.test_server_period_boundaries_and_expiration_leave_post_public) ... ok
+test_settings_do_not_publish_new_draft_or_create_body_revision (news.tests.test_popups.PopupTests.test_settings_do_not_publish_new_draft_or_create_body_revision) ... ok
+test_body_image_reference_controls_public_rendition_access (news.tests.test_publication.PublicationTests.test_body_image_reference_controls_public_rendition_access) ... ok
+test_body_strips_scripts_and_unsafe_links_without_removing_allowed_formatting (news.tests.test_publication.PublicationTests.test_body_strips_scripts_and_unsafe_links_without_removing_allowed_formatting) ... ok
+test_bootstrap_is_idempotent_and_does_not_reset_user_edits_or_credentials (news.tests.test_publication.PublicationTests.test_bootstrap_is_idempotent_and_does_not_reset_user_edits_or_credentials) ... ok
+test_categories_branch_context_and_empty_state_remain_usable (news.tests.test_publication.PublicationTests.test_categories_branch_context_and_empty_state_remain_usable) ... ok
+test_current_editor_form_can_save_and_publish (news.tests.test_publication.PublicationTests.test_current_editor_form_can_save_and_publish) ... ok
+test_line_breaks_and_images_reopen_in_the_actual_rich_text_editor (news.tests.test_publication.PublicationTests.test_line_breaks_and_images_reopen_in_the_actual_rich_text_editor) ... ok
+test_new_draft_is_absent_from_public_urls_even_for_admin (news.tests.test_publication.PublicationTests.test_new_draft_is_absent_from_public_urls_even_for_admin) ... ok
+test_original_draft_and_thumbnail_require_real_editor_permission (news.tests.test_publication.PublicationTests.test_original_draft_and_thumbnail_require_real_editor_permission) ... ok
+test_preview_permission_and_draft_rendering_do_not_change_publication (news.tests.test_publication.PublicationTests.test_preview_permission_and_draft_rendering_do_not_change_publication) ... ok
+test_published_content_survives_changed_draft_including_images_and_date (news.tests.test_publication.PublicationTests.test_published_content_survives_changed_draft_including_images_and_date) ... ok
+test_replacing_original_file_is_rejected_and_old_bytes_remain (news.tests.test_publication.PublicationTests.test_replacing_original_file_is_rejected_and_old_bytes_remain) ... ok
+test_republish_atomically_replaces_visible_content_and_media_usage (news.tests.test_publication.PublicationTests.test_republish_atomically_replaces_visible_content_and_media_usage) ... ok
+test_shared_image_remains_available_until_last_public_use_is_withdrawn (news.tests.test_publication.PublicationTests.test_shared_image_remains_available_until_last_public_use_is_withdrawn) ... ok
+test_stale_editor_form_is_rejected_instead_of_overwriting_new_revision (news.tests.test_publication.PublicationTests.test_stale_editor_form_is_rejected_instead_of_overwriting_new_revision) ... ok
+test_unauthorized_mutation_and_csrf_fail_without_creating_content (news.tests.test_publication.PublicationTests.test_unauthorized_mutation_and_csrf_fail_without_creating_content) ... ok
+test_unpublish_revokes_public_html_and_all_renditions (news.tests.test_publication.PublicationTests.test_unpublish_revokes_public_html_and_all_renditions) ... ok
+test_all_withdrawal_routes_keep_before_after_and_cancel_hooks (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_before_after_and_cancel_hooks) ... ok
+test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) ... 
+  test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) (model='Branch') ... FAIL
+  test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) (model='BrandContent') ... FAIL
+  test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) (model='Post') ... FAIL
+test_branch_editor_and_real_public_routes (news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes) ... skipped 'Opt-in browser review writes only to a temporary test database/media.'
+test_brand_editor_and_public_home (news.tests.test_brand_browser.BrandBrowserTests.test_brand_editor_and_public_home) ... skipped 'Separate opt-in Chromium review uses a temporary test database.'
+test_simultaneous_branch_drafts_only_save_one_and_keep_public_revision (news.tests.test_concurrency.ConcurrentSaveTests.test_simultaneous_branch_drafts_only_save_one_and_keep_public_revision) ... ok
+test_simultaneous_branch_publications_only_publish_one_revision (news.tests.test_concurrency.ConcurrentSaveTests.test_simultaneous_branch_publications_only_publish_one_revision) ... ok
+test_simultaneous_brand_saves_keep_one_draft_and_live_revision (news.tests.test_concurrency.ConcurrentSaveTests.test_simultaneous_brand_saves_keep_one_draft_and_live_revision) ... ok
+test_simultaneous_saves_from_same_revision_only_commit_one_change (news.tests.test_concurrency.ConcurrentSaveTests.test_simultaneous_saves_from_same_revision_only_commit_one_change) ... ok
+test_two_initial_applies_commit_only_one_setting_and_no_post_revision (news.tests.test_popups.PopupConcurrencyTests.test_two_initial_applies_commit_only_one_setting_and_no_post_revision) ... ok
+test_branch_draft_then_withdraw (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_branch_draft_then_withdraw) ... ok
+test_branch_publish_then_withdraw (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_branch_publish_then_withdraw) ... ok
+test_branch_withdraw_then_draft (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_branch_withdraw_then_draft) ... ok
+test_branch_withdraw_then_publish (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_branch_withdraw_then_publish) ... ok
+test_brand_draft_then_withdraw (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_brand_draft_then_withdraw) ... ok
+test_brand_publish_then_withdraw (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_brand_publish_then_withdraw) ... ok
+test_brand_withdraw_then_draft (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_brand_withdraw_then_draft) ... ok
+test_brand_withdraw_then_publish (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_brand_withdraw_then_publish) ... ok
+test_post_draft_then_withdraw (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_post_draft_then_withdraw) ... ok
+test_post_publish_then_withdraw (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_post_publish_then_withdraw) ... ok
+test_post_withdraw_then_draft (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_post_withdraw_then_draft) ... ok
+test_post_withdraw_then_publish (news.tests.test_withdrawal_concurrency.WithdrawalConcurrencyTests.test_post_withdraw_then_publish) ... ok
+
+======================================================================
+FAIL: test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) (model='Branch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/news/tests/test_withdrawal_concurrency.py", line 347, in test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries
+    self.assertEqual(self.client.post(url).status_code, 403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 302 != 403
+
+======================================================================
+FAIL: test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) (model='BrandContent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/news/tests/test_withdrawal_concurrency.py", line 347, in test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries
+    self.assertEqual(self.client.post(url).status_code, 403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 302 != 403
+
+======================================================================
+FAIL: test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries (news.tests.test_withdrawal_concurrency.WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries) (model='Post')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/news/tests/test_withdrawal_concurrency.py", line 347, in test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries
+    self.assertEqual(self.client.post(url).status_code, 403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 302 != 403
+
+----------------------------------------------------------------------
+Ran 81 tests in 77.131s
+
+FAILED (failures=3, skipped=2)
+Destroying test database for alias 'default' ('test_y3gym_m1')...
+ OK
+System check identified no issues (0 silenced).
+Created and published two TEST branches and shared facility images. Existing brand/news/popups/accounts/credentials preserved.
+Existing branch revisions and media preserved. Local permissions updated.
+Created and published the approved local brand fixture. Prototype files and credentials unchanged.
+Existing brand revisions, files and credentials preserved. Local permissions updated.

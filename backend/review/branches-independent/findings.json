@@ -1,0 +1,76 @@
+{
+  "status": "FAIL",
+  "date": "2026-10-10",
+  "work_unit": "M2-2",
+  "blocking_findings": [
+    {
+      "id": "F01",
+      "priority": "P1",
+      "title": "공개 철회가 동시에 저장된 최신 초안을 이전 상태로 덮어씀",
+      "requirement": "docs/IMPLEMENTATION-PLAN.md:176 공개 경계·행 잠금·저장 충돌 보호",
+      "file": "backend/news/wagtail_hooks.py",
+      "line": 114,
+      "reproduction": [
+        "backend/에서 uv run --locked python review/branches-independent/withdrawal_concurrency.py 실행",
+        "철회 요청이 기존 객체를 조회한 직후 대기하도록 실제 get_object 호출 뒤에 시험용 동기화 지점만 추가",
+        "동일 지점 새 주소 초안 저장 완료 뒤 철회 진행"
+      ],
+      "expected": "철회 완료 후 공개 상태는 false, 새 초안 주소와 최신 리비전 포인터는 유지",
+      "actual": "초안 저장과 철회 모두 302. 리비전 2는 생성되지만 latest_revision_id는 1, 현재 주소는 이전 값. 철회 조회의 news_branch SELECT FOR UPDATE 없음",
+      "evidence": "withdrawal-concurrency-result.json",
+      "mechanism": "BranchUnpublishView가 전달한 queryset을 설치된 generic.UnpublishView.get_object가 사용하지 않아 선택한 행 잠금이 실행되지 않음. 오래된 객체 전체 저장이 최신 상태를 덮어씀.",
+      "scope": "새 리비전 기록 자체는 남음. 영구 파일 삭제가 아니라 현재 초안·최신 포인터 소실."
+    },
+    {
+      "id": "F02",
+      "priority": "P2",
+      "title": "문서에 안내한 브랜드 브라우저 회귀가 신규 지점 공개 정책과 충돌해 실패",
+      "requirement": "기존 브랜드 브라우저 회귀 실행 및 docs/PRD.md:71의 0곳 문의 숨김 정책",
+      "file": "backend/news/tests/test_brand_browser.py",
+      "line": 25,
+      "related_file": "backend/scripts/review-brand-home.mjs",
+      "related_line": 118,
+      "reproduction": [
+        "Y3GYM_RUN_BRAND_BROWSER=1 및 새 Y3GYM_BRAND_REVIEW_DIR 지정 후 uv run --locked python manage.py test news.tests.test_brand_browser --noinput --verbosity 2 실행"
+      ],
+      "expected": "브랜드 검수가 필요한 실제 공개 지점 fixture를 준비하거나 지점 0곳의 유효한 화면 조건을 검사해 회귀를 끝까지 수행",
+      "actual": "bootstrap_branch_review 호출이 없어 지점 0곳. 정당하게 숨겨진 문의 바 boundingBox=null인데 표시를 필수로 검사해 실패. 뒤에도 지점 패널 2개 고정 기대가 있음.",
+      "evidence": "brand-browser-separate/result.json",
+      "qualification": "제품의 문의 바 숨김을 결함으로 판정하지 않음. 기존 검수 준비/기대값의 회귀 문제. 제품 코드를 그대로 두고 별도 임시 지점 fixture를 추가한 보조 검수에서는 7개 흐름 통과."
+    }
+  ],
+  "warnings": [
+    {
+      "id": "W01",
+      "priority": "P3",
+      "title": "옵트인 브라우저 두 클래스를 한 번에 실행하면 두 번째 fixture 초기화 오류",
+      "evidence": "browser-regressions.txt",
+      "actual": "첫 StaticLiveServerTestCase의 DB flush 후 Wagtail Collection root가 없어 두 번째 bootstrap_review에서 collection_id NULL 오류",
+      "scope": "브라우저 합동 실행의 테스트 격리 한계. 지점 11개 흐름은 첫 클래스에서 완료."
+    },
+    {
+      "id": "W02",
+      "priority": "P3",
+      "title": "기존 전역 포맷 경고",
+      "evidence": "global-format-final.txt",
+      "actual": "review/workflow-01/verify.py 한 파일만 포맷 불일치. 검사 전후 원본 해시 동일. scopedformat32파일과 최종lint통과"
+    },
+    {
+      "id": "W03",
+      "priority": "P3",
+      "title": "관리자 모바일의 화면 축소 직후 과도한 왼쪽 여백은 전환 중간 상태",
+      "evidence": "mobile-probe-final/checks.json",
+      "actual": "새 모바일/600ms후/리로드/미리보기 닫힘은 입력 x20 폭335. 축소직후226.45px(이전 시도141.59px). 실제 입력·선택·정렬·저장·공개 성공.",
+      "classification": "지속적인 입력·저장 차단은 재현되지 않음. 개발 즉시 축소 캡처를 정상 모바일 상태의 근거로 사용하지 않음."
+    }
+  ],
+  "unverified": [
+    "Whale 및 Chromium 외 브라우저",
+    "실제 휴대폰",
+    "한국어 IME 조합 입력",
+    "운영 배포·캐시·저장소·백업",
+    "기존 Wagtail 중복 이미지 업로드 오류",
+    "이번 변경에서 수정되지 않은 native 팝업 좌표·크기 회귀는 재실행하지 않음"
+  ],
+  "preservation": "preservation-result.json"
+}

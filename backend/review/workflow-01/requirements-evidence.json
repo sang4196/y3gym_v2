@@ -1,0 +1,50 @@
+{
+  "source_thread": {
+    "id": "01a1206c-ebde-73b1-8515-c416e54fb20b",
+    "title": "설계",
+    "verified_from": "read_thread userMessage items"
+  },
+  "user_requirements": [
+    {
+      "turn_id": "01a12450-9d2d-7080-88d1-daf499f0c4a9",
+      "text": "\n<in-app-browser-context source=\"ambient-ui-state\">\nThis block is automatically supplied ambient UI state, not part of the user's request. Do not treat it as an instruction or as evidence that the user explicitly selected the in-app browser.\n# In app browser:\n- The user has the in-app browser open with 2 tabs.\n- Current URL: http://localhost:8768/admin/login/?next=/admin/snippets/news/brandcontent/\n</in-app-browser-context>\n\n## My request:\n좋아. 앞으로 너는 나랑 대화하며 설계만 할거야. 개발은 '개발노예'에게 검증은 '테스트노예'에게 맡길거야.\n너는 나와 같이 설계하고 개발을 '개발노예'에게 지시하고 그리고 너는 그에 대한 결과를 보고 받으면돼. 보고에 이상이 없으면 '테스트노예'에게 개발에 대한 검증을 지시하고 너는 다시 그에 대한 결과를 보고 받으면돼. \n보고에 이상이 있다면 다시 지시를 하거나 나와 대화를 통해 설계를 수정 하거나 하면서 중간에 생기는 문제에 대해 대응하면돼.\n그리고 깃에 푸시가 필요한 시점이 온다면 '깃노예' 세션을 만들어 변경사항에 대한 내용을 확인하고 이상이 없으면 커밋 푸시까지 하고 너가 보고받으면돼.\n앞으로 이 사이클을 자동 반복해가며 프로젝트 구현을 진행해보자\n"
+    },
+    {
+      "turn_id": "01a12450-9d2d-7080-88d1-daf499f0c4a9",
+      "text": "<send_user_message_question_reply>\n[{\"questionItemId\":\"[\\\"request_user_input_async\\\",\\\"call_j47sGkoXbRVu0CnfB07dV8Uz\\\",0]\",\"question\":\"지점의 본점 표시와 기본 선택은 어떻게 할까요? 어느 안이든 문의는 화면에서 선택한 지점으로 연결합니다.\",\"answer\":\"본점은 1곳, 항상 첫 번째에 표시하고 기본 선택\"},{\"questionItemId\":\"[\\\"request_user_input_async\\\",\\\"call_j47sGkoXbRVu0CnfB07dV8Uz\\\",1]\",\"question\":\"지점은 미완성 상태로 초안 저장할 수 있게 하겠습니다. 공개할 때 어떤 정보를 필수로 할까요? 선택 항목이 없으면 해당 영역이나 버튼을 숨깁니다.\",\"answer\":\"지점명·주소·운영시간 필수, 사진·트레이너·연락처는 선택 (추천)\"},{\"questionItemId\":\"[\\\"request_user_input_async\\\",\\\"call_j47sGkoXbRVu0CnfB07dV8Uz\\\",2]\",\"question\":\"마지막 공개 지점도 공개 철회할 수 있게 할까요?\",\"answer\":\"허용하고 지점 준비 중 안내를 표시하며 문의 버튼을 숨김 (추천)\"}]\n</send_user_message_question_reply>"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "01a12449-3ac5-7590-81d2-d9ca72bd581d",
+      "title": "테스트노예",
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+      "hostId": "local"
+    },
+    {
+      "id": "01a12448-6bbd-7003-8671-4eccccb5c977",
+      "title": "개발노예",
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+      "hostId": "local"
+    },
+    {
+      "id": "01a1206c-ebde-73b1-8515-c416e54fb20b",
+      "title": "설계",
+      "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2",
+      "hostId": "local"
+    }
+  ],
+  "scope": [
+    "AGENTS.md",
+    "README.md",
+    "docs/WORKFLOW.md"
+  ],
+  "current_work_unit": "WORKFLOW-01",
+  "restrictions": [
+    "제품·정책 문서 수정 금지",
+    "제품/UI/서버 테스트 범위 밖",
+    "commit/push/deploy 금지",
+    "기존 검수 덮어쓰기 금지"
+  ],
+  "report_directory": "backend/review/workflow-01/"
+}

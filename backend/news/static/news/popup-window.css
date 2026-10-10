@@ -1,0 +1,16 @@
+/* Scope the CMS correction here; preserve the approved prototype and captures. */
+.popup-page .popup-document {
+  width: 100%;
+  max-width: 480px;
+  min-height: 0;
+}
+
+.popup-page .popup-content {
+  flex: 0 0 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.popup-page .popup-controls {
+  margin-top: 0;
+}

@@ -1,0 +1,8 @@
+{% if item.gallery %}
+<div class="facility-gallery{% if home_preview %} facility-gallery--preview{% endif %}"{% if home_preview %} id="{{ item.key }}-facilities" data-branch-section="facilities"{% endif %} data-facility-gallery aria-label="{{ item }} 시설 사진">
+  <div class="facility-gallery-viewport" data-gallery-viewport><div class="facility-grid" id="{{ item.key }}-gallery-track" data-gallery-track>
+    {% for photo in item.gallery %}<figure class="facility" data-gallery-slide><div class="facility-image-frame"><img src="{{ photo.rendition.url }}" alt="{{ photo.alt }}" width="{{ photo.rendition.width }}" height="{{ photo.rendition.height }}" style="object-position: {{ photo.position_x }}% {{ photo.position_y }}%" loading="lazy" decoding="async"></div><figcaption><p class="image-note">로컬 검토용 임시 사진</p><h4{% if not photo.title %} class="sr-only"{% endif %}>{{ photo.title|default:'시설 사진' }}</h4>{% if photo.description %}<p class="facility-description">{{ photo.description }}</p>{% endif %}</figcaption></figure>{% endfor %}
+  </div></div>
+  <p class="sr-only" role="status" aria-live="polite" data-gallery-status></p>
+</div>
+{% endif %}

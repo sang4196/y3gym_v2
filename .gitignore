@@ -1,0 +1,9 @@
+backend/.venv/
+backend/.env.local
+backend/.local-credentials
+backend/.private-media/
+backend/.static/
+backend/__pycache__/
+**/__pycache__/
+*.py[cod]
+.ruff_cache/

@@ -1,0 +1,74 @@
+{
+  "model": "Branch",
+  "publish": true,
+  "first": "withdraw",
+  "second": "save",
+  "actual_blocker_confirmed": true,
+  "requests": {
+    "withdraw": {
+      "status": 302,
+      "location": "/admin/snippets/news/branch/",
+      "row_lock": true
+    },
+    "save": {
+      "status": 302,
+      "location": "/admin/snippets/news/branch/",
+      "row_lock": true
+    }
+  },
+  "latest_revision": 11,
+  "newest_revision": 11,
+  "revision_count": 2,
+  "live": true,
+  "live_revision": 11,
+  "current": {
+    "address": "독립 새 주소",
+    "facilities": [
+      [
+        "독립 새 둘",
+        20
+      ],
+      [
+        "독립 새 하나",
+        21
+      ]
+    ]
+  },
+  "latest": {
+    "address": "독립 새 주소",
+    "facilities": [
+      [
+        "독립 새 둘",
+        20
+      ],
+      [
+        "독립 새 하나",
+        21
+      ]
+    ]
+  },
+  "expected_latest": {
+    "address": "독립 새 주소",
+    "facilities": [
+      [
+        "독립 새 둘",
+        20
+      ],
+      [
+        "독립 새 하나",
+        21
+      ]
+    ]
+  },
+  "published_image_ids": [
+    20,
+    21
+  ],
+  "rendition_status": {
+    "19": 404,
+    "20": 200,
+    "21": 200
+  },
+  "original_images_unchanged": true,
+  "isolated_test_database": true
+}

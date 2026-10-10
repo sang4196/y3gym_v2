@@ -1,0 +1,17 @@
+[
+  {
+    "file": "popup-sizing.js",
+    "sha256": "588182a85dfa5932f33da2c6643d41066727b31f3520f7ce99c8e6d1eaf6a64d",
+    "matches": true
+  },
+  {
+    "file": "home-popups.js",
+    "sha256": "bd06c4b0aaa3251e90c3fc757c98674ac8cabd26375edbb1c1566ad1aeebf4d3",
+    "matches": true
+  },
+  {
+    "file": "popup-window.js",
+    "sha256": "cabe971ab382fdf3213cdfc1f0cd5410ca9d73f32fd37087a6a3c5ea95e08710",
+    "matches": true
+  }
+]

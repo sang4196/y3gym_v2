@@ -1,0 +1,18 @@
+{
+  "name": "y3gym-visual-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A 방향의 홈과 팝업·다지점·빈 데이터·실패 상태를 확인하는 독립 정적 프로토타입",
+  "scripts": {
+    "start": "python3 -m http.server 8767 --bind 127.0.0.1",
+    "review": "node scripts/capture.mjs",
+    "build:scenarios": "node scripts/build-scenarios.mjs",
+    "review:states": "node scripts/build-scenarios.mjs && node scripts/verify-states.mjs",
+    "review:news": "node scripts/build-scenarios.mjs && node scripts/review-news.mjs",
+    "review:gallery": "node scripts/build-scenarios.mjs && node scripts/review-gallery.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}

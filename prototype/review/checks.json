@@ -1,0 +1,234 @@
+{
+  "reviewedAt": "2026-10-09T12:56:58.027Z",
+  "browser": "Chromium",
+  "prototypeURL": "http://127.0.0.1:8767",
+  "scope": "Header through facility photographs; visual review only",
+  "designApproval": "USER_REVIEW_PENDING",
+  "widths": [
+    {
+      "width": 320,
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "heroFontSize": "30px",
+      "heroImageRatio": 1.6,
+      "fontLoaded": true,
+      "images": [
+        {
+          "source": "assets/images/gym-hero.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-strength.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-cardio.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-stretch.png",
+          "loaded": true
+        }
+      ],
+      "visibleContactBar": true,
+      "overflowingButtons": [],
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "viewportWidth": 375,
+      "documentWidth": 375,
+      "heroFontSize": "30px",
+      "heroImageRatio": 1.602803738317757,
+      "fontLoaded": true,
+      "images": [
+        {
+          "source": "assets/images/gym-hero.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-strength.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-cardio.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-stretch.png",
+          "loaded": true
+        }
+      ],
+      "visibleContactBar": true,
+      "overflowingButtons": [],
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "heroFontSize": "40px",
+      "heroImageRatio": 1.6,
+      "fontLoaded": true,
+      "images": [
+        {
+          "source": "assets/images/gym-hero.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-strength.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-cardio.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-stretch.png",
+          "loaded": true
+        }
+      ],
+      "visibleContactBar": false,
+      "overflowingButtons": [],
+      "status": "PASS"
+    },
+    {
+      "width": 1024,
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "heroFontSize": "40px",
+      "heroImageRatio": 1.3323699421965318,
+      "fontLoaded": true,
+      "images": [
+        {
+          "source": "assets/images/gym-hero.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-strength.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-cardio.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-stretch.png",
+          "loaded": true
+        }
+      ],
+      "visibleContactBar": false,
+      "overflowingButtons": [],
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "viewportWidth": 1280,
+      "documentWidth": 1280,
+      "heroFontSize": "40px",
+      "heroImageRatio": 1.3348519362186788,
+      "fontLoaded": true,
+      "images": [
+        {
+          "source": "assets/images/gym-hero.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-strength.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-cardio.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-stretch.png",
+          "loaded": true
+        }
+      ],
+      "visibleContactBar": false,
+      "overflowingButtons": [],
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "heroFontSize": "40px",
+      "heroImageRatio": 1.3348519362186788,
+      "fontLoaded": true,
+      "images": [
+        {
+          "source": "assets/images/gym-hero.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-strength.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-cardio.png",
+          "loaded": true
+        },
+        {
+          "source": "assets/images/gym-stretch.png",
+          "loaded": true
+        }
+      ],
+      "visibleContactBar": false,
+      "overflowingButtons": [],
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "mobile-first.png",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "fullRange": false
+    },
+    {
+      "name": "mobile-full.png",
+      "viewport": {
+        "width": 375,
+        "height": 2355
+      },
+      "fullRange": true
+    },
+    {
+      "name": "desktop-first.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "fullRange": false
+    },
+    {
+      "name": "desktop-full.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1477
+      },
+      "fullRange": true
+    }
+  ],
+  "basicControls": {
+    "hover": "PASS",
+    "keyboardFocus": "PASS",
+    "mobileMenu": "PASS",
+    "resize": "PASS"
+  },
+  "contactStub": "PASS — no real contact service navigation",
+  "javascriptFallback": "PASS — content, navigation list, and anchor link remain",
+  "resourceErrors": [],
+  "browserErrors": [],
+  "status": "PASS — basic visual preparation checks; design approval pending",
+  "notRun": [
+    "User visual approval",
+    "Physical mobile device verification",
+    "Popup behavior, multiple branches, and full functional regression",
+    "Backend, administration, and real service integrations"
+  ]
+}

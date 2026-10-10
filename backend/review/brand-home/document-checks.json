@@ -1,0 +1,21 @@
+{
+  "checked_local_markdown_links": 169,
+  "missing": [],
+  "browser_reports": {
+    "result.json": {
+      "status": "PASS",
+      "checks": 7,
+      "errors": []
+    },
+    "live/result.json": {
+      "status": "PASS",
+      "checks": 4,
+      "errors": []
+    },
+    "popups/checks.json": {
+      "status": "PASS",
+      "checks": 8,
+      "errors": []
+    }
+  }
+}

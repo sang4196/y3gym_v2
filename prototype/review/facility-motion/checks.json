@@ -1,0 +1,166 @@
+{
+  "reviewedAt": "2026-10-09T17:37:31.571Z",
+  "browser": "Chromium",
+  "designApproval": "APPROVED — user: 시설슬라이드 통과",
+  "homeApplication": "Applied the approved gallery as requested",
+  "tests": [
+    {
+      "name": "home: Six widths preserve the existing 3/2/1 photo layout without buttons and keep the track clipped",
+      "status": "PASS"
+    },
+    {
+      "name": "home: Autoplay moves left, loops continuously, pauses for hover/focus and resets per branch without buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "home: Reduced motion starts stopped, mobile touch moves a photo and resize preserves layout",
+      "status": "PASS"
+    },
+    {
+      "name": "home: Zero/one photos remain static; failed images and disabled JavaScript retain useful content",
+      "status": "PASS"
+    },
+    {
+      "name": "details: Six widths preserve the existing 3/2/1 photo layout without buttons and keep the track clipped",
+      "status": "PASS"
+    },
+    {
+      "name": "details: Autoplay moves left, loops continuously, pauses for hover/focus and resets per branch without buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "details: Reduced motion starts stopped, mobile touch moves a photo and resize preserves layout",
+      "status": "PASS"
+    },
+    {
+      "name": "details: Zero/one photos remain static; failed images and disabled JavaScript retain useful content",
+      "status": "PASS"
+    },
+    {
+      "name": "No unexpected script errors",
+      "status": "PASS"
+    }
+  ],
+  "widths": [
+    {
+      "view": "home",
+      "width": 288,
+      "columns": 1,
+      "content": 320,
+      "card": 288,
+      "gap": 32,
+      "status": "PASS"
+    },
+    {
+      "view": "home",
+      "width": 343,
+      "columns": 1,
+      "content": 375,
+      "card": 343,
+      "gap": 32,
+      "status": "PASS"
+    },
+    {
+      "view": "home",
+      "width": 720,
+      "columns": 2,
+      "content": 768,
+      "card": 348,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "home",
+      "width": 960,
+      "columns": 3,
+      "content": 1024,
+      "card": 304,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "home",
+      "width": 1200,
+      "columns": 3,
+      "content": 1280,
+      "card": 384,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "home",
+      "width": 1200,
+      "columns": 3,
+      "content": 1440,
+      "card": 384,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "details",
+      "width": 288,
+      "columns": 1,
+      "content": 320,
+      "card": 288,
+      "gap": 32,
+      "status": "PASS"
+    },
+    {
+      "view": "details",
+      "width": 343,
+      "columns": 1,
+      "content": 375,
+      "card": 343,
+      "gap": 32,
+      "status": "PASS"
+    },
+    {
+      "view": "details",
+      "width": 720,
+      "columns": 2,
+      "content": 768,
+      "card": 348,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "details",
+      "width": 960,
+      "columns": 3,
+      "content": 1024,
+      "card": 304,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "details",
+      "width": 1200,
+      "columns": 3,
+      "content": 1280,
+      "card": 384,
+      "gap": 24,
+      "status": "PASS"
+    },
+    {
+      "view": "details",
+      "width": 1200,
+      "columns": 3,
+      "content": 1440,
+      "card": 384,
+      "gap": 24,
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    "home-facilities-mobile.png",
+    "home-mobile-full.png",
+    "home-facilities-desktop.png",
+    "home-desktop-full.png",
+    "facilities-mobile.png",
+    "branches-mobile-full.png",
+    "facilities-desktop.png",
+    "branches-desktop-full.png"
+  ],
+  "status": "PASS",
+  "errors": []
+}

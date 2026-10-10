@@ -1,0 +1,113 @@
+{
+  "run": "2026-10-09T18-51-12-888Z",
+  "origin": "http://localhost:8768",
+  "checks": [
+    {
+      "name": "한글 문단·줄바꿈·굵게·본문 사진·대표 사진 저장과 초안 미리보기",
+      "result": "PASS",
+      "detail": {
+        "originalCover": "32",
+        "publicDraftStatus": 404
+      }
+    },
+    {
+      "name": "명시적 공개 후 공개 HTML·본문 서식·대표/본문 이미지 제공",
+      "result": "PASS",
+      "detail": {
+        "imageCount": 2
+      }
+    },
+    {
+      "name": "공개 목록·상세 6개 폭에서 가로 넘침·이미지·글꼴 확인",
+      "result": "PASS",
+      "detail": [
+        320,
+        375,
+        768,
+        1024,
+        1280,
+        1440
+      ]
+    },
+    {
+      "name": "분류와 소식 상세 진입 시 선택 지점 유지",
+      "result": "PASS",
+      "detail": "second"
+    },
+    {
+      "name": "공개 글 수정 초안·미리보기 중 기존 제목·본문·사진·날짜 유지",
+      "result": "PASS",
+      "detail": {
+        "replacementCover": "34"
+      }
+    },
+    {
+      "name": "재공개 시 대표·본문 사진 참조 교체와 이전 사진 차단",
+      "result": "PASS",
+      "detail": "실제 미디어 HTTP 요청"
+    },
+    {
+      "name": "CMS 공개 철회 후 목록·상세·마지막 공개 이미지 차단",
+      "result": "PASS",
+      "detail": {
+        "postId": 12,
+        "finalState": "초안/비공개"
+      }
+    },
+    {
+      "name": "JavaScript 비활성 모바일에서 핵심 본문·기본 메뉴 탐색 유지",
+      "result": "PASS",
+      "detail": "서버 HTML 링크"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/add/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/add/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/add/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/add/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/edit/12/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/edit/12/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/edit/12/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    },
+    {
+      "url": "http://localhost:8768/admin/snippets/news/post/edit/12/",
+      "message": "Cannot find matching a matching panel for the trigger/tab in 'aria-controls', 'href' or 'data-w-tabs-id-param'."
+    }
+  ],
+  "screenshots": [
+    "cms-draft-preview.png",
+    "list-375-first.png",
+    "list-375-full.png",
+    "detail-375-first.png",
+    "detail-375-full.png",
+    "list-1440-first.png",
+    "list-1440-full.png",
+    "detail-1440-first.png",
+    "detail-1440-full.png",
+    "cms-revised-preview.png"
+  ],
+  "status": "PASS_WITH_WARNINGS",
+  "postId": 12,
+  "publicUrlDuringReview": "http://localhost:8768/news/12/?branch=second"
+}

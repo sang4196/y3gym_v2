@@ -1,0 +1,10 @@
+{
+  "run": "2026-10-10T03:32:53.343Z",
+  "status": "FAIL",
+  "headed": true,
+  "checks": [],
+  "errors": [],
+  "batches": [],
+  "screenshots": [],
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(Math.abs(native[key] - dom.outer[key]) <= 1)\n\n    at measure (file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:83:57)\n    at runNextTicks (node:internal/process/task_queues:64:5)\n    at process.processImmediate (node:internal/timers:452:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async Promise.all (index 0)\n    at async record (file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:96:19)\n    at async file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:127:18"
+}

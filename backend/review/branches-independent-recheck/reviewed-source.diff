@@ -1,0 +1,143 @@
+--- before/backend/news/wagtail_hooks.py
++++ current/backend/news/wagtail_hooks.py
+@@ -1,4 +1,5 @@
+ from django.core.exceptions import ValidationError
++from django.shortcuts import get_object_or_404
+ from django.templatetags.static import static
+ from django.urls import path
+ from django.utils.html import format_html
+@@ -35,6 +36,17 @@
+         return valid
+ 
+ 
++class ConcurrentUnpublishView(UnpublishView):
++    def get_object(self, queryset=None):
++        obj = super().get_object(queryset)
++        if self.request.method == "POST":
++            # Wagtail 7.4's UnpublishView ignores the queryset argument. Fetch
++            # the current row explicitly; ATOMIC_REQUESTS holds this lock until
++            # the inherited permission checks, hooks and unpublish commit end.
++            return get_object_or_404(self.model.objects.select_for_update(), pk=obj.pk)
++        return obj
++
++
+ class PostViewSet(SnippetViewSet):
+     model = Post
+     icon = "doc-full"
+@@ -44,6 +56,7 @@
+     list_filter = ["category", "live"]
+     search_fields = ["title", "summary"]
+     edit_view_class = ConcurrentEditView
++    unpublish_view_class = ConcurrentUnpublishView
+ 
+ 
+ register_snippet(PostViewSet)
+@@ -94,6 +107,7 @@
+     list_display = ["__str__", "last_published_at"]
+     add_view_class = BrandCreateView
+     edit_view_class = BrandEditView
++    unpublish_view_class = ConcurrentUnpublishView
+ 
+     @property
+     def permission_policy(self):
+@@ -110,11 +124,8 @@
+         return super().user_has_permission(user, action)
+ 
+ 
+-class BranchUnpublishView(UnpublishView):
+-    def get_object(self, queryset=None):
+-        if self.request.method == "POST":
+-            queryset = self.model.objects.select_for_update()
+-        return super().get_object(queryset)
++class BranchUnpublishView(ConcurrentUnpublishView):
++    pass
+ 
+ 
+ class BranchViewSet(SnippetViewSet):
+--- before/backend/news/tests/test_brand_browser.py
++++ current/backend/news/tests/test_brand_browser.py
+@@ -7,8 +7,9 @@
+ 
+ from django.conf import settings
+ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+-from django.core.management import call_command
+ from django.test import override_settings
++
++from news.tests.review_fixtures import bootstrap_browser_review
+ 
+ 
+ @unittest.skipUnless(
+@@ -22,8 +23,7 @@
+         with tempfile.TemporaryDirectory() as directory:
+             base = Path(directory)
+             with override_settings(BASE_DIR=base, MEDIA_ROOT=base / "media"):
+-                call_command("bootstrap_review", verbosity=0)
+-                call_command("bootstrap_brand_review", verbosity=0)
++                bootstrap_browser_review()
+                 credentials = json.loads((base / ".local-credentials").read_text())
+                 environment = os.environ.copy()
+                 environment.update(
+--- before/backend/news/tests/test_branch_browser.py
++++ current/backend/news/tests/test_branch_browser.py
+@@ -7,8 +7,9 @@
+ 
+ from django.conf import settings
+ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+-from django.core.management import call_command
+ from django.test import override_settings
++
++from news.tests.review_fixtures import bootstrap_browser_review
+ 
+ 
+ @unittest.skipUnless(
+@@ -20,9 +21,7 @@
+         with tempfile.TemporaryDirectory() as directory:
+             base = Path(directory)
+             with override_settings(BASE_DIR=base, MEDIA_ROOT=base / "media"):
+-                call_command("bootstrap_review", verbosity=0)
+-                call_command("bootstrap_brand_review", verbosity=0)
+-                call_command("bootstrap_branch_review", verbosity=0)
++                bootstrap_browser_review()
+                 credentials = json.loads((base / ".local-credentials").read_text())
+                 environment = os.environ.copy()
+                 environment.update(
+--- before/backend/scripts/review-brand-home.mjs
++++ current/backend/scripts/review-brand-home.mjs
+@@ -81,6 +81,11 @@
+   });
+ }
+ try {
++  if (!liveReadOnly) {
++    const html = await (await publicContext.request.get(`${origin}/branches/`)).text();
++    const navigation = JSON.parse(html.match(/<script[^>]*id="branch-navigation-data"[^>]*>([\s\S]*?)<\/script>/)?.[1] || '[]');
++    assert.deepEqual(navigation.map(branch => branch.id), ['main', 'second'], 'Brand review requires two published branch fixtures.');
++  }
+   await editor.goto(`${origin}/admin/login/`);
+   await editor.locator('[name="username"]').fill('cms-review-editor');
+   await editor.locator('[name="password"]').fill(password);
+@@ -95,6 +100,11 @@
+   await editor.locator('#id_hero_alt').scrollIntoViewIfNeeded();
+   await capture(editor, 'brand-editor-photo');
+   await editor.setViewportSize({ width: 375, height: 812 });
++  await editor.waitForFunction(() => {
++    const rect = document.querySelector('#id_name').getBoundingClientRect();
++    return Math.abs(rect.x - 20) < 1 && Math.abs(rect.width - 335) < 1;
++  });
++  report.adminMobileNameBox = await editor.locator('#id_name').boundingBox();
+   await editor.locator('#id_name').scrollIntoViewIfNeeded();
+   assert.equal(await editor.evaluate(() => document.documentElement.scrollWidth), 375);
+   await capture(editor, 'brand-editor-mobile');
+--- before/backend/scripts/review-branches.mjs
++++ current/backend/scripts/review-branches.mjs
+@@ -77,6 +77,11 @@
+     const mainEdit = editor.url();
+     await capture(editor, 'branch-editor-desktop', true);
+     await editor.setViewportSize({ width: 375, height: 812 });
++    await editor.waitForFunction(() => {
++      const rect = document.querySelector('#id_name').getBoundingClientRect();
++      return Math.abs(rect.x - 20) < 1 && Math.abs(rect.width - 335) < 1;
++    });
++    report.adminMobileNameBox = await editor.locator('#id_name').boundingBox();
+     await noOverflow(editor);
+     await capture(editor, 'branch-editor-mobile');
+     await editor.setViewportSize({ width: 1440, height: 900 });
