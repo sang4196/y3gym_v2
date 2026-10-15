@@ -1,0 +1,14 @@
+{
+  "id": "qa-20261014T040204Z-f665e9b13983",
+  "eligible": true,
+  "plan_id": "93e7de2f4e7172112ec2811804783c4b54b1d73e4cb884e911ec3677594d5949",
+  "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T040204Z-f665e9b13983",
+  "file_entries": 211,
+  "database_names": [],
+  "state": "DELETED",
+  "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261014T040204Z-f665e9b13983",
+  "cleanup": {
+    "folder_absent": true,
+    "databases_dropped": []
+  }
+}

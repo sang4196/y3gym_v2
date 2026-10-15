@@ -1,0 +1,21 @@
+{
+  "status": "OBSERVED",
+  "scope": "Read-only own exact-purpose run; no Chrome/protected process control, no token or complete argv/environment export.",
+  "run_id": "qa-20261013T151641Z-92518dfbfb6e",
+  "processes": [
+    {
+      "pid": 3146039,
+      "recorded_start_ticks": 35955916,
+      "spawn_exe": "/home/shlee/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell",
+      "signed_birth_verified": true,
+      "kernel_start_ticks_match": true,
+      "actual_kernel_state": "R",
+      "actual_uid": 1000,
+      "actual_exe": "/home/shlee/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell"
+    }
+  ],
+  "profile_under_own_tmp": true,
+  "TMPDIR_under_own_run": true,
+  "browser_binary_cache": "/home/shlee/.cache/ms-playwright",
+  "signature_values_exported": false
+}

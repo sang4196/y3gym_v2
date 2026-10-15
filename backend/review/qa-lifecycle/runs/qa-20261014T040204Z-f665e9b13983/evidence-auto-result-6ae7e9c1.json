@@ -1,0 +1,27 @@
+{
+  "schema": "y3gym.qa.v1",
+  "run_id": "qa-20261014T040204Z-f665e9b13983",
+  "created_at": "2026-10-14T04:02:04.153377+00:00",
+  "mode": "auto",
+  "phase": "auto-result",
+  "state": "RUNNING",
+  "outcome": {
+    "exit_code": 0,
+    "kind": "command"
+  },
+  "source_files": 168,
+  "source_manifest_sha256": "8f7d0de6e245fcc8e3c468517d1fbcfe731ed36f82984ca6baf74e57c05fcabf",
+  "external_DB_exception": "PostgreSQL physical files stay in the existing local service volume; only unique logical DBs with ownership comments are managed. No cluster/volume policy changes.",
+  "raw_DB_credentials_media_profiles_environment_not_exported": true,
+  "sanitized_logs": [
+    {
+      "file": "command.log",
+      "raw_bytes": 2158,
+      "raw_sha256": "8a5dbda16833a029931f6263575d929e999b3c8a792c560e572947c1f3c2b7bd",
+      "truncated": false,
+      "diagnostic": "Using CPython 3.13.15 interpreter at: /home/shlee/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/bin/python3.13\nCreating virtual environment at: /home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/[OPAQUE REDACTED]/install-venv\nResolved 40 packages in 2ms\nDownloading pillow (6.6MiB)\nDownloading ruff (10.9MiB)\nDownloading django (7.9MiB)\nDownloading wagtail (9.0MiB)\nDownloading pillow-heif (5.4MiB)\nDownloading psycopg-binary (5.0MiB)\n Downloaded psycopg-binary\n Downloaded pillow-heif\n Downloaded pillow\n Downloaded django\n Downloaded wagtail\n Downloaded ruff\nPrepared 38 packages in 4.55s\nInstalled 38 packages in 5.44s\n + anyascii==0.3.3\n + asgiref==3.12.1\n + beautifulsoup4==4.15.0\n + bleach==6.4.0\n + certifi==2026.7.22\n + charset-normalizer==3.5.2\n + defusedxml==0.7.1\n + django==5.2.18\n + django-filter==26.2\n + django-modelcluster==6.5\n + django-permissionedforms==0.1\n + django-stubs-ext==6.1.2\n + django-taggit==6.1.0\n + django-tasks==0.12.0\n + django-treebeard==5.3.1\n + djangorestframework==3.18.3\n + draftjs-exporter==5.2.0\n + et-xmlfile==2.0.0\n + filetype==1.2.0\n + idna==3.20\n + laces==0.1.2\n + modelsearch==1.3.2\n + openpyxl==3.1.5\n + pillow==12.3.0\n + pillow-heif==1.8.0\n + psycopg==3.3.6\n + psycopg-binary==3.3.6\n + python-dotenv==1.2.4\n + requests==2.34.2\n + ruff==0.15.22\n + soupsieve==2.10\n + sqlparse==0.6.0\n + telepath==0.3.1\n + typing-extensions==4.16.0\n + urllib3==2.8.0\n + wagtail==7.4.3\n + webencodings==0.6.1\n + willow==1.12.0\nSystem check identified no issues (0 silenced).\nOPS_INSTALL_RESULT {\"status\": \"PASS\", \"command\": [\"uv\", \"sync\", \"--locked\", \"--no-python-downloads\", \"--link-mode\", \"copy\"], \"original_venv_not_synced\": true, \"original_lock_changed\": false, \"sync_exit\": 0, \"versions\": {\"Python\": \"3.13.15\", \"Django\": \"5.2.18\", \"Wagtail\": \"7.4.3\"}, \"fresh_Django_check_exit\": 0, \"locked_definition_sha256\": {\"pyproject.toml\": \"[OPAQUE REDACTED]\", \"uv.lock\": \"[OPAQUE REDACTED]\", \".python-version\": \"[OPAQUE REDACTED]\"}, \"fresh_venv_cache_removed\": true}\n"
+    }
+  ],
+  "browser_result_summaries": [],
+  "private_output_files": 0
+}

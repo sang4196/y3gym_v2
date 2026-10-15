@@ -1,0 +1,100 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "date_KST": "2026-10-13",
+  "scope": "NAV01 independent verification only",
+  "new_product_findings": [],
+  "server_single_execution": "suite-result.json",
+  "server_collected_run_pass": 11,
+  "server_fail_error_skip": 0,
+  "actual_branch_browser_opt_in": {
+    "executed": true,
+    "internal_flows": 11,
+    "evidence": "regression-branches/checks.json",
+    "not_additional_server_tests": true,
+    "zero_public_branches_and_JS_off_included": true
+  },
+  "browser_batches_separate": [
+    {
+      "path": "text/result.json",
+      "status": "PASS",
+      "pass_before_failure": 40,
+      "page_errors": 0,
+      "external_requests": 0,
+      "failure": null
+    },
+    {
+      "path": "counter-text/result.json",
+      "status": "FAIL",
+      "pass_before_failure": 3,
+      "page_errors": 0,
+      "external_requests": 0,
+      "failure": "locator.click: Error: strict mode violation: locator('#primary-navigation a[href*=\"/branches/\"]') resolved to 2 elements:\n    1) <a class=\"nav-link\" data-branch-page=\"\" data-original-href=\"/branches/?branch=main\" href=\"http://localhost:8781/branches/?branch=second\">지점 안내</a> aka getByRole('navigation', { name: '주 메뉴' }).getByRole('link', { name: '지점 안내' })\n    2) <a data-inquiry=\"any\" data-branch-page=\"\" aria-label=\"Y3GYM 예시점 문의하기\" data-original-href=\"/branches/?branch=main#contact-main\" class=\"button button--small button--primary header-contact\" href=\"http://localhost:8781/branches/?branch=second#contact-second\">문의하기</a> aka getByRole('link', { name: 'Y3GYM 예시점 문의하기' })\n\nCall log:\n\u001b[2m  - waiting for locator('#primary-navigation a[href*=\"/branches/\"]')\u001b[22m\n"
+    },
+    {
+      "path": "counter-text-followup/result.json",
+      "status": "FAIL",
+      "pass_before_failure": 0,
+      "page_errors": 0,
+      "external_requests": 0,
+      "failure": "dialog is not defined"
+    },
+    {
+      "path": "counter-text-remaining/result.json",
+      "status": "PASS",
+      "pass_before_failure": 5,
+      "page_errors": 0,
+      "external_requests": 0,
+      "failure": null
+    },
+    {
+      "path": "logo/result.json",
+      "status": "PASS",
+      "pass_before_failure": 40,
+      "page_errors": 0,
+      "external_requests": 0,
+      "failure": null
+    },
+    {
+      "path": "counter-logo/result.json",
+      "status": "PASS",
+      "pass_before_failure": 8,
+      "page_errors": 0,
+      "external_requests": 0,
+      "failure": null
+    }
+  ],
+  "source": "source-scope.json",
+  "frozen_existing_files": "preservation.json",
+  "protected_seven_environments": "protected-environments.json",
+  "actual_native_header_click_URL": "http://localhost:8781/",
+  "raw_and_after_JS_header_href": "/",
+  "saved_selection_and_visible_panel": "second/main correct; unrelated TEST sentinels preserved, no per-navigation seed in independent counters",
+  "trainer_deep_fragment": "/branches/?branch=second#second-trainers; native header Enter checked text/logo PC1440/mobile375",
+  "root_unrelated_query_hash": "/?source=TEST_NAV01#news remains without branch, same on reload; explicit tabs retain branch, back/forward/popstate checked",
+  "other_navigation": "branch menu, news/category/detail/return, inquiry, footer/breadcrumb propagation and native tel/Kakao href retained; no external call made",
+  "content_photo_regression": "hero/trainer/facility open/Escape/focus retained, logo not intercepted",
+  "visual_direct_views": [
+    "text/1440-header.png",
+    "text/375-header.png",
+    "logo/1440-header.png",
+    "logo/375-header.png",
+    "counter-text-remaining/375-trainer-fragment.png",
+    "counter-logo/1440-trainer-fragment.png"
+  ],
+  "runtime": "runtime.json",
+  "warnings": [
+    "OBS01/OBS02 original tool failures kept with separate focused followup5 PASS",
+    "Own server Broken pipe8 kept; cancellation on navigation inferred, requestfailed not counted",
+    "Prior pixel/format QA warnings retained as historical references, not rerun or marked resolved"
+  ],
+  "not_executed": [
+    "full148/152 and whole admin regression",
+    "independent standalone4 rerun (developer reference only; source opt-in scope checked)",
+    "Whale, actual hardware, OS Korean IME, W02 exact early conditions, real map SDK, external phone/Kakao invocation, production/deploy",
+    "NAV01 application/restart on user8776 or any protected server"
+  ],
+  "previous_content_photo_lightbox_approval": "User approved within directly checked scope; no redesign/reimplementation/new approval request",
+  "developer_batches_reference_only": "Initial16=15PASS/1FAIL plus separate1PASS; text40/logo40/standalone4; not independent reruns or aggregated",
+  "only_new_QA_changed": true,
+  "Git_commit_push_deploy": false
+}

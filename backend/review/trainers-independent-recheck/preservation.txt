@@ -1,1 +1,0 @@
-{"status": "PASS", "checks": {"outside_evidence_all_files_unchanged_no_additions": true, "all_58_live_database_tables_and_rows_unchanged": true, "index_unchanged": true, "all_protected_scopes_unchanged": true, "all_three_common_fixtures_unchanged": true, "both_existing_servers_unchanged": true}}

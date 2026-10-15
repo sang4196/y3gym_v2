@@ -1,6 +1,0 @@
-PASS 실제 복수 창 초기 좌표·중앙 랜덤 분산·최종 좌표·48px 가장자리 여백
-PASS 열린 창 재사용·일반 닫기 후 새로고침 전체 재노출·새 랜덤 위치
-PASS 초기 보정 종료 후 사용자가 이동·크기 변경한 창을 다시 끌어오지 않음
-PASS 사진 지연 후 높이가 커져도 같은 랜덤 기준점으로 중앙·가장자리 보정
-PASS 같은 난수값에서도 4개 실제 창 분산·첫 9개 중앙 구역 중복 선택 없음
-{"status":"FAIL","checks":5,"failure":"AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(native.left >= area.left + area.marginX - 1)\n\n    at measure (file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:92:5)\n    at async file:///home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/review-popup-position.mjs:206:24"}

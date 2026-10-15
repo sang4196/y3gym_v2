@@ -38,6 +38,9 @@ async function rows() {
 }
 async function branch(key) {
   await page.waitForFunction(key => new URL(location.href).searchParams.get('branch') === key, key);
+  const panelId = await page.locator(`[data-branch-panel][data-branch-id="${key}"]`).getAttribute('id');
+  await page.locator(`[data-branch-tab][role="tab"][aria-controls="${panelId}"][aria-selected="true"]`).waitFor();
+  await page.locator(`[data-branch-panel][data-branch-id="${key}"]:not([hidden])`).waitFor();
   assert.equal(await page.locator('[data-branch-panel]:not([hidden])').getAttribute('data-branch-id'), key);
   for (const href of await page.locator('#news .news-title-link, #news .section-heading > a').evaluateAll(links => links.map(link => link.href))) {
     assert.deepEqual(new URL(href).searchParams.getAll('branch'), [key]);

@@ -1,4 +1,12 @@
 {% extends 'news/base.html' %}
+{% load static %}
+{% block extra_head %}
+{% if public_branches %}
+<link rel="stylesheet" href="{% static 'news/branch-map.css' %}">
+{{ kakao_map_config|json_script:'branch-map-config' }}
+<script src="{% static 'news/branch-map.js' %}" type="module"></script>
+{% endif %}
+{% endblock %}
 {% block content %}
 <section class="page-intro" aria-labelledby="page-title"><div class="container"><nav class="breadcrumb" aria-label="현재 위치"><a href="/?branch={{ branch }}" data-branch-page>홈</a><span aria-hidden="true">/</span><span aria-current="page">지점 안내</span></nav><h1 id="page-title">지점 안내</h1><p class="section-description">방문할 지점의 시설을 살펴보고,<br class="desktop-break"> 운영시간·위치·문의 정보를 확인하세요.</p><p class="content-example">{% if is_preview %}미리보기 · 저장·공개 전 내용입니다.{% else %}로컬 CMS 검토 · 사진과 운영 정보는 임시 자료입니다.{% endif %}</p></div></section>
 {{ branch_browser|safe }}

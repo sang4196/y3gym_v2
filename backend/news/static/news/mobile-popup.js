@@ -50,6 +50,8 @@ export function createMobilePopup({ popup, post, onReady, onClose }) {
         resolve();
       }, { once: true });
       dialog.querySelector('[data-mobile-popup-image-frame]').hidden = false;
+      image.alt = `${popup.title} · 테스트 자료`;
+      for (const [name, value] of Object.entries(popup.imageFull || {})) image.setAttribute(name, value);
       image.src = popup.image;
     }) : Promise.resolve();
     contentReady = Promise.all([imageReady, document.fonts.ready]);

@@ -1,0 +1,14 @@
+I001 [*] Import block is un-sorted or un-formatted
+   --> review/image-chooser-focus-apply/probe.py:189:5
+    |
+188 |   def loader():
+189 | /     from wagtail import hooks
+190 | |     from news import wagtail_hooks
+    | |__________________________________^
+191 |
+192 |       script = BACKEND / "news/static/news/admin-image-chooser-focus.js"
+    |
+help: Organize imports
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

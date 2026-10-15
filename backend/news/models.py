@@ -21,6 +21,8 @@ from wagtail.models import (
     RevisionMixin,
 )
 
+from .contacts import kakao_chat_href, validate_kakao_chat_url
+from .forms import BranchAdminForm
 from .panels import PopupSettingsPanel, TrainerManagementPanel
 
 
@@ -338,10 +340,22 @@ class Branch(
     name = models.CharField("지점명", max_length=100, blank=True)
     intro = models.TextField("지점 소개", max_length=500, blank=True)
     address = models.CharField("주소", max_length=200, blank=True)
+    address_detail = models.CharField(
+        "상세주소", max_length=200, blank=True, default=""
+    )
     opening_hours = models.TextField("운영시간", max_length=500, blank=True)
     phone = models.CharField("전화 안내 (모의 문의)", max_length=80, blank=True)
     channel = models.CharField("카카오톡 안내 (모의 문의)", max_length=200, blank=True)
+    kakao_chat_url = models.CharField(
+        "카카오톡 1:1 채팅 URL",
+        max_length=500,
+        blank=True,
+        default="",
+        validators=[validate_kakao_chat_url],
+    )
     display_order = models.PositiveIntegerField("표시 순서", default=0)
+
+    base_form_class = BranchAdminForm
 
     panels = [
         MultiFieldPanel(
@@ -362,7 +376,12 @@ class Branch(
             [
                 FieldPanel(
                     "address",
-                    help_text="공개할 때 필수입니다. 현재는 실제 지도가 연결되지 않습니다.",
+                    heading="도로명주소",
+                    help_text="공개할 때 필수입니다. 건물 번호까지 입력하세요. 동·층·호는 상세주소에 입력하세요. 지도는 게시한 도로명주소로 검색하며 초안 저장만으로 공개 위치가 바뀌지 않습니다.",
+                ),
+                FieldPanel(
+                    "address_detail",
+                    help_text="선택 항목입니다. 예: 1동 302, 303호. 공개한 상세주소는 도로명주소 다음 줄에 표시하며 지도 검색에는 사용하지 않습니다.",
                 ),
                 FieldPanel(
                     "opening_hours",
@@ -370,11 +389,18 @@ class Branch(
                 ),
                 FieldPanel(
                     "phone",
-                    help_text="선택 항목입니다. 없으면 전화 버튼을 숨깁니다. 이번 단계는 실제 전화 연결 없이 안내만 표시합니다.",
+                    heading="전화번호·안내",
+                    help_text="선택 항목입니다. 지원하는 국내 지역번호·휴대전화 또는 +국가번호 형식은 게시한 번호로 전화 링크를 제공합니다. 번호가 없거나 자유 안내문이면 전화 링크를 만들지 않고 입력한 안내를 표시합니다. 초안 저장만으로 공개 번호가 바뀌지 않습니다.",
                 ),
                 FieldPanel(
                     "channel",
-                    help_text="선택 항목입니다. 없으면 카카오톡 버튼을 숨깁니다. 실제 외부 서비스로 연결하지 않습니다.",
+                    heading="카카오톡 안내",
+                    help_text="선택 안내 문구입니다. 입력한 안내를 그대로 표시하며 실제 연결 URL은 아래 항목에서 별도로 입력합니다. 안내 문구 없이 URL만 입력할 수도 있습니다.",
+                ),
+                FieldPanel(
+                    "kakao_chat_url",
+                    heading="카카오톡 1:1 채팅 URL",
+                    help_text="선택 항목입니다. https://pf.kakao.com/_공개ID/chat 형식만 입력하세요. 채널 홈 주소는 끝에 /chat을 직접 붙여 입력하며 자동 변환하지 않습니다. 공백·쿼리·프래그먼트는 허용하지 않습니다. 비어 있으면 카카오톡 연결 버튼을 숨깁니다. 초안 저장만으로 공개 대상이 바뀌지 않습니다.",
                 ),
             ],
             heading="위치·운영시간·문의",
@@ -415,7 +441,19 @@ class Branch(
     def with_content_json(self, content):
         obj = super().with_content_json(content)
         obj.key = self.key
+        # Old revisions predate this field; never borrow a newer draft's detail.
+        obj.address_detail = content.get("address_detail", "")
+        obj.kakao_chat_url = content.get("kakao_chat_url", "")
         return obj
+
+    @property
+    def has_phone_contact(self):
+        """Keep nonblank numbers or guidance without changing the stored text."""
+        return bool(self.phone.strip())
+
+    @property
+    def kakao_chat_href(self):
+        return kakao_chat_href(self.kakao_chat_url)
 
     def validate_for_publication(self):
         errors = {
@@ -423,6 +461,10 @@ class Branch(
             for field in ["name", "address", "opening_hours"]
             if not getattr(self, field).strip()
         }
+        try:
+            validate_kakao_chat_url(self.kakao_chat_url)
+        except ValidationError as error:
+            errors["kakao_chat_url"] = error.messages
         if errors:
             raise ValidationError(errors)
 

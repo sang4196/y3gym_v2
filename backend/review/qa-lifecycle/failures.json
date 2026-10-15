@@ -1,0 +1,92 @@
+[
+  {
+    "phase": "initial read-only inventory",
+    "error": "PermissionError: foreign/system /tmp/snap-private-tmp/instance.json",
+    "classification": "inventory observer did not initially catch metadata permission denial",
+    "effect": "no inventory output or environment mutation",
+    "resolution": "record foreign/unreadable directory as unknown and partial size, never read protected contents or infer ownership"
+  },
+  {
+    "phase": "selftests-initial",
+    "run": 12,
+    "pass": 9,
+    "error": 3,
+    "private_original_log": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-initial.log",
+    "classification": "strict process lookup correctly refused transient /proc/environ permission denial during exit after verified SIGTERM; waiting implementation needed kernel exit proof",
+    "resolution": "validate all targets before signaling and keep pidfds open through POLLIN exit; unreadable live records remain fail-closed; no legacy process changed"
+  },
+  {
+    "phase": "selftests-followup",
+    "run": 12,
+    "pass": 11,
+    "error_cases": 1,
+    "error_entries": 2,
+    "classification": "forced controller test observed recorded PID identity mismatch, then conservative teardown refusal; original run preserved",
+    "private_original_log": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-followup.log",
+    "followup": "isolated forced test1 PASS in forced-focused-initial.log; no mismatch in its captured identities",
+    "resolution": "persist newly spawned process only after two stable token/cwd/argv/starttime observations; retain first forced-error environment for independent review"
+  },
+  {
+    "phase": "managed integration initial",
+    "run_id": "qa-20261013T135531Z-7f334c4b7ee2",
+    "command_exit": 1,
+    "tests_executed": 0,
+    "cleanup": "folder and both owned DBs removed after sanitized evidence preserved",
+    "classification": "qa_test_runner import typo settingsdact from an overbroad text replacement",
+    "resolution": "corrected new runner imports only; original sanitized stack retained in run-specific evidence"
+  },
+  {
+    "phase": "selftests-final",
+    "run": 12,
+    "pass": 11,
+    "error_cases": 1,
+    "error_entries": 1,
+    "seconds": 81.309,
+    "private_original_log": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-final.log",
+    "classification": "test teardown included a concurrently active integration run; lifecycle correctly refused its live driver",
+    "original_exception": "qa_lifecycle.Refused: Auto driver still running; stop its operation before cleanup",
+    "resolution": "test collection restricted by unique purpose and exact driver PID; subsequent final-02 and release each 12 PASS; original log preserved"
+  },
+  {
+    "phase": "managed integration followup",
+    "run_id": "qa-20261013T140048Z-2700e16d2d07",
+    "run": 5,
+    "pass": 4,
+    "fail": 1,
+    "command_exit": 1,
+    "classification": "header tests passed; browser CDP Browser.getBrowserCommandLine unavailable under existing launch mode",
+    "resolution": "own-launch observation revised without changing existing browser launch policy; original redacted stack and cleanup evidence preserved",
+    "cleanup": "both owned DBs and folder removed"
+  },
+  {
+    "phase": "managed browser focused",
+    "run_id": "qa-20261013T140601Z-47d4fbda9f50",
+    "run": 1,
+    "pass": 0,
+    "fail": 1,
+    "command_exit": 1,
+    "classification": "Chromium /proc environment unavailable to observer; no positive owned-browser record",
+    "resolution": "record only child_process.spawn from own controlled launch with signed birth/exit events; subsequent separate browser test PASS with 11 internal checks",
+    "cleanup": "both owned DBs and folder removed"
+  },
+  {
+    "phase": "manual first",
+    "run_id": "qa-20261013T141707Z-041104c766cf",
+    "status": "FAIL",
+    "error_type": "TimeoutError",
+    "original_evidence": "manual-smoke.json",
+    "resolution": "manual-followup.json separately PASS; original failure retained; both owned DBs and folder removed"
+  },
+  {
+    "phase": "manual restart original",
+    "run_id": "qa-20261013T144030Z-f46cb3c2bcf3",
+    "status": "FAIL",
+    "error_type": "TimeoutError",
+    "original_evidence": "manual-restart-final.json",
+    "failed_stage": "first public GET http://127.0.0.1:44985/ waiting HTTP response status/header, after admin/login HTTP 200, before stop/restart",
+    "probe_budget_seconds": 10,
+    "observation": "8 cold rendition writes span 17.158593 seconds; consistent with request exceeding probe budget, exact cause not established",
+    "resolution": "same environment manual-restart-followup.json separately PASS: stop/start login200 public200, no reseed, DB rows and credential metadata preserved; both DBs/folder removed",
+    "not_claimed": "public performance root cause resolved, or initial timeout erased"
+  }
+]

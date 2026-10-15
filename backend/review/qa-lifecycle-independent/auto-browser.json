@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "CLI": {
+    "run_id": "qa-20261013T151641Z-92518dfbfb6e",
+    "command_exit_code": 0,
+    "cleanup": {
+      "id": "qa-20261013T151641Z-92518dfbfb6e",
+      "eligible": true,
+      "plan_id": "9cd60b82f79a6fbc74202f8d364a57db6df8eea089845cda8abded145fd39c72",
+      "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151641Z-92518dfbfb6e",
+      "file_entries": 245,
+      "database_names": [
+        "test_y3gym_qa_92518dfbfb6e_0a345f9cdde7",
+        "test_y3gym_qa_92518dfbfb6e_0a345f9cdde7_runner"
+      ],
+      "state": "DELETED",
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151641Z-92518dfbfb6e",
+      "cleanup": {
+        "folder_absent": true,
+        "databases_dropped": [
+          "test_y3gym_qa_92518dfbfb6e_0a345f9cdde7",
+          "test_y3gym_qa_92518dfbfb6e_0a345f9cdde7_runner"
+        ]
+      }
+    },
+    "cleanup_error": null,
+    "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151641Z-92518dfbfb6e"
+  },
+  "tests": {
+    "collected": 1,
+    "run": 1,
+    "pass": 1,
+    "fail": [],
+    "error": [],
+    "skip": [],
+    "executed_ids": [
+      "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes"
+    ],
+    "failure_locations": [],
+    "runtime_scope": {
+      "BASE_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151641Z-92518dfbfb6e",
+      "MEDIA_ROOT": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151641Z-92518dfbfb6e/media",
+      "TMPDIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151641Z-92518dfbfb6e/tmp"
+    }
+  },
+  "browser_result_summaries": [
+    {
+      "path": "output/branch/checks.json",
+      "status": "PASS",
+      "checks": 11,
+      "errors": 0
+    }
+  ],
+  "browser_runtime": [
+    {
+      "pid": 3146039,
+      "start_ticks": 35955916,
+      "exe": "/home/shlee/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell",
+      "profile": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151641Z-92518dfbfb6e/tmp/playwright_chromiumdev_profile-ZWZlnj",
+      "tmpdir": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151641Z-92518dfbfb6e/tmp",
+      "browserCache": "/home/shlee/.cache/ms-playwright",
+      "ownedRun": "qa-20261013T151641Z-92518dfbfb6e",
+      "identity_basis": "signed local ChildProcess spawn, kernel starttime; no complete argv/environment output"
+    }
+  ],
+  "actual_Chrome_process_exited": true,
+  "live_signed_identity_observation": "browser-live-observation.json",
+  "lifecycle_reserved_origin": "http://localhost:52989",
+  "reserved_origin_is_not_claimed_as_Django_live_server_origin": true,
+  "actual_browser_HTTP_origin_not_in_exported_sanitized_logs": true,
+  "origin_enforcement_evidence_level": "Frozen managed guard and executed canonical StaticLiveServer helper set/check their own local origin. Exact runtime HTTP port was not archived; no new origin-blocking negative test was executed.",
+  "both_reserved_DBs_absent": true,
+  "run_folder_absent": true,
+  "initial_postprocessing_failure_preserved": "failures.json"
+}

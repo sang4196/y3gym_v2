@@ -1,0 +1,439 @@
+{
+  "schema": 1,
+  "unit": "QA-LIFECYCLE-01",
+  "recorded_at": "2026-10-13T15:14:41.824818+00:00",
+  "status": "DEVELOPMENT_HANDOFF_PENDING_INDEPENDENT",
+  "source_frozen": true,
+  "closeout_scope": "README.md / verification.json / failures.json only; no new environments, tests, source changes, legacy operations or Git writes during this closeout",
+  "frozen_source_sha256": {
+    "backend/scripts/qa_lifecycle.py": "02ea2d8336bb8cfdc22168c12618d10768de673d964445533dfcb2a7b9cc8fe5",
+    "backend/scripts/qa_redaction.py": "a11478ca11a9703d863898d04d3fa1557409577db5fd5c046ebb38fc77718d15",
+    "backend/scripts/qa_test_runner.py": "039d6c69ea9dcc1f0e38b97a3d97554f85361923255b42df8a750db44057d86f",
+    "backend/scripts/qa_browser_loader.mjs": "14d2ec980340f783183572f5754f5105d66f3095129e60c81d40fd032312ec61",
+    "backend/scripts/qa_browser_resolver.mjs": "41cecda008acba37720b9e8c515797b921a3a0445b75af0f1b5d3d3f481a8f92",
+    "backend/scripts/qa_browser_guard.mjs": "9c752848bf29eb2442c29c2897c80af0317f9d313ae0785b2979d23a3e092990",
+    "backend/scripts/tests/test_qa_lifecycle.py": "e5fe597561205ac73eedf3b3870106043e9053eb7c0027931f17cd4e43de3937"
+  },
+  "tests_are_stored_execution_results_not_closeout_reruns": true,
+  "lifecycle_batches": [
+    {
+      "log": "selftests-initial.log",
+      "run": 12,
+      "pass": 9,
+      "error_cases": 3,
+      "seconds": 18.349
+    },
+    {
+      "log": "selftests-followup.log",
+      "run": 12,
+      "pass": 11,
+      "error_cases": 1,
+      "error_entries": 2,
+      "seconds": 22.752
+    },
+    {
+      "log": "forced-focused-initial.log",
+      "run": 1,
+      "pass": 1,
+      "seconds": 0.756
+    },
+    {
+      "log": "selftests-final.log",
+      "run": 12,
+      "pass": 11,
+      "error_cases": 1,
+      "seconds": 81.309
+    },
+    {
+      "log": "selftests-final-02.log",
+      "run": 12,
+      "pass": 12,
+      "seconds": 77.685
+    },
+    {
+      "log": "selftests-release.log",
+      "run": 12,
+      "pass": 12,
+      "seconds": 15.742
+    }
+  ],
+  "private_log_parent": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs",
+  "final_source_independent_check_required": true,
+  "integration_batches": [
+    {
+      "run_id": "qa-20261013T135531Z-7f334c4b7ee2",
+      "evidence": "runs/qa-20261013T135531Z-7f334c4b7ee2/evidence-auto-result-63cb09da.json",
+      "outcome": {
+        "exit_code": 1,
+        "kind": "tests"
+      },
+      "tests": {},
+      "browser_runtime": [],
+      "browser_results": [],
+      "cleanup_records": [
+        {
+          "evidence": "runs/qa-20261013T135531Z-7f334c4b7ee2/cleanup-f8da8d71.json",
+          "state": "DELETED",
+          "cleanup": {
+            "folder_absent": true,
+            "databases_dropped": [
+              "test_y3gym_qa_7f334c4b7ee2_3b91ae323f11",
+              "test_y3gym_qa_7f334c4b7ee2_3b91ae323f11_runner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "qa-20261013T140048Z-2700e16d2d07",
+      "evidence": "runs/qa-20261013T140048Z-2700e16d2d07/evidence-auto-result-921ec4ff.json",
+      "outcome": {
+        "exit_code": 1,
+        "kind": "tests"
+      },
+      "tests": {
+        "collected": 5,
+        "run": 5,
+        "pass": 4,
+        "fail": [
+          "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes"
+        ],
+        "error": [],
+        "skip": [],
+        "executed_ids": [
+          "news.tests.test_header_home.HeaderHomeTests.test_common_home_without_branch_keeps_server_default_and_zero_branch_fallback",
+          "news.tests.test_header_home.HeaderHomeTests.test_header_resolves_named_home_under_a_route_prefix",
+          "news.tests.test_header_home.HeaderHomeTests.test_logo_header_uses_common_home_without_image_enhancement_metadata",
+          "news.tests.test_header_home.HeaderHomeTests.test_text_header_uses_common_home_and_other_links_keep_branch",
+          "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes"
+        ],
+        "runtime_scope": {
+          "BASE_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T140048Z-2700e16d2d07",
+          "MEDIA_ROOT": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T140048Z-2700e16d2d07/media",
+          "TMPDIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T140048Z-2700e16d2d07/tmp"
+        }
+      },
+      "browser_runtime": [],
+      "browser_results": [],
+      "cleanup_records": [
+        {
+          "evidence": "runs/qa-20261013T140048Z-2700e16d2d07/cleanup-8ec1f58d.json",
+          "state": "DELETED",
+          "cleanup": {
+            "folder_absent": true,
+            "databases_dropped": [
+              "test_y3gym_qa_2700e16d2d07_3805f07a8772",
+              "test_y3gym_qa_2700e16d2d07_3805f07a8772_runner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "qa-20261013T140601Z-47d4fbda9f50",
+      "evidence": "runs/qa-20261013T140601Z-47d4fbda9f50/evidence-auto-result-10f3a9b6.json",
+      "outcome": {
+        "exit_code": 1,
+        "kind": "tests"
+      },
+      "tests": {
+        "collected": 1,
+        "run": 1,
+        "pass": 0,
+        "fail": [
+          "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes"
+        ],
+        "error": [],
+        "skip": [],
+        "executed_ids": [
+          "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes"
+        ],
+        "runtime_scope": {
+          "BASE_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T140601Z-47d4fbda9f50",
+          "MEDIA_ROOT": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T140601Z-47d4fbda9f50/media",
+          "TMPDIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T140601Z-47d4fbda9f50/tmp"
+        }
+      },
+      "browser_runtime": [],
+      "browser_results": [],
+      "cleanup_records": [
+        {
+          "evidence": "runs/qa-20261013T140601Z-47d4fbda9f50/cleanup-c06f7cc6.json",
+          "state": "DELETED",
+          "cleanup": {
+            "folder_absent": true,
+            "databases_dropped": [
+              "test_y3gym_qa_47d4fbda9f50_b0eae1391af3",
+              "test_y3gym_qa_47d4fbda9f50_b0eae1391af3_runner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "qa-20261013T141424Z-093013c9dc4f",
+      "evidence": "runs/qa-20261013T141424Z-093013c9dc4f/evidence-auto-result-d979d19d.json",
+      "outcome": {
+        "exit_code": 0,
+        "kind": "tests"
+      },
+      "tests": {
+        "collected": 1,
+        "run": 1,
+        "pass": 1,
+        "fail": [],
+        "error": [],
+        "skip": [],
+        "executed_ids": [
+          "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes"
+        ],
+        "runtime_scope": {
+          "BASE_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T141424Z-093013c9dc4f",
+          "MEDIA_ROOT": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T141424Z-093013c9dc4f/media",
+          "TMPDIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T141424Z-093013c9dc4f/tmp"
+        }
+      },
+      "browser_runtime": [
+        {
+          "profile": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T141424Z-093013c9dc4f/tmp/playwright_chromiumdev_profile-J4vxVM",
+          "tmpdir": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T141424Z-093013c9dc4f/tmp",
+          "browserCache": "/home/shlee/.cache/ms-playwright",
+          "ownedRun": "qa-20261013T141424Z-093013c9dc4f"
+        }
+      ],
+      "browser_results": [
+        {
+          "path": "output/branch/checks.json",
+          "status": "PASS",
+          "checks": 11,
+          "errors": 0
+        }
+      ],
+      "cleanup_records": [
+        {
+          "evidence": "runs/qa-20261013T141424Z-093013c9dc4f/cleanup-b4046174.json",
+          "state": "DELETED",
+          "cleanup": {
+            "folder_absent": true,
+            "databases_dropped": [
+              "test_y3gym_qa_093013c9dc4f_dc8792619032",
+              "test_y3gym_qa_093013c9dc4f_dc8792619032_runner"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "manual_results": {
+    "original_failures": [
+      "manual-smoke.json",
+      "manual-restart-final.json"
+    ],
+    "separate_followups": [
+      "manual-followup.json",
+      "manual-restart-followup.json"
+    ],
+    "same_environment_restart_followup": {
+      "status": "PASS",
+      "run_id": "qa-20261013T144030Z-f46cb3c2bcf3",
+      "original_timeout_retained": "manual-restart-final.json",
+      "public_HTTP_followup": {
+        "url": "http://127.0.0.1:44985/",
+        "HTTP_status": 200,
+        "seconds": 0.13933798699872568,
+        "bytes": 14635
+      },
+      "login_HTTP_followup": {
+        "url": "http://127.0.0.1:44985/admin/login/",
+        "HTTP_status": 200,
+        "seconds": 0.05083509598625824,
+        "bytes": 13459
+      },
+      "same_environment_restart": {
+        "HTTP_ready": {
+          "url": "http://127.0.0.1:44985/admin/login/",
+          "HTTP_status": 200,
+          "seconds": 0.10776998999062926,
+          "response_body_not_stored": true
+        },
+        "id": "qa-20261013T144030Z-f46cb3c2bcf3",
+        "pid": 3117958,
+        "origin": "http://localhost:44985",
+        "state": "MANUAL_PENDING"
+      },
+      "public_HTTP_after_restart": {
+        "url": "http://127.0.0.1:44985/",
+        "HTTP_status": 200,
+        "seconds": 0.18423678301041946,
+        "bytes": 14635
+      },
+      "manual_pending_preserved_running_and_after_stop": true,
+      "initialized_once_no_reseed": true,
+      "DB_rows_credentials_metadata_unchanged": true,
+      "cleanup": {
+        "id": "qa-20261013T144030Z-f46cb3c2bcf3",
+        "eligible": true,
+        "plan_id": "f3b0b2a5e3e09c18454c9d98d4d6fbe5fd508ece268effa65d748d8ba9b95fdd",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T144030Z-f46cb3c2bcf3",
+        "file_entries": 226,
+        "database_names": [
+          "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166",
+          "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166_runner"
+        ],
+        "state": "DELETED",
+        "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T144030Z-f46cb3c2bcf3",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": [
+            "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166",
+            "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166_runner"
+          ]
+        }
+      }
+    },
+    "timeout_observation": {
+      "source": "own fresh run only; file metadata and stored rendition count",
+      "derived_files": 8,
+      "first_to_last_write_seconds": 17.15859341621399,
+      "original_public_probe_timeout_seconds": 10,
+      "inference": "cold rendition generation outlasted original probe budget; no persistent server/DB deadlock observed later",
+      "no_reseed_or_fixed_sleep": true
+    },
+    "exact_cause_confirmed": false
+  },
+  "inventory_snapshots": [
+    {
+      "file": "inventory-before.json",
+      "observed_at": "2026-10-13T13:27:13.341750+00:00",
+      "root_local_present_at_snapshot": false,
+      "entries": 224,
+      "note": "pre-run snapshot"
+    },
+    {
+      "file": "inventory-scoped.json",
+      "observed_at": "2026-10-13T13:31:03.307444+00:00",
+      "root_local_present_at_snapshot": false,
+      "entries": 75,
+      "note": "pre-run snapshot"
+    },
+    {
+      "file": "inventory-final.json",
+      "observed_at": "2026-10-13T13:55:31.797782+00:00",
+      "root_local_present_at_snapshot": true,
+      "entries": 75,
+      "note": "final snapshot is post-tool-development, not initial .local ownership evidence"
+    }
+  ],
+  "retained_development_runs": [
+    {
+      "id": "qa-20261013T133525Z-1d7ae0edf181",
+      "mode": "manual",
+      "state": "MANUAL_PENDING",
+      "purpose": "QA-LIFECYCLE-01 private preservation evidence; independent review pending",
+      "retention_reason": "manual review pending",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup",
+      "databases": {}
+    },
+    {
+      "id": "qa-20261013T135421Z-384a05dad18c",
+      "mode": "auto",
+      "state": "RETAINED",
+      "purpose": "disposable forced interruption",
+      "retention_reason": "original forced-controller identity error environment; independent review evidence",
+      "cleanup_condition": "design reviews original failure/source and confirms unused, then complete and exact dry-run cleanup",
+      "databases": {}
+    }
+  ],
+  "preservation": {
+    "private_before_snapshot": "qa-20261013T133525Z-1d7ae0edf181/output/protected-before.json",
+    "before_DB_media_environments": 9,
+    "before_listeners": 10,
+    "developer_final_after_comparison_executed": false,
+    "design_reported_readonly_comparison": {
+      "source": "trusted design handoff; not developer closeout execution",
+      "existing_files_compared": 3745,
+      "changed": 0,
+      "missing": 0,
+      "HEAD": "32ade6ba627f49a521bd7efdf0f482f7f7e1aa7b",
+      "qa_root_ignored": true,
+      "qa_root_tracked_files": 0
+    },
+    "legacy_cleanup_authorized": false,
+    "legacy_cleanup_performed": false,
+    "additional_design_observation_protected": {
+      "port": 34471,
+      "pid": 3142748
+    },
+    "user_port_8776": "direct user confirmation complete within checked scope; server remains protected"
+  },
+  "limits": [
+    "No whole-product regression, actual device or deployment validation claimed",
+    "Physical PostgreSQL files remain in existing compose service volume; owned logical base/runner DBs are controlled resources",
+    "Developer final existing DB/media/process after comparison not executed",
+    "Browser PASS runtime records profile/TMPDIR/cache; later exe export field awaits independent output check",
+    "Generated settings outside managed CLI environment not verified",
+    "Latest root/PRD/AGENTS/backend README/design status closeout deferred by design until independent review",
+    "Original errors and raw private logs retained; redacted per-run diagnostics stored before cleanup"
+  ],
+  "git_writes": false,
+  "retained_development_runs_are_handoff_snapshot": true,
+  "latest_closeout": {
+    "recorded_at": "2026-10-13T15:29:23.210191+00:00",
+    "scope": "documentation and two explicitly authorized developer disposable fixture archives/cleanup only; no source changes, new tests or new environments",
+    "independent_core_and_metadata_preservation_reviewed_by_design": true,
+    "independent_final_report_at_instruction": "completed and reviewed by design",
+    "preservation_evidence": "../qa-lifecycle-independent/preservation.json",
+    "raw_DB_rows_media_content_after_not_reexecuted": true,
+    "developer_fixture_closeout": "developer-fixture-closeout.json",
+    "initial_archive_refusal_then_separate_followup": true,
+    "current_retained_development_runs": [],
+    "archives": [
+      {
+        "run_id": "qa-20261013T133525Z-1d7ae0edf181",
+        "archive": "backend/review/qa-lifecycle/runs/qa-20261013T133525Z-1d7ae0edf181/evidence-developer-closeout-archive-c29972b6.json",
+        "archive_index": "backend/review/qa-lifecycle/runs/qa-20261013T133525Z-1d7ae0edf181/archive-index.json",
+        "original_log_count": 20,
+        "state": "DELETED",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": []
+        }
+      },
+      {
+        "run_id": "qa-20261013T135421Z-384a05dad18c",
+        "archive": "backend/review/qa-lifecycle/runs/qa-20261013T135421Z-384a05dad18c/evidence-developer-closeout-archive-a109132f.json",
+        "archive_index": "backend/review/qa-lifecycle/runs/qa-20261013T135421Z-384a05dad18c/archive-index.json",
+        "original_log_count": 1,
+        "state": "DELETED",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": []
+        }
+      }
+    ],
+    "independent_status": "PASS_WITH_OBSERVATION_LIMIT",
+    "independent_verification": "../qa-lifecycle-independent/verification.json",
+    "independent_own_runs_final": "../qa-lifecycle-independent/own-runs-final.json",
+    "independent_own_runs_deleted": 23,
+    "independent_limits": [
+      "Exact dynamic browser HTTP origin absent from sanitized export; lifecycle reserved origin and frozen guard/runtime evidence levels kept separate",
+      "No new negative network/origin-blocking test executed",
+      "Unreadable recorded PID and invalid HMAC cases are unit fixtures; no real interrupted Chrome read-denial scenario forced",
+      "Original DB table rows/revision content/media bytes not reread: metadata-only preservation at after snapshot; developer final after absent remains separate",
+      "Cold public rendition timeout from developer history not rerun or marked resolved",
+      "Original75 inventory classification is reference plus two candidate exit samples, not a new full audit",
+      "No whole148/152, global W01 cleanup, existing server operations, deployment, real device/Whale/OS IME verification"
+    ],
+    "design_reported_final_readonly_state": {
+      "source": "trusted design handoff; not rerun by developer",
+      "registry_count": 124,
+      "all_registry_DELETED": true,
+      "run_folders": 0,
+      "reserved_DB_names_queried": 248,
+      "reserved_DB_names_remaining": 0,
+      "reserved_names_are_not_claimed_as_created_or_dropped_DB_count": true,
+      "frozen_source7_HEAD_index_same": true
+    }
+  },
+  "limits_are_development_handoff_snapshot": true
+}

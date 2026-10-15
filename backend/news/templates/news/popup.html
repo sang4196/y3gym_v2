@@ -1,10 +1,12 @@
-{% load static %}
+{% load static content_images %}
 <!doctype html><html lang="ko"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ popup.title }} · {{ branding.name|default:"Y3GYM" }} 알림</title>
 <link rel="stylesheet" href="{% static 'prototype/styles.css' %}">
 <link rel="stylesheet" href="{% static 'news/popup-window.css' %}">
 <link rel="stylesheet" href="{% static 'news/brand.css' %}">
+<link rel="stylesheet" href="{% static 'news/content-images.css' %}">
+<script src="{% static 'news/content-images.js' %}" type="module"></script>
 <script src="{% static 'news/popup-window.js' %}" type="module"></script>
 <script src="{% static 'news/context.js' %}" type="module"></script>
 </head><body class="popup-page">
@@ -14,7 +16,7 @@
 <article class="popup-content" data-popup-content>
 <p class="eyebrow">{{ popup.category }} · 브랜드 공통 안내</p>
 <h1 data-popup-title>{{ popup.title }}</h1>
-{% if popup.image %}<div class="popup-image-frame" data-popup-image-frame><img src="{{ popup.image }}" alt="{{ popup.title }} · 테스트 자료" data-popup-image><span class="image-fallback" data-popup-image-fallback hidden>사진을 불러오지 못했습니다.</span></div>{% endif %}
+{% if popup.image %}<div class="popup-image-frame" data-popup-image-frame><img src="{{ popup.image }}" alt="{{ popup.title }} · 테스트 자료" data-popup-image{% for name, value in popup.imageFull.items %} {{ name }}="{{ value }}"{% endfor %}><span class="image-fallback" data-popup-image-fallback hidden>사진을 불러오지 못했습니다.</span></div>{% endif %}
 {% if popup.description %}<p data-popup-description>{{ popup.description }}</p>{% endif %}
 <a class="button button--primary" href="{{ popup.post.url }}{% if branch %}?branch={{ branch }}{% endif %}" data-popup-post>소식 글 보기</a>
 <div class="popup-controls"><label class="checkbox-label"><input type="checkbox" data-hide-today>오늘 하루 보지 않기</label><button class="popup-close" type="button" aria-label="알림 닫기" data-close-popup>닫기 <span aria-hidden="true">×</span></button></div>

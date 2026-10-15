@@ -1,0 +1,21 @@
+{
+  "independent_CLI_or_unittest_failures": [],
+  "observer_failures": [
+    {
+      "id": "OBS01",
+      "status": "FAIL",
+      "phase": "initial postprocessing of completed browser CLI",
+      "related_source": "archive-summary-observer-initial.py (originally inline Python)",
+      "raw_error": "Traceback (most recent call last):\n  File \"<stdin>\", line 9, in <module>\nAssertionError",
+      "requirement": "Report actual browser runtime/origin evidence without inferring protected/external access from missing diagnostics.",
+      "reproduction": "Read the archived browser evidence, then require a http://localhost:<port> regex match in sanitized_logs.",
+      "expected_by_observer": "Sanitized log contains at least one exact HTTP origin string.",
+      "actual": "Regex count0; archived CLI exit0/DELETED, test1/internal11 PASS, signed live Chromium identity and exited PID remain valid.",
+      "classification": "Observer assumed an exported log field; no actual transport failure established.",
+      "followup": "auto-browser.json extracts supported runtime/resource fields and records origin observation limit. Actual CLI/browser/manual runs were not repeated."
+    }
+  ],
+  "developer_history_reference_only": "../qa-lifecycle/failures.json",
+  "new_origin_blocking_negative_test": "not executed",
+  "managed_header_browser_manual_retries": 0
+}

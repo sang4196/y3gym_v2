@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "executions": 1,
+  "collected": 12,
+  "run": 12,
+  "pass": 12,
+  "failure": 0,
+  "error": 0,
+  "skip": 0,
+  "seconds": 19.024,
+  "ids": [
+    "test_auto_reproduction_retention_policy",
+    "test_auto_success_failure_diagnostics_redaction_exception",
+    "test_cleanup_failure_is_separate_and_preserves_command_exit",
+    "test_create_before_comment_registration_gap_fails_closed",
+    "test_evidence_destination_symlink_and_secret_modes",
+    "test_external_root_nested_symlink_and_other_run_protection",
+    "test_forced_controller_interruption_discovers_and_stops_only_owned_orphan",
+    "test_live_recorded_pid_lookup_error_is_unknown_not_dead",
+    "test_manual_gate_plan_change_exact_cleanup_and_duplicate",
+    "test_partial_db_drop_folder_failure_report_and_recovery",
+    "test_wrong_database_oid_and_other_run_name_refused",
+    "test_wrong_process_token_and_reused_pid_starttime_refused"
+  ],
+  "baseline": "qa-20261013T151215Z-aa300e83d93f",
+  "raw_log_private_until_explicit_baseline_cleanup": true,
+  "intentional_failure_fixtures_not_tool_test_failures": true
+}

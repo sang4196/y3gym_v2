@@ -1,2 +1,0 @@
-Would reformat: review/workflow-01/verify.py
-1 file would be reformatted, 71 files already formatted

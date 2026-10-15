@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "own_origin_only": true,
+  "URL": "http://localhost:8770/static/news/admin-image-chooser-focus.js",
+  "bytes": 5590,
+  "served_sha256": "c8d0979f62dc3ae5d9d3ab79a09033deaeea3b64183a8b65537a71be0f771665",
+  "matches_task_start_product_hash": true
+}

@@ -1,0 +1,20 @@
+{
+  "id": "qa-20261014T035638Z-fa05f66d3da0",
+  "eligible": true,
+  "plan_id": "b0c686e85253d8f069774357004c067c656403651cefcfee286c697cbecd68a2",
+  "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T035638Z-fa05f66d3da0",
+  "file_entries": 316,
+  "database_names": [
+    "test_y3gym_qa_fa05f66d3da0_6af157ab0f91",
+    "test_y3gym_qa_fa05f66d3da0_6af157ab0f91_runner"
+  ],
+  "state": "DELETED",
+  "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261014T035638Z-fa05f66d3da0",
+  "cleanup": {
+    "folder_absent": true,
+    "databases_dropped": [
+      "test_y3gym_qa_fa05f66d3da0_6af157ab0f91",
+      "test_y3gym_qa_fa05f66d3da0_6af157ab0f91_runner"
+    ]
+  }
+}

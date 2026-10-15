@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "Metadata and source hashes only; no legacy DB table/media raw snapshots or legacy operations performed",
+  "HEAD": "32ade6ba627f49a521bd7efdf0f482f7f7e1aa7b",
+  "HEAD_index_unchanged": true,
+  "existing_public_files": 4022,
+  "existing_public_files_changed": [
+    "backend/review/qa-lifecycle/failures.json"
+  ],
+  "concurrent_developer_document_finalization_only": true,
+  "independent_modified_prior_files": false,
+  "existing_public_files_missing": 0,
+  "protected_entries": 75,
+  "protected_tmp": 68,
+  "protected_internal": 7,
+  "protected_existing_file_stats_identical": true,
+  "original_process_identities": 15,
+  "original_process_identities_identical": true,
+  "original_DB_names_OIDs_comment_hashes_identical": true,
+  "original_DB_table_rows_and_media_content_not_reexecuted": true,
+  "original_sensitive_file_stats_same": true,
+  "existing_dirty_untracked_preserved": true,
+  "developer_two_preserved_runs_unchanged": true,
+  "standard_evidence_new_own_ID_creation_authorized": true,
+  "protected_stat_records_including_absent_markers": 15622,
+  "snapshot_timing": "after scoped executions and before explicit deletion of own baseline; allowed developer documentation may finish afterward",
+  "authorized_concurrent_document_paths": [
+    "AGENTS.md",
+    "README.md",
+    "backend/README.md",
+    "docs/PRD.md",
+    "docs/IMPLEMENTATION-PLAN.md",
+    "prototype/DESIGN.md",
+    "backend/review/dev-integration-01/MANUAL-CHECKLIST.md",
+    "backend/review/qa-lifecycle/{README.md,verification.json,failures.json}"
+  ]
+}

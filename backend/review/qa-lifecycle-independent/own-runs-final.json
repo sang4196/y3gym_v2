@@ -1,0 +1,330 @@
+{
+  "status": "PASS",
+  "own_runs": [
+    {
+      "id": "qa-20261013T151215Z-aa300e83d93f",
+      "purpose": "QA-LIFECYCLE-01 independent unittest baseline",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151215Z-aa300e83d93f"
+    },
+    {
+      "id": "qa-20261013T151321Z-3802370a01af",
+      "purpose": "retain disposable reproduction fixture-297bb0d3",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": {
+        "exit_code": 9,
+        "kind": "command"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151321Z-3802370a01af"
+    },
+    {
+      "id": "qa-20261013T151321Z-f848b9a6deaf",
+      "purpose": "disposable auto success fixture-f5cf72da",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": {
+        "exit_code": 0,
+        "kind": "command"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151321Z-f848b9a6deaf"
+    },
+    {
+      "id": "qa-20261013T151322Z-b4dc82c0cf7e",
+      "purpose": "disposable auto failure fixture-82d11397",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": {
+        "exit_code": 7,
+        "kind": "command"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151322Z-b4dc82c0cf7e"
+    },
+    {
+      "id": "qa-20261013T151322Z-e3f8fbdaec80",
+      "purpose": "disposable auto launch exception fixture-f9d04d39",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": {
+        "exit_code": 1,
+        "exception_type": "FileNotFoundError"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151322Z-e3f8fbdaec80"
+    },
+    {
+      "id": "qa-20261013T151323Z-6226dea0a7e5",
+      "purpose": "failed command and cleanup fixture-ff3506a9",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [
+        "auto-cleanup-failed-d359b548.json"
+      ],
+      "outcome": {
+        "exit_code": 7,
+        "kind": "command"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151323Z-6226dea0a7e5"
+    },
+    {
+      "id": "qa-20261013T151323Z-b6c1e5077757",
+      "purpose": "successful command cleanup failure fixture-cd344d13",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [
+        "auto-cleanup-failed-a83372ea.json"
+      ],
+      "outcome": {
+        "exit_code": 0,
+        "kind": "command"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151323Z-b6c1e5077757"
+    },
+    {
+      "id": "qa-20261013T151324Z-18b1a3790e4f",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151324Z-18b1a3790e4f"
+    },
+    {
+      "id": "qa-20261013T151326Z-1684b12cf4b3",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151326Z-1684b12cf4b3"
+    },
+    {
+      "id": "qa-20261013T151326Z-92a1e74698b2",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151326Z-92a1e74698b2"
+    },
+    {
+      "id": "qa-20261013T151327Z-1bd042ce9446",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151327Z-1bd042ce9446"
+    },
+    {
+      "id": "qa-20261013T151328Z-40148ca13487",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151328Z-40148ca13487"
+    },
+    {
+      "id": "qa-20261013T151329Z-9ad28210c0e1",
+      "purpose": "disposable forced interruption",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151329Z-9ad28210c0e1"
+    },
+    {
+      "id": "qa-20261013T151330Z-b0697b266ce3",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151330Z-b0697b266ce3"
+    },
+    {
+      "id": "qa-20261013T151331Z-bfb7056e37eb",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151331Z-bfb7056e37eb"
+    },
+    {
+      "id": "qa-20261013T151332Z-e46a874742b3",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 2,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [
+        "cleanup-failed-8b9a43ba.json"
+      ],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151332Z-e46a874742b3"
+    },
+    {
+      "id": "qa-20261013T151335Z-2f9e16937e74",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 2,
+      "database_names_dropped_in_final_cleanup": [
+        "test_y3gym_qa_2f9e16937e74_e0fe750aacd5",
+        "test_y3gym_qa_2f9e16937e74_e0fe750aacd5_runner"
+      ],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151335Z-2f9e16937e74"
+    },
+    {
+      "id": "qa-20261013T151335Z-b05fc167949a",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151335Z-b05fc167949a"
+    },
+    {
+      "id": "qa-20261013T151339Z-f747d6b5ed6c",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151339Z-f747d6b5ed6c"
+    },
+    {
+      "id": "qa-20261013T151339Z-fe3ca7b07fc3",
+      "purpose": "disposable QA-LIFECYCLE-01 fixture",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 0,
+      "database_names_dropped_in_final_cleanup": [],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151339Z-fe3ca7b07fc3"
+    },
+    {
+      "id": "qa-20261013T151521Z-2d5217407fe6",
+      "purpose": "QA-LIFECYCLE-01 independent header",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 2,
+      "database_names_dropped_in_final_cleanup": [
+        "test_y3gym_qa_2d5217407fe6_ef6d979a9da7",
+        "test_y3gym_qa_2d5217407fe6_ef6d979a9da7_runner"
+      ],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": {
+        "exit_code": 0,
+        "kind": "tests"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151521Z-2d5217407fe6"
+    },
+    {
+      "id": "qa-20261013T151641Z-92518dfbfb6e",
+      "purpose": "QA-LIFECYCLE-01 independent browser",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 2,
+      "database_names_dropped_in_final_cleanup": [
+        "test_y3gym_qa_92518dfbfb6e_0a345f9cdde7",
+        "test_y3gym_qa_92518dfbfb6e_0a345f9cdde7_runner"
+      ],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": {
+        "exit_code": 0,
+        "kind": "tests"
+      },
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151641Z-92518dfbfb6e"
+    },
+    {
+      "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+      "purpose": "QA-LIFECYCLE-01 independent manual",
+      "state": "DELETED",
+      "folder_absent": true,
+      "both_reserved_DB_names_absent": true,
+      "registered_DB_OIDs_count": 2,
+      "database_names_dropped_in_final_cleanup": [
+        "test_y3gym_qa_a5aa54d1eb7b_b178221f2787",
+        "test_y3gym_qa_a5aa54d1eb7b_b178221f2787_runner"
+      ],
+      "prior_partial_cleanup_evidence": [],
+      "outcome": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151922Z-a5aa54d1eb7b"
+    }
+  ],
+  "all_own_run_folders_absent": true,
+  "all_reserved_DBs_absent": true,
+  "developer_preserved_runs_operated": false,
+  "developer_preserved_references": [
+    "qa-20261013T133525Z-1d7ae0edf181",
+    "qa-20261013T135421Z-384a05dad18c"
+  ]
+}

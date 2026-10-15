@@ -29,7 +29,9 @@
       });
       try { sessionStorage.setItem(storageKey, id); } catch { /* Selection still works without storage. */ }
       const url = new URL(location.href);
-      if (updateURL || index !== 0 || url.searchParams.has('branch')) url.searchParams.set('branch', id);
+      // CMS common-home entry keeps its URL while retaining the selected panel.
+      const commonHome = document.body.dataset.commonHome === url.pathname && !url.searchParams.has('branch');
+      if (updateURL || (!commonHome && (index !== 0 || url.searchParams.has('branch')))) url.searchParams.set('branch', id);
       if (updateURL) url.hash = 'branch';
       history.replaceState(null, '', url);
       document.querySelectorAll('[data-branch-jump]').forEach(link => {

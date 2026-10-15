@@ -1,0 +1,92 @@
+/* Public CMS photos only. Keep the existing frame dimensions and neutral fill.
+   A rounded overflow mask clips the corners of photos matching the frame. */
+.hero-image-frame,
+.branch-browser .facility-image-frame,
+.profile-image-frame,
+.popup-image-frame {
+  border-radius: 0;
+}
+
+.hero-image-frame img[data-image-full],
+.profile-image-frame img[data-image-full],
+.popup-image-frame img[data-image-full] {
+  object-fit: contain;
+  object-position: center;
+}
+
+img[data-image-full][role="button"] {
+  cursor: zoom-in;
+}
+
+img[data-image-full][role="button"]:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: -3px;
+}
+
+.content-image-viewer {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  height: calc(100dvh - 24px);
+  max-width: 1600px;
+  max-height: none;
+  margin: auto;
+  padding: 12px;
+  border: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.content-image-viewer[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.content-image-viewer::backdrop {
+  background: rgb(0 0 0 / 76%);
+}
+
+.content-image-viewer .content-image-close {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  min-width: 64px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.content-image-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+.content-image-media img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+}
+
+.content-image-status {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}

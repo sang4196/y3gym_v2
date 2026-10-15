@@ -1,0 +1,349 @@
+{
+  "status": "PREPARATION_CHECK_PASS_EXECUTION_PENDING",
+  "private_prepared_work": "/tmp/y3gym-dev-integration-3469dh94",
+  "python_ast": "PASS",
+  "javascript_syntax": 15,
+  "test_modules_static": [
+    {
+      "module": "test_address_detail.py",
+      "defined_methods": [
+        "BranchAddressDetailTests.test_optional_detail_and_existing_road_address_constraints",
+        "BranchAddressDetailTests.test_real_form_detail_draft_reopen_preview_publish_and_withdraw",
+        "BranchAddressDetailTests.test_old_public_revision_missing_detail_never_uses_new_draft",
+        "BranchAddressDetailTests.test_safe_multiline_detail_in_summary_contact_home_and_road_only_map",
+        "BranchAddressDetailTests.test_empty_detail_has_no_extra_line_and_can_clear_published_detail",
+        "BranchAddressDetailTests.test_stale_detail_form_does_not_overwrite_newer_draft_or_publication",
+        "AddressDetailMigrationTests.test_additive_migration_preserves_unsplit_existing_address"
+      ]
+    },
+    {
+      "module": "test_branch_browser.py",
+      "defined_methods": [
+        "BranchBrowserTests.test_branch_editor_and_real_public_routes"
+      ]
+    },
+    {
+      "module": "test_branches.py",
+      "defined_methods": [
+        "BranchTests.test_blank_draft_is_private_and_publication_checks_requested_revision",
+        "BranchTests.test_clustered_revision_preserves_deleted_children_order_images_and_parent",
+        "BranchTests.test_preview_uses_inline_draft_and_requires_editor_and_no_store",
+        "BranchTests.test_withdraw_and_republish_restore_only_the_requested_revision_and_media",
+        "BranchTests.test_main_first_and_additional_order_use_public_snapshot_and_stable_id",
+        "BranchTests.test_dynamic_new_branch_selection_and_invalid_or_withdrawn_fallback",
+        "BranchTests.test_optional_photos_trainers_and_channels_hide_without_faking_content",
+        "BranchTests.test_shared_image_survives_until_last_public_post_brand_or_branch_use",
+        "BranchTests.test_real_admin_inline_draft_reopen_preview_publish_and_reorder",
+        "BranchTests.test_admin_incomplete_draft_and_invalid_publish_preserve_input",
+        "BranchTests.test_permission_csrf_lock_stale_form_and_delete_boundaries",
+        "BranchTests.test_fixture_is_idempotent_and_keeps_existing_drafts_and_other_content",
+        "BranchTests.test_plain_text_escaping_and_focal_point_validation"
+      ]
+    },
+    {
+      "module": "test_brand.py",
+      "defined_methods": [
+        "BrandTests.test_blank_draft_does_not_leak_and_empty_home_keeps_navigation",
+        "BrandTests.test_live_revision_used_on_home_news_and_popup_despite_new_draft",
+        "BrandTests.test_preview_uses_draft_and_private_images_without_automatic_popup",
+        "BrandTests.test_republish_replaces_brand_media_but_shared_post_image_remains",
+        "BrandTests.test_unpublish_removes_brand_and_image_but_preserves_news_and_branch_navigation",
+        "BrandTests.test_admin_draft_save_reopen_preview_and_publish_are_separate",
+        "BrandTests.test_publish_requires_name_and_title_but_incomplete_draft_keeps_input",
+        "BrandTests.test_first_publish_is_validated_while_blank_new_draft_can_be_saved",
+        "BrandTests.test_editor_cannot_save_locked_brand_or_publish_without_permission",
+        "BrandTests.test_publishing_previous_blank_revision_is_rejected_in_history_editor",
+        "BrandTests.test_popup_keeps_post_publication_and_uses_only_live_brand",
+        "BrandTests.test_stale_editor_cannot_overwrite_newer_brand_draft",
+        "BrandTests.test_image_optional_layout_and_plain_text_escaping_and_focal_validation",
+        "BrandTests.test_singleton_creation_and_delete_are_denied",
+        "BrandTests.test_model_permission_and_csrf_are_required",
+        "BrandTests.test_bootstrap_is_idempotent_and_keeps_drafts_permissions_and_credentials"
+      ]
+    },
+    {
+      "module": "test_brand_browser.py",
+      "defined_methods": [
+        "BrandBrowserTests.test_brand_editor_and_public_home"
+      ]
+    },
+    {
+      "module": "test_concurrency.py",
+      "defined_methods": [
+        "ConcurrentSaveTests.test_trainer_simultaneous_drafts_keep_one_complete_revision",
+        "ConcurrentSaveTests.test_trainer_simultaneous_publications_keep_one_complete_revision",
+        "ConcurrentSaveTests.test_simultaneous_branch_drafts_only_save_one_and_keep_public_revision",
+        "ConcurrentSaveTests.test_simultaneous_branch_publications_only_publish_one_revision",
+        "ConcurrentSaveTests.test_simultaneous_brand_saves_keep_one_draft_and_live_revision",
+        "ConcurrentSaveTests.test_simultaneous_saves_from_same_revision_only_commit_one_change"
+      ]
+    },
+    {
+      "module": "test_contact_visibility.py",
+      "defined_methods": [
+        "ContactVisibilityTests.test_whitespace_and_note_only_hide_all_contact_entries_without_rewriting",
+        "ContactVisibilityTests.test_numbers_and_free_guidance_keep_internal_contact_and_original_text",
+        "ContactVisibilityTests.test_url_only_branch_has_channel_and_any_but_no_phone_or_main_fallback",
+        "ContactVisibilityTests.test_whitespace_draft_preview_and_public_revision_availability_are_separate",
+        "ContactVisibilityTests.test_withdrawn_main_then_zero_branches_keep_navigation_without_contacts"
+      ]
+    },
+    {
+      "module": "test_home_news.py",
+      "defined_methods": [
+        "HomeNewsTests.test_zero_one_five_and_more_than_five_use_real_detail_links",
+        "HomeNewsTests.test_first_publication_order_ties_and_popup_registration_order_are_separate",
+        "HomeNewsTests.test_saved_draft_publish_withdraw_and_republish_keep_first_date_and_rank",
+        "HomeNewsTests.test_live_snapshot_ignores_mutable_post_fields_and_missing_revision",
+        "HomeNewsTests.test_new_draft_is_absent_even_for_editor_and_brand_preview",
+        "HomeNewsTests.test_escaping_optional_summary_category_and_date_reuse_existing_row",
+        "HomeNewsTests.test_server_links_keep_valid_selected_branch_without_duplicate_query",
+        "HomeNewsTests.test_zero_public_branches_keep_news_accessible_and_contact_hidden"
+      ]
+    },
+    {
+      "module": "test_home_news_browser.py",
+      "defined_methods": [
+        "HomeNewsBrowserTests.test_home_news_navigation_empty_state_and_popup_regressions"
+      ]
+    },
+    {
+      "module": "test_kakao_contact.py",
+      "defined_methods": [
+        "KakaoURLTests.test_exact_chat_urls_and_optional_empty_value",
+        "KakaoURLTests.test_unsafe_or_non_chat_urls_are_rejected_without_repair",
+        "KakaoContactTests.test_public_targets_are_fixed_to_each_revision_with_safe_native_attributes",
+        "KakaoContactTests.test_missing_old_revision_field_never_borrows_base_or_latest_url",
+        "KakaoContactTests.test_actual_admin_draft_reentry_preview_permissions_publish_and_withdraw",
+        "KakaoContactTests.test_invalid_form_and_publication_fail_without_normalization_or_new_revision",
+        "KakaoContactTests.test_url_only_common_home_mobile_news_trainer_use_public_branch_without_fallback",
+        "KakaoContactTests.test_corrupt_public_url_is_suppressed_and_empty_contact_zero_branches_are_optional",
+        "KakaoContactTests.test_whitespace_note_is_absent_without_rewriting_stored_text",
+        "KakaoContactTests.test_new_url_obeys_existing_stale_form_csrf_publish_permission_and_lock"
+      ]
+    },
+    {
+      "module": "test_maps.py",
+      "defined_methods": [
+        "BranchMapTests.test_zero_public_branches_has_no_sdk_configuration_or_map",
+        "BranchMapTests.test_two_branches_have_encoded_html_links_without_javascript",
+        "BranchMapTests.test_address_draft_is_private_until_publish_and_withdrawal_removes_it",
+        "BranchMapTests.test_browser_key_is_safely_serialized_only_on_branches"
+      ]
+    },
+    {
+      "module": "test_phone_contact.py",
+      "defined_methods": [
+        "TelephoneHrefTests.test_supported_notation_derives_global_targets",
+        "TelephoneHrefTests.test_unsafe_ambiguous_or_unsupported_input_is_not_a_dial_target",
+        "PhoneContactTests.test_each_public_panel_owns_its_phone_and_common_routes_stay_indirect",
+        "PhoneContactTests.test_draft_preview_publish_and_withdraw_select_the_right_revision",
+        "PhoneContactTests.test_empty_and_legacy_prose_are_optional_escaped_text_not_phone_links",
+        "PhoneContactTests.test_no_channels_and_zero_public_branches_keep_navigation_without_contacts"
+      ]
+    },
+    {
+      "module": "test_popups.py",
+      "defined_methods": [
+        "PopupTests.test_admin_panel_explains_draft_first_and_current_post_without_url_input",
+        "PopupTests.test_applied_dates_persist_as_korean_time_and_reopen",
+        "PopupTests.test_enabled_requires_both_dates_and_strict_increasing_period",
+        "PopupTests.test_disabled_setting_can_have_no_period",
+        "PopupTests.test_invalid_and_stale_changes_do_not_alter_saved_state",
+        "PopupTests.test_settings_do_not_publish_new_draft_or_create_body_revision",
+        "PopupTests.test_popup_uses_live_title_summary_and_image_with_unpublished_edits",
+        "PopupTests.test_body_saved_from_pre_apply_form_then_published_keeps_popup_setting",
+        "PopupTests.test_server_period_boundaries_and_expiration_leave_post_public",
+        "PopupTests.test_disable_and_unpublish_remove_both_popup_endpoints_and_home_data",
+        "PopupTests.test_all_overlaps_use_registration_not_publication_order_and_common_branches",
+        "PopupTests.test_saved_status_distinguishes_all_required_conditions",
+        "PopupTests.test_permission_csrf_and_existing_edit_lock_are_not_bypassed",
+        "PopupTests.test_fallback_form_saves_without_javascript_and_json_rejects_malformed_data",
+        "PopupTests.test_home_keeps_approved_assets_and_no_routine_alert_button",
+        "PopupConcurrencyTests.test_two_initial_applies_commit_only_one_setting_and_no_post_revision"
+      ]
+    },
+    {
+      "module": "test_publication.py",
+      "defined_methods": [
+        "PublicationTests.test_new_draft_is_absent_from_public_urls_even_for_admin",
+        "PublicationTests.test_line_breaks_and_images_reopen_in_the_actual_rich_text_editor",
+        "PublicationTests.test_published_content_survives_changed_draft_including_images_and_date",
+        "PublicationTests.test_republish_atomically_replaces_visible_content_and_media_usage",
+        "PublicationTests.test_unpublish_revokes_public_html_and_all_renditions",
+        "PublicationTests.test_original_draft_and_thumbnail_require_real_editor_permission",
+        "PublicationTests.test_shared_image_remains_available_until_last_public_use_is_withdrawn",
+        "PublicationTests.test_body_image_reference_controls_public_rendition_access",
+        "PublicationTests.test_replacing_original_file_is_rejected_and_old_bytes_remain",
+        "PublicationTests.test_preview_permission_and_draft_rendering_do_not_change_publication",
+        "PublicationTests.test_body_strips_scripts_and_unsafe_links_without_removing_allowed_formatting",
+        "PublicationTests.test_stale_editor_form_is_rejected_instead_of_overwriting_new_revision",
+        "PublicationTests.test_current_editor_form_can_save_and_publish",
+        "PublicationTests.test_unauthorized_mutation_and_csrf_fail_without_creating_content",
+        "PublicationTests.test_categories_branch_context_and_empty_state_remain_usable",
+        "PublicationTests.test_bootstrap_is_idempotent_and_does_not_reset_user_edits_or_credentials"
+      ]
+    },
+    {
+      "module": "test_trainer_browser.py",
+      "defined_methods": [
+        "TrainerBrowserTests.test_trainer_management_publication_and_cards"
+      ]
+    },
+    {
+      "module": "test_trainer_search.py",
+      "defined_methods": [
+        "TrainerSearchTests.test_saved_latest_name_intro_affiliation_and_public_revision_are_consistent",
+        "TrainerSearchTests.test_empty_latest_draft_does_not_search_previous_model_fields",
+        "TrainerSearchTests.test_model_fallback_only_when_no_latest_revision_exists",
+        "TrainerSearchTests.test_pagination_and_publication_filter_preserve_query_and_draft_branch"
+      ]
+    },
+    {
+      "module": "test_trainers.py",
+      "defined_methods": [
+        "TrainerTests.test_blank_draft_and_requested_revision_publication_requirements",
+        "TrainerTests.test_all_fields_and_children_use_same_public_revision_even_after_mutable_changes",
+        "TrainerTests.test_move_order_publication_and_withdrawal_follow_both_public_states",
+        "TrainerTests.test_public_cards_hide_empty_optional_parts_and_zero_trainers_and_escape_text",
+        "TrainerTests.test_preview_permissions_and_private_affiliation_never_leak_branch_drafts",
+        "TrainerTests.test_images_require_effective_public_profile_and_keep_shared_last_use",
+        "TrainerTests.test_editor_validation_branch_entry_initial_selection_and_draft_affiliation_list",
+        "TrainerTests.test_edit_stale_form_lock_permissions_csrf_and_no_delete",
+        "TrainerTests.test_seed_is_idempotent_and_does_not_rewrite_existing_profiles_or_media"
+      ]
+    },
+    {
+      "module": "test_withdrawal_concurrency.py",
+      "defined_methods": [
+        "WithdrawalConcurrencyTests.test_trainer_withdraw_then_draft",
+        "WithdrawalConcurrencyTests.test_trainer_draft_then_withdraw",
+        "WithdrawalConcurrencyTests.test_trainer_withdraw_then_publish",
+        "WithdrawalConcurrencyTests.test_trainer_publish_then_withdraw",
+        "WithdrawalConcurrencyTests.test_branch_withdraw_then_draft",
+        "WithdrawalConcurrencyTests.test_brand_withdraw_then_draft",
+        "WithdrawalConcurrencyTests.test_post_withdraw_then_draft",
+        "WithdrawalConcurrencyTests.test_branch_draft_then_withdraw",
+        "WithdrawalConcurrencyTests.test_brand_draft_then_withdraw",
+        "WithdrawalConcurrencyTests.test_post_draft_then_withdraw",
+        "WithdrawalConcurrencyTests.test_branch_withdraw_then_publish",
+        "WithdrawalConcurrencyTests.test_brand_withdraw_then_publish",
+        "WithdrawalConcurrencyTests.test_post_withdraw_then_publish",
+        "WithdrawalConcurrencyTests.test_branch_publish_then_withdraw",
+        "WithdrawalConcurrencyTests.test_brand_publish_then_withdraw",
+        "WithdrawalConcurrencyTests.test_post_publish_then_withdraw",
+        "WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_permission_csrf_and_get_boundaries",
+        "WithdrawalBoundaryTests.test_all_withdrawal_routes_keep_before_after_and_cancel_hooks"
+      ]
+    }
+  ],
+  "runtime_collected_pass_fail_skip": "NOT_RUN",
+  "product_db_http_browser_executions": 0,
+  "source_adaptation_proof": [
+    {
+      "source": "scripts/review-brand-home.mjs",
+      "source_sha256": "15383df6032f1ac924e4dd076390dbe41fa2e2ebda6bb98af731a5971e238e8f",
+      "adapted_sha256": "69a03ef36fa7b2170d148bae957c3d900bb25bb2103465bd48eb70cc27ff9f3e",
+      "diff": "--- scripts/review-brand-home.mjs\n+++ private/scripts/review-brand-home.mjs\n@@ -2,7 +2,7 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // Invoke through the opt-in StaticLiveServerTestCase. Never mutate the running\n // local CMS singleton or use its private credentials for this write review.\n"
+    },
+    {
+      "source": "scripts/review-branches.mjs",
+      "source_sha256": "19545c085f5c4bff6274a2b7d777fc821b1e8d1591d5b730d7a2fb2dfc163e01",
+      "adapted_sha256": "c320e9869bcbcf3013ea8a6b993a73a0b039e3c5439454c0aea515fa85561199",
+      "diff": "--- scripts/review-branches.mjs\n+++ private/scripts/review-branches.mjs\n@@ -2,7 +2,7 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n const readOnly = process.argv.includes('--live-read-only');\n"
+    },
+    {
+      "source": "scripts/review-trainers.mjs",
+      "source_sha256": "bbbc11967650a31a77b2547ed7857b88fc7a21df9a20bf3f702e1dbdc9f8c13f",
+      "adapted_sha256": "944276d2e443da2ee7b5499816719e1e0cf8111c1188c78ffbac94c619e5ea20",
+      "diff": "--- scripts/review-trainers.mjs\n+++ private/scripts/review-trainers.mjs\n@@ -2,7 +2,7 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n const readOnly = process.argv.includes('--live-read-only');\n"
+    },
+    {
+      "source": "scripts/review-home-news.mjs",
+      "source_sha256": "6d13f175312bcbeacc0b898db6aa973470e7f918e184f24e4f4f3f8666a43994",
+      "adapted_sha256": "581d1f6cceb7c120df601156b674dfd33817aa13ee1aeed6e82abe8026da520e",
+      "diff": "--- scripts/review-home-news.mjs\n+++ private/scripts/review-home-news.mjs\n@@ -2,7 +2,7 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n const readOnly = process.argv.includes('--live-read-only');\n"
+    },
+    {
+      "source": "review/home-news/popup-revisit.mjs",
+      "source_sha256": "37a8c971dc8e51429553097541dbc11a0ef5e64ac4462aab68f7fd2d6708afad",
+      "adapted_sha256": "c821b6a4bb7875f62fa363924cb7acf5041fbf5de7d755536c69d11484d7b2a1",
+      "diff": "--- review/home-news/popup-revisit.mjs\n+++ private/review/home-news/popup-revisit.mjs\n@@ -2,7 +2,7 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // Read-only CMS review. All hide records live in isolated browser contexts.\n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');\n"
+    },
+    {
+      "source": "review/home-news/popup-edges.mjs",
+      "source_sha256": "31f7cb604e82a6e1437111707c9ae7056fb8ed7f7495c2f0acad7cf372feefb3",
+      "adapted_sha256": "7f7f37594563d9dc781d6385c2584709c43024b2a995cfbc2c8c187650afc27f",
+      "diff": "--- review/home-news/popup-edges.mjs\n+++ private/review/home-news/popup-edges.mjs\n@@ -2,7 +2,7 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // Read-only checks against currently eligible CMS examples. Run review-popups\n // first if its review period has expired. No admin credentials or DB writes.\n"
+    },
+    {
+      "source": "scripts/review-cms.mjs",
+      "source_sha256": "24f99d2db7a07c48cca0901c78c6286a335c27a2def19efd687bf05e080aebca",
+      "adapted_sha256": "09f76044d7ff388567aa45583503ff981b13709ad24ea6aac273048eba207793",
+      "diff": "--- scripts/review-cms.mjs\n+++ private/scripts/review-cms.mjs\n@@ -2,14 +2,14 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // This local review creates one fictional post and uploads test images. It\n // withdraws that post at the end; it never resets or deletes existing content.\n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n-const output = path.join(root, 'review');\n-const origin = 'http://localhost:8768';\n-const credentials = JSON.parse(await fs.readFile(path.join(root, '.local-credentials'), 'utf8'));\n+const output = '/tmp/y3gym-dev-integration-3469dh94/evidence/cms';\n+const origin = 'http://localhost:8772';\n+const credentials = JSON.parse(await fs.readFile('/tmp/y3gym-dev-integration-3469dh94/.local-credentials', 'utf8'));\n const run = new Date().toISOString().replace(/[:.]/g, '-');\n const title = `[TEST] 소식 편집 검수 ${run}`;\n const changedTitle = `${title} · 수정`;\n"
+    },
+    {
+      "source": "scripts/review-popups.mjs",
+      "source_sha256": "2b3e15f8192f1f72e30794406f7fcb7d7f6a3f973373437c72db62fb05dd1fb3",
+      "adapted_sha256": "9a0b4ae5e01ad7790e7e89a7914288dbe7e28fee78c4f98061f0f88ed95e9967",
+      "diff": "--- scripts/review-popups.mjs\n+++ private/scripts/review-popups.mjs\n@@ -2,14 +2,14 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // Creates its own clearly marked local review posts; never edits existing posts.\n // On success the two examples remain available for user review for 24 hours.\n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n-const output = path.join(root, 'review/popups');\n-const origin = 'http://localhost:8768';\n-const credentials = JSON.parse(await fs.readFile(path.join(root, '.local-credentials'), 'utf8'));\n+const output = '/tmp/y3gym-dev-integration-3469dh94/evidence/popups';\n+const origin = 'http://localhost:8772';\n+const credentials = JSON.parse(await fs.readFile('/tmp/y3gym-dev-integration-3469dh94/.local-credentials', 'utf8'));\n const run = new Date().toISOString();\n const kst = timestamp => new Date(timestamp + 9 * 3600000).toISOString().slice(0, 16);\n const starts = kst(Date.now() - 3600000);\n@@ -168,7 +168,7 @@\n   const opened = [];\n   desktop.page.on('popup', page => opened.push(page));\n   await desktop.page.goto('http://localhost:8767/?branch=second');\n-  assert.equal(new URL(desktop.page.url()).port, '8768');\n+  assert.equal(new URL(desktop.page.url()).port, '8772');\n   await desktop.page.waitForFunction(ids => ids.every(id =>\n     sessionStorage.getItem(`y3gym.prototype.shown:${id}`) === '1'), payload.map(popup => popup.id));\n   await new Promise(resolve => setTimeout(resolve, 1500));\n"
+    },
+    {
+      "source": "scripts/review-popup-sizing.mjs",
+      "source_sha256": "e49c6ee525ed479e4556a5203cfaafc4d843b6a2c87ae8a3eb0108ce6164a608",
+      "adapted_sha256": "c5fe05036a958ab5edc0130f161d47d34b0fd3072f475325a964c8b7583a79fb",
+      "diff": "--- scripts/review-popup-sizing.mjs\n+++ private/scripts/review-popup-sizing.mjs\n@@ -2,13 +2,13 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // Read-only against the existing CMS examples. Use a real headed browser and\n // viewport:null: an emulated/headless viewport cannot validate resizeTo.\n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n const output = path.resolve(root, process.env.Y3GYM_POPUP_REVIEW_DIR || 'review/popup-sizing');\n-const origin = 'http://localhost:8768';\n+const origin = 'http://localhost:8772';\n await fs.mkdir(output, { recursive: true });\n const report = { run: new Date().toISOString(), status: 'RUNNING', headed: true,\n   checks: [], errors: [], screenshots: [], windows: [] };\n"
+    },
+    {
+      "source": "scripts/review-popup-position.mjs",
+      "source_sha256": "2e96de4cd8f9811532b62b15431d1e428dc976714d05ed369385ee2ea3005be1",
+      "adapted_sha256": "9aeb5ae8849b28e962e905ceb79e2628974537177f75a0f99968533fcce1a231",
+      "diff": "--- scripts/review-popup-position.mjs\n+++ private/scripts/review-popup-position.mjs\n@@ -2,13 +2,13 @@\n import fs from 'node:fs/promises';\n import path from 'node:path';\n import { fileURLToPath } from 'node:url';\n-import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n // Read existing public examples only. Native geometry requires a headed\n // Chromium with viewport:null; CDP bounds are checked against screenX/Y.\n const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\n const output = path.resolve(root, process.env.Y3GYM_POPUP_REVIEW_DIR || 'review/popup-position');\n-const origin = 'http://localhost:8768';\n+const origin = 'http://localhost:8772';\n await fs.mkdir(output, { recursive: true });\n const report = { run: new Date().toISOString(), status: 'RUNNING', headed: true,\n   checks: [], errors: [], batches: [], screenshots: [] };\n"
+    },
+    {
+      "source": "review/image-chooser-focus-independent/reproduce.mjs",
+      "source_sha256": "b7cdbf548843612cc2574d13cccff3a01fc8b7877e0e3dfd0a313f2d9bf68dff",
+      "adapted_sha256": "ba35822ab601392fe595dc7237c5da9814ca63564af43d37f6519379b5521904",
+      "diff": "--- review/image-chooser-focus-independent/reproduce.mjs\n+++ private/review/image-chooser-focus-independent/reproduce.mjs\n@@ -1,18 +1,18 @@\n import assert from 'node:assert/strict';\n import fs from 'node:fs/promises';\n import path from 'node:path';\n-import { chromium, expect } from '../../../prototype/node_modules/@playwright/test/index.mjs';\n+import { chromium, expect } from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n const here = path.dirname(new URL(import.meta.url).pathname);\n const work = path.resolve(process.argv[2]);\n-assert(work.startsWith('/tmp/y3gym-image-focus-independent-'));\n+assert(work.startsWith('/tmp/y3gym-dev-integration-'));\n const spec = JSON.parse(await fs.readFile(path.join(work, 'instance.json')));\n-assert.equal(spec.origin, 'http://localhost:8770');\n-assert(spec.database.startsWith('test_y3gym_focus_ind_'));\n+assert.equal(spec.origin, 'http://localhost:8772');\n+assert(spec.database.startsWith('test_y3gym_dev_integration_'));\n const credentials = JSON.parse(await fs.readFile(path.join(work, '.local-credentials')));\n const mode = process.argv[3]; assert(['ablation', 'final'].includes(mode));\n const label = process.argv[4] || mode + '-01'; assert(/^[a-z][a-z0-9-]+$/.test(label));\n-const output = path.join(here, label); await fs.mkdir(output);\n+const output = path.join(work, 'evidence', label); await fs.mkdir(output);\n const result = {comparison:'Final project JS omitted by QA route versus real final code; not upstream A/B', mode, attempts: [], errors: [], external: [], captures: [], events: []};\n const browser = await chromium.launch();\n const context = await browser.newContext({viewport: {width: 1440, height: 1000}});\n"
+    },
+    {
+      "source": "review/image-chooser-focus-independent/edges.mjs",
+      "source_sha256": "478806e4df038ea7e26ce7c6fcecb6b413fc2d45956de20abe08d0c2f25a902b",
+      "adapted_sha256": "32b8a08268303c1386a04f0b8864c815c0421ab65bf2e173d9efb4a120a404a5",
+      "diff": "--- review/image-chooser-focus-independent/edges.mjs\n+++ private/review/image-chooser-focus-independent/edges.mjs\n@@ -1,15 +1,15 @@\n import assert from 'node:assert/strict';\n import fs from 'node:fs/promises';\n import path from 'node:path';\n-import {chromium} from '../../../prototype/node_modules/@playwright/test/index.mjs';\n+import {chromium} from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n const work=path.resolve(process.argv[2]),mode=process.argv[3],label=process.argv[4];\n-assert(work.startsWith('/tmp/y3gym-image-focus-independent-'));assert(['without','with'].includes(mode));assert(/^[a-z][a-z0-9-]+$/.test(label));\n-const spec=JSON.parse(await fs.readFile(path.join(work,'instance.json')));assert.equal(spec.origin,'http://localhost:8770');\n-assert(spec.database.startsWith('test_y3gym_focus_ind_'));\n+assert(work.startsWith('/tmp/y3gym-dev-integration-'));assert(['without','with'].includes(mode));assert(/^[a-z][a-z0-9-]+$/.test(label));\n+const spec=JSON.parse(await fs.readFile(path.join(work,'instance.json')));assert.equal(spec.origin,'http://localhost:8772');\n+assert(spec.database.startsWith('test_y3gym_dev_integration_'));\n const credentials=JSON.parse(await fs.readFile(path.join(work,'.local-credentials')));\n const original=JSON.parse(await fs.readFile(path.join(work,'original-image.json'))).id;\n-const out=path.join(path.dirname(new URL(import.meta.url).pathname),label);await fs.mkdir(out);\n+const out=path.join(work,'evidence',label);await fs.mkdir(out);\n const result={mode,events:[],cases:[],errors:[],external:[]};\n const navigation=process.argv[5]||'Tab';assert(['Tab','Shift+Tab'].includes(navigation));result.navigation=navigation;\n const setupOutside=['outside-search','outside-tab'].includes(process.argv[6]);result.programmaticSequentialStartSetup=setupOutside?process.argv[6]:false;\n"
+    },
+    {
+      "source": "review/image-chooser-focus-independent/supplement.mjs",
+      "source_sha256": "1dcc17dc795bcc7ba7dbe3de9f507e514280027f01dda3e0076fba945599a48a",
+      "adapted_sha256": "d0f1d2187fd9d075e98168e0993b7bda9e8a238fca13c438296ac06b2a55785f",
+      "diff": "--- review/image-chooser-focus-independent/supplement.mjs\n+++ private/review/image-chooser-focus-independent/supplement.mjs\n@@ -1,14 +1,14 @@\n import assert from 'node:assert/strict';\n import fs from 'node:fs/promises';\n import path from 'node:path';\n-import {chromium, expect} from '../../../prototype/node_modules/@playwright/test/index.mjs';\n+import {chromium, expect} from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n \n const here=path.dirname(new URL(import.meta.url).pathname),work=path.resolve(process.argv[2]);\n-assert(work.startsWith('/tmp/y3gym-image-focus-independent-'));\n+assert(work.startsWith('/tmp/y3gym-dev-integration-'));\n const spec=JSON.parse(await fs.readFile(path.join(work,'instance.json')));\n-assert.equal(spec.origin,'http://localhost:8770');assert(spec.database.startsWith('test_y3gym_focus_ind_'));\n+assert.equal(spec.origin,'http://localhost:8772');assert(spec.database.startsWith('test_y3gym_dev_integration_'));\n const credentials=JSON.parse(await fs.readFile(path.join(work,'.local-credentials')));\n-const out=path.join(here,process.argv[3]);assert(/^[a-z][a-z0-9-]+$/.test(process.argv[3]));await fs.mkdir(out);\n+const out=path.join(work,'evidence',process.argv[3]);assert(/^[a-z][a-z0-9-]+$/.test(process.argv[3]));await fs.mkdir(out);\n const result={checks:[],events:[],errors:[],external:[],captures:[]};let phase='setup';\n const browser=await chromium.launch(),context=await browser.newContext({viewport:{width:1440,height:1000}});\n await context.route('**/*',r=>{const u=new URL(r.request().url());if(u.origin!==spec.origin){result.external.push({phase,origin:u.origin});return r.abort();}return r.continue();});\n"
+    },
+    {
+      "source": "review/image-chooser-focus-independent/body-close.mjs",
+      "source_sha256": "1cebdfc34f8003472be1a29fbdb6fde091cdda9af73afb653e68efa34eebbb1f",
+      "adapted_sha256": "2da75f6e9dc582a804ab7e6e6a2b3e6addc73cdad57239db7a1bb896a74caf4b",
+      "diff": "--- review/image-chooser-focus-independent/body-close.mjs\n+++ private/review/image-chooser-focus-independent/body-close.mjs\n@@ -1,11 +1,11 @@\n import assert from 'node:assert/strict';\n import fs from 'node:fs/promises';\n import path from 'node:path';\n-import {chromium,expect} from '../../../prototype/node_modules/@playwright/test/index.mjs';\n-const work=path.resolve(process.argv[2]),label=process.argv[3],mode=process.argv[4];assert(work.startsWith('/tmp/y3gym-image-focus-independent-'));assert(/^[a-z][a-z0-9-]+$/.test(label));assert(['without','with'].includes(mode));\n-const spec=JSON.parse(await fs.readFile(path.join(work,'instance.json')));assert.equal(spec.origin,'http://localhost:8770');const credentials=JSON.parse(await fs.readFile(path.join(work,'.local-credentials')));\n-assert(spec.database.startsWith('test_y3gym_focus_ind_'));\n-const out=path.join(path.dirname(new URL(import.meta.url).pathname),label);await fs.mkdir(out);const result={mode,observations:[],events:[],errors:[],external:[]};\n+import {chromium,expect} from '/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/dev-integration-01/guarded-playwright.mjs';\n+const work=path.resolve(process.argv[2]),label=process.argv[3],mode=process.argv[4];assert(work.startsWith('/tmp/y3gym-dev-integration-'));assert(/^[a-z][a-z0-9-]+$/.test(label));assert(['without','with'].includes(mode));\n+const spec=JSON.parse(await fs.readFile(path.join(work,'instance.json')));assert.equal(spec.origin,'http://localhost:8772');const credentials=JSON.parse(await fs.readFile(path.join(work,'.local-credentials')));\n+assert(spec.database.startsWith('test_y3gym_dev_integration_'));\n+const out=path.join(work,'evidence',label);await fs.mkdir(out);const result={mode,observations:[],events:[],errors:[],external:[]};\n const browser=await chromium.launch(),context=await browser.newContext();await context.route('**/*',r=>{const u=new URL(r.request().url());if(u.origin!==spec.origin){result.external.push(u.origin);return r.abort();}if(mode==='without'&&u.pathname==='/static/news/admin-image-chooser-focus.js')return r.fulfill({contentType:'text/javascript',body:'/* omit project guard */'});return r.continue();});const page=await context.newPage();page.on('pageerror',e=>result.errors.push(e.message));\n try{\n  await page.goto(spec.origin+'/admin/login/');await page.locator('[name=username]').fill(spec.username);await page.locator('[name=password]').fill(credentials[spec.username]);await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'로그인',exact:true}).click()]);await page.goto(spec.origin+'/admin/snippets/news/post/add/');\n"
+    },
+    {
+      "source": "review/image-chooser-focus-independent/sandbox.py",
+      "source_sha256": "ee24e418869e2bdbab9431443231bfc31ec94492f75271d340b901d7baf7f4e1",
+      "adapted_sha256": "8d180aaccc87f91755341f1c66d7510f4dbf1b789e7f7e92cdde726d8aa4b052",
+      "diff": "--- review/image-chooser-focus-independent/sandbox.py\n+++ private/sandbox.py\n@@ -1,4 +1,4 @@\n-\"\"\"Operate only the fresh 8770 image-chooser sandbox; never reuse review DBs.\"\"\"\n+\"\"\"Operate only the fresh 8772 image-chooser sandbox; never reuse review DBs.\"\"\"\n \n import copy\n import json\n@@ -14,7 +14,7 @@\n import psycopg\n from psycopg import sql\n \n-ROOT = Path(__file__).resolve().parents[3]\n+ROOT = Path('/home/shlee/Workspace/ai/01.codex/y3gym_v2')\n BACKEND = ROOT / \"backend\"\n work = Path(sys.argv[1]).resolve()\n assert work.parent == Path(\"/tmp\") and work.name.startswith(\"y3gym-image-focus-independent-\")\n@@ -24,12 +24,12 @@\n     assert not (work / \"instance.json\").exists()\n     with socket.socket() as probe:\n         probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)\n-        probe.bind((\"127.0.0.1\", 8770))\n+        probe.bind((\"127.0.0.1\", 8772))\n     sys.path.insert(0, str(BACKEND))\n     from config import settings as original\n \n     suffix = secrets.token_hex(6)\n-    database = \"test_y3gym_focus_ind_\" + suffix\n+    database = \"test_y3gym_dev_integration_\" + suffix\n     config = copy.deepcopy(original.DATABASES[\"default\"])\n     args = {k.lower(): config[k] for k in [\"USER\", \"PASSWORD\", \"HOST\", \"PORT\"]}\n     with psycopg.connect(dbname=\"postgres\", **args, autocommit=True) as conn:\n@@ -48,13 +48,13 @@\n         \"scratch\": str(work),\n         \"database\": database,\n         \"test_database\": database + \"_runner\",\n-        \"origin\": \"http://localhost:8770\",\n-        \"port\": 8770,\n+        \"origin\": \"http://localhost:8772\",\n+        \"port\": 8772,\n         \"media\": str(work / \"media\"),\n         \"initialized\": False,\n     }\n     (work / \"instance.json\").write_text(json.dumps(spec, indent=2))\n-    (work / \"image_focus_ind_settings.py\").write_text(f\"\"\"from config.settings import *\n+    (work / \"dev_integration_settings.py\").write_text(f\"\"\"from config.settings import *\n import copy\n from pathlib import Path\n DATABASES = copy.deepcopy(DATABASES)\n@@ -62,20 +62,20 @@\n DATABASES[\"default\"][\"TEST\"] = {{\"NAME\": {database + \"_runner\"!r}}}\n BASE_DIR = Path({str(work)!r})\n MEDIA_ROOT = BASE_DIR / \"media\"\n-WAGTAILADMIN_BASE_URL = \"http://localhost:8770\"\n-SESSION_COOKIE_NAME = \"image_focus_ind_{suffix}_session\"\n-CSRF_COOKIE_NAME = \"image_focus_ind_{suffix}_csrf\"\n+WAGTAILADMIN_BASE_URL = \"http://localhost:8772\"\n+SESSION_COOKIE_NAME = \"dev_integration_{suffix}_session\"\n+CSRF_COOKIE_NAME = \"dev_integration_{suffix}_csrf\"\n KAKAO_MAP_JS_KEY = \"\"\n \"\"\")\n     print(json.dumps(spec))\n     sys.exit()\n \n spec = json.loads((work / \"instance.json\").read_text())\n-assert spec[\"port\"] == 8770 and spec[\"origin\"] == \"http://localhost:8770\"\n-assert spec[\"database\"].startswith(\"test_y3gym_focus_ind_\")\n+assert spec[\"port\"] == 8772 and spec[\"origin\"] == \"http://localhost:8772\"\n+assert spec[\"database\"].startswith(\"test_y3gym_dev_integration_\")\n environment = os.environ.copy()\n environment.update(\n-    DJANGO_SETTINGS_MODULE=\"image_focus_ind_settings\",\n+    DJANGO_SETTINGS_MODULE=\"dev_integration_settings\",\n     PYTHONPATH=os.pathsep.join([str(work), str(BACKEND)]),\n     Y3GYM_KAKAO_MAP_JS_KEY=\"\",\n     PYTHONDONTWRITEBYTECODE=\"1\",\n@@ -103,7 +103,7 @@\n     from django.contrib.auth import get_user_model\n \n     credentials = json.loads((work / \".local-credentials\").read_text())\n-    username = \"focus-review-\" + spec[\"database\"][-6:]\n+    username = \"cms-review-editor\"\n     user = get_user_model().objects.get(username=\"cms-review-editor\")\n     user.username = username\n     user.save(update_fields=[\"username\"])\n@@ -127,7 +127,7 @@\n         assert not Path(f\"/proc/{int(pid_path.read_text())}\").exists()\n     with socket.socket() as probe:\n         probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)\n-        probe.bind((\"127.0.0.1\", 8770))\n+        probe.bind((\"127.0.0.1\", 8772))\n     with (work / \"server.log\").open(\"ab\") as log:\n         process = subprocess.Popen(\n             [\n@@ -135,7 +135,7 @@\n                 \"-B\",\n                 \"manage.py\",\n                 \"runserver\",\n-                \"127.0.0.1:8770\",\n+                \"127.0.0.1:8772\",\n                 \"--noreload\",\n                 \"--insecure\",\n             ],\n@@ -149,7 +149,7 @@\n     for _ in range(60):\n         assert process.poll() is None\n         try:\n-            with socket.create_connection((\"127.0.0.1\", 8770), timeout=0.2):\n+            with socket.create_connection((\"127.0.0.1\", 8772), timeout=0.2):\n                 break\n         except OSError:\n             time.sleep(0.1)\n@@ -165,12 +165,12 @@\n     proc = Path(f\"/proc/{pid}\")\n     assert (proc / \"cwd\").resolve() == BACKEND\n     command = (proc / \"cmdline\").read_bytes().split(b\"\\0\")\n-    assert b\"manage.py\" in command and b\"127.0.0.1:8770\" in command\n+    assert b\"manage.py\" in command and b\"127.0.0.1:8772\" in command\n     env = (proc / \"environ\").read_bytes().split(b\"\\0\")\n-    assert b\"DJANGO_SETTINGS_MODULE=image_focus_ind_settings\" in env\n+    assert b\"DJANGO_SETTINGS_MODULE=dev_integration_settings\" in env\n     assert any(str(work).encode() in v for v in env if v.startswith(b\"PYTHONPATH=\"))\n     assert b\"Y3GYM_KAKAO_MAP_JS_KEY=\" in env\n-    assert repr(spec[\"database\"]) in (work / \"image_focus_ind_settings.py\").read_text()\n+    assert repr(spec[\"database\"]) in (work / \"dev_integration_settings.py\").read_text()\n     assert spec[\"media\"] == str(work / \"media\")\n     os.kill(pid, signal.SIGTERM)\n     for _ in range(50):\n@@ -178,6 +178,6 @@\n             break\n         time.sleep(0.1)\n     assert not proc.exists()\n-    print(\"Only identified 8770 process stopped\")\n+    print(\"Only identified 8772 process stopped\")\n else:\n     raise ValueError(\"configure, initialize, start or stop\")\n"
+    },
+    {
+      "source": "review/image-chooser-focus-apply/probe.py",
+      "source_sha256": "11cef802123fa5fce26789459c2cfaf03ebba67ea4b918049c04554b36074c27",
+      "copied_read_only_functions": [
+        "digest",
+        "guard",
+        "media_inventory",
+        "metadata",
+        "save",
+        "snapshot",
+        "stat",
+        "summary"
+      ]
+    }
+  ],
+  "root": "/home/shlee/Workspace/ai/01.codex/y3gym_v2"
+}

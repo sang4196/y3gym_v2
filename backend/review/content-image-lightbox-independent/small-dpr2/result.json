@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "group": "normal",
+      "height": 480,
+      "file": "long-normal-320x480-dpr2.png",
+      "box": [
+        257,
+        160.625
+      ],
+      "fit": "contain",
+      "src": "http://localhost:8776/media/images/long.width-800.png"
+    },
+    {
+      "group": "normal",
+      "height": 224,
+      "file": "long-normal-320x224-dpr2.png",
+      "box": [
+        257,
+        160.625
+      ],
+      "fit": "contain",
+      "src": "http://localhost:8776/media/images/long.width-800.png"
+    },
+    {
+      "group": "expanded",
+      "height": 224,
+      "file": "long-expanded-320x224-dpr2.png",
+      "box": [
+        23.109375,
+        115.546875
+      ],
+      "src": "http://localhost:8776/media/images/long.max-2560x2560.png"
+    }
+  ],
+  "DPR": 2,
+  "same_CSS_width": 320,
+  "original_failures_preserved": "shape-pixels.json 39/42; no merge",
+  "status": "CAPTURED_SAME_CSS_GEOMETRY_DPR2",
+  "fixture_restored": true
+}

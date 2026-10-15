@@ -1,0 +1,391 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "create",
+        "--mode",
+        "manual",
+        "--purpose",
+        "QA-LIFECYCLE-01 independent manual"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "initialize",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--fixtures"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "initialized": true,
+        "fixtures": true
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "start",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 0,
+      "result": {
+        "HTTP_ready": {
+          "url": "http://127.0.0.1:47649/admin/login/",
+          "HTTP_status": 200,
+          "seconds": 0.11179939605062827,
+          "response_body_not_stored": true
+        },
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "pid": 3149814,
+        "origin": "http://localhost:47649",
+        "state": "MANUAL_PENDING"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "eligible": false,
+        "reason": "Active/manual pending/retained run is protected; complete explicitly first",
+        "state": "MANUAL_PENDING"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 3,
+      "result": {
+        "status": "REFUSED",
+        "reason": "Active/manual pending/retained run is protected; complete explicitly first"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "complete",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--reason",
+        "fixture still active; must refuse"
+      ],
+      "exit_code": 3,
+      "result": {
+        "status": "REFUSED",
+        "reason": "Run still in use; stop first"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "stop",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "live_owned_processes": 0,
+        "state": "MANUAL_PENDING"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "eligible": false,
+        "reason": "Active/manual pending/retained run is protected; complete explicitly first",
+        "state": "MANUAL_PENDING"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 3,
+      "result": {
+        "status": "REFUSED",
+        "reason": "Active/manual pending/retained run is protected; complete explicitly first"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "start",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 0,
+      "result": {
+        "HTTP_ready": {
+          "url": "http://127.0.0.1:47649/admin/login/",
+          "HTTP_status": 200,
+          "seconds": 0.12849119503516704,
+          "response_body_not_stored": true
+        },
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "pid": 3149885,
+        "origin": "http://localhost:47649",
+        "state": "MANUAL_PENDING"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "stop",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "live_owned_processes": 0,
+        "state": "MANUAL_PENDING"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "complete",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--reason",
+        "Independent fixture checks complete; both owned server processes exited and no review user remains"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "state": "READY"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "eligible": false,
+        "reason": "Database has active connections; preserve",
+        "state": "READY"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--plan",
+        "no-valid-plan"
+      ],
+      "exit_code": 3,
+      "result": {
+        "status": "REFUSED",
+        "reason": "Database has active connections; preserve"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "eligible": false,
+        "reason": "DB owner marker/OID mismatch",
+        "state": "READY"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--plan",
+        "no-valid-plan"
+      ],
+      "exit_code": 3,
+      "result": {
+        "status": "REFUSED",
+        "reason": "DB owner marker/OID mismatch"
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "eligible": true,
+        "plan_id": "7b7097661f4740d79b78f591894d2b4bbaf8131ef13a2345b8b7f62e5c10dcef",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151922Z-a5aa54d1eb7b",
+        "file_entries": 212,
+        "database_names": [
+          "test_y3gym_qa_a5aa54d1eb7b_b178221f2787",
+          "test_y3gym_qa_a5aa54d1eb7b_b178221f2787_runner"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b",
+        "--plan",
+        "7b7097661f4740d79b78f591894d2b4bbaf8131ef13a2345b8b7f62e5c10dcef"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "eligible": true,
+        "plan_id": "7b7097661f4740d79b78f591894d2b4bbaf8131ef13a2345b8b7f62e5c10dcef",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151922Z-a5aa54d1eb7b",
+        "file_entries": 212,
+        "database_names": [
+          "test_y3gym_qa_a5aa54d1eb7b_b178221f2787",
+          "test_y3gym_qa_a5aa54d1eb7b_b178221f2787_runner"
+        ],
+        "state": "DELETED",
+        "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151922Z-a5aa54d1eb7b",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": [
+            "test_y3gym_qa_a5aa54d1eb7b_b178221f2787",
+            "test_y3gym_qa_a5aa54d1eb7b_b178221f2787_runner"
+          ]
+        }
+      }
+    },
+    {
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+        "-B",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+        "cleanup",
+        "qa-20261013T151922Z-a5aa54d1eb7b"
+      ],
+      "exit_code": 0,
+      "result": {
+        "id": "qa-20261013T151922Z-a5aa54d1eb7b",
+        "already_cleaned": true,
+        "state": "DELETED"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "fresh manual initialized exactly once with own fixture DB pair",
+      "status": "PASS",
+      "databases": 2,
+      "media_files": 4
+    },
+    {
+      "name": "first actual login HTTP200 on owned listener",
+      "status": "PASS",
+      "pid": 3149814,
+      "origin": "http://localhost:47649"
+    },
+    {
+      "name": "running MANUAL_PENDING rejects dry/actual cleanup and premature complete",
+      "status": "PASS"
+    },
+    {
+      "name": "stopped MANUAL_PENDING still rejects cleanup; original process exited",
+      "status": "PASS",
+      "pid": 3149814
+    },
+    {
+      "name": "restart retains exact own DB OIDs/comments/rows, media, credentials and source",
+      "status": "PASS",
+      "first_pid": 3149814,
+      "second_pid": 3149885,
+      "HTTP_status": 200,
+      "all_rows_compared_in_memory": true,
+      "raw_values_exported": false
+    },
+    {
+      "name": "additional actual own active DB connection blocks dry and exact cleanup; no deletion",
+      "status": "PASS"
+    },
+    {
+      "name": "additional actual own DB comment mismatch refuses cleanup; exact original OID/comment restored",
+      "status": "PASS"
+    },
+    {
+      "name": "exact dry/actual plan matches; two own DBs and folder absent",
+      "status": "PASS",
+      "plan_id": "7b7097661f4740d79b78f591894d2b4bbaf8131ef13a2345b8b7f62e5c10dcef"
+    },
+    {
+      "name": "duplicate cleanup is a no-op",
+      "status": "PASS"
+    }
+  ],
+  "HTTP_scope": "Own new manual run login GET only; no authentication POST, public cold rendition, protected server access or retry.",
+  "run_id": "qa-20261013T151922Z-a5aa54d1eb7b"
+}

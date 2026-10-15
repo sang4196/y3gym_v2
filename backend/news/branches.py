@@ -1,7 +1,12 @@
+from urllib.parse import quote
+
+from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.views.decorators.cache import never_cache
 
+from .contacts import telephone_href
+from .content_images import image_attributes
 from .publication import published_branches
 
 
@@ -20,8 +25,8 @@ def navigation_context(request, branches=None, selected=None):
             {
                 "id": branch.key,
                 "name": str(branch),
-                "phone": bool(branch.phone.strip()),
-                "channel": bool(branch.channel.strip()),
+                "phone": branch.has_phone_contact,
+                "channel": bool(branch.kakao_chat_href),
             }
             for branch in branches
         ],
@@ -40,10 +45,21 @@ def branch_browser(request, branches, home=False, trainer_preview=None):
 
         branch_trainer_cards(branches, preview=trainer_preview)
     for branch in branches:
+        if not home:
+            branch.phone_display = branch.phone if branch.has_phone_contact else ""
+            branch.channel_display = branch.channel if branch.channel.strip() else ""
+            branch.phone_href = telephone_href(branch.phone)
+            address = branch.address.strip()
+            branch.map_search_url = (
+                "https://map.kakao.com/link/search/" + quote(address, safe="")
+                if address
+                else ""
+            )
         branch.gallery = []
         for item in branch.facilities.all():
             if item.image_id:
                 item.rendition = item.image.get_rendition("max-1536x1536")
+                item.expanded = image_attributes(item.image)
                 branch.gallery.append(item)
     return render_to_string(
         "news/branch_browser.html",
@@ -78,6 +94,7 @@ def render_branches(request, preview=None, trainer_preview=None):
         title="지점 안내",
         page_kind="branches",
         is_preview=preview is not None or trainer_preview is not None,
+        kakao_map_config={"key": settings.KAKAO_MAP_JS_KEY},
         branch_browser=branch_browser(request, rows, trainer_preview=trainer_preview),
     )
     return HttpResponse(

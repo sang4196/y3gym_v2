@@ -13,14 +13,17 @@
     <link rel="stylesheet" href="{% static 'news/brand.css' %}">
     <link rel="stylesheet" href="{% static 'news/branches.css' %}">
     <link rel="stylesheet" href="{% static 'news/trainers.css' %}">
+    <link rel="stylesheet" href="{% static 'news/content-images.css' %}">
+    <script src="{% static 'news/content-images.js' %}" type="module"></script>
     <script src="{% static 'prototype/app.js' %}" defer></script>
     <script src="{% static 'prototype/facility-gallery.js' %}" defer></script>
     <script src="{% static 'news/context.js' %}" type="module"></script>
+    {% block extra_head %}{% endblock %}
   </head>
   <body{% if page_kind != 'branches' %} class="content-page"{% endif %} data-page="{{ page_kind }}" data-site-root="/"{% if is_preview %} data-preview-branch="{{ branch }}"{% endif %}>
     <a class="skip-link" href="#main">본문으로 바로가기</a>
     <header class="site-header"><div class="container header-inner">
-      <a class="wordmark" href="/{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
+      <a class="wordmark" href="{% url 'home' %}" aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
       <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
         <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         <span class="menu-toggle-label">메뉴</span>
@@ -28,7 +31,7 @@
       <nav class="primary-navigation" id="primary-navigation" aria-label="주 메뉴">
         <a class="nav-link" href="{% url 'branches' %}{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page{% if page_kind == 'branches' %} aria-current="page"{% endif %}>지점 안내</a>
         <a class="nav-link" href="{% url 'news:list' %}{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page{% if page_kind != 'branches' %} aria-current="page"{% endif %}>소식</a>
-        <a class="button button--small button--primary header-contact" href="{% url 'branches' %}{% if branch %}?branch={{ branch }}#contact-{{ branch }}{% else %}#branch{% endif %}" data-branch-page data-inquiry="any"{% if not selected_branch.phone and not selected_branch.channel %} hidden{% endif %}>문의하기</a>
+        <a class="button button--small button--primary header-contact" href="{% url 'branches' %}{% if branch %}?branch={{ branch }}#contact-{{ branch }}{% else %}#branch{% endif %}" data-branch-page data-inquiry="any"{% if not selected_branch.has_phone_contact and not selected_branch.kakao_chat_href %} hidden{% endif %}>문의하기</a>
       </nav>
     </div></header>
 
@@ -43,7 +46,7 @@
       <p class="footer-note">로컬 CMS 검토 · 사진과 운영 정보는 임시 자료입니다.</p>
     </div></footer>
 
-    <aside class="mobile-contact-bar" data-inquiry="any"{% if not selected_branch.phone and not selected_branch.channel %} hidden{% endif %} aria-label="{{ selected_branch }} 문의 안내"><div class="mobile-contact-inner"><a class="button button--primary" href="{% url 'branches' %}?branch={{ branch }}#contact-{{ branch }}" data-branch-page data-inquiry="phone"{% if not selected_branch.phone %} hidden{% endif %}>전화 문의</a><a class="button button--secondary" href="{% url 'branches' %}?branch={{ branch }}#contact-{{ branch }}" data-branch-page data-inquiry="channel"{% if not selected_branch.channel %} hidden{% endif %}>카카오톡 문의</a></div></aside>
+    <aside class="mobile-contact-bar" data-inquiry="any"{% if not selected_branch.has_phone_contact and not selected_branch.kakao_chat_href %} hidden{% endif %} aria-label="{{ selected_branch }} 문의 안내"><div class="mobile-contact-inner"><a class="button button--primary" href="{% url 'branches' %}?branch={{ branch }}#contact-{{ branch }}" data-branch-page data-inquiry="phone"{% if not selected_branch.has_phone_contact %} hidden{% endif %}>전화 문의</a><a class="button button--secondary" href="{% url 'branches' %}?branch={{ branch }}#contact-{{ branch }}" data-branch-page data-inquiry="channel"{% if not selected_branch.kakao_chat_href %} hidden{% endif %}>카카오톡 문의</a></div></aside>
     {% include 'news/branch_navigation.html' %}
   </body>
 </html>

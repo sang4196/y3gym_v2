@@ -58,6 +58,8 @@ async function publish({ invalid = false } = {}) {
   }
 }
 async function selected(page, key) {
+  const panelId = await page.locator(`[data-branch-panel][data-branch-id="${key}"]`).getAttribute('id');
+  await page.locator(`[data-branch-tab][role="tab"][aria-controls="${panelId}"][aria-selected="true"]`).waitFor();
   await page.locator(`[data-branch-panel][data-branch-id="${key}"]:not([hidden])`).waitFor();
   assert.equal(await page.locator('[data-branch-panel]:not([hidden])').count(), 1);
 }
@@ -128,7 +130,10 @@ try {
     await visitor.locator('.primary-navigation a[href*="/news/"]').click();
     assert.equal(new URL(visitor.url()).searchParams.get('branch'), third);
     assert.equal(await visitor.locator('[data-inquiry="channel"]').isHidden(), true);
+    assert.equal(await visitor.locator('.site-header .wordmark').getAttribute('href'), '/');
     await visitor.locator('.site-header .wordmark').click();
+    assert.equal(new URL(visitor.url()).pathname, '/');
+    assert.equal(new URL(visitor.url()).searchParams.has('branch'), false);
     await selected(visitor, third);
     await visitor.getByRole('link', { name: '[TEST] 새 예시 지점 자세히 보기', exact: true }).click();
     await selected(visitor, third);
@@ -146,8 +151,11 @@ try {
     await visitor.reload();
     assert.equal(await visitor.locator(`[data-branch-id="${third}"] [data-gallery-slide]`).count(), 1);
     assert.equal(await visitor.locator(`[data-branch-id="${third}"] [data-gallery-clone]`).count(), 0);
-    assert.equal(await visitor.locator(`[data-branch-id="${third}"] [data-gallery-slide] img`).evaluate(image => getComputedStyle(image).objectPosition), '35% 65%');
-    check('실제 사진 선택기로 시설 추가·사진 중심 저장, 1장 정적 표시');
+    assert.equal(await visitor.locator(`[data-branch-id="${third}"] [data-gallery-slide] img`).evaluate(image => getComputedStyle(image).objectPosition), '50% 50%');
+    assert.equal(await visitor.locator(`[data-branch-id="${third}"] [data-gallery-slide] img`).evaluate(image => getComputedStyle(image).objectFit), 'contain');
+    assert.equal(await editor.locator('#id_facilities-0-position_x').inputValue(), '35');
+    assert.equal(await editor.locator('#id_facilities-0-position_y').inputValue(), '65');
+    check('실제 사진 선택기로 시설 추가·1장 전체 중앙 표시·저장 중심 값 보존');
     // Many tabs and a long unbroken name are created only in the test DB.
     for (let index = 0; index < 5; index++) {
       await editor.goto(`${origin}/admin/snippets/news/branch/add/`);

@@ -1,0 +1,531 @@
+{
+  "status": "PREPARED_NOT_RUFF_EXECUTED",
+  "path_base": "backend/",
+  "original_result": {
+    "path": "backend/review/dev-integration-01/run-20261012-independent-01/ruff-results.json",
+    "sha256": "30914577d8b0e8beef49dbe50e08f1be345b630f7fcaef2bd3fea9779cc6b849",
+    "lint": 78,
+    "format": 40,
+    "unique_files": 41,
+    "preserved": true
+  },
+  "classification_summary": {
+    "a": {
+      "files": 0,
+      "lint": 0,
+      "format": 0
+    },
+    "b": {
+      "files": 3,
+      "lint": 1,
+      "format": 2
+    },
+    "c": {
+      "files": 38,
+      "lint": 77,
+      "format": 38
+    }
+  },
+  "a_python": [
+    "config/__init__.py",
+    "config/settings.py",
+    "config/urls.py",
+    "manage.py",
+    "news/__init__.py",
+    "news/apps.py",
+    "news/branches.py",
+    "news/contacts.py",
+    "news/context.py",
+    "news/forms.py",
+    "news/home.py",
+    "news/management/__init__.py",
+    "news/management/commands/__init__.py",
+    "news/management/commands/bootstrap_branch_review.py",
+    "news/management/commands/bootstrap_brand_review.py",
+    "news/management/commands/bootstrap_review.py",
+    "news/management/commands/bootstrap_trainer_review.py",
+    "news/middleware.py",
+    "news/models.py",
+    "news/panels.py",
+    "news/popup_admin.py",
+    "news/popups.py",
+    "news/publication.py",
+    "news/storage.py",
+    "news/tests/__init__.py",
+    "news/tests/review_fixtures.py",
+    "news/tests/test_address_detail.py",
+    "news/tests/test_branch_browser.py",
+    "news/tests/test_branches.py",
+    "news/tests/test_brand.py",
+    "news/tests/test_brand_browser.py",
+    "news/tests/test_concurrency.py",
+    "news/tests/test_contact_visibility.py",
+    "news/tests/test_home_news.py",
+    "news/tests/test_home_news_browser.py",
+    "news/tests/test_kakao_contact.py",
+    "news/tests/test_maps.py",
+    "news/tests/test_phone_contact.py",
+    "news/tests/test_popups.py",
+    "news/tests/test_publication.py",
+    "news/tests/test_trainer_browser.py",
+    "news/tests/test_trainer_search.py",
+    "news/tests/test_trainers.py",
+    "news/tests/test_withdrawal_concurrency.py",
+    "news/trainers.py",
+    "news/views.py",
+    "news/wagtail_hooks.py"
+  ],
+  "b_python": [
+    {
+      "path": "review/contact-visibility-independent/inventory.py",
+      "use_basis": "현재 작업 before/after repository 및 민감/보호 stat 보존에 실제 사용"
+    },
+    {
+      "path": "review/dev-integration-01/campaign.py",
+      "use_basis": "기존 통합 QA 실행 진입점; 이번 최종 1회에는 호출하지 않음"
+    },
+    {
+      "path": "review/dev-integration-01/fixtures.py",
+      "use_basis": "campaign에서 seed/validate import; 기존 fresh 환경 자료 준비"
+    },
+    {
+      "path": "review/dev-integration-01/observe_8769.py",
+      "use_basis": "현재 보호 환경 observer; 추출 snapshot_functions 사용. 이번 미실행"
+    },
+    {
+      "path": "review/dev-integration-01/prepare.py",
+      "use_basis": "현재 private mirror 준비 진입점; sandbox 복사/probe 함수 추출/SCRIPTS 복사"
+    },
+    {
+      "path": "review/dev-integration-01/prepare_check.py",
+      "use_basis": "현재 준비 검사 진입점; prepare import. 역사 출력 보존 위해 미실행"
+    },
+    {
+      "path": "review/dev-integration-01/result_runner.py",
+      "use_basis": "최종 private settings TEST_RUNNER가 import; 실제 suite 결과 기록"
+    },
+    {
+      "path": "review/image-chooser-focus-apply/probe.py",
+      "use_basis": "현재 prepare.py가 읽고 지정 읽기 전용 함수 8개 AST 추출. 원 진입점 실행 아님"
+    },
+    {
+      "path": "review/image-chooser-focus-independent/sandbox.py",
+      "use_basis": "현재 prepare.py가 읽고 identity만 적응해 private sandbox.py로 복사"
+    },
+    {
+      "path": "review/kakao-map/control.py",
+      "use_basis": "현재 8769 보호 환경의 기존 guarded control. 이번 미실행"
+    }
+  ],
+  "existing_ruff_migration_exclusion": {
+    "config": "backend/pyproject.toml",
+    "pattern": "*/migrations/*",
+    "explicitly_not_in_manifest": [
+      "news/migrations/0001_initial.py",
+      "news/migrations/0002_popupsetting.py",
+      "news/migrations/0003_brandcontent.py",
+      "news/migrations/0004_branch_facility.py",
+      "news/migrations/0005_trainer_trainerbiography.py",
+      "news/migrations/0006_branch_address_detail.py",
+      "news/migrations/0007_branch_kakao_chat_url.py",
+      "news/migrations/__init__.py"
+    ],
+    "new_exclusion_added": false
+  },
+  "non_python_ruff_na": {
+    "a": [
+      "news/static/news/admin-image-chooser-focus.js",
+      "news/static/news/branch-map.css",
+      "news/static/news/branch-map.js",
+      "news/static/news/branches.css",
+      "news/static/news/brand.css",
+      "news/static/news/content.css",
+      "news/static/news/context.js",
+      "news/static/news/editor-save.js",
+      "news/static/news/home-popups.js",
+      "news/static/news/mobile-popup.js",
+      "news/static/news/popup-settings.js",
+      "news/static/news/popup-sizing.js",
+      "news/static/news/popup-window.css",
+      "news/static/news/popup-window.js",
+      "news/static/news/trainers.css",
+      "news/templates/news/admin/popup_panel.html",
+      "news/templates/news/admin/popup_settings.html",
+      "news/templates/news/admin/trainer_management.html",
+      "news/templates/news/base.html",
+      "news/templates/news/branch_address.html",
+      "news/templates/news/branch_browser.html",
+      "news/templates/news/branch_map.html",
+      "news/templates/news/branch_navigation.html",
+      "news/templates/news/branches.html",
+      "news/templates/news/brand_wordmark.html",
+      "news/templates/news/detail.html",
+      "news/templates/news/facility_gallery.html",
+      "news/templates/news/home_news.html",
+      "news/templates/news/list.html",
+      "news/templates/news/popup.html",
+      "news/templates/news/popup_entry.html",
+      "news/templates/news/trainer_card.html",
+      "news/templates/news/trainer_preview.html",
+      "news/templates/wagtailimages/chooser/confirm_duplicate_upload.html",
+      "pyproject.toml",
+      "compose.yaml",
+      "uv.lock"
+    ],
+    "b": [
+      "review/contact-visibility/verification.json",
+      "review/dev-integration-01/guarded-playwright.mjs",
+      "review/dev-integration-01/popup-observation.mjs",
+      "review/home-news/popup-edges.mjs",
+      "review/home-news/popup-revisit.mjs",
+      "review/image-chooser-focus-independent/body-close.mjs",
+      "review/image-chooser-focus-independent/edges.mjs",
+      "review/image-chooser-focus-independent/reproduce.mjs",
+      "review/image-chooser-focus-independent/supplement.mjs",
+      "scripts/review-branches.mjs",
+      "scripts/review-brand-home.mjs",
+      "scripts/review-cms.mjs",
+      "scripts/review-home-news.mjs",
+      "scripts/review-popup-position.mjs",
+      "scripts/review-popup-sizing.mjs",
+      "scripts/review-popups.mjs",
+      "scripts/review-trainers.mjs"
+    ],
+    "reason": "Ruff Python 대상이 아니다. 통과나 제외에 의한 개선으로 취급하지 않는다."
+  },
+  "original_findings": [
+    {
+      "path": "review/branch-address-detail-independent/state.py",
+      "category": "c",
+      "original_lint_diagnostics": 8,
+      "original_format_warning": true,
+      "current_sha256": "1ac037e8a54381886b3e407daa00be7a9ce60311cec8572527605e681d7f125a",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/branch-address-detail-independent/test_migration.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "336c912112a3494ced69980862940a31ff6f14e4872365754041845d13825d45",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/independent_boundaries.py",
+      "category": "c",
+      "original_lint_diagnostics": 2,
+      "original_format_warning": true,
+      "current_sha256": "58fc580a4009635cdf63e1b09fdd68e6966898fe7716162482dd8ab276b6c360",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/inventory.py",
+      "category": "b",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "2f41b14fb7d358ac2e28a38e3e5155c3e74cf2280eae578212a6997b1e90f3fb",
+      "use_basis": "현재 작업 before/after repository 및 민감/보호 stat 보존에 실제 사용"
+    },
+    {
+      "path": "review/contact-visibility-independent/runtime_audit.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "c33fc6bba62be5d0915aa28f455764c9b54af83533266a3e47b0957b20588ed1",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/sandbox.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "4264de6f6aa3a06696e431f37969890c21be6c311ab2dd21fea24909e96e8f9b",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/server_tests.py",
+      "category": "c",
+      "original_lint_diagnostics": 4,
+      "original_format_warning": true,
+      "current_sha256": "c5d2e995b964149da360291db230474203b4cb3b821e23088e5d7e52d2ffd728",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/state.py",
+      "category": "c",
+      "original_lint_diagnostics": 6,
+      "original_format_warning": true,
+      "current_sha256": "f68810f4e94d25fd863d7ef4050ac3452ca2de69f806de03a7769693eebed4ee",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/static-first-tool.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "59302907f08533b913c22f8c688b6324561d7af12298e31eb95203e9b39d4697",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/contact-visibility-independent/static_checks.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "42752c63ddb09bcbaec633dec83cac9ffb077a75851387653c0441a199d010eb",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-focus-apply/probe.py",
+      "category": "b",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": false,
+      "current_sha256": "11cef802123fa5fce26789459c2cfaf03ebba67ea4b918049c04554b36074c27",
+      "use_basis": "현재 prepare.py가 읽고 지정 읽기 전용 함수 8개 AST 추출. 원 진입점 실행 아님"
+    },
+    {
+      "path": "review/image-chooser-focus-independent/inventory.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "ac0a3a38b1ca7599cc62cbbc2555d256b03ef53c70aa00847568c6218b1a75bd",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-focus-independent/runtime_audit.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "79c1f60e60072d3ee0649d7afba6ec5fd44fd9c94e8366a587d25ae91298d2df",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-focus-independent/sandbox.py",
+      "category": "b",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "ee24e418869e2bdbab9431443231bfc31ec94492f75271d340b901d7baf7f4e1",
+      "use_basis": "현재 prepare.py가 읽고 identity만 적응해 private sandbox.py로 복사"
+    },
+    {
+      "path": "review/image-chooser-focus-independent/static_checks.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "d27ed1ac292b31d5c18e394590faa87678c9813d6045f86afd720858c332c1ac",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-tabs-independent/check_report.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "9169920941d471ec4cc7811229e52a5e44561a269e1a325633c2f71d6a67cd0c",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-tabs-independent/inventory.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "148c826452c6d39fa4e9f630dc0704e9297ae9b73a57e647951dd3f49390c397",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-tabs-independent/observe.py",
+      "category": "c",
+      "original_lint_diagnostics": 7,
+      "original_format_warning": true,
+      "current_sha256": "056742d53656842905176e7d9364e207d154e4f82b5b8ca85fb50c28d622ecc6",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-tabs-independent/runtime_audit.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "c89842872feedd18c2ec2d53d12fd8e5ca669fd9bf2d0aea55b1c434c00d4bbc",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-tabs-independent/sandbox.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "8a78ef0d9c2254062246f51566bf2cac623b4ac227dff1255484c5c3c07dbc27",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/image-chooser-tabs-independent/server_tests.py",
+      "category": "c",
+      "original_lint_diagnostics": 3,
+      "original_format_warning": true,
+      "current_sha256": "626d968025d1a3b2294bd6b88ef657acc3a10f4d2a4ce034fcc9ffb7efcd934e",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/inventory.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "cd092a066354f64ceb7027002ed00e4495be89d227d2ad66b094772bf9398cb1",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/migration-first-tool.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "cbe4bc12a7f481f3257c103651b20bf38f1b0f4e4fea48ced09151a106ac1605",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/migration_preservation.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "f2356dd0261540ed2469565dd2d9ad651a63bb0a793b084645701c37d631f681",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/runtime_audit.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "034a50a66e369a6289737f8a84ad212940b4a9840dc46bf0c8d8f4512297d6e2",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/server_tests.py",
+      "category": "c",
+      "original_lint_diagnostics": 4,
+      "original_format_warning": true,
+      "current_sha256": "b3836e584cd94e9d317d16c244950a333d6d300a53344636863483f86aafc2fa",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/state.py",
+      "category": "c",
+      "original_lint_diagnostics": 6,
+      "original_format_warning": true,
+      "current_sha256": "133d877a4b3e56b950a442de0918cc59e833f4947a7cd5f07f60665c0afce04a",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-contact-independent/static_checks.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "61c9ebaeb42f6aaf815c72f7c527c97d56c0be5f208654a93887f19497e81818",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-map-independent/audit.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "4cfe8f9dde0de18990f65c48555e937482f027da7b12721597ecb198773d2bcc",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-map-independent/runtime.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "7ea9d17771d5e349569f20ae001cf37423561fc550397f449680263fb7e5de67",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-map-independent/sandbox.py",
+      "category": "c",
+      "original_lint_diagnostics": 8,
+      "original_format_warning": true,
+      "current_sha256": "c10c5bb79b1d81e352a0faefb34e35bc39b3dbbe3625d9a24280c6f8f0316c73",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/kakao-map-independent/summarize.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "83beb1f9d5298d2797f02b446ff8e328271c3a9781cb9f33c3c255542d7d0d89",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/m2-2-admin-followup-independent/db_state.py",
+      "category": "c",
+      "original_lint_diagnostics": 7,
+      "original_format_warning": true,
+      "current_sha256": "b5c54bb0fbd43d581cd5eb18bf552cc65593fb48cabc6ce1f4e128328d96bf73",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/m2-2-admin-followup-independent/stop_sandbox.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "071d4cad86f7c15e4dd71f43a0be9e5bd191f3e711e5d1a6c5f13691be6475e6",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/phone-contact-independent/check_report.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "b5372d0f7eacdfc40dd7785eb4030723d24f9a61769ba78654d71c01a4819f1b",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/phone-contact-independent/grammar.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "c745a6e6fe77215521321dd1d13daf1da4c61badcbf2b4576be744376f9fbef1",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/phone-contact-independent/inventory.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "df2d69a1d14164bb70ee1e316d573756d5c32e35a2b72c8883d8cd1be8021011",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/phone-contact-independent/runtime_audit.py",
+      "category": "c",
+      "original_lint_diagnostics": 1,
+      "original_format_warning": true,
+      "current_sha256": "e03ae965efb6f09604adc8cf3eaaf9d0aba5e88684356a0c2a7868eca48bfb2d",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/phone-contact-independent/server_tests.py",
+      "category": "c",
+      "original_lint_diagnostics": 4,
+      "original_format_warning": true,
+      "current_sha256": "c6788a9617becca7d1fa87a6c6635b94582d550e5c62261985cf532985f6f454",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/phone-contact-independent/state.py",
+      "category": "c",
+      "original_lint_diagnostics": 6,
+      "original_format_warning": true,
+      "current_sha256": "90d43f65ccc04f79c1fb8bb414e52e13c383687c3d265bb0ce2031926cc0797c",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    },
+    {
+      "path": "review/workflow-01/verify.py",
+      "category": "c",
+      "original_lint_diagnostics": 0,
+      "original_format_warning": true,
+      "current_sha256": "710580c56ff3b7adc04b6381715c1849ea9483db49bd3c9c8d4452708a07bee9",
+      "use_basis": "과거 독립 검증 증거 소스. 선택한 현재 prepare/campaign/settings/보존/control의 직접 import·복사·추출·실행 참조에서 사용을 확인하지 못했다. 별도 수동 호출은 미조사."
+    }
+  ],
+  "scope_limits": [
+    "c는 선택한 현재 흐름에서 과거 증거로 분류했다. 전체 과거 파일이나 모든 수동 호출을 재조사하지 않았다.",
+    "private runtime 복제본은 repo 목록 밖이다. 현재 복사/추출하는 canonical 원본은 b에 포함했다.",
+    "Ruff/format/CI 설정·원본 소스·원본78/40 결과는 변경하지 않았다."
+  ]
+}

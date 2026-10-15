@@ -150,17 +150,23 @@ try {
   await editor.locator('button[data-side-panel-toggle="preview"]').click();
   const frame = editor.frameLocator('iframe').first();
   await frame.locator('#intro-title').filter({ hasText: draftTitle }).waitFor();
-  assert.equal(await frame.locator('.hero-figure img').evaluate(image => getComputedStyle(image).objectPosition), '35% 65%');
+  assert.equal(await frame.locator('.hero-figure img').evaluate(image => getComputedStyle(image).objectPosition), '50% 50%');
+  assert.equal(await frame.locator('.hero-figure img').evaluate(image => getComputedStyle(image).objectFit), 'contain');
+  assert.equal(await editor.locator('#id_hero_position_x').inputValue(), '35');
+  assert.equal(await editor.locator('#id_hero_position_y').inputValue(), '65');
   assert.equal(await frame.locator('script[src*="home-popups.js"]').count(), 0);
   await capture(editor, 'brand-draft-preview');
   await editor.locator('button[data-side-panel-toggle="preview"]').click();
-  check(liveReadOnly ? '실행 중 CMS의 저장 전 미리보기·공개 홈 유지·사진 중심·자동 팝업 없음' : '초안 저장·재진입·권한 미리보기: 공개 홈 유지·사진 중심·자동 팝업 없음');
+  check(liveReadOnly ? '실행 중 CMS의 저장 전 미리보기·공개 홈 유지·전체 사진·저장 중심 보존·자동 팝업 없음' : '초안 저장·재진입·권한 미리보기: 공개 홈 유지·전체 사진·저장 중심 보존·자동 팝업 없음');
 
   if (!liveReadOnly) {
   await publish();
   await home(draftTitle);
-  assert.equal((await geometry(visitor)).image.position, '35% 65%');
-  check('명시적 공개 후에만 실제 홈 소개·사진 중심 변경');
+  assert.equal((await geometry(visitor)).image.position, '50% 50%');
+  assert.equal(await visitor.locator('.hero-figure img').evaluate(image => getComputedStyle(image).objectFit), 'contain');
+  assert.equal(await editor.locator('#id_hero_position_x').inputValue(), '35');
+  assert.equal(await editor.locator('#id_hero_position_y').inputValue(), '65');
+  check('명시적 공개 후에만 실제 홈 소개 변경·전체 사진 표시·저장 중심 보존');
 
   // Wagtail's chooser clear button updates its hidden input and visible state.
   const chooser = editor.locator('#id_hero_image-chooser');

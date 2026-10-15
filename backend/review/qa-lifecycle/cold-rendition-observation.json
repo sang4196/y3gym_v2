@@ -1,0 +1,8 @@
+{
+  "source": "own fresh run only; file metadata and stored rendition count",
+  "derived_files": 8,
+  "first_to_last_write_seconds": 17.15859341621399,
+  "original_public_probe_timeout_seconds": 10,
+  "inference": "cold rendition generation outlasted original probe budget; no persistent server/DB deadlock observed later",
+  "no_reseed_or_fixed_sleep": true
+}

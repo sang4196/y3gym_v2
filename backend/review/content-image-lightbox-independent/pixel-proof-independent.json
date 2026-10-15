@@ -1,0 +1,3830 @@
+{
+  "total": 77,
+  "pass": 76,
+  "fail": [
+    {
+      "group": "normal",
+      "image": "branches-375-8.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          30.854497241083024,
+          13.564659966250536,
+          13.564659966250536,
+          46.010868281309364
+        ],
+        "circle_box": [
+          12,
+          12
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    }
+  ],
+  "results": [
+    {
+      "group": "normal",
+      "image": "home-1440-0.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          118,
+          118
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-1440-1.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-1440-2.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          78,
+          78
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-1440-3.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          104,
+          104
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-1440-4.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          22,
+          22
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-1440-5.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          104,
+          104
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-0.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-1.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          78,
+          78
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-2.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          104,
+          104
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-3.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          22,
+          22
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-4.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          104,
+          104
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-5.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          67,
+          68
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-6.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          40,
+          40
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-7.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          80,
+          80
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-8.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          20,
+          21
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-1440-9.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          54,
+          54
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-0.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-1.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-2.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          101,
+          101
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          162,
+          162
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-3.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          201,
+          201
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          322,
+          322
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-4.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          322,
+          322
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-5.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          214,
+          214
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          214,
+          214
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-1440-6.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-375-0.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          58,
+          58
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-375-1.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          62,
+          62
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-375-2.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          70,
+          70
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-375-3.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          93,
+          92
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-375-4.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          19,
+          20
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "home-375-5.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          93,
+          92
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-0.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          62,
+          62
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-1.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          70,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-2.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          93,
+          93
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-3.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          19,
+          19
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-4.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          93,
+          93
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-5.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          38,
+          38
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-6.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          23,
+          23
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-7.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          46,
+          46
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-8.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          30.854497241083024,
+          13.564659966250536,
+          13.564659966250536,
+          46.010868281309364
+        ],
+        "circle_box": [
+          12,
+          12
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "group": "normal",
+      "image": "branches-375-9.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          411,
+          411
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          30,
+          31
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-0.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          138,
+          138
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-1.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          138,
+          138
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-2.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          101,
+          101
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          70
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-3.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          201,
+          201
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          138,
+          138
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-4.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          138,
+          138
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-5.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          214,
+          214
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          93,
+          92
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-375-6.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          138,
+          138
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "popup-480.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          72,
+          72
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "popup-320.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          46,
+          46
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-0-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          229,
+          229
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-1-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          229,
+          229
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-2-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          279,
+          279
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-3-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-4-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-5-photo.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-1440-6-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-0-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-1-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-2-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          66,
+          66
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-3-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-4-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-5-photo.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          88,
+          88
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-375-6-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-1440-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          229,
+          229
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-1440-0-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          229,
+          229
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-1440-1-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          279,
+          279
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-1440-2-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-1440-3-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-1440-4-photo.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-375-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-375-0-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-375-1-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          66,
+          66
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-375-2-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-375-3-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "trainer-375-4-photo.png",
+      "shape": "frame-match",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          88,
+          88
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "mobile-popup-expanded-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-small-expanded-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          100,
+          100
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "facility-clone-expanded-photo.png",
+      "shape": "portrait",
+      "ratio": true,
+      "http_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          229,
+          229
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    }
+  ]
+}

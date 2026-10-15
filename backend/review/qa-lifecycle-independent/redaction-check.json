@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "public_text_files_scanned_before_baseline_cleanup": 72,
+  "new_standard_evidence_own_IDs_only": true,
+  "private_redaction_fixture_exact_negative_check": true,
+  "run_owner_secret_and_config_known_values_checked_in_memory": true,
+  "known_values_exported": false,
+  "raw_credential_DB_media_profile_files_exported": false,
+  "unit_expected_error_class_stack_preserved_and_secret_redacted": true,
+  "public_text_files_scanned_after_baseline_cleanup": 78,
+  "baseline_archive_and_logs_sanitized": true,
+  "baseline_private_raw_folder_absent": true,
+  "all_json_parsed": true
+}

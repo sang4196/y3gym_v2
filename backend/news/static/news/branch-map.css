@@ -1,0 +1,27 @@
+.branch-map {
+  min-width: 0;
+}
+
+.branch-map-canvas {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 360px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.branch-map-status {
+  margin: 12px 0 8px;
+}
+
+@media (max-width: 1023px) {
+  .branch-map-canvas {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .branch-map-canvas {
+    min-height: 0;
+  }
+}

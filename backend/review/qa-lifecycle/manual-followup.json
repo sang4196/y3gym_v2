@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "run_id": "qa-20261013T141707Z-041104c766cf",
+  "original_HTTP_timeout_preserved": "manual-smoke.json",
+  "followup_HTTP_log_private": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/manual-http-followup.log",
+  "HTTP_followup": 200,
+  "owned_listener_PID_proven": true,
+  "pending_preserved_running_and_after_stop": true,
+  "initialized_once_no_reseed": true,
+  "credentials_mode0600": true,
+  "cleanup": {
+    "id": "qa-20261013T141707Z-041104c766cf",
+    "eligible": true,
+    "plan_id": "bd88782dc570ac64d546084e36904b6ccc9ebbe00fd01c9c27ca79030661d53a",
+    "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T141707Z-041104c766cf",
+    "file_entries": 226,
+    "database_names": [
+      "test_y3gym_qa_041104c766cf_5704d6fa81b8",
+      "test_y3gym_qa_041104c766cf_5704d6fa81b8_runner"
+    ],
+    "state": "DELETED",
+    "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T141707Z-041104c766cf",
+    "cleanup": {
+      "folder_absent": true,
+      "databases_dropped": [
+        "test_y3gym_qa_041104c766cf_5704d6fa81b8",
+        "test_y3gym_qa_041104c766cf_5704d6fa81b8_runner"
+      ]
+    }
+  }
+}

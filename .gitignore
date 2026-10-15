@@ -7,3 +7,4 @@ backend/__pycache__/
 **/__pycache__/
 *.py[cod]
 .ruff_cache/
+.local/qa/

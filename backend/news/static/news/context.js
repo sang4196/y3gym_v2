@@ -9,8 +9,9 @@ function synchronize() {
   const requested = params.has('branch') ? params.get('branch') : saved;
   const selected = branches.find(branch => branch.id === requested) || branches[0];
   const pageURL = new URL(location.href);
+  const commonHome = document.body.dataset.commonHome === pageURL.pathname && !params.has('branch');
   if (selected) {
-    pageURL.searchParams.set('branch', selected.id);
+    if (!commonHome) pageURL.searchParams.set('branch', selected.id);
     try { sessionStorage.setItem(storageKey, selected.id); } catch { /* No storage required. */ }
   } else {
     pageURL.searchParams.delete('branch');

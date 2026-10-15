@@ -1,4 +1,0 @@
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, news, sessions, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailimages, wagtailsearch, wagtailusers
-Running migrations:
-  Applying news.0005_trainer_trainerbiography... OK

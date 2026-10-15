@@ -1,0 +1,89 @@
+{
+  "capture_status": "CAPTURED_SAME_CSS_GEOMETRY_DPR2",
+  "same_CSS_geometry_and_originals": true,
+  "corner_threshold7_unchanged": true,
+  "DPR": 2,
+  "records": [
+    {
+      "file": "long-normal-320x480-dpr2.png",
+      "group": "normal",
+      "strict_original_criteria": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          20.97617696340303,
+          403.57774963444155
+        ],
+        "circle_box": [
+          28,
+          26
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "file": "long-normal-320x224-dpr2.png",
+      "group": "normal",
+      "strict_original_criteria": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          20.97617696340303,
+          403.57774963444155
+        ],
+        "circle_box": [
+          28,
+          26
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "file": "long-expanded-320x224-dpr2.png",
+      "group": "expanded",
+      "strict_original_criteria": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          43.23193264243457,
+          0.0,
+          39.230090491866065
+        ],
+        "circle_box": [
+          20,
+          20
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    }
+  ],
+  "pass": 0,
+  "fail": 3,
+  "original_42_failures_retained_not_merged": true
+}

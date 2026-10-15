@@ -51,9 +51,11 @@ class BranchTests(TestCase):
             "name",
             "intro",
             "address",
+            "address_detail",
             "opening_hours",
             "phone",
             "channel",
+            "kakao_chat_url",
             "display_order",
             "loaded_revision_id",
             "loaded_revision_created_at",
@@ -236,7 +238,13 @@ class BranchTests(TestCase):
             soup = BeautifulSoup(
                 self.client.get("/news/", {"branch": bad}).content, "html.parser"
             )
-            self.assertIn("branch=main", soup.select_one(".wordmark")["href"])
+            self.assertEqual(
+                soup.select_one(".site-header .wordmark")["href"], reverse("home")
+            )
+            self.assertIn(
+                "branch=main",
+                soup.select_one(".primary-navigation a[data-branch-page]")["href"],
+            )
         main.unpublish()
         for path in ["/", "/branches/", "/news/"]:
             response = self.client.get(path)
@@ -270,8 +278,11 @@ class BranchTests(TestCase):
         self.publish(branch)
         soup = BeautifulSoup(self.client.get("/branches/").content, "html.parser")
         self.assertTrue(soup.select_one('[data-inquiry="phone"]').has_attr("hidden"))
-        self.assertFalse(soup.select_one('[data-inquiry="channel"]').has_attr("hidden"))
-        self.assertFalse(soup.select('[href^="tel:"], [href*="kakao"]'))
+        self.assertTrue(soup.select_one('[data-inquiry="channel"]').has_attr("hidden"))
+        self.assertIn("카카오톡 예시", soup.select_one(".location-details").get_text())
+        self.assertFalse(
+            soup.select('[href^="tel:"], [href*="kakao"]:not([data-map-link])')
+        )
 
     def test_shared_image_survives_until_last_public_post_brand_or_branch_use(self):
         image = picture()

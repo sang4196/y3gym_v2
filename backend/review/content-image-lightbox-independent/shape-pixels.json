@@ -1,0 +1,2215 @@
+{
+  "total": 42,
+  "pass": 39,
+  "fail": [
+    {
+      "group": "normal",
+      "image": "pc-popup-long-320x480-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          10.246950765959598,
+          13.564659966250536,
+          18.05547008526779,
+          23.45207879911715
+        ],
+        "circle_box": [
+          15,
+          14
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-long-320x224-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          10.246950765959598,
+          13.564659966250536,
+          18.05547008526779,
+          23.45207879911715
+        ],
+        "circle_box": [
+          15,
+          14
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-long-320x224-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          42.40283009422838,
+          60.21627686929839,
+          53.08483775994799,
+          62.81719509815764
+        ],
+        "circle_box": [
+          10,
+          10
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    }
+  ],
+  "results": [
+    {
+      "group": "normal",
+      "image": "hero-landscape-1440-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          118,
+          118
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-cover-landscape-1440-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          161,
+          161
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "mobile-popup-landscape-375-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          161,
+          161
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          61,
+          62
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "hero-landscape-375-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          309,
+          309
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          67,
+          67
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-cover-landscape-375-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          66,
+          66
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-landscape-320x480-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          161,
+          161
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          52,
+          52
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-landscape-320x224-normal.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          161,
+          161
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          52,
+          52
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "hero-square-1440-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          177,
+          177
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-cover-square-1440-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "mobile-popup-square-375-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          77,
+          77
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "hero-square-375-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          616,
+          616
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          83,
+          83
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-cover-square-375-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          481,
+          481
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-square-320x480-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          65,
+          64
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-square-320x224-normal.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          321,
+          321
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          65,
+          64
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "hero-long-1440-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          36,
+          35
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-cover-long-1440-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          322,
+          322
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "mobile-popup-long-375-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          15,
+          15
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "hero-long-375-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          124,
+          124
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          16,
+          17
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "news-cover-long-375-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-long-320x480-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          10.246950765959598,
+          13.564659966250536,
+          18.05547008526779,
+          23.45207879911715
+        ],
+        "circle_box": [
+          15,
+          14
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "group": "normal",
+      "image": "pc-popup-long-320x224-normal.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          241,
+          241
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          10.246950765959598,
+          13.564659966250536,
+          18.05547008526779,
+          23.45207879911715
+        ],
+        "circle_box": [
+          15,
+          14
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-landscape-1440-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          279,
+          279
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-cover-landscape-1440-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          279,
+          279
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "mobile-popup-landscape-375-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          66,
+          66
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-landscape-375-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          66,
+          66
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-cover-landscape-375-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          66,
+          66
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-landscape-320x480-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          55,
+          56
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-landscape-320x224-photo.png",
+      "shape": "landscape",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          361,
+          361
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          47,
+          48
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-square-1440-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-cover-square-1440-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          342,
+          342
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "mobile-popup-square-375-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-square-375-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-cover-square-375-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          132,
+          132
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-square-320x480-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          110,
+          110
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-square-320x224-photo.png",
+      "shape": "square",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          641,
+          641
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          46,
+          46
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-long-1440-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-cover-long-1440-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "mobile-popup-long-375-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "hero-long-375-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "news-cover-long-375-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          69,
+          69
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-long-320x480-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          30,
+          30
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "status": "PASS"
+    },
+    {
+      "group": "expanded",
+      "image": "pc-popup-long-320x224-photo.png",
+      "shape": "long",
+      "ratio": true,
+      "HTTP_bytes": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "circle_box": [
+          207,
+          207
+        ],
+        "edges": true,
+        "corners": true,
+        "circle": true
+      },
+      "browser_pixels": {
+        "edge_distance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "corner_distance": [
+          42.40283009422838,
+          60.21627686929839,
+          53.08483775994799,
+          62.81719509815764
+        ],
+        "circle_box": [
+          10,
+          10
+        ],
+        "edges": true,
+        "corners": false,
+        "circle": true
+      },
+      "status": "FAIL"
+    }
+  ],
+  "corner_threshold_7_unchanged": true,
+  "independent_extra_42_not_merged_with_base77": true
+}

@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "CLI": {
+    "run_id": "qa-20261013T151521Z-2d5217407fe6",
+    "command_exit_code": 0,
+    "cleanup": {
+      "id": "qa-20261013T151521Z-2d5217407fe6",
+      "eligible": true,
+      "plan_id": "d903880de3824f420a0660155f50a1553b14c56626832c985e7d6c5cf8cae741",
+      "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151521Z-2d5217407fe6",
+      "file_entries": 206,
+      "database_names": [
+        "test_y3gym_qa_2d5217407fe6_ef6d979a9da7",
+        "test_y3gym_qa_2d5217407fe6_ef6d979a9da7_runner"
+      ],
+      "state": "DELETED",
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151521Z-2d5217407fe6",
+      "cleanup": {
+        "folder_absent": true,
+        "databases_dropped": [
+          "test_y3gym_qa_2d5217407fe6_ef6d979a9da7",
+          "test_y3gym_qa_2d5217407fe6_ef6d979a9da7_runner"
+        ]
+      }
+    },
+    "cleanup_error": null,
+    "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T151521Z-2d5217407fe6"
+  },
+  "tests": {
+    "collected": 4,
+    "run": 4,
+    "pass": 4,
+    "fail": [],
+    "error": [],
+    "skip": [],
+    "executed_ids": [
+      "news.tests.test_header_home.HeaderHomeTests.test_common_home_without_branch_keeps_server_default_and_zero_branch_fallback",
+      "news.tests.test_header_home.HeaderHomeTests.test_header_resolves_named_home_under_a_route_prefix",
+      "news.tests.test_header_home.HeaderHomeTests.test_logo_header_uses_common_home_without_image_enhancement_metadata",
+      "news.tests.test_header_home.HeaderHomeTests.test_text_header_uses_common_home_and_other_links_keep_branch"
+    ],
+    "failure_locations": [],
+    "runtime_scope": {
+      "BASE_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151521Z-2d5217407fe6",
+      "MEDIA_ROOT": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151521Z-2d5217407fe6/media",
+      "TMPDIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T151521Z-2d5217407fe6/tmp"
+    }
+  },
+  "browser_result_summaries": []
+}

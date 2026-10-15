@@ -19,6 +19,13 @@ from wagtail.snippets.views.snippets import (
 from .models import Branch, BrandContent, Post, Trainer
 
 
+@hooks.register("register_rich_text_features", order=100)
+def content_image_expansion(features):
+    from .content_images import ContentImageEmbedHandler
+
+    features.register_embed_type(ContentImageEmbedHandler)
+
+
 class ConcurrentEditView(EditView):
     def get_object(self, queryset=None):
         if self.request.method == "POST":
@@ -248,6 +255,13 @@ def popup_admin_urls():
     from .popup_admin import popup_settings
 
     return [path("news-popup/<int:pk>/", popup_settings, name="news_popup_settings")]
+
+
+@hooks.register("insert_global_admin_js")
+def preserve_image_chooser_focus():
+    return format_html(
+        '<script src="{}"></script>', static("news/admin-image-chooser-focus.js")
+    )
 
 
 @hooks.register("construct_main_menu")

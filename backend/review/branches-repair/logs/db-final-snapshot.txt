@@ -1,3 +1,0 @@
-48 objects imported automatically (use -v 2 for details).
-
-{"snapshot": "/tmp/y3gym-m2-2-r1-2lzs9l2n/db-final.json", "counts": {"auth_group": 3, "auth_group_permissions": 30, "auth_user": 2, "auth_user_groups": 1, "auth_user_user_permissions": 0, "news_branch": 2, "news_brandcontent": 1, "news_contentimage": 39, "news_facilityimage": 6, "news_popupsetting": 10, "news_post": 22, "news_rendition": 102, "wagtailcore_collection": 1, "wagtailcore_groupcollectionpermission": 15, "wagtailcore_revision": 67}}

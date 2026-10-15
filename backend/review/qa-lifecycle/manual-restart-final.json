@@ -1,0 +1,17 @@
+{
+  "run_id": "qa-20261013T144030Z-f46cb3c2bcf3",
+  "status": "FAIL",
+  "ready_first": {
+    "HTTP_ready": {
+      "url": "http://127.0.0.1:44985/admin/login/",
+      "HTTP_status": 200,
+      "seconds": 0.1444910970167257,
+      "response_body_not_stored": true
+    },
+    "id": "qa-20261013T144030Z-f46cb3c2bcf3",
+    "pid": 3099345,
+    "origin": "http://localhost:44985",
+    "state": "MANUAL_PENDING"
+  },
+  "error_type": "TimeoutError"
+}

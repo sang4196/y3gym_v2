@@ -1,5 +1,0 @@
-news
- [X] 0001_initial
- [X] 0002_popupsetting
- [X] 0003_brandcontent
- [X] 0004_branch_facility

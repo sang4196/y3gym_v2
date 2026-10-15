@@ -1,1 +1,0 @@
-PASS: 849 baseline files, 15 unchanged DB tables, Git index unchanged

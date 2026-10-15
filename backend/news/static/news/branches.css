@@ -4,3 +4,13 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+.branch-address-detail {
+  overflow-wrap: anywhere;
+}
+
+/* Keep every facility photo visible inside the existing neutral 3:2 frame. */
+.branch-browser .facility-image-frame img {
+  object-fit: contain;
+  object-position: center;
+}

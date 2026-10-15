@@ -1,3 +1,0 @@
-50 objects imported automatically (use -v 2 for details).
-
-{"snapshot": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/home-news-independent/snapshot-before.json", "file_count": 2101, "db_table_count": 58, "database_read_only": true}

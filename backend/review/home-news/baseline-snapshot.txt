@@ -1,3 +1,0 @@
-50 objects imported automatically (use -v 2 for details).
-
-{"snapshot": "/tmp/y3gym-m2-4-chvghqww/snapshot-before.json", "file_count": 1931, "db_table_count": 58, "database_read_only": true}

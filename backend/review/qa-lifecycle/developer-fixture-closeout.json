@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-13T15:29:23.210191+00:00",
+  "scope": "Only two authorized new developer disposable fixtures; no existing /tmp or user environment operations; no new tests or environments",
+  "status": "PASS",
+  "initial_archive_refusal": {
+    "error": "qa_lifecycle.Refused: Control file must have mode0600",
+    "deleted_before_archive": false,
+    "resolution": "verified exact run ownership/type/nlink then restricted only owned logs to0600, contents unchanged",
+    "mode_changes": [
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/forced-focused-initial.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/integration-initial.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/ruff-initial.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/format-new-only.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/format-release.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/manual-http-followup.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-followup.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/ruff-final.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/manual-restart-final.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/format-final.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-release.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/manual-restart-followup.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-initial.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/integration-browser-focused.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-final.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/selftests-final-02.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/manual-smoke.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/integration-followup.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      },
+      {
+        "path": ".local/qa/qa-20261013T133525Z-1d7ae0edf181/logs/integration-browser-final.log",
+        "before_mode": "0o644",
+        "after_mode": "0o600",
+        "contents_sha256_unchanged": true
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "qa-20261013T133525Z-1d7ae0edf181",
+      "archive": "backend/review/qa-lifecycle/runs/qa-20261013T133525Z-1d7ae0edf181/evidence-developer-closeout-archive-c29972b6.json",
+      "archive_index": "backend/review/qa-lifecycle/runs/qa-20261013T133525Z-1d7ae0edf181/archive-index.json",
+      "original_log_count": 20,
+      "commands": [
+        {
+          "argv": [
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+            "-B",
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+            "stop",
+            "qa-20261013T133525Z-1d7ae0edf181"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+            "-B",
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+            "complete",
+            "qa-20261013T133525Z-1d7ae0edf181",
+            "--reason",
+            "Independent review completed; original diagnostics archived; disposable environment unused"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+            "-B",
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+            "cleanup",
+            "qa-20261013T133525Z-1d7ae0edf181",
+            "--plan",
+            "022b2bbce310eb2c4b85481a24fadd931e46c69289bf44179c587e0206936d73"
+          ],
+          "exit": 0
+        }
+      ],
+      "dry_run": {
+        "id": "qa-20261013T133525Z-1d7ae0edf181",
+        "eligible": true,
+        "plan_id": "022b2bbce310eb2c4b85481a24fadd931e46c69289bf44179c587e0206936d73",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T133525Z-1d7ae0edf181",
+        "file_entries": 233,
+        "database_names": []
+      },
+      "cleanup": {
+        "id": "qa-20261013T133525Z-1d7ae0edf181",
+        "eligible": true,
+        "plan_id": "022b2bbce310eb2c4b85481a24fadd931e46c69289bf44179c587e0206936d73",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T133525Z-1d7ae0edf181",
+        "file_entries": 233,
+        "database_names": [],
+        "state": "DELETED",
+        "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T133525Z-1d7ae0edf181",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": []
+        }
+      }
+    },
+    {
+      "run_id": "qa-20261013T135421Z-384a05dad18c",
+      "archive": "backend/review/qa-lifecycle/runs/qa-20261013T135421Z-384a05dad18c/evidence-developer-closeout-archive-a109132f.json",
+      "archive_index": "backend/review/qa-lifecycle/runs/qa-20261013T135421Z-384a05dad18c/archive-index.json",
+      "original_log_count": 1,
+      "commands": [
+        {
+          "argv": [
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+            "-B",
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+            "stop",
+            "qa-20261013T135421Z-384a05dad18c"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+            "-B",
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+            "complete",
+            "qa-20261013T135421Z-384a05dad18c",
+            "--reason",
+            "Independent review completed; original diagnostics archived; disposable environment unused"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+            "-B",
+            "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+            "cleanup",
+            "qa-20261013T135421Z-384a05dad18c",
+            "--plan",
+            "0f5957ae1fe67a3f655df0b8206c1b64b8c822b90639fd02ed3ac2bf211ed267"
+          ],
+          "exit": 0
+        }
+      ],
+      "dry_run": {
+        "id": "qa-20261013T135421Z-384a05dad18c",
+        "eligible": true,
+        "plan_id": "0f5957ae1fe67a3f655df0b8206c1b64b8c822b90639fd02ed3ac2bf211ed267",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T135421Z-384a05dad18c",
+        "file_entries": 211,
+        "database_names": []
+      },
+      "cleanup": {
+        "id": "qa-20261013T135421Z-384a05dad18c",
+        "eligible": true,
+        "plan_id": "0f5957ae1fe67a3f655df0b8206c1b64b8c822b90639fd02ed3ac2bf211ed267",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T135421Z-384a05dad18c",
+        "file_entries": 211,
+        "database_names": [],
+        "state": "DELETED",
+        "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T135421Z-384a05dad18c",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": []
+        }
+      }
+    }
+  ]
+}

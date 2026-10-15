@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from .content_images import image_attributes
 from .publication import published_branches, published_trainers
 
 
@@ -9,9 +10,10 @@ def trainer_card(trainer, branch=None):
         "name": trainer.name.strip() or "이름 미입력 · 미리보기",
         "intro": trainer.intro.strip(),
         "position": trainer.position.strip(),
-        "photo": trainer.photo.get_rendition("fill-640x800")
+        "photo": trainer.photo.get_rendition("max-1536x1536")
         if trainer.photo_id
         else None,
+        "expanded": image_attributes(trainer.photo) if trainer.photo_id else None,
         "photo_alt": trainer.photo_alt.strip() or trainer.name,
         "biography": [
             item.text.strip() for item in trainer.biography.all() if item.text.strip()

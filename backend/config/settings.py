@@ -1,14 +1,12 @@
-import os
 from pathlib import Path
 
-from dotenv import load_dotenv
+from .runtime import read_runtime
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROTOTYPE_DIR = BASE_DIR.parent / "prototype"
-load_dotenv(BASE_DIR / ".env.local")
-SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+_runtime = read_runtime(BASE_DIR)
+globals().update(_runtime)
 DEBUG = False
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "testserver"]
 INSTALLED_APPS = [
     "news",
     "wagtail.embeds",
@@ -56,25 +54,12 @@ TEMPLATES = [
         },
     }
 ]
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ["Y3GYM_DB_NAME"],
-        "USER": os.environ["Y3GYM_DB_USER"],
-        "PASSWORD": os.environ["Y3GYM_DB_PASSWORD"],
-        "HOST": os.environ["Y3GYM_DB_HOST"],
-        "PORT": os.environ["Y3GYM_DB_PORT"],
-        "ATOMIC_REQUESTS": True,
-    }
-}
 LANGUAGE_CODE = "ko"
 TIME_ZONE = "Asia/Seoul"
 USE_I18N = True
 USE_TZ = True
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / ".static"
 STATICFILES_DIRS = [("prototype", PROTOTYPE_DIR)]
-MEDIA_ROOT = BASE_DIR / ".private-media"
 MEDIA_URL = "/media/"
 STORAGES = {
     "default": {"BACKEND": "news.storage.PrivateImageStorage"},
@@ -82,7 +67,6 @@ STORAGES = {
 }
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 WAGTAIL_SITE_NAME = "Y3GYM 콘텐츠 관리 · 로컬 검토"
-WAGTAILADMIN_BASE_URL = "http://localhost:8768"
 WAGTAILIMAGES_IMAGE_MODEL = "news.ContentImage"
 WAGTAILIMAGES_EXTENSIONS = ["jpg", "jpeg", "png", "webp"]
 WAGTAILDOCS_EXTENSIONS = []
@@ -101,9 +85,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = "Lax"
-SESSION_COOKIE_NAME = "y3gym_m1_session"
-CSRF_COOKIE_NAME = "y3gym_m1_csrf"
-X_FRAME_OPTIONS = "SAMEORIGIN"
-PROTOTYPE_URL = os.environ.get("Y3GYM_PROTOTYPE_URL", "http://localhost:8767").rstrip(
-    "/"
+SESSION_COOKIE_NAME = (
+    "y3gym_session" if _runtime["Y3GYM_ENV"] == "production" else "y3gym_m1_session"
 )
+CSRF_COOKIE_NAME = (
+    "y3gym_csrf" if _runtime["Y3GYM_ENV"] == "production" else "y3gym_m1_csrf"
+)
+X_FRAME_OPTIONS = "SAMEORIGIN"

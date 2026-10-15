@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "run_id": "qa-20261013T144030Z-f46cb3c2bcf3",
+  "original_timeout_retained": "manual-restart-final.json",
+  "public_HTTP_followup": {
+    "url": "http://127.0.0.1:44985/",
+    "HTTP_status": 200,
+    "seconds": 0.13933798699872568,
+    "bytes": 14635
+  },
+  "login_HTTP_followup": {
+    "url": "http://127.0.0.1:44985/admin/login/",
+    "HTTP_status": 200,
+    "seconds": 0.05083509598625824,
+    "bytes": 13459
+  },
+  "same_environment_restart": {
+    "HTTP_ready": {
+      "url": "http://127.0.0.1:44985/admin/login/",
+      "HTTP_status": 200,
+      "seconds": 0.10776998999062926,
+      "response_body_not_stored": true
+    },
+    "id": "qa-20261013T144030Z-f46cb3c2bcf3",
+    "pid": 3117958,
+    "origin": "http://localhost:44985",
+    "state": "MANUAL_PENDING"
+  },
+  "public_HTTP_after_restart": {
+    "url": "http://127.0.0.1:44985/",
+    "HTTP_status": 200,
+    "seconds": 0.18423678301041946,
+    "bytes": 14635
+  },
+  "manual_pending_preserved_running_and_after_stop": true,
+  "initialized_once_no_reseed": true,
+  "DB_rows_credentials_metadata_unchanged": true,
+  "cleanup": {
+    "id": "qa-20261013T144030Z-f46cb3c2bcf3",
+    "eligible": true,
+    "plan_id": "f3b0b2a5e3e09c18454c9d98d4d6fbe5fd508ece268effa65d748d8ba9b95fdd",
+    "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261013T144030Z-f46cb3c2bcf3",
+    "file_entries": 226,
+    "database_names": [
+      "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166",
+      "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166_runner"
+    ],
+    "state": "DELETED",
+    "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261013T144030Z-f46cb3c2bcf3",
+    "cleanup": {
+      "folder_absent": true,
+      "databases_dropped": [
+        "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166",
+        "test_y3gym_qa_f46cb3c2bcf3_b34f37b09166_runner"
+      ]
+    }
+  }
+}

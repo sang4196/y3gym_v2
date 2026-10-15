@@ -1,0 +1,1314 @@
+{
+  "schema": 1,
+  "status": "PASS_WITH_EXISTING_TOOL_WARNINGS_AND_DEPLOYMENT_LIMITS",
+  "date_KST": "2026-10-15T21:38:11.962450+09:00",
+  "scope": "Cumulative exact commit candidate independent validation; same existing owned run only",
+  "requirements_basis": [
+    "AGENTS.md: 작업 시작, 검증과 보고",
+    "docs/WORKFLOW.md: 독립 검증 및 Git 역할 분리",
+    "docs/PRD.md: 공개 홈, 관리자, 공개 리비전 및 QA 경계",
+    "docs/IMPLEMENTATION-PLAN.md: OPS-01 재현 실행·운영 설정",
+    "backend/README.md: 개발과 운영 설정, QA 환경 생성·실행·정리",
+    "설계 최신 지시: 정확한 누적 후보·새 venv 기본 실행·같은 run 마무리, 전체164 반복 금지"
+  ],
+  "HEAD": "32ade6ba627f49a521bd7efdf0f482f7f7e1aa7b",
+  "manifest_identity": {
+    "readiness_actual_sha256": "a58ebaed03b7042b15ab01a2df0b1f0665dc3d3721512bfc3028608e24e0b2f3",
+    "initial_handoff_sha256": "5235d48feac6932775551e396ba2ef8b12e92bbafc68252debc8d579df920532",
+    "administrative_C_to_D_metadata_correction_authorized": true,
+    "candidate_delta_counts": {
+      "M": 32,
+      "A": 107,
+      "D": 1946,
+      "total": 2085
+    },
+    "all2085_delta_rows_verified_including_HEAD_blob_SHA1946": true,
+    "tree_files": 271,
+    "tree_bytes": 20748348,
+    "candidate_tree_sha256": "edadf85cb4422d1c27cd34d82e915d7b6f13cc9b3906ab8566c3577d8b76152c",
+    "qa168_manifest_sha256": "8f7d0de6e245fcc8e3c468517d1fbcfe731ed36f82984ca6baf74e57c05fcabf",
+    "source191_freeze_sha256": "d62674ec397b7452dd803afb3cc899194d0f44fb4d507c3c4e312a187a505615",
+    "same_source164_archive_counts": {
+      "collected": 164,
+      "run": 164,
+      "pass": 164,
+      "fail": [],
+      "error": [],
+      "skip": []
+    },
+    "same_source164_optin4": true,
+    "full164_rerun_required": false,
+    "local_readiness_manifest_excluded_from_candidate": true
+  },
+  "fresh_install_directly_executed": {
+    "status": "PASS",
+    "versions": {
+      "Python": "3.13.15",
+      "Django": "5.2.18",
+      "Wagtail": "7.4.3",
+      "fresh_prefix": true,
+      "candidate_settings_origin": true
+    },
+    "definition_hashes": {
+      "backend/pyproject.toml": "c8825be762fedb53292c38d7ab43b917e601a24c8d8da63740c4d2690fb19b8c",
+      "backend/uv.lock": "65f82df76f08ab474610549fef96e45e3cb4c736bb61d35402c16ac0ee4c4af8",
+      "backend/.python-version": "861b3dd8083d28f336ef70f6755bc399538ddad627b1d095820ca34cb953cf14"
+    },
+    "existing_development_venv_synced": false,
+    "Python_downloads_enabled": false,
+    "link_mode": "copy"
+  },
+  "commands_directly_executed_once": [
+    {
+      "name": "fresh-uv-locked",
+      "argv": [
+        "uv",
+        "sync",
+        "--locked",
+        "--no-python-downloads",
+        "--link-mode",
+        "copy"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "fresh-prefix-versions",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "-c",
+        "import json,sys,importlib.metadata,importlib.util; from pathlib import Path; assert Path(sys.prefix)==Path(sys.argv[1]); assert str(importlib.util.find_spec('config.settings').origin).startswith(sys.argv[2]); print(json.dumps({'Python':sys.version.split()[0],'Django':importlib.metadata.version('Django'),'Wagtail':importlib.metadata.version('wagtail'),'fresh_prefix':True,'candidate_settings_origin':True}))",
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv",
+        "<OWN_RUN>/source/backend"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "fresh-system-check",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "manage.py",
+        "check"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "fresh-makemigrations-check",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "manage.py",
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "fresh-migrate",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "manage.py",
+        "migrate",
+        "--noinput",
+        "--verbosity",
+        "1"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "fresh-synthetic-bootstrap",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "manage.py",
+        "shell",
+        "-c",
+        "from news.tests.review_fixtures import bootstrap_browser_review; bootstrap_browser_review()"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-0",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/admin-image-chooser-focus.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-1",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/branch-map.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-2",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/content-images.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-3",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/context.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-4",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/editor-save.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-5",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/home-popups.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-6",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/mobile-popup.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-7",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/popup-settings.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-8",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/popup-sizing.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-9",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/news/static/news/popup-window.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-10",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/guarded-playwright.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-11",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/popup-observation.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-12",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/home-news/popup-edges.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-13",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/home-news/popup-revisit.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-14",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-independent/body-close.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-15",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-independent/edges.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-16",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-independent/reproduce.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-17",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-independent/supplement.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-18",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/qa_browser_guard.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-19",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/qa_browser_loader.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-20",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/qa_browser_resolver.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-21",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-branches.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-22",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-brand-home.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-23",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-cms.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-24",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-home-news.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-25",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-popup-edges.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-26",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-popup-position.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-27",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-popup-revisit.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-28",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-popup-sizing.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-29",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-popups.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-30",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/backend/scripts/review-trainers.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-31",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/app.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-32",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/branch-context.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-33",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/branch-data.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-34",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/demo-content.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-35",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/facility-gallery.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-36",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/mobile-popup.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-37",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/news-data.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-38",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/popup-launcher.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-39",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/popup-policy.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-40",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/popup.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-41",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/post-context.js"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-42",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/build-scenarios.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-43",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/capture.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-44",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/render-branches.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-45",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/render-news.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-46",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/review-gallery.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-47",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/review-news.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "node-syntax-48",
+      "argv": [
+        "node",
+        "--check",
+        "<OWN_RUN>/source/prototype/scripts/verify-states.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "product55-ruff-lint",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/ruff",
+        "check",
+        "--no-cache",
+        "--output-format",
+        "json",
+        "<OWN_RUN>/source/backend/config/__init__.py",
+        "<OWN_RUN>/source/backend/config/runtime.py",
+        "<OWN_RUN>/source/backend/config/settings.py",
+        "<OWN_RUN>/source/backend/config/urls.py",
+        "<OWN_RUN>/source/backend/manage.py",
+        "<OWN_RUN>/source/backend/news/__init__.py",
+        "<OWN_RUN>/source/backend/news/apps.py",
+        "<OWN_RUN>/source/backend/news/branches.py",
+        "<OWN_RUN>/source/backend/news/contacts.py",
+        "<OWN_RUN>/source/backend/news/content_images.py",
+        "<OWN_RUN>/source/backend/news/context.py",
+        "<OWN_RUN>/source/backend/news/forms.py",
+        "<OWN_RUN>/source/backend/news/home.py",
+        "<OWN_RUN>/source/backend/news/management/__init__.py",
+        "<OWN_RUN>/source/backend/news/management/commands/__init__.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_branch_review.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_brand_review.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_review.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_trainer_review.py",
+        "<OWN_RUN>/source/backend/news/middleware.py",
+        "<OWN_RUN>/source/backend/news/models.py",
+        "<OWN_RUN>/source/backend/news/panels.py",
+        "<OWN_RUN>/source/backend/news/popup_admin.py",
+        "<OWN_RUN>/source/backend/news/popups.py",
+        "<OWN_RUN>/source/backend/news/publication.py",
+        "<OWN_RUN>/source/backend/news/storage.py",
+        "<OWN_RUN>/source/backend/news/templatetags/__init__.py",
+        "<OWN_RUN>/source/backend/news/templatetags/content_images.py",
+        "<OWN_RUN>/source/backend/news/tests/__init__.py",
+        "<OWN_RUN>/source/backend/news/tests/review_fixtures.py",
+        "<OWN_RUN>/source/backend/news/tests/test_address_detail.py",
+        "<OWN_RUN>/source/backend/news/tests/test_branch_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_branches.py",
+        "<OWN_RUN>/source/backend/news/tests/test_brand.py",
+        "<OWN_RUN>/source/backend/news/tests/test_brand_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_concurrency.py",
+        "<OWN_RUN>/source/backend/news/tests/test_contact_visibility.py",
+        "<OWN_RUN>/source/backend/news/tests/test_content_images.py",
+        "<OWN_RUN>/source/backend/news/tests/test_facility_image_fit.py",
+        "<OWN_RUN>/source/backend/news/tests/test_header_home.py",
+        "<OWN_RUN>/source/backend/news/tests/test_home_news.py",
+        "<OWN_RUN>/source/backend/news/tests/test_home_news_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_kakao_contact.py",
+        "<OWN_RUN>/source/backend/news/tests/test_maps.py",
+        "<OWN_RUN>/source/backend/news/tests/test_phone_contact.py",
+        "<OWN_RUN>/source/backend/news/tests/test_popups.py",
+        "<OWN_RUN>/source/backend/news/tests/test_publication.py",
+        "<OWN_RUN>/source/backend/news/tests/test_runtime_settings.py",
+        "<OWN_RUN>/source/backend/news/tests/test_trainer_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_trainer_search.py",
+        "<OWN_RUN>/source/backend/news/tests/test_trainers.py",
+        "<OWN_RUN>/source/backend/news/tests/test_withdrawal_concurrency.py",
+        "<OWN_RUN>/source/backend/news/trainers.py",
+        "<OWN_RUN>/source/backend/news/views.py",
+        "<OWN_RUN>/source/backend/news/wagtail_hooks.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "product55-ruff-format",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/ruff",
+        "format",
+        "--check",
+        "--no-cache",
+        "<OWN_RUN>/source/backend/config/__init__.py",
+        "<OWN_RUN>/source/backend/config/runtime.py",
+        "<OWN_RUN>/source/backend/config/settings.py",
+        "<OWN_RUN>/source/backend/config/urls.py",
+        "<OWN_RUN>/source/backend/manage.py",
+        "<OWN_RUN>/source/backend/news/__init__.py",
+        "<OWN_RUN>/source/backend/news/apps.py",
+        "<OWN_RUN>/source/backend/news/branches.py",
+        "<OWN_RUN>/source/backend/news/contacts.py",
+        "<OWN_RUN>/source/backend/news/content_images.py",
+        "<OWN_RUN>/source/backend/news/context.py",
+        "<OWN_RUN>/source/backend/news/forms.py",
+        "<OWN_RUN>/source/backend/news/home.py",
+        "<OWN_RUN>/source/backend/news/management/__init__.py",
+        "<OWN_RUN>/source/backend/news/management/commands/__init__.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_branch_review.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_brand_review.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_review.py",
+        "<OWN_RUN>/source/backend/news/management/commands/bootstrap_trainer_review.py",
+        "<OWN_RUN>/source/backend/news/middleware.py",
+        "<OWN_RUN>/source/backend/news/models.py",
+        "<OWN_RUN>/source/backend/news/panels.py",
+        "<OWN_RUN>/source/backend/news/popup_admin.py",
+        "<OWN_RUN>/source/backend/news/popups.py",
+        "<OWN_RUN>/source/backend/news/publication.py",
+        "<OWN_RUN>/source/backend/news/storage.py",
+        "<OWN_RUN>/source/backend/news/templatetags/__init__.py",
+        "<OWN_RUN>/source/backend/news/templatetags/content_images.py",
+        "<OWN_RUN>/source/backend/news/tests/__init__.py",
+        "<OWN_RUN>/source/backend/news/tests/review_fixtures.py",
+        "<OWN_RUN>/source/backend/news/tests/test_address_detail.py",
+        "<OWN_RUN>/source/backend/news/tests/test_branch_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_branches.py",
+        "<OWN_RUN>/source/backend/news/tests/test_brand.py",
+        "<OWN_RUN>/source/backend/news/tests/test_brand_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_concurrency.py",
+        "<OWN_RUN>/source/backend/news/tests/test_contact_visibility.py",
+        "<OWN_RUN>/source/backend/news/tests/test_content_images.py",
+        "<OWN_RUN>/source/backend/news/tests/test_facility_image_fit.py",
+        "<OWN_RUN>/source/backend/news/tests/test_header_home.py",
+        "<OWN_RUN>/source/backend/news/tests/test_home_news.py",
+        "<OWN_RUN>/source/backend/news/tests/test_home_news_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_kakao_contact.py",
+        "<OWN_RUN>/source/backend/news/tests/test_maps.py",
+        "<OWN_RUN>/source/backend/news/tests/test_phone_contact.py",
+        "<OWN_RUN>/source/backend/news/tests/test_popups.py",
+        "<OWN_RUN>/source/backend/news/tests/test_publication.py",
+        "<OWN_RUN>/source/backend/news/tests/test_runtime_settings.py",
+        "<OWN_RUN>/source/backend/news/tests/test_trainer_browser.py",
+        "<OWN_RUN>/source/backend/news/tests/test_trainer_search.py",
+        "<OWN_RUN>/source/backend/news/tests/test_trainers.py",
+        "<OWN_RUN>/source/backend/news/tests/test_withdrawal_concurrency.py",
+        "<OWN_RUN>/source/backend/news/trainers.py",
+        "<OWN_RUN>/source/backend/news/views.py",
+        "<OWN_RUN>/source/backend/news/wagtail_hooks.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "current-tools16-ruff-lint",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/ruff",
+        "check",
+        "--no-cache",
+        "--output-format",
+        "json",
+        "<OWN_RUN>/source/backend/review/contact-visibility-independent/inventory.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/campaign.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/fixtures.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/observe_8769.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/prepare.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/prepare_check.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/result_runner.py",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-apply/probe.py",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-independent/sandbox.py",
+        "<OWN_RUN>/source/backend/review/kakao-map/control.py",
+        "<OWN_RUN>/source/backend/scripts/prepare_local.py",
+        "<OWN_RUN>/source/backend/scripts/qa_lifecycle.py",
+        "<OWN_RUN>/source/backend/scripts/qa_redaction.py",
+        "<OWN_RUN>/source/backend/scripts/qa_test_runner.py",
+        "<OWN_RUN>/source/backend/scripts/serve-prototype.py",
+        "<OWN_RUN>/source/backend/scripts/tests/test_qa_lifecycle.py"
+      ],
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "name": "current-tools16-ruff-format",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/ruff",
+        "format",
+        "--check",
+        "--no-cache",
+        "<OWN_RUN>/source/backend/review/contact-visibility-independent/inventory.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/campaign.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/fixtures.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/observe_8769.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/prepare.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/prepare_check.py",
+        "<OWN_RUN>/source/backend/review/dev-integration-01/result_runner.py",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-apply/probe.py",
+        "<OWN_RUN>/source/backend/review/image-chooser-focus-independent/sandbox.py",
+        "<OWN_RUN>/source/backend/review/kakao-map/control.py",
+        "<OWN_RUN>/source/backend/scripts/prepare_local.py",
+        "<OWN_RUN>/source/backend/scripts/qa_lifecycle.py",
+        "<OWN_RUN>/source/backend/scripts/qa_redaction.py",
+        "<OWN_RUN>/source/backend/scripts/qa_test_runner.py",
+        "<OWN_RUN>/source/backend/scripts/serve-prototype.py",
+        "<OWN_RUN>/source/backend/scripts/tests/test_qa_lifecycle.py"
+      ],
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "name": "fresh-permission-fixture",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "manage.py",
+        "shell",
+        "-c",
+        "exec(open('<OWN_RUN>/output/permission-fixture.py').read())"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "fresh-collectstatic",
+      "argv": [
+        "<OWN_RUN>/tmp/candidate-install-ad2403to/venv/bin/python",
+        "-B",
+        "manage.py",
+        "collectstatic",
+        "--noinput",
+        "--verbosity",
+        "0",
+        "--ignore",
+        "node_modules",
+        "--ignore",
+        "review",
+        "--ignore",
+        "templates",
+        "--ignore",
+        "scripts",
+        "--ignore",
+        "*.md",
+        "--ignore",
+        "package*.json"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    }
+  ],
+  "Python_syntax81_direct": "PASS; compile-only, no imports or pyc; exact paths below",
+  "javascript_syntax49_direct": "PASS; node --check, no dependencies installed or product output generated",
+  "syntax_lint_direct": {
+    "product55": {
+      "files": 55,
+      "lint_exit": 0,
+      "format_exit": 0,
+      "findings": [],
+      "format_output": "55 files already formatted"
+    },
+    "current-tools16": {
+      "files": 16,
+      "lint_exit": 1,
+      "format_exit": 1,
+      "findings": [
+        {
+          "code": "I001",
+          "file": "backend/review/image-chooser-focus-apply/probe.py",
+          "row": 189
+        }
+      ],
+      "format_output": "Would reformat: review/contact-visibility-independent/inventory.py\nWould reformat: review/image-chooser-focus-independent/sandbox.py\n2 files would be reformatted, 14 files already formatted"
+    },
+    "Python_syntax81": "PASS; compile only, no imports/pyc",
+    "JS_syntax49": "PASS",
+    "historical_c2": "syntax only; preserved, not included as current-tool Ruff",
+    "migrations8": "existing product Ruff exclusion preserved",
+    "source_formatting_performed": false
+  },
+  "syntax_lint_scope_paths": {
+    "a_python_compile": [
+      "backend/config/__init__.py",
+      "backend/config/runtime.py",
+      "backend/config/settings.py",
+      "backend/config/urls.py",
+      "backend/manage.py",
+      "backend/news/__init__.py",
+      "backend/news/apps.py",
+      "backend/news/branches.py",
+      "backend/news/contacts.py",
+      "backend/news/content_images.py",
+      "backend/news/context.py",
+      "backend/news/forms.py",
+      "backend/news/home.py",
+      "backend/news/management/__init__.py",
+      "backend/news/management/commands/__init__.py",
+      "backend/news/management/commands/bootstrap_branch_review.py",
+      "backend/news/management/commands/bootstrap_brand_review.py",
+      "backend/news/management/commands/bootstrap_review.py",
+      "backend/news/management/commands/bootstrap_trainer_review.py",
+      "backend/news/middleware.py",
+      "backend/news/migrations/0001_initial.py",
+      "backend/news/migrations/0002_popupsetting.py",
+      "backend/news/migrations/0003_brandcontent.py",
+      "backend/news/migrations/0004_branch_facility.py",
+      "backend/news/migrations/0005_trainer_trainerbiography.py",
+      "backend/news/migrations/0006_branch_address_detail.py",
+      "backend/news/migrations/0007_branch_kakao_chat_url.py",
+      "backend/news/migrations/__init__.py",
+      "backend/news/models.py",
+      "backend/news/panels.py",
+      "backend/news/popup_admin.py",
+      "backend/news/popups.py",
+      "backend/news/publication.py",
+      "backend/news/storage.py",
+      "backend/news/templatetags/__init__.py",
+      "backend/news/templatetags/content_images.py",
+      "backend/news/tests/__init__.py",
+      "backend/news/tests/review_fixtures.py",
+      "backend/news/tests/test_address_detail.py",
+      "backend/news/tests/test_branch_browser.py",
+      "backend/news/tests/test_branches.py",
+      "backend/news/tests/test_brand.py",
+      "backend/news/tests/test_brand_browser.py",
+      "backend/news/tests/test_concurrency.py",
+      "backend/news/tests/test_contact_visibility.py",
+      "backend/news/tests/test_content_images.py",
+      "backend/news/tests/test_facility_image_fit.py",
+      "backend/news/tests/test_header_home.py",
+      "backend/news/tests/test_home_news.py",
+      "backend/news/tests/test_home_news_browser.py",
+      "backend/news/tests/test_kakao_contact.py",
+      "backend/news/tests/test_maps.py",
+      "backend/news/tests/test_phone_contact.py",
+      "backend/news/tests/test_popups.py",
+      "backend/news/tests/test_publication.py",
+      "backend/news/tests/test_runtime_settings.py",
+      "backend/news/tests/test_trainer_browser.py",
+      "backend/news/tests/test_trainer_search.py",
+      "backend/news/tests/test_trainers.py",
+      "backend/news/tests/test_withdrawal_concurrency.py",
+      "backend/news/trainers.py",
+      "backend/news/views.py",
+      "backend/news/wagtail_hooks.py"
+    ],
+    "a_ruff": [
+      "backend/config/__init__.py",
+      "backend/config/runtime.py",
+      "backend/config/settings.py",
+      "backend/config/urls.py",
+      "backend/manage.py",
+      "backend/news/__init__.py",
+      "backend/news/apps.py",
+      "backend/news/branches.py",
+      "backend/news/contacts.py",
+      "backend/news/content_images.py",
+      "backend/news/context.py",
+      "backend/news/forms.py",
+      "backend/news/home.py",
+      "backend/news/management/__init__.py",
+      "backend/news/management/commands/__init__.py",
+      "backend/news/management/commands/bootstrap_branch_review.py",
+      "backend/news/management/commands/bootstrap_brand_review.py",
+      "backend/news/management/commands/bootstrap_review.py",
+      "backend/news/management/commands/bootstrap_trainer_review.py",
+      "backend/news/middleware.py",
+      "backend/news/models.py",
+      "backend/news/panels.py",
+      "backend/news/popup_admin.py",
+      "backend/news/popups.py",
+      "backend/news/publication.py",
+      "backend/news/storage.py",
+      "backend/news/templatetags/__init__.py",
+      "backend/news/templatetags/content_images.py",
+      "backend/news/tests/__init__.py",
+      "backend/news/tests/review_fixtures.py",
+      "backend/news/tests/test_address_detail.py",
+      "backend/news/tests/test_branch_browser.py",
+      "backend/news/tests/test_branches.py",
+      "backend/news/tests/test_brand.py",
+      "backend/news/tests/test_brand_browser.py",
+      "backend/news/tests/test_concurrency.py",
+      "backend/news/tests/test_contact_visibility.py",
+      "backend/news/tests/test_content_images.py",
+      "backend/news/tests/test_facility_image_fit.py",
+      "backend/news/tests/test_header_home.py",
+      "backend/news/tests/test_home_news.py",
+      "backend/news/tests/test_home_news_browser.py",
+      "backend/news/tests/test_kakao_contact.py",
+      "backend/news/tests/test_maps.py",
+      "backend/news/tests/test_phone_contact.py",
+      "backend/news/tests/test_popups.py",
+      "backend/news/tests/test_publication.py",
+      "backend/news/tests/test_runtime_settings.py",
+      "backend/news/tests/test_trainer_browser.py",
+      "backend/news/tests/test_trainer_search.py",
+      "backend/news/tests/test_trainers.py",
+      "backend/news/tests/test_withdrawal_concurrency.py",
+      "backend/news/trainers.py",
+      "backend/news/views.py",
+      "backend/news/wagtail_hooks.py"
+    ],
+    "b_python_compile_and_ruff": [
+      "backend/review/contact-visibility-independent/inventory.py",
+      "backend/review/dev-integration-01/campaign.py",
+      "backend/review/dev-integration-01/fixtures.py",
+      "backend/review/dev-integration-01/observe_8769.py",
+      "backend/review/dev-integration-01/prepare.py",
+      "backend/review/dev-integration-01/prepare_check.py",
+      "backend/review/dev-integration-01/result_runner.py",
+      "backend/review/image-chooser-focus-apply/probe.py",
+      "backend/review/image-chooser-focus-independent/sandbox.py",
+      "backend/review/kakao-map/control.py",
+      "backend/scripts/prepare_local.py",
+      "backend/scripts/qa_lifecycle.py",
+      "backend/scripts/qa_redaction.py",
+      "backend/scripts/qa_test_runner.py",
+      "backend/scripts/serve-prototype.py",
+      "backend/scripts/tests/test_qa_lifecycle.py"
+    ],
+    "c_python_compile_only_no_ruff": [
+      "backend/review/qa-lifecycle-independent/archive-summary-observer-initial.py",
+      "backend/review/workflow-01/verify.py"
+    ],
+    "javascript_syntax_only": [
+      "backend/news/static/news/admin-image-chooser-focus.js",
+      "backend/news/static/news/branch-map.js",
+      "backend/news/static/news/content-images.js",
+      "backend/news/static/news/context.js",
+      "backend/news/static/news/editor-save.js",
+      "backend/news/static/news/home-popups.js",
+      "backend/news/static/news/mobile-popup.js",
+      "backend/news/static/news/popup-settings.js",
+      "backend/news/static/news/popup-sizing.js",
+      "backend/news/static/news/popup-window.js",
+      "backend/review/dev-integration-01/guarded-playwright.mjs",
+      "backend/review/dev-integration-01/popup-observation.mjs",
+      "backend/review/home-news/popup-edges.mjs",
+      "backend/review/home-news/popup-revisit.mjs",
+      "backend/review/image-chooser-focus-independent/body-close.mjs",
+      "backend/review/image-chooser-focus-independent/edges.mjs",
+      "backend/review/image-chooser-focus-independent/reproduce.mjs",
+      "backend/review/image-chooser-focus-independent/supplement.mjs",
+      "backend/scripts/qa_browser_guard.mjs",
+      "backend/scripts/qa_browser_loader.mjs",
+      "backend/scripts/qa_browser_resolver.mjs",
+      "backend/scripts/review-branches.mjs",
+      "backend/scripts/review-brand-home.mjs",
+      "backend/scripts/review-cms.mjs",
+      "backend/scripts/review-home-news.mjs",
+      "backend/scripts/review-popup-edges.mjs",
+      "backend/scripts/review-popup-position.mjs",
+      "backend/scripts/review-popup-revisit.mjs",
+      "backend/scripts/review-popup-sizing.mjs",
+      "backend/scripts/review-popups.mjs",
+      "backend/scripts/review-trainers.mjs",
+      "prototype/app.js",
+      "prototype/branch-context.js",
+      "prototype/branch-data.js",
+      "prototype/demo-content.js",
+      "prototype/facility-gallery.js",
+      "prototype/mobile-popup.js",
+      "prototype/news-data.js",
+      "prototype/popup-launcher.js",
+      "prototype/popup-policy.js",
+      "prototype/popup.js",
+      "prototype/post-context.js",
+      "prototype/scripts/build-scenarios.mjs",
+      "prototype/scripts/capture.mjs",
+      "prototype/scripts/render-branches.mjs",
+      "prototype/scripts/render-news.mjs",
+      "prototype/scripts/review-gallery.mjs",
+      "prototype/scripts/review-news.mjs",
+      "prototype/scripts/verify-states.mjs"
+    ]
+  },
+  "original_execution_failure": {
+    "status": "FAIL",
+    "driver_exit": 1,
+    "stage": "Immediately after successful fresh collectstatic; no HTTP had run",
+    "type": "AssertionError",
+    "assertion": "assert len(static_files)==263",
+    "script": "owned output/candidate_probe.py:142",
+    "script_sha256": "5cb45d407e668560775f243bcc5b42c9f1ce58a5f37c133828fda1817b8f2ca8",
+    "diagnostic": "Traceback (most recent call last):\n  File \"<PROJECT>/.local/qa/[OPAQUE REDACTED]/output/candidate_probe.py\", line 142, in <module>\n    assert len(static_files)==263\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "requirement_basis": "OPS-01 requires valid collected static assets excluding private/QA files; it defines no universal fixed total of 263",
+    "reproduction": [
+      "Materialize the exact271 candidate into a managed run with a new locked venv",
+      "Run collectstatic --noinput --verbosity 0 with --ignore node_modules/review/templates/scripts/*.md/package*.json",
+      "Count regular files in the owned static root; applying the old fixed263 assertion fails"
+    ],
+    "expected": "Collectstatic exit0, required public/admin assets present, private/QA absent; count reflects actual candidate inputs",
+    "actual": "Collectstatic exit0 and264 files; additional prototype/assets/fonts/LICENSE.txt is in exact candidate and byte-identical; old QA168 copy excludes .txt and collected263",
+    "classification": "Independent observer fixed-count assumption; no product defect established",
+    "preserved_as_failure": true,
+    "related_files": [
+      "backend/scripts/qa_lifecycle.py",
+      "backend/config/settings.py",
+      "prototype/assets/fonts/LICENSE.txt"
+    ]
+  },
+  "coordination_interruption": {
+    "instruction": "Temporary read-only/scope handoff during running work; latest coordinator corrected it to finish same existing run",
+    "direct_observation": "Attempted own-only suspension found zero matching driver/owned processes; no SIGSTOP or termination was sent",
+    "actual_driver_exit": "1 from static observer AssertionError; no evidence it was caused by coordinator interruption",
+    "second_worker_environment_created": 0,
+    "same_run_only": true,
+    "already_PASS_checks_repeated": false
+  },
+  "focused_followup_direct": {
+    "status": "PASS_WITH_EXISTING_TOOL_WARNINGS",
+    "run_id": "qa-20261015T121720Z-a6d50c8fef95",
+    "original_status_preserved": "FAIL",
+    "new_install_migration_lint_collectstatic_rerun": false,
+    "HTTP_checks": [
+      {
+        "name": "public home actual candidate brand and branch content",
+        "status": 200,
+        "seconds": 20.162,
+        "timeout_seconds": 30
+      },
+      {
+        "name": "admin login form",
+        "status": 200
+      },
+      {
+        "name": "required static prototype/styles.css",
+        "status": 200,
+        "collected_bytes_match": true
+      },
+      {
+        "name": "required static prototype/app.js",
+        "status": 200,
+        "collected_bytes_match": true
+      },
+      {
+        "name": "required static news/content-images.js",
+        "status": 200,
+        "collected_bytes_match": true
+      },
+      {
+        "name": "required static news/context.js",
+        "status": 200,
+        "collected_bytes_match": true
+      },
+      {
+        "name": "required static wagtailadmin/css/core.css",
+        "status": 200,
+        "collected_bytes_match": true
+      },
+      {
+        "name": "synthetic editor login reaches admin",
+        "status": 200
+      }
+    ],
+    "static": {
+      "collected_files": 264,
+      "previous_QA168_count": 263,
+      "additional_exact_candidate_input": "prototype/assets/fonts/LICENSE.txt",
+      "additional_bytes_match": true,
+      "private_QA_exclusions_pass": true,
+      "collectstatic_original_exit": 0
+    },
+    "runtime": {
+      "fresh_venv_server": true,
+      "owned_identity_registered": true,
+      "owned_server_PID": 2363550,
+      "login_readiness_HTTP200": true,
+      "actual_login_direct_assets_present": 18
+    },
+    "candidate_post_runtime_exact271_match": true,
+    "preservation": {
+      "original_private5_stat_same": true,
+      "original_server3_identity_same": true,
+      "index_same": true,
+      "candidate_root271_hash_same": true,
+      "original_DB_media_raw_compared": false
+    }
+  },
+  "existing_tool_warnings": [
+    {
+      "id": "W01-LINT",
+      "file": "backend/review/image-chooser-focus-apply/probe.py",
+      "line": 189,
+      "requirement_basis": "Current-tool lint scope and preserve existing unresolved diagnostics; no production edit authorized",
+      "reproduction": "fresh-venv/bin/ruff check --no-cache backend/review/image-chooser-focus-apply/probe.py",
+      "expected": "No lint findings for a clean check",
+      "actual": "exit1; I001 import block is un-sorted or un-formatted; exactly1 finding in current16"
+    },
+    {
+      "id": "W01-FORMAT",
+      "files": [
+        "backend/review/contact-visibility-independent/inventory.py",
+        "backend/review/image-chooser-focus-independent/sandbox.py"
+      ],
+      "requirement_basis": "Current-tool format scope and preserve existing unresolved diagnostics",
+      "reproduction": "fresh-venv/bin/ruff format --check --no-cache <the two files>",
+      "expected": "exit0; already formatted",
+      "actual": "exit1;2 files would be reformatted;14 already formatted in current16"
+    }
+  ],
+  "same_source_full164_reused_not_rerun": {
+    "archive": "backend/review/qa-lifecycle/runs/qa-20261014T035638Z-fa05f66d3da0/evidence-auto-result-b1499e6a.json",
+    "counts": {
+      "collected": 164,
+      "run": 164,
+      "pass": 164,
+      "fail": [],
+      "error": [],
+      "skip": []
+    },
+    "four_optin_test_ids_confirmed": true,
+    "exact_QA168_source_hash_reproduced": true,
+    "additional23_source_config_tool_hashes_match": true,
+    "independent_full164_execution_this_task": false,
+    "counts_combined_with_current_smoke": false
+  },
+  "not_executed_and_limits": [
+    "Full164 was not independently rerun; exact same-source archive was verified and reused under explicit scope",
+    "Additional image-permission HTTP smoke was removed from the required scope; own synthetic fixture preparation is not claimed as permission verification",
+    "No visual approval, browser interaction, real devices, Whale or Korean IME checks in this candidate-install smoke",
+    "No actual production infrastructure/TLS/proxy/storage/backup/restore/deploy verification; prior W004/W019 remain",
+    "First cold home rendered in20.162sec within the stated30sec smoke timeout; no performance approval or root-cause claim",
+    "Original DB rows and media bytes were not compared; protection checks cover private stat and process identity only",
+    "Existing historical2 scripts received syntax-only checks, not current-tool Ruff; existing8 migration exclusions retained",
+    "This new independent metadata report and CLI cleanup evidence are outside the tested271 candidate; coordinator must refresh final candidate manifest before Git"
+  ],
+  "production_QA_tool_dependency_code_changed": false,
+  "commit_push_deploy_or_index_write": false,
+  "cleanup": {
+    "status": "PASS",
+    "run_id": "qa-20261015T121720Z-a6d50c8fef95",
+    "owned_server_stopped_via_CLI": true,
+    "owned_live_processes_after_stop": 0,
+    "fresh_venv_cache_owned_fixture_removed": {
+      "exact_inode_verified": true,
+      "symlinks_not_followed": 42,
+      "descriptor_safe_rmtree": true,
+      "CLI_guards_changed": false
+    },
+    "own_created_runs": 1,
+    "own_created_and_removed_DBs": 2,
+    "own_folder_absent": true,
+    "owned_fresh_server_exited": true,
+    "exact_current_dry_run_plan_used": true,
+    "duplicate_cleanup_noop": true,
+    "CLI_commands": [
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "complete",
+          "qa-20261015T121720Z-a6d50c8fef95",
+          "--reason",
+          "Exact candidate independent smoke complete; own run unused; original observer failure and focused followup preserved"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261015T121720Z-a6d50c8fef95",
+          "--dry-run"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261015T121720Z-a6d50c8fef95",
+          "--plan",
+          "8c4c84afddb962c15944872ce3f802329ab9c8af0e3181ad842a803e7d418487"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261015T121720Z-a6d50c8fef95",
+          "--plan",
+          "8c4c84afddb962c15944872ce3f802329ab9c8af0e3181ad842a803e7d418487"
+        ],
+        "exit": 0
+      }
+    ],
+    "standard_new_ID_evidence": [
+      "backend/review/qa-lifecycle/runs/qa-20261015T121720Z-a6d50c8fef95/cleanup-bf59dbd7.json",
+      "backend/review/qa-lifecycle/runs/qa-20261015T121720Z-a6d50c8fef95/evidence-explicit-cleanup-7d22f008.json"
+    ],
+    "standard_new_ID_evidence_known_secret_scan": "PASS"
+  },
+  "secret_negative_scan": {
+    "known_values_checked_in_memory": true,
+    "values_not_recorded": true,
+    "raw_credentials_cookies_DB_media_not_exported": true
+  },
+  "writing_finished": true
+}

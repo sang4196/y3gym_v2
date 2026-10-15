@@ -3,9 +3,11 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.templatetags.static import static
+from django.urls import reverse
 from django.views.decorators.cache import never_cache
 
 from .branches import branch_browser, request_navigation
+from .content_images import image_attributes
 from .popups import eligible_popups, popup_content
 from .publication import published_brand, published_posts
 
@@ -65,9 +67,9 @@ def apply_brand(document, branding, request, is_preview):
         image["src"] = rendition.url
         image["width"], image["height"] = str(rendition.width), str(rendition.height)
         image["alt"] = branding.hero_alt or f"{name} 소개 이미지"
-        image["style"] = (
-            f"object-position: {branding.hero_position_x}% {branding.hero_position_y}%"
-        )
+        image.attrs.update(image_attributes(branding.hero_image))
+        image["data-image-alt"] = image["alt"]
+        image.attrs.pop("style", None)
         caption = figure.select(".photo-caption span")
         caption[0].string = "브랜드 소개 이미지"
         caption[1].string = "로컬 CMS 검토 자료"
@@ -92,6 +94,10 @@ def render_home(request, branding, is_preview=False):
     document = BeautifulSoup(
         (settings.PROTOTYPE_DIR / "index.html").read_text(), "html.parser"
     )
+    document.body["data-common-home"] = reverse("home")
+    for wordmark in document.select(".site-header .wordmark"):
+        wordmark["href"] = reverse("home")
+        wordmark.attrs.pop("data-branch-page", None)
     navigation = request_navigation(request)
     recent_news = document.select_one("#news")
     recent_news.select_one(".news-list").replace_with(
@@ -145,9 +151,13 @@ def render_home(request, branding, is_preview=False):
     for control in document.select("[data-inquiry]"):
         kind = control["data-inquiry"]
         allowed = selected and (
-            bool(selected.phone or selected.channel)
+            bool(selected.has_phone_contact or selected.kakao_chat_href)
             if kind == "any"
-            else bool(getattr(selected, kind))
+            else bool(
+                selected.kakao_chat_href
+                if kind == "channel"
+                else selected.has_phone_contact
+            )
         )
         if not allowed:
             control["hidden"] = ""
@@ -177,6 +187,14 @@ def render_home(request, branding, is_preview=False):
         document.new_tag("link", rel="stylesheet", href=static("news/branches.css"))
     )
     apply_brand(document, branding, request, is_preview)
+    document.head.append(
+        document.new_tag(
+            "link", rel="stylesheet", href=static("news/content-images.css")
+        )
+    )
+    document.head.append(
+        document.new_tag("script", src=static("news/content-images.js"), type="module")
+    )
     payloads = (
         [] if is_preview else [popup_content(setting) for setting in eligible_popups()]
     )

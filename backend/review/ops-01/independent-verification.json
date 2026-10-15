@@ -1,0 +1,826 @@
+{
+  "status": "PASS_WITH_DEPLOYMENT_LIMITS",
+  "date_KST": "2026-10-14",
+  "scope": "OPS-01 narrow independent settings/runtime/static/media verification; no production deployment",
+  "actual_selected_auto": {
+    "CLI": {
+      "run_id": "qa-20261014T042251Z-ac45e5ec29bb",
+      "command_exit_code": 0,
+      "cleanup": {
+        "id": "qa-20261014T042251Z-ac45e5ec29bb",
+        "eligible": true,
+        "plan_id": "fa4793c41de8a404251c7b404648eddd31a7483b1cb4ccd40094b78945b296b8",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042251Z-ac45e5ec29bb",
+        "file_entries": 208,
+        "database_names": [
+          "test_y3gym_qa_ac45e5ec29bb_cd3f91eae0c9",
+          "test_y3gym_qa_ac45e5ec29bb_cd3f91eae0c9_runner"
+        ],
+        "state": "DELETED",
+        "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261014T042251Z-ac45e5ec29bb",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": [
+            "test_y3gym_qa_ac45e5ec29bb_cd3f91eae0c9",
+            "test_y3gym_qa_ac45e5ec29bb_cd3f91eae0c9_runner"
+          ]
+        }
+      },
+      "cleanup_error": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261014T042251Z-ac45e5ec29bb"
+    },
+    "tests": {
+      "collected": 16,
+      "run": 16,
+      "pass": 16,
+      "fail": [],
+      "error": [],
+      "skip": [],
+      "executed_ids": [
+        "news.tests.test_publication.PublicationTests.test_original_draft_and_thumbnail_require_real_editor_permission",
+        "news.tests.test_publication.PublicationTests.test_unpublish_revokes_public_html_and_all_renditions",
+        "news.tests.test_publication.PublicationTests.test_body_image_reference_controls_public_rendition_access",
+        "news.tests.test_content_images.ContentImageTests.test_private_preview_expansion_requires_real_editor_permission",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_development_defaults_preserve_existing_contract",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_development_or_template_secrets_and_DB_names_are_rejected",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_dotenv_cannot_silently_select_production",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_explicit_loopback_DB_is_allowed_but_invalid_connection_fields_fail",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_invalid_mode_log_level_and_non_directory_path_fail_clearly",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_operating_hosts_cannot_be_wildcard_or_local_preview_hosts",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_origins_require_https_and_explicit_matching_admin_host",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_paths_cannot_expose_private_media_sources_or_QA_runtime",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_production_never_loads_dotenv_to_fill_a_missing_secret",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_production_requires_each_field_instead_of_local_defaults",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_production_security_defaults_do_not_invent_proxy_or_hsts_policy",
+        "news.tests.test_runtime_settings.RuntimeSettingsTests.test_symlink_alias_cannot_hide_static_and_media_overlap"
+      ],
+      "failure_locations": [],
+      "runtime_scope": {
+        "BASE_DIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042251Z-ac45e5ec29bb",
+        "MEDIA_ROOT": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042251Z-ac45e5ec29bb/media",
+        "TMPDIR": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042251Z-ac45e5ec29bb/tmp"
+      }
+    },
+    "original_executions": 1
+  },
+  "runtime_initial_original": {
+    "status": "FAIL",
+    "commands": [
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "initialize",
+          "qa-20261014T042245Z-77021a381325",
+          "--fixtures"
+        ],
+        "exit": 0,
+        "result": {
+          "id": "qa-20261014T042245Z-77021a381325",
+          "initialized": true,
+          "fixtures": true
+        }
+      },
+      {
+        "name": "own-image-fixtures",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "manage.py",
+          "shell",
+          "-c",
+          "exec(open('/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/output/image_fixtures.py').read())"
+        ],
+        "exit": 0,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/own-image-fixtures.log",
+        "expected_nonzero": false
+      }
+    ],
+    "settings_checks_completed": 0,
+    "HTTP_checks_completed": 0,
+    "failure": {
+      "type": "AssertionError",
+      "message": "production-import-no-dotenv-proxy-default"
+    }
+  },
+  "runtime_focused_followup": {
+    "status": "PASS",
+    "run_id": "qa-20261014T042245Z-77021a381325",
+    "commands": [
+      {
+        "name": "production-import-no-dotenv-proxy-default-followup",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import os,json; import django; django.setup(); import config.settings as s; from django.test import RequestFactory,override_settings; assert 'OPS01_POISON_CANARY' not in os.environ; assert s.Y3GYM_ENV=='production' and s.DEBUG is False; assert s.SECURE_SSL_REDIRECT and s.SESSION_COOKIE_SECURE and s.CSRF_COOKIE_SECURE; expected=os.environ['Y3GYM_TRUST_PROXY_HTTPS']=='1'; assert (s.SECURE_PROXY_SSL_HEADER is not None)==expected; \nwith override_settings(SECURE_PROXY_SSL_HEADER=s.SECURE_PROXY_SSL_HEADER): assert RequestFactory().get('/',HTTP_X_FORWARDED_PROTO='https').is_secure()==expected\nprint(json.dumps({'production_import':True,'dotenv_poison_loaded':False,'proxy_opt_in':expected,'DEBUG':s.DEBUG,'HSTS':s.SECURE_HSTS_SECONDS}))"
+        ],
+        "exit": 0,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-import-no-dotenv-proxy-default-followup.log",
+        "expected_nonzero": false
+      },
+      {
+        "name": "production-import-proxy-explicit",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import os,json; import django; django.setup(); import config.settings as s; from django.test import RequestFactory,override_settings; assert 'OPS01_POISON_CANARY' not in os.environ; assert s.Y3GYM_ENV=='production' and s.DEBUG is False; assert s.SECURE_SSL_REDIRECT and s.SESSION_COOKIE_SECURE and s.CSRF_COOKIE_SECURE; expected=os.environ['Y3GYM_TRUST_PROXY_HTTPS']=='1'; assert (s.SECURE_PROXY_SSL_HEADER is not None)==expected; \nwith override_settings(SECURE_PROXY_SSL_HEADER=s.SECURE_PROXY_SSL_HEADER): assert RequestFactory().get('/',HTTP_X_FORWARDED_PROTO='https').is_secure()==expected\nprint(json.dumps({'production_import':True,'dotenv_poison_loaded':False,'proxy_opt_in':expected,'DEBUG':s.DEBUG,'HSTS':s.SECURE_HSTS_SECONDS}))"
+        ],
+        "exit": 0,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-import-proxy-explicit.log",
+        "expected_nonzero": false
+      },
+      {
+        "name": "production-missing-secret",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-missing-secret.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-reject-test-db",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-reject-test-db.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-reject-same-path",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-reject-same-path.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-reject-ancestor-overlap",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-reject-ancestor-overlap.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-reject-source-ancestor",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-reject-source-ancestor.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-reject-QA-subtree",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-reject-QA-subtree.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-reject-symlink-overlap",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "-c",
+          "import config.settings"
+        ],
+        "exit": 1,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-reject-symlink-overlap.log",
+        "expected_nonzero": true
+      },
+      {
+        "name": "production-deploy-check",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "manage.py",
+          "check",
+          "--deploy"
+        ],
+        "exit": 0,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-deploy-check.log",
+        "expected_nonzero": false
+      },
+      {
+        "name": "production-collectstatic",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "manage.py",
+          "collectstatic",
+          "--noinput",
+          "--verbosity",
+          "0",
+          "--ignore",
+          "node_modules",
+          "--ignore",
+          "review",
+          "--ignore",
+          "templates",
+          "--ignore",
+          "scripts",
+          "--ignore",
+          "*.md",
+          "--ignore",
+          "package*.json"
+        ],
+        "exit": 0,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/production-collectstatic.log",
+        "expected_nonzero": false
+      },
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "start",
+          "qa-20261014T042245Z-77021a381325"
+        ],
+        "exit": 0,
+        "result": {
+          "HTTP_ready": {
+            "url": "http://127.0.0.1:38481/admin/login/",
+            "HTTP_status": 200,
+            "seconds": 0.10173629899509251,
+            "response_body_not_stored": true
+          },
+          "id": "qa-20261014T042245Z-77021a381325",
+          "pid": 4163584,
+          "origin": "http://localhost:38481",
+          "state": "MANUAL_PENDING"
+        }
+      },
+      {
+        "name": "withdraw-own-public-use",
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "manage.py",
+          "shell",
+          "-c",
+          "from news.models import Post; p=Post.objects.get(pk=3); assert p.title=='[TEST] OPS independent public'; p.unpublish(); print('Own TEST publication withdrawn')"
+        ],
+        "exit": 0,
+        "private_log": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325/logs/withdraw-own-public-use.log",
+        "expected_nonzero": false
+      }
+    ],
+    "settings_checks": [
+      {
+        "name": "actual config.settings imports ignore poisoned dotenv; secure defaults and actual RequestFactory proxy default/opt-in",
+        "status": "PASS",
+        "subprocesses": 2
+      },
+      {
+        "name": "poisoned dotenv cannot fill required production secret; named error only",
+        "status": "PASS"
+      },
+      {
+        "name": "actual production import rejects test-db",
+        "status": "PASS"
+      },
+      {
+        "name": "actual production import rejects same-path",
+        "status": "PASS"
+      },
+      {
+        "name": "actual production import rejects ancestor-overlap",
+        "status": "PASS"
+      },
+      {
+        "name": "actual production import rejects source-ancestor",
+        "status": "PASS"
+      },
+      {
+        "name": "actual production import rejects QA-subtree",
+        "status": "PASS"
+      },
+      {
+        "name": "actual production import resolves own symlink and refuses hidden overlap; fixture link removed before lifecycle cleanup",
+        "status": "PASS"
+      }
+    ],
+    "HTTP_checks": [
+      {
+        "name": "public rendition allowed",
+        "HTTP_status": 200,
+        "expected": 200,
+        "no_store": true,
+        "exact_fixture_bytes": true,
+        "decoded_image_size": [
+          80,
+          53
+        ],
+        "nosniff": true
+      },
+      {
+        "name": "public original blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "draft original blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "unused original blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "draft rendition blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "unused rendition blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "authorized public original",
+        "HTTP_status": 200,
+        "expected": 200,
+        "no_store": true,
+        "exact_fixture_bytes": true,
+        "decoded_image_size": [
+          120,
+          80
+        ],
+        "nosniff": true
+      },
+      {
+        "name": "authorized draft original",
+        "HTTP_status": 200,
+        "expected": 200,
+        "no_store": true,
+        "exact_fixture_bytes": true,
+        "decoded_image_size": [
+          120,
+          80
+        ],
+        "nosniff": true
+      },
+      {
+        "name": "authorized unused original",
+        "HTTP_status": 200,
+        "expected": 200,
+        "no_store": true,
+        "exact_fixture_bytes": true,
+        "decoded_image_size": [
+          120,
+          80
+        ],
+        "nosniff": true
+      },
+      {
+        "name": "authorized draft rendition",
+        "HTTP_status": 200,
+        "expected": 200,
+        "no_store": true,
+        "exact_fixture_bytes": true,
+        "decoded_image_size": [
+          80,
+          53
+        ],
+        "nosniff": true
+      },
+      {
+        "name": "admin-entry-only private rendition denied",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "admin-entry-only public original denied",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "admin-entry-only unused original denied",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "last public use withdrawal revokes rendition",
+        "HTTP_status": 404,
+        "expected": 404,
+        "no_store": true
+      },
+      {
+        "name": "private/QA static path blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "body_not_stored": true
+      },
+      {
+        "name": "private/QA static path blocked",
+        "HTTP_status": 404,
+        "expected": 404,
+        "body_not_stored": true
+      }
+    ],
+    "static": {
+      "exit": 0,
+      "files": 263,
+      "bytes": 21161520,
+      "ignore": [
+        "node_modules",
+        "review",
+        "templates",
+        "scripts",
+        "*.md",
+        "package*.json"
+      ],
+      "required_assets_present": [
+        "prototype/styles.css",
+        "prototype/app.js",
+        "prototype/popup-policy.js",
+        "news/context.js",
+        "news/content-images.js",
+        "wagtailadmin/css/core.css"
+      ],
+      "private_QA_and_all_sentinels_absent": true,
+      "real_static_server_delivery_claimed": false,
+      "actual_login_direct_assets_present": 18
+    },
+    "owned_database_connected": true,
+    "migrations": 213,
+    "followup_scope": "Reuse same initialized own DB/media/fixtures; Django setup before RequestFactory; selected16 and fixture initialization not repeated.",
+    "deploy": {
+      "exit": 0,
+      "warnings": [
+        "security.W004",
+        "security.W019"
+      ],
+      "production_DB_connection_claimed": false
+    },
+    "runtime": {
+      "origin": "http://127.0.0.1:38481",
+      "server_pid": 4163584,
+      "login_HTTP200": true,
+      "development_owned_DB_only": true
+    },
+    "credentials_cookies_body_values_not_recorded": true,
+    "production_synthetic_non_test_DB_never_created": true
+  },
+  "observer_failures": [
+    {
+      "phase": "Evidence reader before any run/test creation",
+      "type": "AssertionError",
+      "expected": "Compare actual SHA strings",
+      "actual": "unchanged_core_source_hashes Boolean flags were incorrectly compared with hashes",
+      "followup": "Read expected SHA from source_hashes_before; all11 matched; no test or create retry",
+      "classification": "Observer metadata type assumption"
+    },
+    {
+      "phase": "Initial production RequestFactory probe",
+      "classification": "Observer Django initialization order, not settings defect",
+      "related_file": "Own runtime_probe.py temporary driver (removed with managed run)",
+      "requirement": "Actual production settings import and real RequestFactory proxy behavior",
+      "reproduction": "With valid production config.settings environment, import config.settings as s and use override_settings before LazySettings/Django initialization, then RequestFactory.get().is_secure()",
+      "expected": "Proxy default ignored; explicit opt-in accepted",
+      "actual": "AttributeError: object has no attribute DEFAULT_CHARSET; production config import/default assertions had already run, but no completed settings/HTTP checks recorded",
+      "original_sanitized_diagnostic": "Traceback (most recent call last):\n  File \"<string>\", line 2, in <module>\n    with override_settings(SECURE_PROXY_SSL_HEADER=s.SECURE_PROXY_SSL_HEADER): assert RequestFactory().get('/',HTTP_X_FORWARDED_PROTO='https').is_secure()==expected\n                                                                                      ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/lib/python3.13/site-packages/django/test/client.py\", line 475, in get\n    return self.generic(\n           ~~~~~~~~~~~~^\n        \"GET\",\n        ^^^^^^\n    ...<4 lines>...\n        **extra,\n        ^^^^^^^^\n    )\n    ^\n  File \"/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/lib/python3.13/site-packages/django/test/client.py\", line 647, in generic\n    data = force_bytes(data, settings.DEFAULT_CHARSET)\n                             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/lib/python3.13/site-packages/django/conf/__init__.py\", line 83, in __getattr__\n    val = getattr(_wrapped, name)\n  File \"/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/lib/python3.13/site-packages/django/conf/__init__.py\", line 235, in __getattr__\n    return getattr(self.default_settings, name)\nAttributeError: 'object' object has no attribute 'DEFAULT_CHARSET'\n",
+      "followup": "Same initialized DB/media/fixtures reused; django.setup() before RequestFactory; subsequent settings8/HTTP16 PASS, no selected16/full164/initialize repeat"
+    }
+  ],
+  "developer_evidence_read_and_metadata_check": {
+    "whole164_actual_archive": {
+      "counts": {
+        "collected": 164,
+        "run": 164,
+        "pass": 164,
+        "fail": [],
+        "error": [],
+        "skip": []
+      },
+      "runtime_test_ids_in_whole": 12,
+      "four_optin_ids_present": true,
+      "executions_reported": 1,
+      "own_current_source_manifest_matches_whole": true,
+      "browser_summaries": [
+        {
+          "path": "output/branch/checks.json",
+          "status": "PASS",
+          "checks": 11,
+          "errors": 0
+        },
+        {
+          "path": "output/brand/result.json",
+          "status": "PASS",
+          "checks": 7,
+          "errors": 0
+        },
+        {
+          "path": "output/withdrawal/boundary-permissions.json",
+          "status": "PASS",
+          "checks": 4,
+          "errors": 0
+        },
+        {
+          "path": "output/trainer/checks.json",
+          "status": "PASS",
+          "checks": 10,
+          "errors": 0
+        },
+        {
+          "path": "output/home_news/popup-revisit/checks.json",
+          "status": "PASS",
+          "checks": 8,
+          "errors": 0
+        },
+        {
+          "path": "output/home_news/popup-edges/edge-checks.json",
+          "status": "PASS",
+          "checks": 3,
+          "errors": 0
+        },
+        {
+          "path": "output/home_news/home/checks.json",
+          "status": "PASS",
+          "checks": 8,
+          "errors": 0
+        }
+      ]
+    },
+    "fresh_locked_install_handoff": {
+      "status": "PASS",
+      "sync_exit": 0,
+      "versions": {
+        "Python": "3.13.15",
+        "Django": "5.2.18",
+        "Wagtail": "7.4.3"
+      },
+      "fresh_Django_check_exit": 0,
+      "original_lock_changed": false,
+      "fresh_venv_cache_removed": true
+    },
+    "developer_own_cleanup_direct_metadata_check": {
+      "runs": [
+        {
+          "id": "qa-20261014T034500Z-e46df7845f22",
+          "folder_absent": true,
+          "reserved_DB_names_absent": true,
+          "registered_DB_count": 2
+        },
+        {
+          "id": "qa-20261014T035316Z-350d53f5b24d",
+          "folder_absent": true,
+          "reserved_DB_names_absent": true,
+          "registered_DB_count": 2
+        },
+        {
+          "id": "qa-20261014T035638Z-fa05f66d3da0",
+          "folder_absent": true,
+          "reserved_DB_names_absent": true,
+          "registered_DB_count": 2
+        },
+        {
+          "id": "qa-20261014T040204Z-f665e9b13983",
+          "folder_absent": true,
+          "reserved_DB_names_absent": true,
+          "registered_DB_count": 0
+        }
+      ],
+      "registered_DBs_absent": 6
+    },
+    "developer_original_observer_failure": {
+      "original": "System python3 metadata collection: ModuleNotFoundError: No module named psycopg",
+      "effect": "Report write not reached; no product execution or resource mutation",
+      "followup": "Same evidence read with existing backend/.venv interpreter; no test/install rerun"
+    },
+    "not_independent_whole_or_reinstall_rerun": true
+  },
+  "preservation": {
+    "status": "PASS",
+    "own_initial_final_source_hashes": {
+      "backend/config/settings.py": "971321b1c7cd3656144390bba464d511c03d8374908caa39dc93fcf79cad7310",
+      "backend/config/runtime.py": "a788dfdbdb01c23bb2d1c890a0bc9eb03a4e247abf040d15aa8fafa3be291659",
+      "backend/news/tests/test_runtime_settings.py": "7884d54a10c06c6f8ced524742bb3c3d48fc454f6ac046f08710957e131a51d3",
+      "backend/.env.example": "40d25ea4df9ce49e499f5a5963de293a7fe263952f14edf118f83490c17bb890",
+      "backend/scripts/qa_lifecycle.py": "02ea2d8336bb8cfdc22168c12618d10768de673d964445533dfcb2a7b9cc8fe5",
+      "backend/scripts/qa_browser_guard.mjs": "9c752848bf29eb2442c29c2897c80af0317f9d313ae0785b2979d23a3e092990",
+      "backend/news/views.py": "0de9733c1e77f0c59f766ab263a0c3b3fdecc8f2abb5fb5ccbafa6248f99452c",
+      "backend/news/storage.py": "b581996e6df626eb5ac09b77a82b8d1b698ce3f7008a2ba08d83b4d5c97ed366",
+      "backend/config/urls.py": "00e42bf276e30e42f6bd2ab4573cfd8b97d49b44acf972c4399789dd5556c2a0",
+      "backend/pyproject.toml": "c8825be762fedb53292c38d7ab43b917e601a24c8d8da63740c4d2690fb19b8c",
+      "backend/uv.lock": "65f82df76f08ab474610549fef96e45e3cb4c736bb61d35402c16ac0ee4c4af8"
+    },
+    "source_hashes_unchanged": true,
+    "core_unchanged_including_private_media_view_storage_URL_lockfiles": true,
+    "protected_private_metadata5_same": true,
+    "metadata_fields": [
+      "mode",
+      "bytes",
+      "mtime_ns",
+      "inode"
+    ],
+    "protected_original_process3_identities_same": true,
+    "HEAD_index_and_preexisting_dirty_untracked_preserved": true,
+    "old_deleted_QA_not_restored": true,
+    "original_DB_table_rows_and_media_bytes_not_reread": true,
+    "ROOT_preservation_handoff_separate": "ROOT compared20 protected items including204 media bytes/metadata and3 process identities; not an independent media-content or DB-row recheck."
+  },
+  "ROOT_handoff_not_independent_reexecution": "ROOT separately compared20 protected items including204 media bytes/metadata,3 processes,AGENTS/lock/compose/DESIGN/HEAD/index; no original DB-row comparison claimed",
+  "production_warnings_retained": [
+    "security.W004 HSTS remains undecided at0",
+    "security.W019 existing SAMEORIGIN remains"
+  ],
+  "new_product_settings_findings": [],
+  "commands_scope": {
+    "actual_focused_CLI": "Y3GYM_ENV=development backend/.venv/bin/python -B backend/scripts/qa_lifecycle.py auto --purpose 'OPS-01 independent runtime12 and image permissions4' --tests news.tests.test_runtime_settings news.tests.test_publication.PublicationTests.test_original_draft_and_thumbnail_require_real_editor_permission news.tests.test_publication.PublicationTests.test_unpublish_revokes_public_html_and_all_renditions news.tests.test_publication.PublicationTests.test_body_image_reference_controls_public_rendition_access news.tests.test_content_images.ContentImageTests.test_private_preview_expansion_requires_real_editor_permission",
+    "runtime_CREATE": "backend/.venv/bin/python -B backend/scripts/qa_lifecycle.py create --mode manual --purpose 'OPS-01 independent runtime and settings'",
+    "actual_private_driver_executions": 1,
+    "actual_focused_private_followup": 1,
+    "initialize_fixtures": 1,
+    "start": 1,
+    "fresh_install_or_whole164_or_browsers4_rerun": false
+  },
+  "deployment_limits": [
+    "Production configuration import/deploy check/collectstatic only; actual connections and media requests used development owned DB",
+    "Synthetic non-test production DB not created or connected; no operational DB permissions verified",
+    "No DNS/TLS/reverse proxy/server/static delivery/backup/restore/deployment or real infrastructure validated",
+    "No global W01 or original DB/media content audit, no remaining legacy residue investigation/cleanup",
+    "Prior coldTimeout/OBS01/pixel/device limitations not resolved by this work"
+  ],
+  "developer_reports_modified": false,
+  "product_QA_tools_dependencies_changed_by_independent": false,
+  "Git_commit_push_deploy": false,
+  "cleanup": {
+    "status": "PASS",
+    "runs": [
+      {
+        "id": "qa-20261014T042245Z-77021a381325",
+        "state": "DELETED",
+        "folder_absent": true,
+        "registered_DBs_absent": 2,
+        "reserved_DB_names_absent": true
+      },
+      {
+        "id": "qa-20261014T042251Z-ac45e5ec29bb",
+        "state": "DELETED",
+        "folder_absent": true,
+        "registered_DBs_absent": 2,
+        "reserved_DB_names_absent": true
+      }
+    ],
+    "total_registered_DBs_removed": 4,
+    "runtime_server_PID_exited": true,
+    "same_exact_dry_plan": true,
+    "duplicate_cleanup_noop": true,
+    "commands": [
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "stop",
+          "qa-20261014T042245Z-77021a381325"
+        ],
+        "exit": 0,
+        "result": {
+          "id": "qa-20261014T042245Z-77021a381325",
+          "live_owned_processes": 0,
+          "state": "MANUAL_PENDING"
+        }
+      },
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "complete",
+          "qa-20261014T042245Z-77021a381325",
+          "--reason",
+          "OPS-01 independent validation finished; owned server exited and fixture is unused"
+        ],
+        "exit": 0,
+        "result": {
+          "id": "qa-20261014T042245Z-77021a381325",
+          "state": "READY"
+        }
+      },
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261014T042245Z-77021a381325",
+          "--dry-run"
+        ],
+        "exit": 0,
+        "result": {
+          "id": "qa-20261014T042245Z-77021a381325",
+          "eligible": true,
+          "plan_id": "ed09785b7779480edf12fc7305c5a2499541f5887846f72db6ef3122a4887c0c",
+          "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325",
+          "file_entries": 564,
+          "database_names": [
+            "test_y3gym_qa_77021a381325_d11059119918",
+            "test_y3gym_qa_77021a381325_d11059119918_runner"
+          ]
+        }
+      },
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261014T042245Z-77021a381325",
+          "--plan",
+          "ed09785b7779480edf12fc7305c5a2499541f5887846f72db6ef3122a4887c0c"
+        ],
+        "exit": 0,
+        "result": {
+          "id": "qa-20261014T042245Z-77021a381325",
+          "eligible": true,
+          "plan_id": "ed09785b7779480edf12fc7305c5a2499541f5887846f72db6ef3122a4887c0c",
+          "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261014T042245Z-77021a381325",
+          "file_entries": 564,
+          "database_names": [
+            "test_y3gym_qa_77021a381325_d11059119918",
+            "test_y3gym_qa_77021a381325_d11059119918_runner"
+          ],
+          "state": "DELETED",
+          "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261014T042245Z-77021a381325",
+          "cleanup": {
+            "folder_absent": true,
+            "databases_dropped": [
+              "test_y3gym_qa_77021a381325_d11059119918",
+              "test_y3gym_qa_77021a381325_d11059119918_runner"
+            ]
+          }
+        }
+      },
+      {
+        "argv": [
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python",
+          "-B",
+          "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261014T042245Z-77021a381325"
+        ],
+        "exit": 0,
+        "result": {
+          "id": "qa-20261014T042245Z-77021a381325",
+          "already_cleaned": true,
+          "state": "DELETED"
+        }
+      }
+    ],
+    "raw_scripts_logs_cache_fixture_credentials_media_removed": true
+  },
+  "evidence_policy": {
+    "minimal_summary": "backend/review/ops-01/independent-verification.json",
+    "standard_selected_auto_result_retained": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261014T042251Z-ac45e5ec29bb",
+    "standard_cleanup_records_retained": true,
+    "duplicate_own_log_exports_retired": [
+      "backend/review/qa-lifecycle/runs/qa-20261014T042245Z-77021a381325/evidence-explicit-cleanup-dcbe1739.json",
+      "backend/review/qa-lifecycle/runs/qa-20261014T042251Z-ac45e5ec29bb/evidence-explicit-cleanup-36bd8ad4.json"
+    ]
+  },
+  "known_secret_negative_scan": {
+    "status": "PASS",
+    "documents_example_summaries_and_kept_new_evidence": 10,
+    "known_values_used_only_in_memory": true
+  }
+}

@@ -1,6 +1,7 @@
 from django.db.models import Min
 from django.utils import timezone
 
+from .content_images import image_attributes
 from .models import PopupSetting
 
 
@@ -33,6 +34,7 @@ def popup_content(setting):
         "image": post.cover_image.get_rendition("width-800").url
         if post.cover_image
         else None,
+        "imageFull": image_attributes(post.cover_image) if post.cover_image else None,
         "url": f"/popups/{post.pk}/",
         "dataUrl": f"/popups/{post.pk}/data/",
         "post": {"id": str(post.pk), "published": True, "url": post.get_absolute_url()},

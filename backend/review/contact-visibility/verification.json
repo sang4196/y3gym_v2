@@ -1,0 +1,310 @@
+{
+  "date": "2026-10-12 KST",
+  "role": "development/self-verification only",
+  "status": "PASS_WITH_WARNINGS",
+  "unit": "PHONE-OBS01 nonblank contact visibility",
+  "scope": {
+    "product_files": [
+      "backend/news/models.py",
+      "backend/news/branches.py",
+      "backend/news/home.py",
+      "backend/news/templates/news/base.html",
+      "backend/news/templates/news/trainer_card.html"
+    ],
+    "new_test": "backend/news/tests/test_contact_visibility.py",
+    "latest_documents": [
+      "README.md",
+      "backend/README.md",
+      "docs/PRD.md",
+      "docs/IMPLEMENTATION-PLAN.md",
+      "prototype/DESIGN.md"
+    ],
+    "schema_phone_grammar_stored_text_CSS_prototype_changed": false
+  },
+  "requirements": {
+    "nonblank_property": "Branch.has_phone_contact = bool(phone.strip())",
+    "empty_ASCII_Unicode_whitespace_hidden_from_server_HTML": true,
+    "metadata_home_common_mobile_trainer_consistent": true,
+    "free_guidance_preserved_without_native_phone_link": true,
+    "URL_only_any_channel_visible_phone_hidden": true,
+    "main_fallback_added": false,
+    "draft_public_withdraw_zero_navigation_preserved": true
+  },
+  "environment": {
+    "scratch": "/tmp/y3gym-contact-visibility-jtpih5er",
+    "database": "test_y3gym_contact_visibility_f0f3fa5e31f0",
+    "test_database": "test_y3gym_contact_visibility_f0f3fa5e31f0_runner",
+    "origin": "http://localhost:8771",
+    "port": 8771,
+    "media": "/tmp/y3gym-contact-visibility-jtpih5er/media",
+    "initialized": true
+  },
+  "user_kakao_confirmation": {
+    "reported_by_design": "확인완료. 다음마일스 톤진행하",
+    "scope": "User just confirmed Kakao connection in the scope directly checked; proceed next small unit",
+    "not_inferred": [
+      "device/OS",
+      "login/message",
+      "whole admin/regression",
+      "Korean IME",
+      "operations"
+    ],
+    "old_QA_empty_URL_pending_FAIL_preserved": true,
+    "current8769_URL_read_or_assumed_blank": false
+  },
+  "executions": {
+    "baseline_browser": {
+      "log": "baseline-01.log",
+      "result": "baseline-01/result.json",
+      "status": "PASS defect reproduction",
+      "checks": 4,
+      "not_a_functionality_pass": true
+    },
+    "server": {
+      "log": "server-01.log",
+      "new_tests": 5,
+      "related_existing_tests": 2,
+      "pass": 7,
+      "seconds": 7.311,
+      "first_run_no_failures": true,
+      "existing_selected": [
+        "news.tests.test_phone_contact.PhoneContactTests.test_empty_and_legacy_prose_are_optional_escaped_text_not_phone_links",
+        "news.tests.test_kakao_contact.KakaoContactTests.test_url_only_common_home_mobile_news_trainer_use_public_branch_without_fallback"
+      ]
+    },
+    "fixed_browser_first": {
+      "result": "fixed-01/result.json",
+      "status": "FAIL",
+      "completed_checks": 1,
+      "phase": "empty-1440-jstrue",
+      "cause": "QA compared existing JS absolute href with literal relative href",
+      "product_defect": false,
+      "original_tool": "fixed-01/tool-at-failure.mjs"
+    },
+    "remaining_browser": {
+      "result": "finish-01/result.json",
+      "status": "PASS",
+      "checks": 27,
+      "previous_pass_not_repeated": true,
+      "source_change": "QA URL interpretation comparison only",
+      "page_errors": 0,
+      "external_requests": 0,
+      "native_tel_chat_calls": 0
+    },
+    "counts_not_combined": true
+  },
+  "static": {
+    "first": "static-first.txt: new QA I001/E701 and new files format only; original observation preserved",
+    "selected_python_check": "PASS",
+    "selected_python_format": "PASS 5 files",
+    "migration_check": "No changes detected",
+    "JS_syntax_after_QA_change": "PASS",
+    "git_diff_check_selected_existing_files": "PASS",
+    "global_Ruff_not_run": true,
+    "preservation_tool_first_error": "preservation-first.txt: len(integer) in summary count; original private tool preserved; count-only correction"
+  },
+  "captures_viewed": [
+    "baseline-01/375-detail-no-js.png",
+    "finish-01/375-detail-no-js.png",
+    "finish-01/1440-detail-no-js.png",
+    "finish-01/375-home-no-js.png"
+  ],
+  "visual_limits": [
+    "synthetic fixtures, PC1440 and mobile375 Chromium viewport",
+    "offscreen lazy facility images include placeholders in JS-off full-page captures; image loading not retested",
+    "CSS/source preserved; hiding changes empty-state flow",
+    "not user visual approval"
+  ],
+  "runtime_audit": {
+    "status": "PASS",
+    "own_database": "test_y3gym_contact_visibility_f0f3fa5e31f0",
+    "own_test_database": "test_y3gym_contact_visibility_f0f3fa5e31f0_runner",
+    "own_base_dir_media_isolated": true,
+    "observer_settings_key_blank": true,
+    "baseline_pid667211_terminated": true,
+    "fixed_pid669803_terminated": true,
+    "port8771_listening": false,
+    "runner_database_removed": true,
+    "private_directories0700_files0600": true,
+    "other_server_signals": 0,
+    "protected_HTTP_DB_credentials_key_access": false
+  },
+  "remaining": [
+    "independent verification pending",
+    "this empty-state user visual approval pending",
+    "existing8769 application requires separate design instruction",
+    "W02/P3 unresolved/not retested",
+    "global Ruff W01 unresolved/not retested"
+  ],
+  "not_executed": [
+    "protected8769/8768/34471/52949 HTTP/DB/account/key/media/server actions",
+    "actual external phone/Kakao/map/OS/SDK requests",
+    "whole admin/regression/phone grammar66",
+    "real devices/Whale/Korean IME",
+    "operations/deployment",
+    "Git writes/direct role messages/next feature"
+  ],
+  "static_and_preservation": {
+    "status": "PASS",
+    "start_repository_files": 2594,
+    "unchanged_existing_files": 2584,
+    "changed_existing_files": [
+      "README.md",
+      "backend/README.md",
+      "backend/news/branches.py",
+      "backend/news/home.py",
+      "backend/news/models.py",
+      "backend/news/templates/news/base.html",
+      "backend/news/templates/news/trainer_card.html",
+      "docs/IMPLEMENTATION-PLAN.md",
+      "docs/PRD.md",
+      "prototype/DESIGN.md"
+    ],
+    "new_files": [
+      "backend/news/tests/test_contact_visibility.py",
+      "backend/review/contact-visibility/README.md",
+      "backend/review/contact-visibility/baseline-01.log",
+      "backend/review/contact-visibility/baseline-01/1440-detail-no-js.png",
+      "backend/review/contact-visibility/baseline-01/1440-home-no-js.png",
+      "backend/review/contact-visibility/baseline-01/375-detail-no-js.png",
+      "backend/review/contact-visibility/baseline-01/375-home-no-js.png",
+      "backend/review/contact-visibility/baseline-01/result.json",
+      "backend/review/contact-visibility/finish-01.log",
+      "backend/review/contact-visibility/finish-01/1440-detail-no-js.png",
+      "backend/review/contact-visibility/finish-01/1440-home-no-js.png",
+      "backend/review/contact-visibility/finish-01/375-detail-no-js.png",
+      "backend/review/contact-visibility/finish-01/375-home-no-js.png",
+      "backend/review/contact-visibility/finish-01/result.json",
+      "backend/review/contact-visibility/fixed-01.log",
+      "backend/review/contact-visibility/fixed-01/result.json",
+      "backend/review/contact-visibility/fixed-01/tool-at-failure.mjs",
+      "backend/review/contact-visibility/preservation-first.txt",
+      "backend/review/contact-visibility/review.mjs",
+      "backend/review/contact-visibility/runtime-audit.json",
+      "backend/review/contact-visibility/sandbox.py",
+      "backend/review/contact-visibility/server-01.log",
+      "backend/review/contact-visibility/static-first.txt",
+      "backend/review/contact-visibility/stop.log",
+      "backend/review/contact-visibility/verification.json"
+    ],
+    "protected_metadata": [
+      {
+        "path": "/tmp/y3gym-kakao-map-iq9yoy7v",
+        "files_before": 30,
+        "files_after": 30,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-m2-2-admin-wi8ljajx",
+        "files_before": 51,
+        "files_after": 51,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-admin-usability-qYI6At6O",
+        "files_before": 181,
+        "files_after": 181,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-address-detail-yunol4e7",
+        "files_before": 18,
+        "files_after": 18,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-kakao-map-address-independent-d_pzmt1s",
+        "files_before": 21,
+        "files_after": 21,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-kakao-map-independent-nrzSbqfL",
+        "files_before": 20,
+        "files_after": 20,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-image-tabs-jk7_ll0l",
+        "files_before": 79,
+        "files_after": 79,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-image-tabs-independent-_ccrg8vf",
+        "files_before": 60,
+        "files_after": 60,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-image-tabs-apply-lgzlsfd_",
+        "files_before": 23,
+        "files_after": 23,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-phone-contact-zyo0clxd",
+        "files_before": 20,
+        "files_after": 20,
+        "changed_metadata": []
+      },
+      {
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.private-media",
+        "files_before": 145,
+        "files_after": 145,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-phone-independent-24my5c8g",
+        "files_before": 16,
+        "files_after": 16,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-phone-apply-rryhpoa1",
+        "files_before": 7,
+        "files_after": 7,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-kakao-contact-24tocti0",
+        "files_before": 25,
+        "files_after": 25,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-phone-approval-y9raiwve",
+        "files_before": 7,
+        "files_after": 7,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-kakao-independent-f58zk3km",
+        "files_before": 17,
+        "files_after": 17,
+        "changed_metadata": []
+      },
+      {
+        "path": "/tmp/y3gym-kakao-contact-apply-b9bp3tqo",
+        "files_before": 34,
+        "files_after": 34,
+        "changed_metadata": []
+      }
+    ],
+    "protected_metadata_files": 754,
+    "protected_differences": 0,
+    "sensitive_repository_stat_unchanged": true,
+    "vendor_unchanged": 4,
+    "head": "32ade6ba627f49a521bd7efdf0f482f7f7e1aa7b",
+    "index_unchanged": true,
+    "prior_QA_raw_FAIL_pending_capture_contents_unchanged": true,
+    "styles_prototype_contacts_grammar_forms_migrations_unchanged": true,
+    "local_links_checked": 369,
+    "anchors_checked": 23,
+    "link_issues": 0,
+    "new_JSON_and_Python_syntax": "PASS",
+    "actual_own_password_matches": 0,
+    "protected_key_credentials_contents_read": false,
+    "other_runtime_check": "stat only; not DB/media content comparison"
+  }
+}
