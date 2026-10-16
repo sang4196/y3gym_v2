@@ -31,6 +31,22 @@
 
 빈 DB·앱 준비 완료를 공개 배포나 서버 수용량 승인으로 확대하지 않는다. **2026-10-16 Docker A 로컬 검증·앞선 문서 마감 당시의 AWS 접속0/Git 쓰기0와 대상 미확정 기록은 과거 근거로 보존**하며 이후 단계와 구분한다.
 
+## 카카오맵 운영 설정
+
+공개 지도는 기존 `Y3GYM_KAKAO_MAP_JS_KEY`를 운영 비공개 환경 파일 → Compose의 app environment → Django `KAKAO_MAP_JS_KEY` → 지점 페이지의 `branch-map-config` JSON으로 전달한다. JavaScript 키만 사용하고 REST/Admin 키·서버 비밀값을 넣지 않는다. 키가 비어 있으면 SDK를 요청하지 않고 기존 외부 지도 링크·안내를 유지한다. 키 값은 저장소나 검사 출력에 기록하지 않는다.
+
+2026-10-16 운영 확인에서 JSON 요소와 위 전달 경로는 정상이었으나 운영 환경 파일의 해당 값이 비어 있었다. 사용자가 비공개 파일로 제공한 기존 JavaScript 키를 이 항목에만 반영했고 app만 같은 이미지로 재생성했다(Compose 명령 경과 약9.2초이며 실제 중단 시간을 측정한 값은 아니다). 다른 앱 환경변수·DB/proxy 컨테이너 ID와 시작 시각·Compose/Caddy/routes 파일·미디어/정적 볼륨 연결은 유지했다. 이전 항목만 담은 root0600 롤백 자료는 기존 release의 `private/kakao-map-setting.before-20261016T114523Z.json`에 보관한다. 실제 키는 Git이나 검사 출력에 포함하지 않았다.
+
+같은 날 운영 origin `https://y3gym.co.kr`의 지점 페이지를 새 Chromium headless·1440×1000에서 읽기 전용으로 확인했다. 페이지 `keyConfigured=true`, `sdkLoaded=true`, `mapState=ready`, 실제 지도 타일12개·영역 안 마커1개 로딩, 페이지 오류0·요청 차단0을 확인했다. 선택 지점은 와이쓰리짐 동백점이며 공개 도로명주소 `경기도 용인시 기흥구 동백중앙로 269`를 사용한다. 기존 외부 좌표 지도 링크·새 창 속성도 유지했다. SDK HTTP200만으로 완료 판정한 것이 아니며 카카오 콘솔 설정을 직접 조회한 것은 아니다. 현재 공개 지점1곳이므로 두 지점 전환·실기기 검증은 미실행이고 SDK 실패 주입 검사를 추가로 수행하지 않았다.
+
+사용자는 이후 운영 페이지에서 지도 정상 표시를 직접 확인했다. 이 확인 범위의 승인을 기록하며 다지점·실기기·다른 브라우저 전체 검증으로 확대하지 않는다.
+
+최소 실행 근거는 로컬 `backend/review/qa-lifecycle/runs/qa-20261016T114821Z-d47921370f1b/evidence-auto-result-58f53a45.json`의 비밀값 제거 `command.log`에 남겼으며 run별 원자료는 Git 반영 대상에서 제외한다. 저장소의 검증 요약은 위 확인 결과와 한계다. 이 실행의 브라우저·프로필·run 폴더는 기존 CLI로 정리해 DELETED이며 새 DB·Docker 자원 생성은0이다. 전체 회귀·별도 독립 검증·DB/사진 백업·복구는 수행하지 않았다.
+
+운영자는 기존 비공개 환경 파일의 이 항목만 수정하고 이전 값·존재 여부를 비공개 위치에 보관한다. 기존 Compose의 같은 release·project·env 경로로 `up -d --no-deps --no-build --pull never --force-recreate --wait --wait-timeout 90 app`을 실행해야 컨테이너 환경에 반영된다. 짧은 앱 중단 영향을 적용 전에 알리며 DB·미디어·proxy·TLS·www는 변경하지 않는다. 롤백도 해당 항목만 이전 값으로 되돌린 뒤 app만 재생성한다. DB·사진 백업이나 복구 연습은 이 설정 변경의 선행 조건이 아니다.
+
+확인은 페이지 JSON의 키 설정 여부, 보이는 선택 지점의 공개 도로명주소, 실제 SDK·지도 타일·마커 및 외부 지도 링크를 구분한다. 키 존재나 HTTP 200만으로 지도 표시 완료로 처리하지 않는다.
+
 ## 실제 www HTTPS·리다이렉트 적용
 
 2026-10-16 19:36 KST 기존 release의 `deploy/Caddyfile`에 환경 변수 기반 `www.{$Y3GYM_DOMAIN}` site와 `redir https://{$Y3GYM_DOMAIN}{uri} 308`만4줄 추가했다. 기존 root/import/routes·strict_sni_host·헤더 보호·127.0.0.1 health는 유지한다. [Caddy redir](https://caddyserver.com/docs/caddyfile/directives/redir)·[automatic HTTPS](https://caddyserver.com/docs/automatic-https)의 동작과 아래 실제 관측을 구분한다. Django ALLOWED_HOSTS/CSRF/admin origin·env/secret·앱 이미지·DB·UI는 바꾸지 않았다.
