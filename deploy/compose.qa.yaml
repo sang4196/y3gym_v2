@@ -1,0 +1,36 @@
+# Explicit opt-in local TLS/resource isolation. Never loaded by deployment tool.
+x-owner: &owner
+  com.y3gym.qa.run: ${Y3GYM_QA_RUN_ID:?managed run required}
+  com.y3gym.qa.owner: ${Y3GYM_QA_OWNER_HASH:?managed owner required}
+
+services:
+  app:
+    labels: *owner
+  database:
+    labels: *owner
+  proxy:
+    labels: *owner
+    ports: !override
+      - "127.0.0.1:${Y3GYM_QA_HTTP_PORT:?required}:80"
+      - "127.0.0.1:${Y3GYM_QA_HTTPS_PORT:?required}:443"
+    volumes:
+      - ./deploy/Caddyfile.qa:/etc/caddy/Caddyfile:ro
+    networks:
+      application:
+        aliases: ["${Y3GYM_DOMAIN:?required}"]
+networks:
+  application:
+    labels: *owner
+  database:
+    labels: *owner
+volumes:
+  database:
+    labels: *owner
+  media:
+    labels: *owner
+  static:
+    labels: *owner
+  caddy_data:
+    labels: *owner
+  caddy_config:
+    labels: *owner

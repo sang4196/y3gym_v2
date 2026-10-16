@@ -1,5 +1,13 @@
 # 소식 CMS · 팝업 · 브랜드/홈 · 지점/시설 · 트레이너 관리
 
+**2026-10-16 현재 운영 상태:** 루트·www 실제 HTTPS/308 적용, 18:47 PC 초기 스냅샷(이후 업로드 미포함)과 독립 백업 복구 상태는 [현재 운영 안내](../docs/OPERATIONS.md#실제-www-https리다이렉트-적용)를 따른다. 아래 접속·읽기 전용/B 미배포/설치0 문단은 이전 사전 확인 이력이다.
+
+**2026-10-16 이전 사전 확인 이력 — 서울 배포 테스트 서버:** 사용자는 현재 서울 EC2를 Y3GYM 전용 배포 테스트에 약 한 달 사용한 뒤 다른 AWS 서버로 이전할 예정이다. 설계가 AWS 임시 로그인·EC2 읽기 전용 조회·ubuntu SSH 접속을 확인했다. **A 로컬 완료 / B 접속·읽기 전용 사전 확인 완료·배포 미진행 / C 공개 운영 미완료**이며 자원 생성·설정 변경·서버 설치/재시작/배포·Git 쓰기는0이다. 실제 사양·비용 표시의 확인 범위와 남은 결정은 [현재 운영 기준](../docs/OPERATIONS.md)을 따른다. 아래 AWS 접속0·B 미진행·대상 미확정은 이 사전 확인 이전의 Docker A 검증·문서 마감 당시 기록이며, 이번 후속 변경도 문서만 반영했다.
+
+**2026-10-16 AWS Docker 개발 자체·독립 로컬 검증 완료(한계 유지):** AWS Ubuntu 단일 EC2 + Docker Engine/Compose, Caddy·Gunicorn/WSGI·PostgreSQL17.11 구성을 로컬 linux/amd64에서 검증했다. 개발은 동일189파일 소스로 Docker23/23·CLI15/15·전체167/167(4 opt-in·skip0)을 실행했고, 독립 검증은 실제 Docker23/23(실 TLS 브라우저6 포함)과 JPEG/WebP 최소 native probe를 확인했다. 독립의 전체167·CLI15는 같은 소스의 인계 근거 재사용이며 재실행·합산이 아니다. 새 제품 결함0, 원 FAIL·OBS2 관측 한계는 유지한다. **A 로컬 완료 / B AWS 미진행 / C 공개 운영 미완료·외부 백업 미설정**이며 실제 AWS·이번 Git 쓰기는0이다. [개발 근거](review/docker-01/README.md), [독립 최종 판정](review/docker-01/independent-verification.json), [구성·운영 경계](../docs/OPERATIONS.md).
+
+이번 마감은 테스트된189소스 밖의 네 문서만 수정한 후속 docs-only 작업이다. 두 검증 JSON의 당시 판정·194파일 freeze·원 FAIL은 보존하며 현재 문서 hash가 당시 freeze와 달라졌음을 구분한다. 이전 운영 중단·OCI 선택 대기는 당시 이력이고 독립 OBS2의 추가6파일 정확한 나노초 대조 미검증은 유지한다.
+
 **2026-10-14 기존 잔여물 정리:** 사용자 승인으로 완료 서버7개, legacy DB31개, 임시 폴더63개와 과거 bulk 결과물을 정리했다. 현재8776·원본성8769·canonical8767과 제품/현행 도구·원본 데이터는 보호했다. 과거 자료 링크의 ‘정리됨’은 결과 변경이 아니며 [현재 검증·원실패·한계 요약](review/README.md)과 [실제 정리·보류](review/cleanup-residue-01/README.md)를 따른다. 좁은 독립 확인을 완료했으며 기존 경고·관측 한계는 유지한다.
 
 Django/Wagtail + PostgreSQL에서 소식·브랜드 소개·지점/시설·트레이너를 **초안 저장 → 미리보기 → 명시적 공개 → 수정 → 공개 철회**하고 글의 팝업 설정을 별도 적용하는 로컬 구현이다. 전체 제품·전체 관리자의 완성이 아니다. 승인된 공개 HTML·CSS·글꼴을 재사용하며 관리자 편집 경험의 사용자 확인은 아직 받지 않았다.
@@ -81,6 +89,14 @@ production은 `test_` DB를 거절하므로 **production은 설정 로딩·deplo
 최종 `news.tests`는 **1회164/164 PASS·4opt-in 실행·skip0**다. 이전148/148·142/142와 합산하지 않는다. 별도 새 venv의 `uv sync --locked --no-python-downloads --link-mode copy`와 버전/Django check도 PASS이며 원본 `.venv`·lock은 sync/변경하지 않았다. 새 venv/cache는 자기 run 안에서 검증 후 제거하고 기존 CLI로 own4run·생성 DB6개·프로세스를 정리했다. 정확한 명령·구분·원 후처리 오류는 [verification](review/ops-01/verification.json)에 있다.
 
 이는 격리 runserver와 수집 검증이다. 실제 WSGI/ASGI 서버·TLS·DNS·신뢰 프록시·정적/미디어 제공·운영 DB 연결/권한·실자료·백업/복구·배포는 미검증이다. 해당 인프라와 도메인/secret/계정 정책을 결정하고 운영 전 검증할 때 사용자 선택이 필요하다. [독립 최종 PASS_WITH_DEPLOYMENT_LIMITS](review/ops-01/independent-verification.json)·설계 검토를 완료했다. 독립 선택16/16·후속 설정8/HTTP16 PASS, 정적263파일/private·QA 제외와 own2run/DB4개 DELETED를 확인했다. 개발 전체164/164·새 설치는 근거 읽기이며 독립 재실행/합산이 아니다. 초기 metadata Boolean-vs-SHA 가정·RequestFactory 초기화 순서 관찰 오류2건은 원기록과 후속을 유지하며 새 제품/설정 결함은0이다. W004/W019/W01과 위 실제 운영 미검증은 유지한다.
+
+## AWS Ubuntu Docker 배포 구성
+
+현재 root [운영 Compose](../compose.production.yaml)·[Dockerfile](../Dockerfile)·[WSGI](config/wsgi.py)·[명시 배포 도구](scripts/deploy.py)를 추가했다. 기존 `backend/compose.yaml`은 로컬 DB용으로 그대로다. Gunicorn26.2.0만 lock에 추가했고 기존 의존성 버전·원본 venv를 변경하지 않았다. 앱은 비root/readonly, DB·media·static·Caddy 인증서 volume을 분리하고 private media는 기존 보호 view만 통과한다.
+
+실제 production 환경 파일/명령·새 DB의 bootstrap와 최소권한 앱 역할·관리자 명시 생성·TLS·backup/isolated restore·AWS 승인 항목은 [운영 안내](../docs/OPERATIONS.md)를 따른다. 앱 startup은 migrate/seed/admin을 자동 실행하지 않는다. 운영자의 start/stop/update는 volume을 삭제하지 않는다.
+
+Docker QA는 기존 CLI의 명시 `--resource-backend docker --command`를 사용한다. 이 모드는 기존 PostgreSQL/env를 접속 설정으로 읽지 않고 고유 Compose 프로젝트·run/owner 라벨의 container/network/volume만 정리한다. TLS override는 `deploy/compose.qa.yaml`의 고유 합성 도메인·loopback 포트·소유 CA에 한정한다. 실제 브라우저도 기존 guard의 소유 검증·외부 transport 차단을 유지하며 컨테이너 PID namespace를 host PID와 구분한다. 공유 pinned 기반 이미지/build cache는 prune하지 않는다. 실제 Docker 기능 검사와 host 격리 전체 회귀를 서로 다른 실행으로 기록한다.
 
 ## 버전과 로컬 준비
 
@@ -180,7 +196,7 @@ backend/.venv/bin/python -B backend/scripts/qa_lifecycle.py cleanup "$QA_RUN_ID"
 
 2026-10-14 현재 [개발 인계·원실패 · 정리됨](review/README.md#정리-후-유지한-검증-요약)와 독립 [자체 검사 12/12](review/qa-lifecycle-independent/unittest-result.json), [헤더 4/4](review/qa-lifecycle-independent/auto-header.json), [브라우저 1/1·내부 11](review/qa-lifecycle-independent/auto-browser.json), [수동 9 PASS](review/qa-lifecycle-independent/manual-result.json), [새 Python4 Ruff lint/format·JS3 syntax](review/qa-lifecycle-independent/static-checks.json)를 설계가 검토했다. 브라우저 실제 Chrome identity·종료와 두 DB/폴더 정리를 확인했으며 [독립 보존 metadata 대조 PASS](review/qa-lifecycle-independent/preservation.json)까지 설계 검토를 완료했고 최종 독립 판정은 [PASS_WITH_OBSERVATION_LIMIT](review/qa-lifecycle-independent/verification.json)이며 [독립 보고](review/qa-lifecycle-independent/README.md)를 설계가 검토했다. 독립 [자기 run23개](review/qa-lifecycle-independent/own-runs-final.json)는 모두 DELETED·예약 DB 부재다. 기존 4,022파일 누락0·허용 failures 문서1변경, 보호75경로/68tmp의15,622파일 stat·15process identity·DB 이름/OID/comment hash·HEAD/index 동일 범위이며 raw DB 행·미디어 내용 재대조는 아니다. 개발 두 disposable fixture는 [원로그 archive 후 정리](review/qa-lifecycle/developer-fixture-closeout.json)했고 기존 `/tmp` 환경은 제어하지 않았다. [OBS01](review/qa-lifecycle-independent/failures.json)은 완료된 브라우저 로그의 origin 정규식 부재로 후처리 AssertionError가 난 원실패다. 실제 검사 재실행은 없었으며 새 origin 차단 negative·실제 중단 Chrome의 조회 거절 강제 시나리오는 미실행이다. 동적 브라우저 HTTP origin은 export에 없어 예약 origin과 실제 Chrome identity 근거를 구분한다. 개발의 최초 공개 GET TimeoutError와 별도 후속 PASS도 그대로 구분한다. 제품 전체 회귀·W01 수정·실기기/운영 검증으로 확대하지 않는다.
 
-`.local/qa/`는 Git에서 제외한다. 실제 배포 도구는 없으며, 향후 배포 패키징에서는 `.local/qa`, 비밀 설정/계정, raw DB·미디어·브라우저 프로필 등 QA 실행 자료를 제외해야 한다. 배포 제외 검증을 완료했다는 뜻은 아니다.
+`.local/qa/`는 Git에서 제외한다. 현재 [명시 배포 도구](scripts/deploy.py)와 운영 Docker 구성이 있으며 allowlist build context·실제 이미지 검사는 프로젝트 QA/review·비밀 설정/계정·raw DB/media·프로필·개발 의존성 제외를 확인한다. 이는 로컬 이미지 검사 범위이며 실제 AWS 전달 패키지·설치·배포 검증과 구분한다. 상세 결과와 이미지 식별값은 [운영 안내](../docs/OPERATIONS.md#검증-결과와-한계)를 따른다.
 
 ### 이전 마일스톤의 실행·검사 기록
 

@@ -1,0 +1,113 @@
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  database:
+    image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+    restart: unless-stopped
+    mem_limit: ${Y3GYM_DB_MEMORY:-512m}
+    command: [postgres, -c, "max_connections=${Y3GYM_PG_MAX_CONNECTIONS:-50}", -c, "shared_buffers=${Y3GYM_PG_SHARED_BUFFERS:-128MB}"]
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: ${Y3GYM_DB_ADMIN_USER:?required separate bootstrap role}
+      POSTGRES_PASSWORD: ${Y3GYM_DB_ADMIN_PASSWORD:?required}
+      Y3GYM_DB_NAME: ${Y3GYM_DB_NAME:?required}
+    volumes:
+      - database:/var/lib/postgresql/data
+    networks: [database]
+    healthcheck:
+      # The image's temporary first-init server also answers pg_isready.
+      # Wait for PID1 to become the final postgres process before provisioning.
+      test: [CMD-SHELL, 'test "$$(cat /proc/1/comm)" = postgres && pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    stop_grace_period: 30s
+    logging: *logging
+
+  app:
+    image: ${Y3GYM_APP_IMAGE:?use an explicit built release tag or digest}
+    restart: unless-stopped
+    mem_limit: ${Y3GYM_APP_MEMORY:-512m}
+    read_only: true
+    init: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs:
+      - /tmp:size=134217728,mode=1777
+    environment:
+      Y3GYM_ENV: production
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?required}
+      Y3GYM_DB_NAME: ${Y3GYM_DB_NAME:?required}
+      Y3GYM_DB_USER: ${Y3GYM_DB_USER:?required}
+      Y3GYM_DB_PASSWORD: ${Y3GYM_DB_PASSWORD:?required}
+      Y3GYM_DB_HOST: database
+      Y3GYM_DB_PORT: "5432"
+      Y3GYM_ALLOWED_HOSTS: ${Y3GYM_ALLOWED_HOSTS:?required}
+      Y3GYM_ADMIN_ORIGIN: ${Y3GYM_ADMIN_ORIGIN:?required}
+      Y3GYM_CSRF_TRUSTED_ORIGINS: ${Y3GYM_CSRF_TRUSTED_ORIGINS:?required}
+      Y3GYM_MEDIA_ROOT: /var/lib/y3gym/media
+      Y3GYM_STATIC_ROOT: /var/lib/y3gym/static
+      Y3GYM_TRUST_PROXY_HTTPS: "1"
+      Y3GYM_SECURE_HSTS_SECONDS: ${Y3GYM_SECURE_HSTS_SECONDS:-0}
+      Y3GYM_LOG_LEVEL: ${Y3GYM_LOG_LEVEL:-INFO}
+      Y3GYM_KAKAO_MAP_JS_KEY: ${Y3GYM_KAKAO_MAP_JS_KEY:-}
+      Y3GYM_WORKERS: ${Y3GYM_WORKERS:-1}
+      Y3GYM_THREADS: ${Y3GYM_THREADS:-2}
+    depends_on:
+      database:
+        condition: service_healthy
+    volumes:
+      - media:/var/lib/y3gym/media
+      - static:/var/lib/y3gym/static
+    networks: [application, database]
+    healthcheck:
+      test: [CMD, python, -B, config/health.py]
+      interval: 10s
+      timeout: 6s
+      retries: 3
+      start_period: 30s
+    stop_grace_period: 35s
+    logging: *logging
+
+  proxy:
+    image: caddy:2.11.7-alpine@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f
+    restart: unless-stopped
+    mem_limit: ${Y3GYM_PROXY_MEMORY:-128m}
+    environment:
+      Y3GYM_DOMAIN: ${Y3GYM_DOMAIN:?required}
+      Y3GYM_TLS_EMAIL: ${Y3GYM_TLS_EMAIL:?required}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./deploy/routes.caddy:/etc/caddy/routes.caddy:ro
+      - static:/srv/static:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [application]
+    depends_on:
+      app:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, "http://127.0.0.1:8081/healthz/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    stop_grace_period: 30s
+    logging: *logging
+
+networks:
+  application:
+  database:
+    internal: true
+volumes:
+  database:
+  media:
+  static:
+  caddy_data:
+  caddy_config:

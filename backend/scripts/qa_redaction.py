@@ -8,12 +8,14 @@ from pathlib import Path
 from dotenv import dotenv_values
 
 
-def secrets_for(run, project):
+def secrets_for(run, project, include_project=True):
     values = []
     for key, value in os.environ.items():
         if re.search(r"PASSWORD|SECRET|TOKEN|COOKIE|AUTH|API_KEY", key, re.I):
             values.append(value)
-    donor = dotenv_values(Path(project) / "backend/.env.local")
+    donor = (
+        dotenv_values(Path(project) / "backend/.env.local") if include_project else {}
+    )
     values.extend(
         v
         for k, v in donor.items()

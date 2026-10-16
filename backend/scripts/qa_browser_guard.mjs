@@ -11,7 +11,16 @@ const origin = ['Y3GYM_BRAND_REVIEW_ORIGIN', 'Y3GYM_BRANCH_REVIEW_ORIGIN', 'Y3GY
   .map(key => process.env[key]).find(Boolean) || process.env.Y3GYM_QA_ORIGIN;
 assert(origin, 'Private campaign origin required');
 const allowed = new URL(origin);
-assert(allowed.hostname === 'localhost' && allowed.protocol === 'http:');
+const dockerTLS = process.env.Y3GYM_QA_DOCKER === '1';
+if (dockerTLS) {
+  const run = process.env.Y3GYM_QA_RUN_DIR;
+  const marker = JSON.parse(fs.readFileSync(path.join(run, 'owner.json'), 'utf8'));
+  const manifest = JSON.parse(fs.readFileSync(path.join(run, 'manifest.json'), 'utf8'));
+  assert.equal(marker.token, process.env.Y3GYM_QA_RUN_TOKEN);
+  assert.equal(manifest.resource_backend, 'docker');
+  assert.equal(allowed.hostname, `qa-${process.env.Y3GYM_QA_RUN_ID.split('-').at(-1)}.test`);
+  assert.equal(allowed.protocol, 'https:');
+} else assert(allowed.hostname === 'localhost' && allowed.protocol === 'http:');
 assert(process.env.Y3GYM_QA_RUN_ID && process.env.Y3GYM_QA_RUN_TOKEN, 'Managed run required');
 assert(!['8767','8768','8769','8772','8773','8774','8775','8776','8780','8781'].includes(allowed.port), 'Existing review server blocked');
 const permit = value => {
@@ -41,6 +50,7 @@ const chromium = new Proxy(original, { get(target, name) {
       if(profile&&child.pid){
         const raw=fs.readFileSync(`/proc/${child.pid}/stat`,'utf8');
         const record={pid:child.pid,start_ticks:Number(raw.slice(raw.lastIndexOf(')')+2).split(' ')[19]),cwd:options.cwd||process.cwd(),exe:fs.realpathSync(command),argv_sha256:crypto.createHash('sha256').update([command,...argv,''].join('\0')).digest('hex'),uid:process.getuid(),boot_id:fs.readFileSync('/proc/sys/kernel/random/boot_id','utf8').trim()};
+        if (dockerTLS) record.pid_namespace = 'owned-docker';
         const observed={...record,profile};born.push(observed);event({event:'spawn',record});
         child.once('exit',()=>event({event:'exit',pid:child.pid,start_ticks:record.start_ticks}));
       }
@@ -56,6 +66,7 @@ const chromium = new Proxy(original, { get(target, name) {
     }catch(error){await browser.close();throw error;}
     const newContext = browser.newContext.bind(browser);
     browser.newContext = async (...contextArgs) => {
+      if (dockerTLS) assert.notEqual(contextArgs[0]?.ignoreHTTPSErrors, true, 'Owned CA must be trusted; TLS verification cannot be skipped');
       const context = await newContext(...contextArgs);
       const route = context.route.bind(context);
       context.route = (pattern, handler, options) => route(pattern, (r, request) => {

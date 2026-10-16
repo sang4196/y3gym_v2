@@ -574,8 +574,16 @@ def copy_source(run):
         BACKEND / "news",
         BACKEND / "scripts",
         PROJECT / "prototype",
+        PROJECT / "deploy",
     ]
-    files = [BACKEND / "manage.py"]
+    files = [
+        BACKEND / "manage.py",
+        BACKEND / "pyproject.toml",
+        BACKEND / "uv.lock",
+        PROJECT / "Dockerfile",
+        PROJECT / ".dockerignore",
+        PROJECT / "compose.production.yaml",
+    ]
     for folder in folders:
         for base, dirs, names in os.walk(folder):
             dirs[:] = [
@@ -614,9 +622,16 @@ def copy_source(run):
                     ".woff2",
                     ".ttf",
                     ".sh",
+                    ".yaml",
+                    ".caddy",
                 }
                 if (
-                    p.suffix in allowed_suffixes
+                    (
+                        p.suffix in allowed_suffixes
+                        or name
+                        in {"Caddyfile", "Caddyfile.qa", "LICENSE.txt", "GENERATED.md"}
+                        or name.startswith("Dockerfile.")
+                    )
                     and not any(
                         word in name.lower()
                         for word in ["credential", "secret-key", ".env"]
@@ -639,8 +654,9 @@ def copy_source(run):
     return len(manifest)
 
 
-def create(mode, purpose):
+def create(mode, purpose, resource_backend="postgres"):
     require(mode in {"auto", "manual"} and purpose.strip(), "Mode and purpose required")
+    require(resource_backend in {"postgres", "docker"}, "Unknown resource backend")
     os.umask(0o077)
     with lock(True):
         run_id = (
@@ -675,6 +691,7 @@ def create(mode, purpose):
             "owner_hash": owner_hash,
             "created_at": now(),
             "mode": mode,
+            "resource_backend": resource_backend,
             "purpose": purpose,
             "state": "MANUAL_PENDING" if mode == "manual" else "PREPARED",
             "retention_reason": "manual review pending" if mode == "manual" else "",
@@ -689,6 +706,10 @@ def create(mode, purpose):
             "outcome": None,
             "evidence": None,
         }
+        if resource_backend == "docker":
+            value["external_DB_exception"] = (
+                "Docker QA uses only owned containers/networks/named volumes; existing PostgreSQL is never contacted"
+            )
         save(run, value)
         try:
             value["source_files"] = copy_source(run)
@@ -734,7 +755,11 @@ TEST_RUNNER = 'qa_test_runner.Runner'
 def environment(run, value, token):
     from dotenv import dotenv_values
 
-    donor = dotenv_values(BACKEND / ".env.local")
+    donor = (
+        dotenv_values(BACKEND / ".env.local")
+        if value.get("resource_backend") != "docker"
+        else {}
+    )
     env = os.environ.copy()
     for key in list(env):
         if key.startswith("Y3GYM_") and any(
@@ -743,10 +768,14 @@ def environment(run, value, token):
         ):
             env.pop(key)
     for key in ["Y3GYM_DB_USER", "Y3GYM_DB_PASSWORD", "Y3GYM_DB_HOST", "Y3GYM_DB_PORT"]:
-        require(
-            bool(donor.get(key)), "Local PostgreSQL connection configuration missing"
-        )
-        env[key] = donor[key]
+        if value.get("resource_backend") == "docker":
+            env.pop(key, None)
+        else:
+            require(
+                bool(donor.get(key)),
+                "Local PostgreSQL connection configuration missing",
+            )
+            env[key] = donor[key]
     env.update(
         Y3GYM_DB_NAME=value["database_names"][0],
         DJANGO_SECRET_KEY=(run / "secret-key").read_text(),
@@ -783,6 +812,8 @@ def environment(run, value, token):
     env["NODE_OPTIONS"] = "--import=" + str(
         run / "source/backend/scripts/qa_browser_loader.mjs"
     )
+    if value.get("resource_backend") == "docker":
+        env["Y3GYM_QA_OWNER_HASH"] = value["owner_hash"]
     return env
 
 
@@ -955,7 +986,14 @@ def browser_process_records(run, token):
 
 def owned_processes(run, value, token):
     found = {}
-    for record in value["processes"] + browser_process_records(run, token):
+    browser_records = browser_process_records(run, token)
+    if value.get("resource_backend") == "docker":
+        # Signed container-namespace PIDs are not host PIDs. Docker label/ID guards
+        # own those processes and remove their exact containers at cleanup.
+        browser_records = [
+            r for r in browser_records if r.get("pid_namespace") != "owned-docker"
+        ]
+    for record in value["processes"] + browser_records:
         info = proc_info(record["pid"], strict=True)
         if info:
             require(
@@ -1203,23 +1241,29 @@ def cleanup_plan(run, value, token):
     )
     resources = []
     # Query every reserved name, even when interrupted before ownership registration.
-    with db_connect() as connection, connection.cursor() as cursor:
-        for name in value["database_names"]:
-            state = db_state(cursor, name)
-            if state:
-                require(
-                    state[0] == value["databases"].get(name)
-                    and state[1] == "y3gym-qa-owner:" + token,
-                    "DB owner marker/OID mismatch",
-                )
-                cursor.execute(
-                    "SELECT count(*) FROM pg_stat_activity WHERE datname=%s", [name]
-                )
-                require(
-                    cursor.fetchone()[0] == 0,
-                    "Database has active connections; preserve",
-                )
-                resources.append({"name": name, "oid": state[0]})
+    docker_resources = []
+    if value.get("resource_backend") == "docker":
+        from qa_docker import inspect_resources
+
+        docker_resources = inspect_resources(value)
+    else:
+        with db_connect() as connection, connection.cursor() as cursor:
+            for name in value["database_names"]:
+                state = db_state(cursor, name)
+                if state:
+                    require(
+                        state[0] == value["databases"].get(name)
+                        and state[1] == "y3gym-qa-owner:" + token,
+                        "DB owner marker/OID mismatch",
+                    )
+                    cursor.execute(
+                        "SELECT count(*) FROM pg_stat_activity WHERE datname=%s", [name]
+                    )
+                    require(
+                        cursor.fetchone()[0] == 0,
+                        "Database has active connections; preserve",
+                    )
+                    resources.append({"name": name, "oid": state[0]})
     tree = tree_plan(run)
     plan = {
         "run_id": value["id"],
@@ -1227,6 +1271,7 @@ def cleanup_plan(run, value, token):
         "inode": value["inode"],
         "files": tree,
         "databases": resources,
+        "docker_resources": docker_resources,
     }
     return {**plan, "plan_id": digest(json.dumps(plan, sort_keys=True).encode())}
 
@@ -1267,6 +1312,10 @@ def _cleanup(run_id, dry_run=False, expected_plan=None):
         evidence = export_evidence(run, value, "explicit-cleanup")
         value["cleanup_started"] = {"plan_id": plan["plan_id"], "time": now()}
         save(run, value)
+        if value.get("resource_backend") == "docker":
+            from qa_docker import remove_resources
+
+            remove_resources(value, plan["docker_resources"])
         if plan["databases"]:
             with db_connect() as connection, connection.cursor() as cursor:
                 for resource in plan["databases"]:
@@ -1306,6 +1355,7 @@ def _cleanup(run_id, dry_run=False, expected_plan=None):
             "cleanup_result": {
                 "folder_absent": not run.exists(),
                 "databases_dropped": [v["name"] for v in plan["databases"]],
+                "docker_resources_removed": len(plan["docker_resources"]),
             },
         }
         private_json(registry_path(run_id), tombstone)
@@ -1336,7 +1386,9 @@ def export_evidence(run, value, phase):
             current.is_dir() and current.resolve() == current,
             "Evidence destination escape refused",
         )
-    known = secrets_for(run, PROJECT)
+    known = secrets_for(
+        run, PROJECT, include_project=value.get("resource_backend") != "docker"
+    )
     data = {
         "schema": SCHEMA,
         "run_id": value["id"],
@@ -1407,6 +1459,7 @@ def export_evidence(run, value, phase):
                     "browserCache",
                     "ownedRun",
                     "identity_basis",
+                    "pid_namespace",
                 ]
             }
             for line in browser_runtime.read_text().splitlines()
@@ -1430,6 +1483,9 @@ def export_evidence(run, value, phase):
             pass
     data["browser_result_summaries"] = summaries
     data["private_output_files"] = sum(p.is_file() for p in (run / "output").rglob("*"))
+    docker_result = run / "output/docker-result.json"
+    if value.get("resource_backend") == "docker" and docker_result.is_file():
+        data["docker_validation"] = json.loads(docker_result.read_text())
 
     def scrub(value):
         if isinstance(value, dict):
@@ -1522,6 +1578,9 @@ def main():
     p = sub.add_parser("create")
     p.add_argument("--mode", choices=["auto", "manual"], required=True)
     p.add_argument("--purpose", required=True)
+    p.add_argument(
+        "--resource-backend", choices=["postgres", "docker"], default="postgres"
+    )
     p = sub.add_parser("status")
     p.add_argument("run_id", nargs="?")
     p = sub.add_parser("initialize")
@@ -1544,6 +1603,9 @@ def main():
     p = sub.add_parser("auto")
     p.add_argument("--purpose", required=True)
     p.add_argument(
+        "--resource-backend", choices=["postgres", "docker"], default="postgres"
+    )
+    p.add_argument(
         "--browser",
         choices=["brand", "branch", "trainer", "home_news"],
         action="append",
@@ -1564,13 +1626,14 @@ def main():
                 args.browser,
                 args.retain_on_failure,
                 args.cleanup_condition,
+                args.resource_backend,
             )
             print(json.dumps(result, ensure_ascii=False))
             return code
         if args.action == "inventory":
             result = write_inventory(args.output)
         elif args.action == "create":
-            result = {"id": create(args.mode, args.purpose)}
+            result = {"id": create(args.mode, args.purpose, args.resource_backend)}
         elif args.action == "status":
             result = status(args.run_id)
         elif args.action == "initialize":
@@ -1606,6 +1669,10 @@ def main():
 
 
 def resource_observation(value, token):
+    if value.get("resource_backend") == "docker":
+        from qa_docker import inspect_resources
+
+        return inspect_resources(value)
     found = []
     try:
         with db_connect() as connection, connection.cursor() as cursor:
@@ -1698,6 +1765,7 @@ def auto(
     browsers=(),
     retain_reason=None,
     cleanup_condition=None,
+    resource_backend="postgres",
 ):
     require(bool(tests) != bool(command), "Choose explicit tests or one argv command")
     require(
@@ -1712,7 +1780,11 @@ def auto(
             ),
             "Explicit news.tests labels required",
         )
-    run_id = create("auto", purpose)
+    require(
+        not tests or resource_backend == "postgres",
+        "Docker backend uses an explicit owned command; host whole tests are separate",
+    )
+    run_id = create("auto", purpose, resource_backend)
     code = 1
     cleanup_error = None
     evidence = None

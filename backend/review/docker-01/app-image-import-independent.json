@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "status": "PASS_APP_IMAGE_IDENTITY_READ_ONLY_NEXT_GATE_UNVERIFIED",
+  "recorded_at_UTC": "2026-10-16T07:10:24.275197+00:00",
+  "scope": "준비 앱 이미지1 적재 후 같은 EC2를 한 번 읽기 조회. DEV 피크·정리·예산은 원본 JSON을 로컬에서 대조. 앱 실행 또는 전체 배포 안전성 판정이 아님.",
+  "requirements": [
+    {
+      "basis": "사용자/설계의 이번 한정 지시; AGENTS.md 검증과 보고",
+      "expected": "동일 대상·불변 이미지 정체성·컨테이너/볼륨0·자원·SSH 확인. 서버 쓰기·추가 QA·전체 재검사0."
+    },
+    {
+      "basis": "docs/OPERATIONS.md:34",
+      "expected": "같은 ID의 기존94파일 검사 재사용, amd64·전체 labels 일치. inspect Size4096bytes 차이는 보고값 차이로 구분."
+    },
+    {
+      "basis": "docs/OPERATIONS.md:48 및 이번 확정 gate",
+      "expected": "floor1503657984bytes·RAM268435456bytes·inode100000·16MiB buffer를 유지. PG/Caddy 추정량660535910bytes는 실측 피크가 아님."
+    },
+    {
+      "basis": "docs/OPERATIONS.md:27",
+      "expected": "사용자 콘솔 적용80/443 IPv4전체·22 /32 유지. IPv6/group sources·8000/5432 없음."
+    }
+  ],
+  "direct_readonly_result": {
+    "status": "PASS_READ_ONLY",
+    "observed_at_UTC": "2026-10-16T07:09:20.886746+00:00",
+    "target_matches": {
+      "IMDS_instance_region_type_arch": true,
+      "OS_Ubuntu_26_04": true,
+      "SSH_peer_allowed_by_22_CIDR": true
+    },
+    "image": {
+      "Id": "sha256:478d6a9fb51e94498427e06893c9915e7c83e182d80418d9b31082f60025c39e",
+      "Architecture": "amd64",
+      "Os": "linux",
+      "Size": 459035877,
+      "label_count": 6,
+      "identity_matches": {
+        "id": true,
+        "architecture": true,
+        "os": true,
+        "all_labels": true,
+        "all_layers": true
+      },
+      "local_minus_remote_inspect_Size_bytes": 4096
+    },
+    "docker_resource_counts": {
+      "images": 1,
+      "containers": 0,
+      "volumes": 0
+    },
+    "root_fs": {
+      "available_bytes": 2281611264,
+      "inode_free": 698821,
+      "inode_total": 878080
+    },
+    "memory_bytes": {
+      "MemTotal": 952860672,
+      "MemAvailable": 484417536,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "SSH": {
+      "active": true,
+      "MainPID_and_start_unchanged_from_DEV_post": true
+    },
+    "TCP_listeners": [
+      {
+        "port": 22,
+        "bind_class": "wildcard"
+      },
+      {
+        "port": 22,
+        "bind_class": "wildcard"
+      },
+      {
+        "port": 53,
+        "bind_class": "loopback"
+      },
+      {
+        "port": 53,
+        "bind_class": "loopback"
+      },
+      {
+        "port": 6010,
+        "bind_class": "loopback"
+      },
+      {
+        "port": 6010,
+        "bind_class": "loopback"
+      }
+    ],
+    "remote_mutation_commands": 0,
+    "AWS_readonly": {
+      "DescribeInstances_calls": 1,
+      "DescribeSecurityGroups_calls": 1,
+      "same_target_running_type_arch": true,
+      "ingress": {
+        "TCP22_IPv4_source_32_only": true,
+        "TCP80_IPv4_0_0_0_0_0": true,
+        "TCP443_IPv4_0_0_0_0_0": true,
+        "no_IPv6_group_prefix_sources": true,
+        "no_8000_5432_ingress": true
+      },
+      "write_calls": 0
+    },
+    "SSH_invocations": 1,
+    "strict_known_host_check": true
+  },
+  "DEV_measurement_review": {
+    "source": "backend/review/docker-01/app-image-import.json",
+    "source_sha256": "1610b6dee2b3b5e532857dc5cafaedc10f9c17371b5e0b9ff7ae5519e9cdb66a",
+    "evidence_kind": "이번 독립 실행 피크가 아니라 DEV 기록의 로컬 산술·정체성·정리 대조",
+    "stream_exit_code": 0,
+    "stream_bytes": 110139392,
+    "stream_sha256": "52c1dc91353577e781a7e35d8c363eb3f673ba7adbb21d2ec5fa0948aee23426",
+    "elapsed_stream_seconds": 17.536912159994245,
+    "sample_count": 41,
+    "maximum_sample_gap_seconds": 0.50488917,
+    "observed_min": {
+      "free_bytes": 2282106880,
+      "MemAvailable": 455069696,
+      "inode_free": 698821
+    },
+    "OOM_counter_increment": 0,
+    "sampled_RSS_max_bytes": {
+      "docker.service": 66068480,
+      "containerd.service": 46800896
+    },
+    "separate_post_RSS_bytes": {
+      "docker.service": 67526656,
+      "containerd.service": 29929472
+    },
+    "app_stage_df_drop_bytes": 459505664,
+    "sampled_min_disk_clearance_above_floor_bytes": 778448896,
+    "sampled_min_RAM_clearance_above_stop_bytes": 186634240,
+    "peak_scope": "41샘플과 별도 post snapshot을 구분한다. post Docker RSS가 sampled maximum보다 크며 sub-0.5초 피크 상한은 미검증."
+  },
+  "budget_review": {
+    "reserved_components_bytes": {
+      "DB": 268435456,
+      "media": 134217728,
+      "static_state": 67108864,
+      "log": 94371840,
+      "swap": 268435456,
+      "free": 536870912,
+      "imageFS": 134217728
+    },
+    "reserved_floor_bytes": 1503657984,
+    "rough_remaining_PG_Caddy_bytes": 660535910,
+    "approach_buffer_bytes": 16777216,
+    "sum_floor_estimate_buffer_bytes": 2180971110,
+    "current_free_bytes": 2281611264,
+    "current_clearance_above_floor_bytes": 777953280,
+    "current_clearance_after_floor_estimate_buffer_bytes": 100640154,
+    "calculation_match": true,
+    "conclusion": "양수 여유 약96MiB는 이전 unique-layer 추정량에서 app 단계 df 감소를 뺀 혼합 추정에 대한 산술 결과다. PG/Caddy 실제 적재량·임시 피크·전체 설치 가능성을 보장하지 않는다."
+  },
+  "reused_evidence": {
+    "path": "backend/review/docker-01/deployment-preparation-independent.json",
+    "sha256": "cf257f7381f97e212e7d2119e107f54244fbeb73ea9d1b634e5fef5abb62d082",
+    "same_immutable_image_ID": true,
+    "previous_direct_files_checked": 94,
+    "previous_mismatches": 0,
+    "rerun_in_this_stage": false,
+    "current191_source_rehash": false,
+    "full170_or_other_regression_rerun": false
+  },
+  "passed_checks": [
+    "AWS DescribeInstances1·DescribeSecurityGroups1 및 strict known-host SSH1: 동일 대상과 갱신된 SG 정책 일치",
+    "원격 ID·linux/amd64·전체6labels·전체layers 일치, 이미지1·컨테이너0·볼륨0",
+    "현재 df·RAM·inode 중단선 이상, 기존 SSH MainPID/start 유지,8000/5432 listen 없음",
+    "DEV41샘플 최소값·간격·RSS·OOM 불변·예약 예산 합계·남은 추정량 산술 일치",
+    "DEV 관리 run DELETED tombstone·폴더 부재·로컬 소유 Docker 자원0 직접 읽기 확인"
+  ],
+  "product_findings_in_checked_scope": [],
+  "remaining_warnings": [
+    "현재 혼합 추정 후 여유 약96MiB. PG/Caddy 실제 cold 적재 피크를 확인하기 전 추가 적재/전체 설치 가능 승인으로 확대할 수 없다.",
+    "DEV의0.5초 샘플은 sub-sample transient를 보장하지 않는다. sampled RSS 최대와 별도 post snapshot은 서로 다른 관측이다.",
+    "SG80/443 개방은 확인했으나 현재 해당 포트의 서비스가 없으며 공개 HTTP/TLS 성공 판정은 아니다."
+  ],
+  "not_executed": [
+    "stream/load 재실행·PG/Caddy pull/load·컨테이너 실행·새 QA 생성",
+    "swap·DB/app·secret/admin·ACME/DNS/TLS 및 전체 실배포 안전성",
+    "전체170/기존 Docker·브라우저 검사, 현재191파일 또는 기존94파일 재해시",
+    "순간 메모리/디스크 피크의 독립 연속 계측·추가 서버 조회"
+  ],
+  "observer_execution_history": [
+    {
+      "result": "LOCAL_OBSERVER_ERROR",
+      "cause": "첫 로컬 JSON 대조에서 Config.Labels를 가정했으나 실제 DEV post는 평탄화된 Labels 필드였다.",
+      "followup": "메모리상의 대조 스크립트 필드 접근만 수정한 별도 로컬 실행 PASS. 제품/저장 도구 수정0, 원격 재조회0."
+    }
+  ],
+  "reproduction": {
+    "local": "원본 app-image-import.json을 Python 정수로 읽어41샘플 min/max와 monotonic_ns 간격, before/post df차, 예약합계와 남은 추정량을 대조한다. qa_lifecycle.load와 qa_docker.inspect_resources는 해당 DELETED run만 읽는다.",
+    "remote": "기존 승인된 대상과 자격 매핑을 사용하여 DescribeInstances/DescribeSecurityGroups 각1회 후 strict known-host SSH1회. stdin Python에서 IMDSv2 identity, docker image inspect/image ls/ps/volume ls, statvfs, /proc/meminfo, systemctl show ssh, ss -ltnH만 읽고 비교 결과만 출력한다.",
+    "expected": "같은 불변ID/linux-amd64/labels/layers, 컨테이너·볼륨0, 자원 gate 이상 및 SSH 유지.",
+    "actual": "direct_readonly_result와 budget_review 참조. 기대값 일치. 이미지 Size4096bytes 차이는 동일ID의 표기 차이로 기록."
+  },
+  "cleanup_and_preservation": {
+    "DEV_run_id": "qa-20261016T065445Z-5545eb1f349f",
+    "DEV_state_directly_read": "DELETED",
+    "DEV_run_folder_absent": true,
+    "DEV_local_owned_Docker_resources": 0,
+    "DEV_local_clients_exited": "DEV 기록 대조, 이번 별도 PID audit 없음",
+    "remote_app_image": "다음 별도 지시를 위한 의도적 보존. 이번 삭제/정리0.",
+    "new_QA_runs": 0,
+    "remote_mutation_commands": 0,
+    "product_code_writes": 0,
+    "existing_document_or_report_writes": 0,
+    "git_stage_commit_push_deploy": 0,
+    "root_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "root_index_empty": true,
+    "new_files_this_stage": [
+      "backend/review/docker-01/app-image-import-independent.json"
+    ],
+    "sanitization": "서버/계정/SG ID·주소·자격값·인증 원문과 SSH/AWS raw 출력을 저장하지 않고 허용된 이미지 metadata·비식별 비교값·자원값만 보존."
+  }
+}

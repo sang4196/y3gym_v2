@@ -1,11 +1,13 @@
 from django.urls import include, path
 from wagtail.admin import urls as wagtailadmin_urls
 
+from config.health import readiness
 from news import views
 from news.branches import branches
 from news.home import home
 
 urlpatterns = [
+    path("healthz/", readiness, name="readiness"),
     path("admin/", include(wagtailadmin_urls)),
     path("", home, name="home"),
     path("branches/", branches, name="branches"),

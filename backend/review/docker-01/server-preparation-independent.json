@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "status": "PASS_OBSERVED_SCOPE_WITH_SWAP_FSTAB_METADATA_UNVERIFIED",
+  "recorded_at_UTC": "2026-10-16T08:19:29.499935+00:00",
+  "scope": "DNS 전 기존 빈 DB/app의 한정 읽기 확인: strictSSH1·기존app readonly exec1·익명내부GET3. 새QA/컨테이너/validator·준비변경0.",
+  "requirements": {
+    "source": "이번 설계 지시; AGENTS.md 검증과 보고; docs/OPERATIONS.md:39-56,72; compose.production.yaml",
+    "criteria": "같은 대상/고정3이미지/배포4해시/2healthy/RO·UID10001/port0/restart·log/3volumes/env권한/빈DB·migration0/내부GET·headers·static8/SSH·자원·원예약+4096·실사용1회차감. 원FAIL3와후속/QA5 보존."
+  },
+  "direct_readonly_evidence": {
+    "target_alias": "서울 배포 테스트 서버",
+    "SSH_invocations": 1,
+    "strict_known_host_check": true,
+    "sections": {
+      "target": {
+        "status": "PASS",
+        "instance_region_type_arch_match": true
+      },
+      "images": {
+        "status": "PASS",
+        "images": {
+          "app": {
+            "ID": "sha256:478d6a9fb51e94498427e06893c9915e7c83e182d80418d9b31082f60025c39e",
+            "arch": "amd64",
+            "matches": true
+          },
+          "postgres": {
+            "ID": "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+            "arch": "amd64",
+            "matches": true
+          },
+          "caddy": {
+            "ID": "sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f",
+            "arch": "amd64",
+            "matches": true
+          }
+        },
+        "total_images": 3
+      },
+      "containers": {
+        "status": "PASS",
+        "project_container_count": 2,
+        "checks": {
+          "app": {
+            "same_container_started": true,
+            "healthy": true,
+            "expected_image": true,
+            "not_OOMKilled": true,
+            "no_published_ports": true,
+            "restart_unless_stopped": true,
+            "bounded_logs": true,
+            "memory_limit": true,
+            "not_privileged": true,
+            "readonly_root": true,
+            "declared_UID10001": true,
+            "cap_drop_ALL": true,
+            "no_new_privileges": true
+          },
+          "database": {
+            "same_container_started": true,
+            "healthy": true,
+            "expected_image": true,
+            "not_OOMKilled": true,
+            "no_published_ports": true,
+            "restart_unless_stopped": true,
+            "bounded_logs": true,
+            "memory_limit": true,
+            "not_privileged": true
+          }
+        }
+      },
+      "files_volumes_swap": {
+        "status": "FAIL",
+        "deployment4_hash_matches": {
+          "compose.production.yaml": true,
+          "deploy/Caddyfile": true,
+          "deploy/routes.caddy": true,
+          "backend/scripts/deploy.py": true
+        },
+        "env_root0600_parent_root0700_no_value_read": true,
+        "volume3_owner_mode_and_mount_matches": {
+          "database": true,
+          "media": true,
+          "static": true
+        },
+        "volume_allocated_bytes": {
+          "database": 53014528,
+          "media": 4096,
+          "static": 21860352
+        },
+        "swap": {
+          "logical_bytes": 268435456,
+          "physical_bytes": 268439552,
+          "additional_metadata_bytes": 4096,
+          "owner_mode_nlink_regular_matches": false,
+          "fstab_exact_entry_one": false
+        }
+      },
+      "app_readonly_exec": {
+        "status": "PASS",
+        "effective_uid": 10001,
+        "effective_gid": 10001,
+        "DB_readonly": {
+          "identity_matches": true,
+          "role_privileges": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "pending_migrations": 0,
+          "counts": {
+            "users": 0,
+            "BrandContent": 0,
+            "Branch": 0,
+            "Post": 0,
+            "Trainer": 0
+          },
+          "max_connections": 20,
+          "shared_buffers": "32MB"
+        },
+        "internal_GET": {
+          "health_DB": {
+            "status": 200,
+            "same_path": true
+          },
+          "home": {
+            "status": 200,
+            "same_path": true,
+            "frame_sameorigin": true,
+            "nosniff": true
+          },
+          "anonymous_admin_login": {
+            "status": 200,
+            "same_path": true,
+            "frame_sameorigin": true,
+            "nosniff": true,
+            "CSRF_secure": true,
+            "CSRF_SameSite_Lax": true
+          }
+        },
+        "static8_present_nonempty": {
+          "prototype/index.html": true,
+          "prototype/styles.css": true,
+          "news/brand.css": true,
+          "news/home-popups.js": true,
+          "news/context.js": true,
+          "prototype/branch-data.js": true,
+          "prototype/assets/fonts/PretendardVariable.woff2": true,
+          "prototype/assets/fonts/LICENSE.txt": true
+        },
+        "transaction": "READ ONLY; SELECT/count/migration graph only; closed without writes"
+      },
+      "current_resources_budget": {
+        "status": "PASS",
+        "root_free_bytes": 1195409408,
+        "inode_free": 684358,
+        "memory_bytes": {
+          "MemTotal": 952860672,
+          "MemAvailable": 416247808,
+          "SwapTotal": 268431360,
+          "SwapFree": 151801856
+        },
+        "oom_kill_counter": 0,
+        "OOM_baseline_from_DEV": 0,
+        "SSH_identity_unchanged_active": true,
+        "budget": {
+          "original_components_bytes": {
+            "image_FS_metadata_reserve": 134217728,
+            "DB_initial_growth": 268435456,
+            "media_initial": 134217728,
+            "static_Caddy_state": 67108864,
+            "bounded_service_logs": 94371840,
+            "free_space_reserve": 536870912,
+            "logical_swap": 268435456
+          },
+          "original_sum_bytes": 1503657984,
+          "additional_swap_metadata_bytes": 4096,
+          "actual_spent_once_bytes": {
+            "swap": 268439552,
+            "database": 53014528,
+            "media": 4096,
+            "static": 21860352
+          },
+          "remaining_reserved_floor_bytes": 1160343552,
+          "margin_bytes": 35065856,
+          "approach_buffer_bytes": 16777216,
+          "margin_above_approach_buffer_bytes": 18288640
+        }
+      }
+    },
+    "observed_at_UTC": "2026-10-16T08:16:58.411650+00:00",
+    "status": "PARTIAL_OR_FAIL",
+    "prepared_resource_mutations": 0
+  },
+  "assessment": {
+    "confirmed_product_defects": [],
+    "passed": "target/images/containers/app_readonly_exec/current_resources_budget 전 항목 통과. files_volumes_swap의4해시·env권한·3volume권한/mount·swap논리/물리는 각각 통과. 복합section 원FAIL은 그대로 보존.",
+    "verification_gap": {
+      "id": "OBSERVER_FSTAB_OPTION_ASSUMPTION",
+      "kind": "미확인; 제품 FAIL로 확정하지 않음",
+      "requirement_basis": "docs/OPERATIONS.md:48 및 이번 전용 fstab1줄·swap metadata 확인 지시",
+      "related_files": [
+        "/etc/fstab",
+        "/var/lib/y3gym/y3gym-test-0729a88ca540.swap"
+      ],
+      "reproduction": "단일 원격 관측 스크립트가 fstab 항목 토큰을 [swap_path,none,swap,sw,0,0]과 비교했다. 이 sw 고정 옵션에는 확정 근거가 없었다.",
+      "expected": "전용 fstab 항목1개와 swap uid/mode/nlink/type/active를 개별 근거로 확인한다. sw 옵션 고정은 확정 요구가 아니다.",
+      "actual": "원 fstab 비교 false와 복합 swap 판정 false를 보존한다. 실제 fstab 토큰/count 및 swap uid/mode/nlink/type/active 개별 관측값은 필터된 출력에 보존되지 않아 이 데이터로 독립 판정할 수 없다. 복합 AND false를 개별 권한 FAIL로 해석하지 않는다. swap 논리/물리 크기와 kernel SwapTotal은 직접 일치. env root0600·부모root0700은 별도 true로 직접 통과했다.",
+      "handling": "서버 추가조회·수정0. 개별값 부족을 미확인으로 분류하며 DEV 기존 swap uid0/0600/nlink1/비symlink/active/fstab1 기록은 이력으로만 재사용한다."
+    }
+  },
+  "existing_record_review": {
+    "closeout_sha256": "a03ce279e27c0a7c4d53e2bcb886d6498362557307c648d6b36473512316ffda",
+    "execution_sha256": "9af93105644e3b4ac3ead8421c08732b774e5950f53a9c38a68613ad86e283e1",
+    "five_evidence_hashes_match": true,
+    "local4_deployment_hashes_match": true,
+    "current3_document_hashes_match": true,
+    "QA5": [
+      {
+        "run_id": "qa-20261016T071900Z-554370255d28",
+        "DELETED_folder_absent_tombstone_and_two_archive_hashes_match": true
+      },
+      {
+        "run_id": "qa-20261016T072353Z-cecf12376881",
+        "DELETED_folder_absent_tombstone_and_two_archive_hashes_match": true
+      },
+      {
+        "run_id": "qa-20261016T073702Z-0729a88ca540",
+        "DELETED_folder_absent_tombstone_and_two_archive_hashes_match": true
+      },
+      {
+        "run_id": "qa-20261016T074448Z-daa77580cd1b",
+        "DELETED_folder_absent_tombstone_and_two_archive_hashes_match": true
+      },
+      {
+        "run_id": "qa-20261016T075754Z-9a9e810d8aa4",
+        "DELETED_folder_absent_tombstone_and_two_archive_hashes_match": true
+      }
+    ],
+    "original_FAIL3": [
+      "FAIL_OBSERVER_TAGGED_REFERENCE_VS_REPODIGEST",
+      "FAIL_STOPPED_NO_RETRY",
+      "FAIL_STOPPED_NO_RETRY"
+    ],
+    "PG": "기존 canonical repository·immutable digest/ID/amd64/14layers 유지, pull1·재pull0 기록. 이번 ID/RepoDigest/14layers 직접 일치.",
+    "swap": "원observer 물리<=논리 가정FAIL→기존 extent/stat 근거metadata4096 추가. 원FS128/free512 등 예산불변·재생성0 기록. 이번 논리/물리·예산 직접 일치.",
+    "Caddy": "기존 binary filecap NET_BIND_SERVICE only/effective·capdropALL exec255 보존. 후속validator만 단일capadd·networknone/RO/configRO/noports/no-new-privileges exit0 기록. 이번 재실행0, productionCompose frozenSHA 로컬/원격 일치.",
+    "policy_or_test_weakening_found_in_record_review": false,
+    "record_review_is_not_new_execution": true,
+    "prior_app_only_evidence_version": {
+      "original_app_status_preserved": true,
+      "prior_app_only_SHA_recorded_in_parent": true,
+      "meaning": "이전 app-only JSON 이후 실행 이력이 추가된 현재 JSON의 해시는 다르다. 이전 독립 보고서·그 입력 SHA와 parent의 prior SHA를 보존한다."
+    },
+    "root_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "index_empty": true
+  },
+  "remaining_warnings": [
+    "독립 fstab·swap 개별metadata/active 판정은 수집값 부족. 원observerFAIL 보존; 제품 권한 실패로 확대하지 않음.",
+    "현재free1195409408−잔여reserve1160343552=35065856bytes(33.4MiB),16MiB buffer 위18288640bytes. 계획잔여이며 월간수용량·최대사진수·지속성능 보장 아님.",
+    "기존 Caddy validator X-Forwarded-Proto/For 경고2개 유지. 내부GET의 https forwarded header는 실제TLS 검증이 아님."
+  ],
+  "not_executed_or_reused": {
+    "reused": "기존 전체170/170·4opt-in·skip0, 같은appID94파일, 앱적재독립근거 재사용; 새전체검사/191재해시/94재실행0.",
+    "network": "SG만사용자콘솔적용/DNS未변경은 최신설계·문서의 기존근거. 이번AWS SG/DNS 조회·변경0.",
+    "not_executed": [
+      "인증로그인·브라우저·실제이미지접근·외부HTTP/TLS/ACME·공개proxy",
+      "부팅/reboot·지속부하·순간피크·전체QA/코드감사",
+      "create/restart/pull/migrate/collectstatic/swap/secret/account/fixture/validator",
+      "추가서버조회·Git쓰기·배포"
+    ]
+  },
+  "retention_and_writes": {
+    "retained": "현재app/DB·3images·3volumes·release/env·swap/fstab·기존DEV근거 유지. 별도완료/미사용·소유확인 후 지시 전 삭제0.",
+    "new_files": [
+      "backend/review/docker-01/server-preparation-independent.json"
+    ],
+    "new_QA_runs": 0,
+    "prepared_resource_mutations": 0,
+    "product_or_existing_document_report_writes": 0,
+    "Git_writes": 0,
+    "read_execution_effect_limit": "exec/SQL읽기/GET의 일시프로세스·접속·로그 효과는 있을 수 있음. 서버전체bytes불변 주장 아님.",
+    "sanitization": "서버/계정/SG ID·주소·자격/env값·쿠키/CSRF값·본문·원문로그/SSH/AWS 출력 저장0. env는 metadata만 읽음."
+  },
+  "current_followup_status": "PASS_NARROW_PRE_DNS_READONLY_SWAP_GAP_RESOLVED",
+  "additional_limited_read_followups": [
+    {
+      "scope": "설계가 명시적으로 승인한 owned swap 단일 항목의 추가 읽기1회. 최초 전체읽기1회와 구분. env/DB/HTTP/images/services/QA 재검사0.",
+      "prior_independent_report_sha256": "4b7475b40b16af0c9e0b1f4499c8b8aead5067cc3b0b32a9900267ddc7d7b52e",
+      "direct_result": {
+        "status": "PASS",
+        "observed_at_UTC": "2026-10-16T08:22:46.595504+00:00",
+        "path_alias": "OWNED_SWAP_PATH",
+        "raw_individual_values": {
+          "uid": 0,
+          "gid": 0,
+          "mode_octal": "0600",
+          "nlink": 1,
+          "is_regular": true,
+          "is_symlink": false,
+          "logical_bytes": 268435456,
+          "st_blocks_512": 524296,
+          "physical_bytes": 268439552,
+          "active_in_proc_swaps": true,
+          "fstab_matching_entry_count": 1,
+          "fstab_matching_entry_tokens": [
+            [
+              "OWNED_SWAP_PATH",
+              "none",
+              "swap",
+              "sw",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        "individual_checks": {
+          "uid_root": true,
+          "gid_root": true,
+          "mode_0600": true,
+          "nlink_one": true,
+          "regular": true,
+          "not_symlink": true,
+          "logical_256MiB": true,
+          "physical_logical_plus4096": true,
+          "currently_active": true,
+          "fstab_one_swap_entry": true
+        },
+        "additional_strict_SSH_read_invocations": 1,
+        "prepared_resource_mutations": 0
+      },
+      "assessment": "uid/gid0·0600·nlink1·regular·비symlink·현재active·fstab전용swap항목1개 각각 PASS. 논리256MiB/물리+4096 일치. 현재 관측에서 swap 권한 이상 없음.",
+      "original_observer_history": "최초 files_volumes_swap FAIL·fstab false·복합권한 false·미확인 한계와 기존 필드를 그대로 보존한다. 추가 수집의 개별 PASS를 최초 실행 성공으로 바꾸지 않는다.",
+      "cause_clarification": "이번 실제 fst​​ab 옵션도 sw였다. 따라서 최초 false 원인을 옵션값 차이라고 확정할 수 없다. 최초 원문/개별값 미보존으로 정확한 false 원인은 미확정이며 앞선 sw 가정 설명은 미확정 요구를 고정한 검사 설계의 한계로만 읽어야 한다. 이번 토큰화는 표준 inline comment를 제외하지만 이것이 최초 실패 원인이었다고 단정하지 않는다.",
+      "execution_counts": {
+        "initial_readonly_SSH": 1,
+        "additional_swap_only_readonly_SSH": 1,
+        "total_SSH_reads_for_this_independent_check": 2
+      },
+      "still_not_verified": [
+        "외부HTTP/TLS/ACME·공개proxy",
+        "운영부팅/reboot·지속성능/용량·순간피크"
+      ],
+      "changes": {
+        "prepared_resources": 0,
+        "product_code": 0,
+        "existing_reports_other_than_this_append": 0,
+        "new_QA_or_other_files": 0,
+        "Git": 0
+      },
+      "sanitization": "해당 swap lstat 원값/활성bool/해당 fst​​ab 항목 수와 alias 토큰만 보존. fst​​ab 원문·다른항목·UUID·secret/env/HTTP/로그 읽기나 저장 없음."
+    }
+  ]
+}

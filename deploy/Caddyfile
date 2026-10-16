@@ -1,0 +1,24 @@
+{
+	admin off
+	email {$Y3GYM_TLS_EMAIL}
+	servers {
+		strict_sni_host on
+		timeouts {
+			read_header 10s
+			read_body 30s
+			write 30s
+		}
+	}
+}
+
+{$Y3GYM_DOMAIN} {
+	import /etc/caddy/routes.caddy
+}
+
+www.{$Y3GYM_DOMAIN} {
+	redir https://{$Y3GYM_DOMAIN}{uri} 308
+}
+
+http://127.0.0.1:8081 {
+	respond /healthz/ "ok" 200
+}

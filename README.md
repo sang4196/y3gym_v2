@@ -1,6 +1,16 @@
 # Y3GYM
 
-**2026-10-16 LOGO-01 헤더 로고 병기:** 기존 Wagtail 로고 선택기를 재사용해 공통 헤더에서 선택 로고를 브랜드명 왼쪽에 함께 표시한다. 로고 미선택 시 기존 텍스트만 표시하며 푸터·게시글 팝업과 공개/초안·이미지 접근 정책은 유지한다. 개발 자체 검증의 원실패·후보는 아래 근거에 보존한다. [최종 독립 검증](backend/review/logo-01/independent-verification.json)은 같은 로고 전용 후보에서 전체 167/167·기존 4opt-in·skip0·실행1회와 로고 브라우저 8흐름·60배치를 확인했다. 사용자 시각 승인은 대기다. 합성 QA 캡처는 사용자 시각 승인을 뜻하지 않는다. [로고 단위 근거](backend/review/logo-01/verification.json). 이번 로고 변경은 누적 Docker/운영 준비 변경과 별도로 Git 후보를 구분한다.
+**2026-10-16 LOGO-01 헤더 로고 병기:** 기존 Wagtail 로고 선택기를 재사용해 공통 헤더에서 선택 로고를 브랜드명 왼쪽에 함께 표시한다. 로고 미선택 시 기존 텍스트만 표시하며 푸터·게시글 팝업과 공개/초안·이미지 접근 정책은 유지한다. 개발 자체 검증의 원실패·후보는 아래 근거에 보존한다. [최종 독립 검증](backend/review/logo-01/independent-verification.json)은 같은 로고 전용 후보에서 전체 167/167·기존 4opt-in·skip0·실행1회와 로고 브라우저 8흐름·60배치를 확인했다. 사용자 시각 승인은 대기다. 합성 QA 캡처는 사용자 시각 승인을 뜻하지 않는다. [로고 단위 근거](backend/review/logo-01/verification.json). 이번 로고 변경은 누적 Docker/운영 준비 변경과 별도로 Git 후보를 구분한다. 로고 개발 커밋 e193cfff와 PR #1의 main 머지 f1321a7은 설계가 원격 일치를 확인했다. 현재 원루트 HEAD628aa66·빈 index와 누적 Docker/운영 변경은 유지하며 Git 동기화하지 않는다.
+
+**2026-10-16 후속 상태 — 서울 배포 테스트 서버:** www Caddy 구성을 실제 적용하고 proxy만1회 교체했다. https://www.y3gym.co.kr 는 경로·query를 보존한308로 https://y3gym.co.kr 에 도착한다. HTTP www는 HTTPS www를 거치는308 두 단계다. www/root 신뢰 TLS·5 URI의 HTTP/HTTPS10체인·루트/정적8개/익명 로그인/보안 경계·새 익명 브라우저3흐름을 개발에서 확인했고 기존 자체 TLS·10체인·브라우저3 근거로 이번 WWW 작업을 종료했고 추가 독립 검증은 중단했다. app/DB의 ID·시작 시각·PID, env bytes·named volume5의 소유/권한은 보존했다. [WWW 적용·원 실패/별도 후속·정리 근거](backend/review/docker-01/README.md), [현재 운영·롤백 안내](docs/OPERATIONS.md#실제-www-https리다이렉트-적용)을 따른다. 원 로컬 runtime FAIL3건/로그 한계와 최초 DNS gaierror의 정확한 원인 미확정은 그대로 남겼으며 별도 권한 재현/후속 runtime과 기본 DNS 외부 후속은 PASS다.
+
+기존 PC 비공개 백업은 **2026-10-16 18:47 KST 초기 스냅샷(사용자1·콘텐츠/리비전/미디어0)**이며 이후 사용자 업로드를 포함하지 않는다. 사본4파일278006bytes·0700/0600을 보존했다. [백업 개발 원 실패/후속](backend/review/docker-01/README.md)과 [독립 백업 복구 한정 PASS](backend/review/docker-01/server-backup-restore-independent.json)는58테이블/536행·미디어0 복구를 확인한 이전 근거이며 기본 렌더는 DEV 후속 재사용이다. 이번 WWW 작업에서 백업/인증 로그인·계정/콘텐츠 명시 쓰기·DB 전체 해시 검사를 반복하지 않았다. 공개 GET의 자연스러운 rendition/cache 변화는 가능하다.
+
+A 로컬 완료/B 루트·www HTTPS·초기 관리자/접근 관측·초기 PC 백업/격리 복구와 C 실사진 ACL·지도키·HSTS0/W004·SAMEORIGIN/W019·재부팅/완전 복구·정기 외부 보관 미완료를 구분한다. [TLS 독립 한정 PASS](backend/review/docker-01/server-https-independent.json)·[관리자 독립 원 FAIL/관측 한계](backend/review/docker-01/server-admin-independent.json)는 유지한다. 이번 own QA9run/Docker5·서버 stage/validator는 정리했고 운영 rollback root0600만 보존했다. HEAD628aa66·빈 index·누적 변경/불변 app/build98은 유지한다. 이전 source191 freeze는 이번 Caddy 수정으로 현재 전체 소스 일치를 뜻하지 않으며 전체170 검사는 재실행하지 않았다. Git·DNS·SG·새 AWS자원 쓰기0이며 아래 AWS0·미배포·www NXDOMAIN·미디어0는 각 당시 이력이다.
+
+**2026-10-16 AWS Docker 개발 자체·독립 로컬 검증 완료(한계 유지):** AWS Ubuntu 단일 EC2 + Docker Engine/Compose, Caddy·Gunicorn/WSGI·PostgreSQL17.11 구성을 로컬 linux/amd64에서 검증했다. 개발은 동일189파일 소스로 Docker23/23·CLI15/15·전체167/167(4 opt-in·skip0)을 실행했고, 독립 검증은 실제 Docker23/23(실 TLS 브라우저6 포함)과 JPEG/WebP 최소 native probe를 확인했다. 독립의 전체167·CLI15는 같은 소스의 인계 근거 재사용이며 재실행·합산이 아니다. 새 제품 결함0, 원 FAIL·OBS2 관측 한계는 유지한다. **A 로컬 완료 / B AWS 미진행 / C 공개 운영 미완료·외부 백업 미설정**이며 실제 AWS·이번 Git 쓰기는0이다. [개발 근거](backend/review/docker-01/README.md), [독립 최종 판정](backend/review/docker-01/independent-verification.json), [구성·운영 경계](docs/OPERATIONS.md).
+
+이번 마감은 테스트된189소스 밖의 네 문서만 수정한 후속 docs-only 작업이다. 두 검증 JSON의 당시 판정·194파일 freeze·원 FAIL은 보존하며 현재 문서 hash가 당시 freeze와 달라졌음을 구분한다. 이전 운영 중단·OCI 선택 대기는 당시 이력이고 독립 OBS2의 추가6파일 정확한 나노초 대조 미검증은 유지한다.
 
 **2026-10-15 현재 제품 개발 기준선 완료·커밋 준비 독립 조건부 통과:** 합의된 필수 제품 기능 중 확인된 미구현 C는 없다. 홈·지점/시설·트레이너·소식 CMS·팝업·지도/연락·사진 확대·공통 헤더는 기존 사용자 한정 승인(A)을 유지하고, 공개/초안·권한·충돌·QA 수명주기·dev/prod 설정은 로컬 구현·검증 완료와 잔여 한계(B)를 구분한다. 실제 자료·영업위치·운영권한·인프라·백업·배포는 후속 공개/운영 준비(D)다. 운영 비교·Docker·배포 준비는 사용자 우선순위로 잠시 중단했다. **운영 릴리스나 Git 커밋·푸시 완료를 뜻하지 않는다.** 이하 예전 날짜의 승인 대기·미구현 문구는 당시 단계 이력이며 현재 사용자 승인을 취소하거나 과거 판정을 변경하지 않는다.
 
@@ -62,7 +72,7 @@
 - **미구현/미완료:** 실제 채널 도착의 구체 조건·로그인/메시지/앱호출·실제 통화/영업번호 확인, 실제 지점 자료·위치 확인·배포·운영 환경, 프로필 삭제/복원·운영 계정 확대. `prototype/` 원본은 계속 정적 참고 자료이며 보존한다.
 - 기존 Chromium 프로토타입 검수 자료를 보존했다. 이번 소식 CMS의 실제 검증·새 캡처는 [별도 기록](backend/review/README.md)에 두며, 관리자 사용성의 사용자 승인·실제 기기 검증·출시 완료와 구분한다.
 
-2026-10-10 사용자 지시부터 설계 → 개발 → 독립 검증 → 필요한 Git 반영을 역할별로 맡기고, 정상 보고와 진행 조건을 확인하면 승인된 계획 안에서 다음 작은 단위를 자동 진행한다. 담당 세션과 보고·승인 경계는 [실행 역할·작업 흐름](docs/WORKFLOW.md)을 따른다. M2-1 이후 확정한 지점 정책을 이번 M2-2의 [PRD](docs/PRD.md#fr-02-지점시설)와 [구현 계획](docs/IMPLEMENTATION-PLAN.md)에 반영했다.
+과거 흐름(2026-10-10)은 설계 → 개발 → 독립 검증 → 필요한 Git 반영과 승인 계획 안의 자동 진행이었다. 현재는 영향 범위에 맞춰 담당 하나가 필요한 검증·보고까지 수행하고 요청 완료 시 멈추는 [WORKFLOW](docs/WORKFLOW.md)를 따른다. 담당 세션과 보고·승인 경계는 [실행 역할·작업 흐름](docs/WORKFLOW.md)을 따른다. M2-1 이후 확정한 지점 정책을 이번 M2-2의 [PRD](docs/PRD.md#fr-02-지점시설)와 [구현 계획](docs/IMPLEMENTATION-PLAN.md)에 반영했다.
 
 본점은 1곳이며 공개 상태일 때 첫 순서·새 방문 기본값이다. 명시된 지점 선택을 유지하고 본점 비공개 시 첫 유효 공개 지점을 선택한다. 미완성 초안을 허용하며 공개 필수값은 지점명·주소·운영시간이다. 마지막 공개 지점도 철회 가능하고 0곳이면 준비 중 안내와 문의 버튼 숨김을 적용한다. 트레이너 CMS는 M2-3에서 연결했으며 실서비스 연결·사용자 사용성 확인은 후속 범위다. 전체 콘텐츠의 초안 → 미리보기 → 공개와 팝업의 별도 적용 정책은 유지한다.
 

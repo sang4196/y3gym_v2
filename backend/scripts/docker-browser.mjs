@@ -1,0 +1,76 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';
+
+const run = process.env.Y3GYM_QA_RUN_DIR;
+const data = JSON.parse(fs.readFileSync(path.join(run, 'browser-input.json'), 'utf8'));
+const origin = process.env.Y3GYM_QA_ORIGIN;
+const browser = await chromium.launch({ headless: true });
+const checks = [];
+let step = 'login';
+try {
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+  const page = await context.newPage();
+  await page.goto(`${origin}/admin/login/`);
+  await page.locator('#id_username').fill(data.username);
+  await page.locator('#id_password').fill(data.password);
+  await page.locator('button[type=submit], input[type=submit]').first().click();
+  await page.waitForURL(`${origin}/admin/`);
+  checks.push('Real HTTPS browser login with owned CA; no TLS bypass');
+  step = 'image_upload';
+  await page.goto(`${origin}/admin/images/add/`);
+  await page.locator('#id_title').fill('[TEST] Browser upload');
+  await page.locator('input[type=file]').setInputFiles(data.upload_path);
+  await Promise.all([page.waitForNavigation(), page.locator('button[type=submit].button-longrunning').filter({ hasText: /업로드|Upload/ }).click()]);
+  assert.equal(new URL(page.url()).pathname, '/admin/images/');
+  await page.getByRole('link', { name: '[TEST] Browser upload', exact: true }).click();
+  assert.match(new URL(page.url()).pathname, /\/admin\/images\/\d+\//);
+  checks.push('Actual browser image upload through HTTPS proxy');
+  step = 'preview';
+  await page.goto(`${origin}/admin/snippets/news/post/edit/${data.post_id}/`);
+  await page.locator('#id_title').fill('[TEST] Docker browser draft');
+  await page.locator('button[data-side-panel-toggle="preview"]').click();
+  await page.frameLocator('iframe').first().locator('#post-title').filter({ hasText: '[TEST] Docker browser draft' }).waitFor();
+  checks.push('Same-origin Wagtail iframe preview remains functional');
+  step = 'save_draft';
+  await page.locator('button[data-side-panel-toggle="preview"]').click();
+  await Promise.all([page.waitForNavigation(), page.getByRole('button', { name: '초안 저장', exact: true }).click()]);
+  if (!(await page.locator('#id_title').count())) await page.goto(`${origin}/admin/snippets/news/post/edit/${data.post_id}/`);
+  await page.locator('#id_title').waitFor();
+  assert.equal(await page.locator('#id_title').inputValue(), '[TEST] Docker browser draft');
+  checks.push('Actual admin draft save');
+  step = 'publish';
+  await page.locator('footer button[data-w-dropdown-target="toggle"]').click();
+  await Promise.all([page.waitForNavigation(), page.locator('button[name="action-publish"]').click()]);
+  const publicContext = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+  const visitor = await publicContext.newPage();
+  await visitor.goto(`${origin}/news/${data.post_id}/`);
+  await visitor.locator('img[data-image-full]').first().click();
+  await visitor.locator('.content-image-viewer[open] img').waitFor();
+  await visitor.waitForFunction(() => {
+    const image = document.querySelector('.content-image-viewer[open] img');
+    return image?.complete && image.naturalWidth > 0;
+  });
+  const fit = await visitor.locator('.content-image-viewer[open] img').evaluate(image => getComputedStyle(image).objectFit);
+  assert.equal(fit, 'contain');
+  checks.push('Published image and high-resolution lightbox use protected media');
+  step = 'responsive_viewer';
+  await visitor.locator('.content-image-close').click();
+  await visitor.goto(origin);
+  await visitor.locator('.hero-image-frame img[data-image-full]').waitFor();
+  assert.equal(await visitor.locator('.hero-image-frame img[data-image-full]').evaluate(image => getComputedStyle(image).objectFit), 'contain');
+  await visitor.setViewportSize({ width: 375, height: 900 });
+  await visitor.locator('.hero-image-frame img[data-image-full]').click();
+  await visitor.locator('.content-image-viewer[open]').waitFor();
+  checks.push('Desktop/mobile approved contain styling and viewer preserved');
+  await visitor.close();
+  await publicContext.close();
+  await context.close();
+  fs.writeFileSync(path.join(run, 'output/docker-browser-result.json'), JSON.stringify({ status: 'PASS', checks }) + '\n', { mode: 0o600 });
+} catch (error) {
+  fs.writeFileSync(path.join(run, 'output/docker-browser-result.json'), JSON.stringify({ status: 'FAIL', checks, failure: { step, type: error.name } }) + '\n', { mode: 0o600 });
+  throw error;
+} finally {
+  await browser.close();
+}

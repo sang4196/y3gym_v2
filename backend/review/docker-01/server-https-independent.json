@@ -1,0 +1,357 @@
+{
+  "schema": 1,
+  "status": "PASS_ROOT_HTTPS_ANONYMOUS_WITH_EVIDENCE_REDACTION_WARNING",
+  "recorded_at_UTC": "2026-10-16T09:05:36.311851+00:00",
+  "scope": "승인된 루트 https://y3gym.co.kr/만. 읽기SSH1회와 관리CLI의 새 익명TLS/HTTP/브라우저 관측. www·계정생성·제품/서버설정·서비스쓰기·Git은 범위 밖.",
+  "requirements": [
+    {
+      "basis": "이번 설계 한정 지시; AGENTS.md 검증과 보고; docs/OPERATIONS.md:34",
+      "criteria": "시스템신뢰/호스트검증 TLS·HTTP308·홈/익명login/static·href /·Host/Origin/CSRF음성경계·새익명브라우저·현재3서비스/공개포트/env/Caddy영속/예산 읽기 확인."
+    },
+    {
+      "basis": "docs/OPERATIONS.md:42; deploy/Caddyfile; deploy/routes.caddy; backend/config/urls.py; backend/news/views.py:95",
+      "criteria": "strict SNI Host 및 전달헤더 제거/재설정, media는 앱 protected_media 경로. 빈DB missing404를 실사진ACL검증으로 확대하지 않음."
+    }
+  ],
+  "direct_external_HTTPS": {
+    "status": "PASS",
+    "origin": "https://y3gym.co.kr",
+    "checks": {
+      "home": {
+        "HTTP": 200,
+        "brand_href": "/",
+        "SAMEORIGIN": true,
+        "nosniff": true,
+        "HSTS_absent_expected_HSTS0": true
+      },
+      "HTTP_redirect": {
+        "HTTP": 308,
+        "root_HTTPS_location": true
+      },
+      "anonymous_login": {
+        "HTTP": 200,
+        "SAMEORIGIN": true,
+        "nosniff": true,
+        "CSRF_Secure": true,
+        "CSRF_Lax": true
+      },
+      "HTTPS_forwarded_headers": {
+        "HTTP": 200,
+        "no_redirect": true,
+        "foreign_host_not_reflected": true
+      },
+      "HTTP_forged_https": {
+        "HTTP": 308,
+        "root_HTTPS_location": true
+      },
+      "mismatched_Host": {
+        "HTTP": 421
+      },
+      "valid_CSRF_foreign_Origin": {
+        "HTTP": 403
+      },
+      "trusted_Origin_empty_form_control": {
+        "HTTP": 200,
+        "credentials_submitted": false
+      },
+      "missing_CSRF": {
+        "HTTP": 403
+      },
+      "missing_media": {
+        "HTTP": 404,
+        "Django_security_headers": true
+      }
+    },
+    "static": {
+      "prototype/index.html": {
+        "HTTP": 200,
+        "bytes": 12817,
+        "nonempty": true
+      },
+      "prototype/styles.css": {
+        "HTTP": 200,
+        "bytes": 26890,
+        "nonempty": true
+      },
+      "news/brand.css": {
+        "HTTP": 200,
+        "bytes": 1034,
+        "nonempty": true
+      },
+      "news/home-popups.js": {
+        "HTTP": 200,
+        "bytes": 6481,
+        "nonempty": true
+      },
+      "news/context.js": {
+        "HTTP": 200,
+        "bytes": 3337,
+        "nonempty": true
+      },
+      "prototype/branch-data.js": {
+        "HTTP": 200,
+        "bytes": 2112,
+        "nonempty": true
+      },
+      "prototype/assets/fonts/PretendardVariable.woff2": {
+        "HTTP": 200,
+        "bytes": 2057688,
+        "nonempty": true
+      },
+      "prototype/assets/fonts/LICENSE.txt": {
+        "HTTP": 200,
+        "bytes": 4418,
+        "nonempty": true
+      }
+    },
+    "certificate": {
+      "protocol": "TLSv1.3",
+      "issuer": [
+        "Let's Encrypt",
+        "YE1"
+      ],
+      "DNS_SAN": [
+        "y3gym.co.kr"
+      ],
+      "notBefore": "Oct 16 07:44:32 2026 GMT",
+      "notAfter": "Jan 14 07:44:31 2027 GMT",
+      "system_trust_hostname_verified_observer": true
+    },
+    "DNS_A_match_observed": true
+  },
+  "direct_anonymous_browser": {
+    "status": "PASS",
+    "anonymous": true,
+    "ignoreHTTPSErrors": false,
+    "checks": [
+      {
+        "page": "/",
+        "HTTP": 200,
+        "brand_visible": true,
+        "brand_href": "/",
+        "fonts_loaded": true,
+        "TLS_security_details_observed": {
+          "issuer": "YE1",
+          "protocol": "TLS 1.3",
+          "subjectName": "y3gym.co.kr",
+          "validFrom": 1792136672,
+          "validTo": 1799912671
+        }
+      },
+      {
+        "page": "/admin/login/",
+        "HTTP": 200,
+        "username_visible": true,
+        "password_visible": "[REDACTED]",
+        "form_visible": true
+      }
+    ],
+    "page_error_count": 0,
+    "console_error_count": 0,
+    "blocked_external_or_nonread": 0,
+    "failed_requests": [],
+    "owned_browser": {
+      "pid": 107431,
+      "PID_absent_now": true,
+      "fresh_launch_observed": true,
+      "profile_reuse": false
+    },
+    "owned_browser_closed": true,
+    "assets_summary": {
+      "responses": 32,
+      "by_type": {
+        "script": 26,
+        "stylesheet": 5,
+        "font": 1
+      },
+      "non200": [],
+      "font_loaded": true
+    }
+  },
+  "direct_readonly_SSH_preflight": {
+    "status": "PASS",
+    "observed_at_UTC": "2026-10-16T08:57:31.866075+00:00",
+    "strict_SSH_invocations": 1,
+    "services": {
+      "proxy": {
+        "same_ID_start": true,
+        "healthy": true,
+        "same_image": true,
+        "no_OOM": true,
+        "restart_zero": true,
+        "memory_limit_matches": true,
+        "only_TCP80_443_published": true,
+        "no_media_mount": true,
+        "static_readonly": true,
+        "persistent_data_config_RW": true
+      },
+      "app": {
+        "same_ID_start": true,
+        "healthy": true,
+        "same_image": true,
+        "no_OOM": true,
+        "restart_zero": true,
+        "memory_limit_matches": true,
+        "no_host_published_ports": true
+      },
+      "database": {
+        "same_ID_start": true,
+        "healthy": true,
+        "same_image": true,
+        "no_OOM": true,
+        "restart_zero": true,
+        "memory_limit_matches": true,
+        "no_host_published_ports": true
+      }
+    },
+    "env_root0600_parent_root0700": true,
+    "source4_hash_matches": {
+      "compose.production.yaml": true,
+      "deploy/Caddyfile": true,
+      "deploy/routes.caddy": true,
+      "backend/scripts/deploy.py": true
+    },
+    "volume5_names_labels_match": true,
+    "volume_allocated_bytes": {
+      "caddy_config": 12288,
+      "caddy_data": 77824,
+      "database": 53014528,
+      "media": 4096,
+      "static": 21860352
+    },
+    "Caddy_persistence_in_mounts": true,
+    "nonloopback_TCP_ports": [
+      22,
+      80,
+      443
+    ],
+    "only22_80_443_no_app_DB_ports": true,
+    "resources": {
+      "root_free_bytes": 1193570304,
+      "inode_free": 684298,
+      "memory_bytes": {
+        "MemAvailable": 441405440,
+        "SwapTotal": 268431360,
+        "SwapFree": 110600192
+      },
+      "oom_kill_counter": 0,
+      "container_memory_usage": {
+        "proxy": "17.16MiB / 64MiB",
+        "app": "106.1MiB / 512MiB",
+        "database": "28.12MiB / 192MiB"
+      },
+      "budget": {
+        "original_components_bytes": {
+          "image_FS_metadata_reserve": 134217728,
+          "DB_initial_growth": 268435456,
+          "media_initial": 134217728,
+          "static_Caddy_state": 67108864,
+          "bounded_service_logs": 94371840,
+          "free_space_reserve": 536870912,
+          "logical_swap": 268435456
+        },
+        "extra_swap_metadata_bytes": 4096,
+        "actual_spent_once_bytes": {
+          "swap": 268439552,
+          "DB": 53014528,
+          "media": 4096,
+          "static_Caddy": 21950464
+        },
+        "remaining_reserved_floor_bytes": 1160253440,
+        "margin_bytes": 33316864,
+        "approach_buffer_bytes": 16777216
+      }
+    },
+    "preflight_guard_pass": true,
+    "prepared_resource_mutations": 0
+  },
+  "resource_scope": "SSH는 외부검사 전 snapshot1회이며 이후 연속피크/최종재조회가 아니다. 여유33316864bytes(31.8MiB),16MiB buffer 위16539648bytes. 월간/최대사진/지속성능 보장 아님.",
+  "media_and_forwarding_basis": {
+    "current_remote4_config_hashes_match_local": true,
+    "current_proxy_no_media_mount": true,
+    "routing": "현재routes.caddy는 /static/*만 파일 제공하며 나머지는app:8000. Compose/current mount는 Caddy에static RO만 공유하고 media를 공유하지 않는다. 같은불변appID의 이전94파일/route 근거를 재사용하며 config.urls media→news.views.protected_media와 이번 missing404/security headers가 일치.",
+    "header_boundary": "현재 Caddyfile strict_sni_host on, routes는 Forwarded/X-Forwarded-Host/Port/Real-IP 제거·Proto/For 재설정. 이번HTTPS 위조헤더200/redirect없음·HTTP 위조https도308·mismatchedHost421 확인.",
+    "limit": "실제상류 raw header echo 추가/관측0, 기존사진/공개·초안·비공개 이미지ACL/업로드 검증0."
+  },
+  "execution_and_failure_history": {
+    "DEV_reused": {
+      "source_path": "backend/review/docker-01/server-https.json",
+      "source_sha256": "911fbf998043bde269622e437082a094f959116af5cc6ca6dd5c90595a519c54",
+      "original_run": "qa-20261016T084434Z-ac9d4bd8117d",
+      "original_status": "FAIL_EVIDENCE_WRITE_OBSERVER_PATH_SHADOWING",
+      "original_exit": 1,
+      "cause": "Path변수를static path문자열이 가린 결과저장 AttributeError. 최초성공외부결과는 미보존/미주장.",
+      "separate_followup": "PASS_TRUSTED_ROOT_HTTPS_ANONYMOUS_HTTP_BROWSER_WITH_LIMITS",
+      "correction": "report_path로구분한 별도수집. 서버proxy retry/restart 아님; 현재동일ID/start·restart0 직접확인."
+    },
+    "independent_first": {
+      "run_id": "qa-20261016T085932Z-f3bdd614220e",
+      "exit": 1,
+      "status": "FAIL_LOCAL_OBSERVER_SYNTAX_BEFORE_NETWORK_BROWSER",
+      "cause": "HTTP forged-https Location 문자열 오타. HTTP/browser 실행0. 저장제품/도구파일 수정0."
+    },
+    "independent_separate_followup": {
+      "run_id": "qa-20261016T090038Z-67a1c480e476",
+      "exit": 0,
+      "status": "PASS_EXTERNAL_TLS_HTTP_BROWSER",
+      "correction": "인라인관측 문자열만 정정하고 compile 구문PASS 후 새관리run에서1회실행. 최초실패와합산하지 않음."
+    }
+  },
+  "evidence_warning": {
+    "id": "QA_REDACTION_STRUCTURED_JSON",
+    "kind": "검증근거/도구 경고; HTTPS제품결함으로 분류하지 않음",
+    "requirement_basis": "AGENTS.md 실제수행검증·실패/미확인 구분 및 근거보존",
+    "related_files": [
+      "backend/scripts/qa_redaction.py:50",
+      "backend/scripts/qa_redaction.py:55",
+      "backend/review/qa-lifecycle/runs/qa-20261016T090038Z-67a1c480e476/evidence-auto-result-5b8be2a7.json"
+    ],
+    "reproduction": "후속run evidence-auto-result의 sanitized_logs command.log를 JSON으로 읽는다. password_visible:true가 unquoted [REDACTED]로 바뀌어 parse오류; 긴필드명들이 동일 [OPAQUE REDACTED] 키로 바뀌어 일반dict파서에서는 충돌한다.",
+    "expected": "비밀값을 제거하면서 JSON 구문과 비밀이 아닌 개별검사결과/항목구분을 보존.",
+    "actual": "직접원실행exit0/overallPASS, home·login/form·username표시 및페이지/console오류0·자산32응답200은 보존. password_visible 원bool은 가려져 개별값재확인 불가. TLS/전달헤더 등 일부이름은가려짐.",
+    "handling": "Unquoted [REDACTED] represented as a JSON string, duplicate opaque keys retained, ambiguous field labels named only from unique known emitter shape. No removed raw values restored; password_visible remains redacted. Original archive untouched.",
+    "limit": "파생요약은 known emitter의 유일한shape로 이름을 붙였고 제거된값은 복원하지 않음. password_visible=[REDACTED] 유지; 브라우저overallPASS의 산출조건에실제가시검사가포함돼있음을구분. 원archive/도구 수정·검사재실행0."
+  },
+  "reused_not_rerun": {
+    "source191_and_build98": "8bdc75ca1c44d88c920d02952e5b45e3041160b7c2b34cfdf84ed40a22ff69fc / b59117b373c1fe90fdef8433ef7c5e40eebd214617097024734cf1039039660d",
+    "whole170": "기존전체170/170·4opt-in·skip0·1회근거 재사용. 이번AWS전체회귀/추가170실행/합산 아님.",
+    "image94_preDNS_swap": "같은불변appID의 이전94파일·preDNS기본·별도swap개별권한PASS 인계; 이번전수반복0.",
+    "empty_DB_users0": "DEV최신읽기와이전독립근거인계. 이번DB SQL/계정/CMS인증검사0.",
+    "documents": "최신README/OPERATIONS/IMPLEMENTATION-PLAN3해시 대조 일치; 이번문서수정0."
+  },
+  "remaining_warnings_and_unverified": [
+    "QA sanitizer의 구조화JSON 키충돌/가려진password_visible 개별값: 위근거경고 유지.",
+    "HSTS0/W004·SAMEORIGIN/W019 정책유지. 실제응답HSTS없음/프레임SAMEORIGIN; check --deploy 미실행.",
+    "자동인증서갱신·재부팅/서비스복구·지속부하/순간피크·최대용량 미검증.",
+    "실사진ACL/업로드·인증CMS·운영계정/최초관리자·실기기/Whale/OS IME·외부백업/복원 미검증.",
+    "www는대상밖. DNS/SG/AWS자원쓰기·공개서비스 재시작/재배포0."
+  ],
+  "cleanup_and_preservation": {
+    "own_runs": [
+      {
+        "run_id": "qa-20261016T085932Z-f3bdd614220e",
+        "CLI_exit": 1,
+        "state": "DELETED",
+        "run_folder_absent": true,
+        "evidence_path": "backend/review/qa-lifecycle/runs/qa-20261016T085932Z-f3bdd614220e/evidence-auto-result-85402d4c.json",
+        "evidence_sha256": "fce376e92dd7d3bf0c38f964a4bfbd352c86f05d4e477c7a8349a9c770316949",
+        "observer_failure": "SyntaxError before any external HTTP/browser execution"
+      },
+      {
+        "run_id": "qa-20261016T090038Z-67a1c480e476",
+        "CLI_exit": 0,
+        "state": "DELETED",
+        "run_folder_absent": true,
+        "evidence_path": "backend/review/qa-lifecycle/runs/qa-20261016T090038Z-67a1c480e476/evidence-auto-result-5b8be2a7.json",
+        "evidence_sha256": "e6f93d286dbbb37808c752cb068ff98dc797f70d94f540cba79c806eab1eb3d7"
+      }
+    ],
+    "summary": "두관리run 모두DELETED·폴더부재. 후속freshChrome closed 및PID부재 직접확인. DB/로컬Docker자원생성·제거0. 표준CLI sanitized근거/원FAIL은고유ID로보존.",
+    "remote_prepared_resources": "기존3서비스·5volumes·이미지/release/env/swap/fstab유지. 서버준비변경0; 익명요청의접속/로그효과는가능.",
+    "new_files": "독립summary1개와자동CLI의두새ID표준근거만. 기존실행JSON/문서/제품/설정 수정0.",
+    "sanitization": "서버/계정/SG ID·IP·env/secret·쿠키/CSRF값·HTTP본문·로그원문·브라우저인증자료 저장0. publicTLS cert와비식별결과만.",
+    "root_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "index_empty": true,
+    "commit_push_deploy": 0
+  }
+}

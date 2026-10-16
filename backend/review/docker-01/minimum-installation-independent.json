@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "date_KST": "2026-10-16",
+  "status": "PASS_MINIMUM_INSTALLATION_READ_ONLY_NEXT_IMAGE_UNVERIFIED",
+  "scope": "같은 기존 서울 EC2의 최소 Docker4 설치 결과를 원격 읽기 전용으로 한 번 확인. 제품/191소스/전체170/Docker23 재검사0.",
+  "observed_UTC": "2026-10-16T06:40:24.190080+00:00",
+  "basis": {
+    "developer_report": "backend/review/docker-01/minimum-installation.json",
+    "developer_report_sha256": "762a07e2dceb67e7c6767883d878b7ecf8c73b85f964cb2098b3929a0c957bc5",
+    "requirements": "최신 설계 지시·AGENTS.md의 원본 보존·직접 확인/인계 구분",
+    "target_alias": "Existing Seoul deployment test EC2",
+    "target_ID_IP_region_type_arch": "AWS EC2 Describe + IMDSv2 identity 일치. Ubuntu26.04/x86_64/t3.micro 확인. 실제 계정/인스턴스/SG ID·IP·인증값은 이 보고서에 기록하지 않음.",
+    "connection": "기존 private key, strict known_hosts, UpdateHostKeys=no, BatchMode/IdentitiesOnly, agent/X11 forwarding 없음. 기존 read-only profile 재사용."
+  },
+  "direct": {
+    "OS": "Ubuntu 26.04 LTS",
+    "architecture": "x86_64",
+    "package4": {
+      "docker-ce": {
+        "status": "install ok installed",
+        "version": "5:29.9.1-1~ubuntu.26.04~resolute",
+        "arch": "amd64"
+      },
+      "docker-ce-cli": {
+        "status": "install ok installed",
+        "version": "5:29.9.1-1~ubuntu.26.04~resolute",
+        "arch": "amd64"
+      },
+      "containerd.io": {
+        "status": "install ok installed",
+        "version": "2.4.2-2~ubuntu.26.04~resolute",
+        "arch": "amd64"
+      },
+      "docker-compose-plugin": {
+        "status": "install ok installed",
+        "version": "5.6.0-1~ubuntu.26.04~resolute",
+        "arch": "amd64"
+      }
+    },
+    "dpkg_audit": {
+      "exit": 0,
+      "output": ""
+    },
+    "Docker_info": {
+      "ServerVersion": "29.9.1",
+      "Driver": "overlayfs",
+      "DriverStatus": [
+        [
+          "driver-type",
+          "io.containerd.snapshotter.v1"
+        ]
+      ],
+      "DockerRootDir": "/var/lib/docker",
+      "Images": 0,
+      "Containers": 0,
+      "ContainersRunning": 0,
+      "ContainersStopped": 0,
+      "Architecture": "x86_64",
+      "CgroupDriver": "systemd",
+      "CgroupVersion": "2"
+    },
+    "Compose_version": "5.6.0",
+    "containerd_version": "containerd containerd v2.4.2 b7a25261e029d68978bbf290df0a62fc819b3c51",
+    "daemon_services": {
+      "docker.service": {
+        "active": "active",
+        "enabled": "enabled",
+        "MainPID": "890010",
+        "start_monotonic": "13371849135531",
+        "RSS_bytes": 55750656
+      },
+      "containerd.service": {
+        "active": "active",
+        "enabled": "enabled",
+        "MainPID": "889834",
+        "start_monotonic": "13371847458195",
+        "RSS_bytes": 30560256
+      }
+    },
+    "resource_counts": {
+      "images": 0,
+      "containers": 0,
+      "volumes": 0
+    },
+    "socket": {
+      "mode": "0o660",
+      "uid": 0,
+      "gid": 986,
+      "same_as_DEV": true,
+      "group_identity": "동일 gid를 DEV 기록과 대조했습니다. group 이름을 별도로 재조회하지는 않았습니다."
+    },
+    "ubuntu_group_set_same_as_DEV": true,
+    "ubuntu_Docker_group_member": false,
+    "network": {
+      "SG_TCP22_IPv4_32_only": true,
+      "SG_ssh_source_rule_count": 1,
+      "actual_SSH_peer_allowed": true,
+      "nonloopback_TCP_ports": [
+        22
+      ],
+      "Internet_Docker_API_listener": false,
+      "dockerd_ExecStart_has_no_TCP_endpoint": true,
+      "docker_socket_listen": "/run/docker.sock (Stream)",
+      "public80_443_not_opened": true,
+      "SG_before_after_limit": "현재 구조를 DEV의 비식별 SSH22 /32 조건과 대조. 과거 raw SG rule/hash나 CloudTrail 변동 감사는 아님."
+    },
+    "existing_services": {
+      "compared": 23,
+      "PID_start_identity_changes": [],
+      "Docker_PID_same_as_DEV": true,
+      "containerd_PID_same_as_DEV": true
+    },
+    "root_bytes": {
+      "total": 7097950208,
+      "available": 2742124544,
+      "free": 2758901760
+    },
+    "root_inodes": {
+      "total": 878080,
+      "available": 721149
+    },
+    "memory_bytes": {
+      "MemTotal": 952860672,
+      "MemAvailable": 484909056,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "read_only_command_families": [
+      "AWS ec2 describe-instances / describe-security-groups",
+      "SSH python3 - (IMDSv2 인증/metadata read, /etc/os-release)",
+      "dpkg-query4 / dpkg --audit",
+      "sudo -n docker info / compose version / image ls / ps / volume ls",
+      "containerd --version / systemctl show(기존23+Docker/containerd/socket)",
+      "statvfs / /proc/meminfo / daemon /proc status / socket stat / id ubuntu / ss -ltnH"
+    ],
+    "remote_observation_sessions": 1,
+    "remote_retries": 0
+  },
+  "inherited_not_reexecuted": {
+    "APT_simulate_and_install": "DEV의 동일 core argv/정확4버전/--no-install-recommends·--no-upgrade·--no-remove 결과 재사용. 이번엔 설치/apt simulate/update를 실행하지 않음.",
+    "deb_cleanup": "DEV의 기존SSL deb3 보존 및 정확 새deb4 소유·버전·SHA 정리 기록 재사용. 복구/재삭제/전역clean/purge0.",
+    "previous_source_image_and_whole_results": "191/170, logo167, Docker23 결과는 기존 범위/한계 그대로이며 이번 직접 재실행 아님.",
+    "TLS_contact": "사용자 명시 승인된 연락메일은 기존 보고서 참조. 후속TLS용이며 이번 ACME0."
+  },
+  "next_image_gate": {
+    "current_available_bytes": 2742124544,
+    "current_available_MiB": 2615.09375,
+    "MemAvailable_bytes": 484909056,
+    "MemAvailable_MiB": 462.4453125,
+    "unchanged_budget_bytes": {
+      "image_store_base": 1120041574,
+      "image_FS_allowance": 134217728,
+      "DB": 268435456,
+      "media": 134217728,
+      "static_Caddy_state": 67108864,
+      "service_logs": 94371840,
+      "swap": 268435456,
+      "common_available_reserve": 536870912
+    },
+    "total_remaining_with_swap256": 2623699558,
+    "margin_before_extra_cold_peak": 118424986,
+    "margin_MiB": 112.93886756896973,
+    "swap512_shortfall_bytes": 150010470,
+    "cold_import_extra_peak": "UNMEASURED. 설치 PASS·빈 daemon RSS로 이미지 import/운영 안전성을 승인하지 않음.",
+    "recommendation": "다음 별도 지시는 준비 app ID sha256:478d6a9fb51e94498427e06893c9915e7c83e182d80418d9b31082f60025c39e의 원격 archive 없는 stream/load 한 단계와 피크 계측에 한정할 것을 권고. PG/Caddy는 앞 단계 결과·여유를 보고 각각 순차 결정. 자동 전체 진행 아님.",
+    "stop_conditions": [
+      "시작 전과 각 이미지 완료 후 새 df/MemAvailable을 수집하고, 미진행 이미지 추정+원래 데이터/log/swap/512MiB reserve 예산이 남는지 확인. 음수이면 다음 단계 중단. 실제 여유/피크가 아직 없으므로 현재112.94MiB를 충분한 임시 피크로 간주하지 않음.",
+      "import 중 미생성 DB256/media128/static64/log90/swap256/free512 및 imageFS128MiB를 합친 보수적 보존 floor는1503657984bytes. 이 기준에 접근/침범하거나 inode 부족·ENOSPC·OOM·SSH 응답 악화가 생기면 자기 stream/pull/load 클라이언트 작업만 중단. 예산을 낮추거나 원본 삭제로 통과시키지 않음.",
+      "메모리 중단선은 실행 전에 설계가 명시해야 함. 보수적 관측 gate로 MemAvailable256MiB 이하를 제안하지만 제품/daemon 설정 또는 이미 승인된 정책으로 확정한 값은 아님. swap0이므로 현재 여유를 최대 업로드/동시성 가능으로 확대하지 않음.",
+      "Docker/containerd/기존 서비스 중지·재시작이나 global prune 금지. 클라이언트 중단만으로 daemon import 종료·공간 반환을 단정하지 말고 읽기 전용 상태를 확인해 보고; 임의 삭제/재시도/PG·Caddy 후속 진행 없음."
+    ],
+    "no_source_policy_or_daemon_tuning_changed": true,
+    "no_final_full_deployment_or_operation_approval": true
+  },
+  "limits": [
+    "실시간 df/RAM/RSS snapshot이며 DEV 수치와의 작은 차이를 설치 변경으로 단정하지 않음.",
+    "cold load/pull peak, 실제 이미지/volume 점유, 월간 DB/WAL/media/log 성장, target 최대 이미지/동시성 미검증.",
+    "현재 SSH·소켓·SG 조건만 좁게 확인; IAM/CloudTrail/전체 보안·과금 감사 아님.",
+    "IMDSv2 토큰은 metadata 인증을 위해 메모리에서만 사용. 실제 서버 데이터/설정 변경 명령 없음; 정상 SSH/sudo 접근 기록은 시스템에 남을 수 있음.",
+    "이전 미확정 원인·관측 오류·제품/운영 한계는 유지."
+  ],
+  "observer_history": {
+    "local_comparison_only": "첫 로컬 JSON→Python 값 전달에서 true/True 직렬화 NameError 발생, 실제 대조 전 종료. JSON decode로 바로잡아 동일 수집값을 대조했고 원격 재조회 없음.",
+    "server_test_failure_or_reinstallation": false
+  },
+  "cleanup": {
+    "new_QA_environments": 0,
+    "containers_volumes_DB_media_created": 0,
+    "temporary_remote_tools_files": 0,
+    "remote_mutating_commands": 0,
+    "local_only_new_file": "backend/review/docker-01/minimum-installation-independent.json"
+  },
+  "product_dependency_existing_docs_Git_writes": 0,
+  "writing_finished": true
+}

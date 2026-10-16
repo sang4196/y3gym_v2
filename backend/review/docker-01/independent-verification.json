@@ -1,0 +1,489 @@
+{
+  "schema": 1,
+  "date_KST": "2026-10-16",
+  "status": "PASS_WITH_OBSERVER_HISTORY_AND_DEPLOYMENT_LIMITS",
+  "scope": "AWS Ubuntu single EC2 Docker configuration: approved local linux/amd64 rehearsal only; no AWS access or deployment",
+  "base_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+  "requirements_basis": [
+    "AGENTS.md: 작업 시작·검증과 보고·원본 보호·관리 CLI 정리",
+    "docs/OPERATIONS.md: A Docker 구성·로컬 검증, HTTPS·헤더·미디어, 백업·격리 복원",
+    "backend/README.md: AWS Ubuntu Docker 배포 구성 및 QA 환경 생성·실행·정리",
+    "docs/IMPLEMENTATION-PLAN.md: 2026-10-16 AWS Docker 확정 범위",
+    "설계 최신 독립 검증 지시: 동결194 보존, 새 고유 Docker run, Docker23 실제 실행, 동일소스 전체167 반복 금지"
+  ],
+  "new_product_or_requirement_findings": [],
+  "source_identity": {
+    "tested189_manifest_sha256": "64fcc20ffa8fd4795dec7b8bfb0f112bc90bc1ca39977f5434e42cc91945bbe4",
+    "frozen194_manifest_sha256": "7c99857afe7bcf0fcbb4a6c64feeeb6673cb6d718b1343e62c6333681cd78e5f",
+    "app98_input_fingerprint": "177d63caa4c7e96a47dc90b8163fd4653596535f297b00089516d09333f3c820",
+    "source189_actual_run_snapshot_matches": true,
+    "frozen194_and_app98_pre_post_direct_match": true,
+    "compose_Caddy_deploy_QA_tools_are_separately_hashed": true,
+    "developer_verification_JSON_unchanged": true,
+    "tested_image_and_replacement_artifacts": {
+      "canonical_app_input_parity": true,
+      "app_input_files": 98,
+      "release": {
+        "revision": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+        "dirty": true,
+        "source_fingerprint": "177d63caa4c7e96a47dc90b8163fd4653596535f297b00089516d09333f3c820"
+      },
+      "image_id": "sha256:befb46938e92c7dd1a8611d8bbd5562b8d8ec34585666371217f9c3a0acbb820",
+      "locked_versions": {
+        "Django": "5.2.18",
+        "wagtail": "7.4.3",
+        "gunicorn": "26.2.0"
+      },
+      "empty_first_home_seconds": 0.208,
+      "near_limit_upload": {
+        "bytes": 10274570,
+        "image_id": 2,
+        "status": "PASS"
+      },
+      "populated_home_first_repeat_seconds": [
+        0.178,
+        0.118
+      ],
+      "admin_referenced_static_assets": 18,
+      "bad_host_status": 421,
+      "negative_security": {
+        "HTTP_spoof_status": 308,
+        "bad_host_status": 421,
+        "foreign_origin_POST": 403
+      },
+      "runtime_services": [
+        {
+          "service": "app",
+          "health": "healthy",
+          "log_rotation": true
+        },
+        {
+          "service": "database",
+          "health": "healthy",
+          "log_rotation": true
+        },
+        {
+          "service": "proxy",
+          "health": "healthy",
+          "log_rotation": true
+        }
+      ],
+      "replacement_image_id": "sha256:8269da32b1dd9dbfa89ffedf40c0f44a89d31a02edadb1ff0098a1b634cfdcfb",
+      "backup_release": {
+        "image_id": "sha256:8269da32b1dd9dbfa89ffedf40c0f44a89d31a02edadb1ff0098a1b634cfdcfb",
+        "release": {
+          "revision": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+          "source_fingerprint": "177d63caa4c7e96a47dc90b8163fd4653596535f297b00089516d09333f3c820"
+        }
+      },
+      "restored_state": {
+        "posts": 1,
+        "images": 3,
+        "media_files": 12,
+        "all_media_hashes_match": true
+      },
+      "scope": "Docker production path plus browser; whole news.tests executes separately on host managed QA",
+      "external_backup": "NOT_CONFIGURED: local export/isolated restore only"
+    },
+    "image_IDs_are_removed_QA_artifacts_not_available_releases": true
+  },
+  "direct_execution": {
+    "command": "Y3GYM_ENV=development backend/.venv/bin/python -B backend/scripts/qa_lifecycle.py auto --resource-backend docker --purpose 'Docker independent frozen194 TLS browser backup restore verification' --command /home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/.venv/bin/python -B /home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/docker_qa.py",
+    "managed_run_id": "qa-20261015T160608Z-9c56968f6997",
+    "command_exit": 0,
+    "CLI_exit": 0,
+    "Docker_checks": 23,
+    "Docker_pass": 23,
+    "browser6_are_subset_of23": true,
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "Immutable non-root image locked install and sensitive/QA canary exclusion",
+        "Only loopback QA proxy ports; app/DB hidden; proxy never mounts media",
+        "Blank PostgreSQL17.11 migration and separate non-superuser application role",
+        "Duplicate provision refuses before secret SQL; forced secret-session error does not disclose password in server log",
+        "Production HTTPS admin login/secure cookies with owned CA and normal certificate verification",
+        "Actual admin multipart uploads through Caddy including near10MiB unchanged limit",
+        "Draft-only original/rendition denied anonymously; actual near10MiB FileResponse download verified for editor",
+        "Anonymous originals blocked even with public shared rendition; authorized editor can read original",
+        "Required font/LICENSE/JS/CSS served; private canaries denied; HTTPS forwarded spoof overwritten",
+        "HTTP forwarded spoof cannot bypass HTTPS; invalid Host and foreign-origin admin POST denied",
+        "Every live service healthy; actual Docker log rotation configured",
+        "Real HTTPS browser login with owned CA; no TLS bypass",
+        "Actual browser image upload through HTTPS proxy",
+        "Same-origin Wagtail iframe preview remains functional",
+        "Actual admin draft save",
+        "Published image and high-resolution lightbox use protected media",
+        "Desktop/mobile approved contain styling and viewer preserved",
+        "Withdrawal immediately revokes public HTML and last public image usage",
+        "Backup refuses a configured image different from the actually running release",
+        "Application image replacement and normal stop/restart preserve own DB and private media",
+        "Restore refuses an exact-name existing volume lacking Compose ownership; only owned synthetic collision fixture removed",
+        "Writes paused DB+original/rendition export restored into a separate empty owned deployment",
+        "Protected original server identities and private file metadata/bytes unchanged; no original DB-row scan"
+      ],
+      "details": {
+        "canonical_app_input_parity": true,
+        "app_input_files": 98,
+        "release": {
+          "revision": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+          "dirty": true,
+          "source_fingerprint": "177d63caa4c7e96a47dc90b8163fd4653596535f297b00089516d09333f3c820"
+        },
+        "image_id": "sha256:befb46938e92c7dd1a8611d8bbd5562b8d8ec34585666371217f9c3a0acbb820",
+        "locked_versions": {
+          "Django": "5.2.18",
+          "wagtail": "7.4.3",
+          "gunicorn": "26.2.0"
+        },
+        "empty_first_home_seconds": 0.208,
+        "near_limit_upload": {
+          "bytes": 10274570,
+          "image_id": 2,
+          "status": "PASS"
+        },
+        "populated_home_first_repeat_seconds": [
+          0.178,
+          0.118
+        ],
+        "admin_referenced_static_assets": 18,
+        "bad_host_status": 421,
+        "negative_security": {
+          "HTTP_spoof_status": 308,
+          "bad_host_status": 421,
+          "foreign_origin_POST": 403
+        },
+        "runtime_services": [
+          {
+            "service": "app",
+            "health": "healthy",
+            "log_rotation": true
+          },
+          {
+            "service": "database",
+            "health": "healthy",
+            "log_rotation": true
+          },
+          {
+            "service": "proxy",
+            "health": "healthy",
+            "log_rotation": true
+          }
+        ],
+        "replacement_image_id": "sha256:8269da32b1dd9dbfa89ffedf40c0f44a89d31a02edadb1ff0098a1b634cfdcfb",
+        "backup_release": {
+          "image_id": "sha256:8269da32b1dd9dbfa89ffedf40c0f44a89d31a02edadb1ff0098a1b634cfdcfb",
+          "release": {
+            "revision": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+            "source_fingerprint": "177d63caa4c7e96a47dc90b8163fd4653596535f297b00089516d09333f3c820"
+          }
+        },
+        "restored_state": {
+          "posts": 1,
+          "images": 3,
+          "media_files": 12,
+          "all_media_hashes_match": true
+        },
+        "scope": "Docker production path plus browser; whole news.tests executes separately on host managed QA",
+        "external_backup": "NOT_CONFIGURED: local export/isolated restore only"
+      }
+    },
+    "build_dependency_layer": "Actual docker build executed with canonical98 parity and --locked --no-dev inputs; existing pinned dependency build cache was reused, not a fresh download/install claim",
+    "runtime_engine": "Docker client/server29.8.1; Compose5.5.1; linux/x86_64",
+    "native_optional_probe_followup": {
+      "status": "PASS",
+      "actual_app_nonroot_readonly": true,
+      "actual_app_DB_no_host_ports": true,
+      "actual_proxy_ports_loopback": true,
+      "actual_proxy_no_media_mount_static_readonly": true,
+      "actual_DB_network_internal": true,
+      "native_Pillow_and_DB_probe": {
+        "uid": 10001,
+        "codecs": {
+          "JPEG": {
+            "encode_decode": "PASS",
+            "native_resize_PNG_output": "PASS",
+            "input_size": [
+              17,
+              11
+            ],
+            "output_size": [
+              8,
+              5
+            ]
+          },
+          "WEBP": {
+            "encode_decode": "PASS",
+            "native_resize_PNG_output": "PASS",
+            "input_size": [
+              17,
+              11
+            ],
+            "output_size": [
+              8,
+              5
+            ]
+          }
+        },
+        "app_DB_superuser_createRole_createDB_replication": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "owned_database_matches": true,
+        "files_written": 0
+      },
+      "source_files_written": 0
+    },
+    "native_probe_scope": "Own running app container only; memory JPEG/WebP encode/decode/resize to PNG and four actual DB role flags; no JPEG/WebP HTTP upload or pixel fidelity claim",
+    "browser_identity_direct": {
+      "status": "PASS",
+      "signed_Chromium_births": 1,
+      "signed_Chromium_exits": 1,
+      "unmatched_birth_records": 0,
+      "PID_namespace": "owned-docker",
+      "host_PID_lookup_or_signal_from_namespace_PID": false,
+      "actual_runtime_executable": "/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell",
+      "identity_basis": "signed local ChildProcess spawn, kernel starttime; no complete argv/environment output"
+    },
+    "backup_directory_file_permissions_and_hashes_direct": {
+      "status": "PASS",
+      "backup_directory_mode": "0700",
+      "backup_files_mode": "0600",
+      "backup_file_hashes_match": true,
+      "backup_files": [
+        "database.dump",
+        "manifest.json",
+        "media.tar"
+      ],
+      "backup_image_id": "sha256:8269da32b1dd9dbfa89ffedf40c0f44a89d31a02edadb1ff0098a1b634cfdcfb",
+      "release": {
+        "revision": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+        "source_fingerprint": "177d63caa4c7e96a47dc90b8163fd4653596535f297b00089516d09333f3c820"
+      },
+      "raw_DB_or_media_exported_by_observer": false
+    },
+    "raw_logs_known_secret_negative_scan_while_live": {
+      "status": "PASS",
+      "known_values_checked_in_memory": true,
+      "secret_values_output": false,
+      "raw_log_files_checked": 2,
+      "phase": "local backup/restore in progress; final exported records additionally scanned by managed CLI"
+    },
+    "managed_export_known_secret_negative_scan": "PASS: actual CLI export_evidence executed secrets_for/scrub/assert before deletion; final evidence JSON parses. Raw secrets are not copied to this report.",
+    "operations_local_links": {
+      "checked": 7,
+      "missing": 0
+    },
+    "product_source_tool_dependency_edits": 0,
+    "source_formatting": 0
+  },
+  "direct_coverage": {
+    "locked immutable image, prototype/font/LICENSE/JS/CSS, private/QA exclusion": "Docker23 plus exact98 canonical parity; actual required assets served with matching hashes; own canaries excluded",
+    "nonroot/readonly, hidden app/DB ports, internal DB network, proxy no media mount": "Docker23 config checks plus independent actual container/network inspection PASS",
+    "DB roles and duplicate provision/forced-secret-session error logging": "Docker23 PASS; independent four app-role privilege flags all false",
+    "TLS and header/CSRF boundaries": "Owned CA trusted by Python and actual Chromium; no ignoreHTTPSErrors or certificate bypass; plainHTTP spoof308, invalid Host421, foreign-Origin POST403",
+    "near10MiB upload and authorized original FileResponse download": "10,274,570-byte PNG through actual HTTPS multipart and authorized original hash match; anonymous draft-only original/rendition404",
+    "public image, draft preview/save/publish, lightbox, withdrawal": "Actual TLS browser6 and HTTP publication/withdrawal assertions PASS",
+    "editing a previously published item must preserve old public revision": "Same-source final host167 publication tests reused; Docker browser directly exercises draft before first publication, not an additional published-item edit flow",
+    "normal replacement and stop/start persistence": "Actual new image ID, DB/model and media SHA state preserved",
+    "backup/restoration": "Actual deploy.py backup/restore with explicit QA compose runner, writers stopped, separate empty owned DB/media, app-role queries and all12 media file hashes match; backup0700/files0600",
+    "negative backup and restore": "Configured/running image mismatch refused before backup; exact-name synthetic foreign-labelled-volume collision refused before restore; only owned collision fixture removed",
+    "PID namespace and ownership cleanup": "Signed actual Chromium spawn/exit with owned-docker namespace; host PID identity separate; exact owned labels/IDs/current cleanup plan, pre-existing Docker resource set unchanged"
+  },
+  "inherited_results_not_reexecuted": {
+    "reference": "backend/review/docker-01/verification.json",
+    "whole167": {
+      "archive": "backend/review/qa-lifecycle/runs/qa-20261015T155102Z-83ba43ed04b7/evidence-auto-result-ad6a30f9.json",
+      "collected": 167,
+      "run": 167,
+      "pass": 167,
+      "fail": 0,
+      "error": 0,
+      "skip": 0,
+      "unique_executed_ids": 167,
+      "optin4_actual_ids_present": true,
+      "exact_same_source189_SHA": true,
+      "independent_rerun": false
+    },
+    "lifecycle15": {
+      "archive": "backend/review/qa-lifecycle/runs/qa-20261015T154516Z-d3227c1dac8e/evidence-auto-result-b0713028.json",
+      "actual_log_Ran15_OK_and_exit0_verified": true,
+      "exact_same_source189_SHA": true,
+      "independent_rerun": false
+    },
+    "developer_original_FAIL10": "Preserved in verification.json.original_failures; not rewritten, rerun, or merged into current counts",
+    "current_static_lint_and_historical_W01": "Developer records read only. No independent full syntax/lint/format or historical review audit in this unit.",
+    "counts_combined_with_new_Docker23": false
+  },
+  "independent_observer_failures": [
+    {
+      "id": "OBS-DOCKER-INDEPENDENT-01",
+      "classification": "Observer entrypoint setup; no product defect",
+      "original_status": "FAIL",
+      "original_exit": 1,
+      "requirement_basis": "Optional minimum native JPEG/WebP probe must execute in the own app image using its normal Django entrypoint conditions",
+      "related_files": [
+        "backend/config/wsgi.py",
+        "backend/scripts/docker_qa.py"
+      ],
+      "observer_source": "Read-only inline docker exec Python; no repository source file edited",
+      "reproduction": [
+        "In the owned app container invoke plain python -B - with django.setup() and no DJANGO_SETTINGS_MODULE",
+        "The native image-memory assertions precede Django configuration; django.setup() raises ImproperlyConfigured"
+      ],
+      "expected": "Complete native codec and own DB-role probe",
+      "actual": "Requested setting LOGGING_CONFIG, but settings are not configured",
+      "original_diagnostic": "Traceback (most recent call last):\n  File \"<stdin>\", line 14, in <module>\nAssertionError: Traceback (most recent call last):\n  File \"<stdin>\", line 9, in <module>\n  File \"/opt/venv/lib/python3.13/site-packages/django/__init__.py\", line 19, in setup\n    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)\n                      ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/venv/lib/python3.13/site-packages/django/conf/__init__.py\", line 81, in __getattr__\n    self._setup(name)\n    ~~~~~~~~~~~^^^^^^\n  File \"/opt/venv/lib/python3.13/site-packages/django/conf/__init__.py\", line 61, in _setup\n    raise ImproperlyConfigured(\n    ...<4 lines>...\n    )\ndjango.core.exceptions.ImproperlyConfigured: Requested setting LOGGING_CONFIG, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.\n\n",
+      "original_probe_code": "import io,json,os\nfrom PIL import Image,features\nassert os.getuid()==10001\nassert features.check_codec('jpg') and features.check_module('webp')\nresults={}\nfor format in ['JPEG','WEBP']:\n b=io.BytesIO();Image.new('RGB',(17,11),(40,100,160)).save(b,format=format);b.seek(0);decoded=Image.open(b);decoded.load();assert decoded.format==format and decoded.size==(17,11);decoded.thumbnail((8,8));out=io.BytesIO();decoded.save(out,'PNG');out.seek(0);reloaded=Image.open(out);reloaded.load();assert reloaded.size==(8,5);results[format]={'encode_decode':'PASS','native_resize_PNG_output':'PASS','input_size':[17,11],'output_size':list(reloaded.size)}\nimport django\ndjango.setup()\nfrom django.db import connection\nwith connection.cursor() as cursor:\n cursor.execute('SELECT rolsuper,rolcreaterole,rolcreatedb,rolreplication FROM pg_roles WHERE rolname=current_user')\n roles=list(cursor.fetchone())\n assert roles==[False,False,False,False]\n cursor.execute('SELECT current_database()')\n assert cursor.fetchone()[0]=='y3gymqa_9c56968f6997'\nprint(json.dumps({'uid':os.getuid(),'codecs':results,'app_DB_superuser_createRole_createDB_replication':roles,'owned_database_matches':True,'files_written':0}))\n",
+      "followup": "Same container; set DJANGO_SETTINGS_MODULE=config.settings exactly as config/wsgi.py before django.setup(). PASS with unchanged expectations and no product/tool edits.",
+      "corrected_probe_code": "import io,json,os\nfrom PIL import Image,features\nassert os.getuid()==10001\nassert features.check_codec('jpg') and features.check_module('webp')\nresults={}\nfor format in ['JPEG','WEBP']:\n b=io.BytesIO();Image.new('RGB',(17,11),(40,100,160)).save(b,format=format);b.seek(0);decoded=Image.open(b);decoded.load();assert decoded.format==format and decoded.size==(17,11);decoded.thumbnail((8,8));out=io.BytesIO();decoded.save(out,'PNG');out.seek(0);reloaded=Image.open(out);reloaded.load();assert reloaded.size==(8,5);results[format]={'encode_decode':'PASS','native_resize_PNG_output':'PASS','input_size':[17,11],'output_size':list(reloaded.size)}\nimport django\nos.environ.setdefault('DJANGO_SETTINGS_MODULE','config.settings')\ndjango.setup()\nfrom django.db import connection\nwith connection.cursor() as cursor:\n cursor.execute('SELECT rolsuper,rolcreaterole,rolcreatedb,rolreplication FROM pg_roles WHERE rolname=current_user')\n roles=list(cursor.fetchone())\n assert roles==[False,False,False,False]\n cursor.execute('SELECT current_database()')\n assert cursor.fetchone()[0]=='y3gymqa_9c56968f6997'\nprint(json.dumps({'uid':os.getuid(),'codecs':results,'app_DB_superuser_createRole_createDB_replication':roles,'owned_database_matches':True,'files_written':0}))\n",
+      "core_Docker23_was_not_repeated": true,
+      "original_failure_preserved": true
+    },
+    {
+      "id": "OBS-DOCKER-INDEPENDENT-02",
+      "classification": "Read-only preservation observer integer serialization loss",
+      "original_status": "FAIL",
+      "original_exit": 1,
+      "requirement_basis": "Protected original files must remain intact; exact nanosecond metadata must not be reported PASS without a precise baseline",
+      "related_files": [
+        "AGENTS.md",
+        "backend/scripts/docker_qa.py",
+        "backend/review/docker-01/independent-verification.json"
+      ],
+      "observer_source": "functions.exec JSON.parse/store/stringify roundtrip between Python preflight and post-audit",
+      "reproduction": [
+        "Serialize Python st_mtime_ns as a JSON number, pass through JavaScript JSON.parse and stringify",
+        "Compare the rounded decimal integer with the exact Python st_mtime_ns; these values exceed JavaScript safe integer precision"
+      ],
+      "expected": "Lossless original nanosecond baseline and exact pre/post comparison",
+      "actual": "Post-audit AssertionError at inline line6; current six exact values all reproduce the stored rounded values through Number(decimal). No source hash mismatch.",
+      "original_diagnostic": "Traceback (most recent call last):\n  File \"<stdin>\", line 6, in <module>\nAssertionError\n",
+      "precision_diagnostic": [
+        {
+          "path": "backend/.env.local",
+          "controller_before_mtime_ns_decimal": "1791570441572512500",
+          "current_actual_mtime_ns_decimal": "1791570441572512633",
+          "numeric_round_trip_reproduces_controller_value": true
+        },
+        {
+          "path": "backend/.local-credentials",
+          "controller_before_mtime_ns_decimal": "1791570627627083000",
+          "current_actual_mtime_ns_decimal": "1791570627627083020",
+          "numeric_round_trip_reproduces_controller_value": true
+        },
+        {
+          "path": ".local/commit-readiness-01.json",
+          "controller_before_mtime_ns_decimal": "1792068145989264400",
+          "current_actual_mtime_ns_decimal": "1792068145989264302",
+          "numeric_round_trip_reproduces_controller_value": true
+        },
+        {
+          "path": "/tmp/y3gym-kakao-map-iq9yoy7v/.local-credentials",
+          "controller_before_mtime_ns_decimal": "1791726106077773000",
+          "current_actual_mtime_ns_decimal": "1791726106077772963",
+          "numeric_round_trip_reproduces_controller_value": true
+        },
+        {
+          "path": "/tmp/y3gym-kakao-map-iq9yoy7v/kakao-map-js-key",
+          "controller_before_mtime_ns_decimal": "1791725973750409700",
+          "current_actual_mtime_ns_decimal": "1791725973750409782",
+          "numeric_round_trip_reproduces_controller_value": true
+        },
+        {
+          "path": "/tmp/y3gym-content-lightbox-independent-tmps8dos/.local-credentials",
+          "controller_before_mtime_ns_decimal": "1791849380596299800",
+          "current_actual_mtime_ns_decimal": "1791849380596299652",
+          "numeric_round_trip_reproduces_controller_value": true
+        }
+      ],
+      "followup": "Remaining independent checks resumed separately: six inode/size/mode/content SHA, three full process identities,194 hashes,98 fingerprint,HEAD/index and owned-resource absence PASS. Original baseline precision cannot be recovered; six cross-controller exact-ns result is NOT_VERIFIED, not converted to PASS.",
+      "additional_evidence": "Docker23 itself compares the two root private files' exact inode/size/mtime_ns/content hash wholly within Python and passed.",
+      "original_failure_preserved": true
+    }
+  ],
+  "preservation": {
+    "protected_original_server3_full_identity": "PASS",
+    "protected_file6_inode_size_mode_content_SHA": "PASS; includes prior untracked .local/commit-readiness-01.json and original private files; no raw values emitted",
+    "root_private2_exact_nanosecond_pre_post_in_Docker23": "PASS",
+    "six_file_cross_controller_exact_nanosecond_pre_post": "NOT_VERIFIED due OBS-02 precision loss; original FAIL retained",
+    "original_DB_rows_or_original_full_media_audit": false,
+    "HEAD_index_and_developer_report_unchanged": true,
+    "preexisting_Docker_resource_sets_unchanged": {
+      "containers": 4,
+      "networks": 6,
+      "volumes": 4,
+      "images": 4
+    },
+    "source194_hashes_unchanged": true
+  },
+  "cleanup": {
+    "status": "PASS",
+    "own_run_created": 1,
+    "run_id": "qa-20261015T160608Z-9c56968f6997",
+    "state": "DELETED",
+    "source_and_private_folder_absent": true,
+    "own_Docker_resources_removed": 16,
+    "own_Docker_remaining": {
+      "containers": 0,
+      "networks": 0,
+      "volumes": 0,
+      "images": 0
+    },
+    "own_application_DBs_in_Docker": 2,
+    "own_application_DB_storage": "Both primary/restore owned DB containers and named volumes removed; no original host PostgreSQL connection",
+    "host_DB_registrations": 0,
+    "exact_current_plan": "c7430cb891e4caebba0822e1788bf53954b0ed91bfe8a95c3dcf0907a74e916c",
+    "managed_CLI_result": {
+      "run_id": "qa-20261015T160608Z-9c56968f6997",
+      "command_exit_code": 0,
+      "cleanup": {
+        "id": "qa-20261015T160608Z-9c56968f6997",
+        "eligible": true,
+        "plan_id": "c7430cb891e4caebba0822e1788bf53954b0ed91bfe8a95c3dcf0907a74e916c",
+        "path": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261015T160608Z-9c56968f6997",
+        "file_entries": 253,
+        "database_names": [],
+        "state": "DELETED",
+        "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997",
+        "cleanup": {
+          "folder_absent": true,
+          "databases_dropped": [],
+          "docker_resources_removed": 16
+        }
+      },
+      "cleanup_error": null,
+      "evidence": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997"
+    },
+    "shared_pinned_images_and_build_cache": "Retained; no prune",
+    "older_QA_or_tmp_control_or_cleanup": 0,
+    "standard_new_ID_evidence": [
+      "backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997/cleanup-973fef2a.json",
+      "backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997/evidence-auto-result-825ba885.json",
+      "backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997/evidence-explicit-cleanup-4ebb2aed.json"
+    ]
+  },
+  "warnings_and_not_executed": [
+    "W004 HSTS remains default0 pending real-domain TLS/renewal and approved policy; W019 SAMEORIGIN retained for the directly verified Wagtail iframe preview. Both warnings observed, none silenced.",
+    "Historical W01, previous coldTimeout/OBS01 and developer original10 failures remain history; no claim they were fixed by this independent run.",
+    "Exact nanosecond baseline for the additional protection observer was lost in JavaScript serialization; see OBS-02. Content hashes/inode/size/mode and original server full identities match.",
+    "Full167 and CLI15 are verified same-source inherited evidence, not independent re-executions or counts added to23.",
+    "JPEG/WebP probe is tiny synthetic in-memory native processing, not actual HTTP upload of these formats or production-size codec load.",
+    "Local backup/restore only; restored proxy/TLS public service not started. No off-host disaster recovery, external backup destination/schedule/encryption/retention/RPO/RTO configured.",
+    "No AWS access/resources/DNS/firewall/deployment, actual Ubuntu/EC2 reboot/daemon boot recovery, real-domain certificate renewal, ARM execution or EC2 performance approval.",
+    "No real devices, Whale, OS Korean IME, full administrator usability or strict pixel/visual approval.",
+    "First empty home0.208sec; synthetic populated photo180x300 PNG first/repeat0.178/0.118sec on local Docker. Optional near-limit1800x1900 PNG is a separate upload fixture. Values do not establish cause resolution of previous20.162sec or real-EC2 performance.",
+    "Independent report and new standard CLI evidence are generated metadata outside frozen194; design must review them before updating status documents or Git scope."
+  ],
+  "files_added_by_independent": [
+    "backend/review/docker-01/independent-verification.json",
+    "backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997/cleanup-973fef2a.json",
+    "backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997/evidence-auto-result-825ba885.json",
+    "backend/review/qa-lifecycle/runs/qa-20261015T160608Z-9c56968f6997/evidence-explicit-cleanup-4ebb2aed.json"
+  ],
+  "Git_commit_push_deploy": 0,
+  "AWS_actions": 0,
+  "finished_no_next_feature_started": true
+}

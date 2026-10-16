@@ -1,0 +1,12 @@
+FROM mcr.microsoft.com/playwright:v1.64.0-noble@sha256:06a9939e57531807f8d5fd76ce44b53165ffb7d7501d87ab10e285c20b1e971f
+ARG QA_RUN_ID
+ARG QA_OWNER_HASH
+ARG QA_UID
+ARG QA_GID
+LABEL com.y3gym.qa.run=$QA_RUN_ID com.y3gym.qa.owner=$QA_OWNER_HASH
+RUN apt-get update && apt-get install -y --no-install-recommends libnss3-tools \
+    && rm -rf /var/lib/apt/lists/* \
+    && id pwuser \
+    && install -d -o "$QA_UID" -g "$QA_GID" -m 0700 /home/y3gym-qa /home/y3gym-qa/.pki /home/y3gym-qa/.pki/nssdb
+ENV HOME=/home/y3gym-qa
+USER ${QA_UID}:${QA_GID}

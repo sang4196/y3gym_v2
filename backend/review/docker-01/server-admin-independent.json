@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "status": "FAIL_GUARD_ZERO_ACCESS_AND_LOGOUT_OBSERVED",
+  "recorded_at_UTC": "2026-10-16T09:30:54.766725+00:00",
+  "scope": "최초AWS관리자1명의 새프로필 정상신뢰HTTPS 로그인·화면9개 읽기·표준로그아웃1회. 콘텐츠쓰기·계정/암호/권한변경·외부origin 허용0.",
+  "requirements": [
+    {
+      "basis": "이번 확정 설계 지시; AGENTS.md 검증과 보고",
+      "expected": "지정개인파일을메모리에서만사용·새QA/프로필·dashboard와목록4/add4표시·로그아웃/비인증전환. 로그인/로그아웃 외 쓰기·off-origin 차단과 blocked0 기대 유지."
+    },
+    {
+      "basis": "원DEV server-admin.json browser_runs[0] 및 closeout",
+      "expected": "원9GET성공/최종guard10 FAIL·요청별원인미수집·errors0 exporter TypeError와별도호환요약/원FAIL 보존. 이번독립은분리된실행."
+    }
+  ],
+  "direct_browser": {
+    "run_id": "qa-20261016T092541Z-24b0f64e5f86",
+    "CLI_exit": 1,
+    "raw_overall_status": "FAIL",
+    "checks": [
+      {
+        "p": "/admin/",
+        "http": null,
+        "ui": true,
+        "http_note": "dashboard status was assigned200 in observer rather than captured from response; actual HTTP status not independently retained"
+      },
+      {
+        "p": "/admin/snippets/news/post/",
+        "http": 200,
+        "ui": true
+      },
+      {
+        "p": "/admin/snippets/news/post/add/",
+        "http": 200,
+        "ui": true,
+        "form": true,
+        "fields": 7
+      },
+      {
+        "p": "/admin/snippets/news/brandcontent/",
+        "http": 200,
+        "ui": true
+      },
+      {
+        "p": "/admin/snippets/news/brandcontent/add/",
+        "http": 200,
+        "ui": true,
+        "form": true,
+        "fields": 10
+      },
+      {
+        "p": "/admin/snippets/news/branch/",
+        "http": 200,
+        "ui": true
+      },
+      {
+        "p": "/admin/snippets/news/branch/add/",
+        "http": 200,
+        "ui": true,
+        "form": true,
+        "fields": 13
+      },
+      {
+        "p": "/admin/snippets/news/trainer/",
+        "http": 200,
+        "ui": true
+      },
+      {
+        "p": "/admin/snippets/news/trainer/add/",
+        "http": 200,
+        "ui": true,
+        "form": true,
+        "fields": 9
+      }
+    ],
+    "auth": {
+      "sent": 302,
+      "out": 302,
+      "cookie_gone": true,
+      "protected": 302
+    },
+    "tls_verification_skipped": false,
+    "gates_as_emitted": {
+      "core": true,
+      "js": true,
+      "net": true,
+      "logout": true,
+      "zero": false
+    },
+    "failed_condition": [
+      "zero"
+    ],
+    "blocked_requests": [
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      },
+      {
+        "m": "GET",
+        "o": "https://www.gravatar.com",
+        "p": "/avatar/[OPAQUE REDACTED]",
+        "why": "off_origin"
+      }
+    ],
+    "classification": {
+      "off_origin_Gravatar_GET": 10,
+      "content_write": 0,
+      "unknown_blocked": 0
+    },
+    "page_JS_errors": [],
+    "non_guard_network_failures": [],
+    "guard_network_aborts": 10,
+    "console_error_count": 10,
+    "console_limit": "console 원문/위치는 수집하지 않았고 guard network abort10과 동시 관측했다. 개수 일치만으로 전체 console error의 원인을 확정하지 않는다.",
+    "own_browser_closed": true,
+    "PID_absent": true,
+    "evidence_path": "backend/review/qa-lifecycle/runs/qa-20261016T092541Z-24b0f64e5f86/evidence-auto-result-b668f58b.json",
+    "evidence_sha256": "c95d2a37c4b2531a83657870cff0bbe039639152d12b08bf5fef744d2fef6d04"
+  },
+  "direct_readonly_SSH_after_logout": {
+    "status": "PASS",
+    "at_UTC": "2026-10-16T09:27:51.708275+00:00",
+    "services": {
+      "proxy": {
+        "same_ID_start": true,
+        "healthy": true,
+        "no_OOM": true,
+        "restart_zero": true
+      },
+      "app": {
+        "same_ID_start": true,
+        "healthy": true,
+        "no_OOM": true,
+        "restart_zero": true
+      },
+      "database": {
+        "same_ID_start": true,
+        "healthy": true,
+        "no_OOM": true,
+        "restart_zero": true
+      }
+    },
+    "DB": {
+      "status": "PASS",
+      "users": 1,
+      "acct": {
+        "requested_match": true,
+        "mail_match": true,
+        "active": true,
+        "staff": true,
+        "superuser": true
+      },
+      "counts": {
+        "BrandContent": 0,
+        "Branch": 0,
+        "Post": 0,
+        "Trainer": 0,
+        "ContentImage": 0,
+        "Rendition": 0
+      },
+      "auth_rows": 0,
+      "deleted_rows": 0,
+      "query_mode": "READ ONLY"
+    },
+    "SSH_reads": 1,
+    "resource_changes": 0
+  },
+  "findings": [
+    {
+      "id": "GUARD_ZERO_ASSERTION_FAIL",
+      "kind": "검수guard 예상차단과0건가정의 충돌; 전체FAIL유지",
+      "requirement_basis": "off-origin 차단 및 blocked0 기대를 삭제/완화하지 말라는 이번확정지시",
+      "related_files": [
+        "backend/review/qa-lifecycle/runs/qa-20261016T092541Z-24b0f64e5f86/evidence-auto-result-b668f58b.json",
+        "backend/.venv/lib/python3.13/site-packages/wagtail/users/utils.py:57"
+      ],
+      "reproduction": "고유새브라우저에서로그인 후 dashboard·post/brandcontent/branch/trainer 목록/add를GET하고표준logout. 같은origin GET/HEAD와로그인/logout POST만허용하며 외부요청metadata를기록한다.",
+      "expected": "안전guard는외부origin을차단. 전체blocked==0 검사는0건일때만PASS.",
+      "actual": "외부 https://www.gravatar.com/avatar/<masked> GET10을off_origin으로정확히차단. 콘텐츠쓰기0·미분류차단0. 화면9개표시와로그아웃은관측성공했지만 blocked10으로전체검사exit1/FAIL.",
+      "source_basis": "로컬동일프로젝트 Wagtail의 기본Gravatar provider 경로가 요청과일치. 해당외부요청은이번직접관측이며 원DEV10건의요청별metadata는여전히없다.",
+      "handling": "외부Gravatar/불명확POST 허용·guard일괄완화·blocked0삭제·서버수정·재실행0. 외부아바타 사용방향/검수기대 정합성은별도설계판단이필요."
+    }
+  ],
+  "observer_limits": [
+    {
+      "id": "DASHBOARD_STATUS_NOT_CAPTURED",
+      "kind": "독립HTTP상태코드미확인",
+      "related_file": "backend/review/qa-lifecycle/runs/qa-20261016T092541Z-24b0f64e5f86/evidence-auto-result-b668f58b.json",
+      "expected": "dashboard200을실제응답에서기록.",
+      "actual": "최초dashboard의http200은관측스크립트에지정한상수였다. 도착URL과main실제표시는확인했지만상태코드는직접보존하지못했다. 이보고서derivedchecks의http는null로구분하며원archive는수정하지않았다.",
+      "limit": "목록/add8개는실제응답200·표시를직접수집. dashboard도표시되었고로그인302·보호화면로그아웃후302를직접확인. 9GET전부200 독립측정이라고주장하지않으며추가로그인/재실행0."
+    },
+    {
+      "id": "SANITIZER_KNOWN_WARNING",
+      "actual": "기존구조화JSON sanitizer경고유지. 이번짧은키원출력은JSON으로읽힘;avatar path의opaque hash만마스킹되어있고복원하지않음. 필터변경0."
+    }
+  ],
+  "DEV_original_history_reused": {
+    "source_path": "backend/review/docker-01/server-admin.json",
+    "source_sha256": "e50f8c1e37e65a8d5b38cec470252a7826e48da966e2b91a5a6a0e97fd73bc72",
+    "status": "INITIAL_ADMIN_CREATED_ACCESS_OBSERVED_BROWSER_ASSERTION_FAIL_PENDING_INDEPENDENT",
+    "original_browser_status": "FAIL",
+    "original_blocked": 10,
+    "original_step_label": "trainer_add는마지막단계라벨이며원인근거가아님.",
+    "original_requests": "method/origin/path/reason미수집. 이번관측Gravatar10과개수가같아도원DEV10건과동일함을확정하지않음.",
+    "original_raw_result_sha256": "99077f79884aa2d0a0462c53c4a750fbd26d66dcd31fea86c99f7bbd1138337f",
+    "export_failure": "임시 errors:0에exporter len() TypeError. 원데이터/hash/FAIL보존, errors:[] 호환요약으로만별도변환하고자체2run DELETED;도구소스수정/DEV재실행0 기록.",
+    "no_aggregation": "개발9GET200 이력과이번8HTTP200+9표시를합산하지않고,기존170/191/98·HTTPS근거는재사용."
+  },
+  "passed_and_unverified": {
+    "passed": [
+      "정상신뢰새브라우저로그인302·화면9개표시·목록/add8실제200·작성form4/필드접근",
+      "표준logout302·own cookie부재·보호dashboard302·후속READ ONLY 계정auth세션0",
+      "users1·지정계정active/staff/superuser·email일치·콘텐츠/이미지/rendition0",
+      "원서비스3ID/start·healthy·OOM/restart0·개인파일UID1000/0600·부모0700유지"
+    ],
+    "failed": [
+      "blocked_requests==0: actual10. 기대/정책을유지한전체FAIL."
+    ],
+    "unverified": [
+      "dashboard 실제HTTP코드·console10개별원문원인·원DEV차단10요청정체",
+      "실데이터편집/저장/게시/삭제·프로필/암호/권한변경·업로드/실사진ACL·세부운영자권한",
+      "TLS전체/정적8/헤더/SG·전체제품회귀 재검사,실기기·갱신/재부팅/용량/외부백업"
+    ],
+    "new_product_login_defect_confirmed": false
+  },
+  "cleanup_and_preservation": {
+    "own_run": {
+      "id": "qa-20261016T092541Z-24b0f64e5f86",
+      "state": "DELETED",
+      "folder_absent": true,
+      "Chrome_closed_and_PID_absent": true,
+      "DB_or_Docker_created_removed": 0
+    },
+    "session_cleanup": "표준logout만실행;후속READ ONLY auth_rows0/deleted_rows0. 타인세션/데이터삭제0.",
+    "private_delivery": "저장소/QA밖원파일보존·UID1000/0600·부모0700·비symlink. 실제초기secret이이번새공유CLIJSON에없음을메모리비교확인.",
+    "remote_resources": "기존서버/사용자계정/서비스유지;인증의last_login/ownsession효과만승인범위. 재설정/재생성0.",
+    "secret_recording": "값/쿠키/CSRF/headers/payload/응답본문/trace/HAR/video/인증후capture 출력·저장0. 차단metadata는method/origin/쿼리없는pathname/이유만.",
+    "writes": "독립summary1개+고유QA標準근거만. 원실행JSON/문서/제품/QA도구·설정/서비스/AWS/DNS/SG/Git쓰기0."
+  }
+}

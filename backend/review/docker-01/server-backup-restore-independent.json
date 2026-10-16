@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "status": "PASS_ONE_PRIVATE_DB_MEDIA_RESTORE_WITH_LIMITS",
+  "at_UTC": "2026-10-16T10:20:02.957916+00:00",
+  "scope": "PC의현재private백업 무결성 및새고유격리DB/media 복구1회·비공개기준비교. AWS export/SSH/stop/up/현재서버대조·관리자비밀번호읽기/로그인0.",
+  "requirements": [
+    {
+      "basis": "이번확정설계지시; AGENTS.md 검증과 보고; docs/OPERATIONS.md:34",
+      "expected": "PC private4파일/부모0700·파일0600/UID/regular/nosymlink/외부경로·종류/크기·manifestSHA·비공개자료무결성. 값/개별tablehash 공개0."
+    },
+    {
+      "basis": "docs/OPERATIONS.md:45; backend/scripts/deploy.py:393",
+      "expected": "기존managedCLI와restore --confirm-empty-restore, 같은불변app/PG17.11·새DB/project/volumes/secret·DBinternal. 기존DB/볼륨복원·기대완화/성공까지반복0."
+    },
+    {
+      "basis": "docs/OPERATIONS.md:46",
+      "expected": "private58테이블행집계/digest·계정현재값·public/draft/revision관계·media개수/크기/SHA비교. media0을실사진복구로확대하지않음."
+    }
+  ],
+  "private_file_preflight": {
+    "mode_uid_kind": true,
+    "file_n": 4,
+    "bytes": 278006,
+    "manifest_match": true,
+    "verify_integrity": true,
+    "PGDMP": true,
+    "tar_safe": true,
+    "same_app": true,
+    "PG_fixed": true
+  },
+  "direct_restore": {
+    "run_id": "qa-20261016T101544Z-7efb36033b4d",
+    "CLI_exit": 0,
+    "restore_executions": 1,
+    "same_app_ID": "sha256:478d6a9fb51e94498427e06893c9915e7c83e182d80418d9b31082f60025c39e",
+    "same_PG_ID": "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+    "method": "기존managedCLI auto --resource-backend docker --command; 기존Compose production+QA 소유label adapter와 deploy.py restore --directory <PC-private> --confirm-empty-restore 1회. 앱서비스/프록시/HTTP는기동하지않음.",
+    "fresh_boundary": "고유-restore Composeproject·새PGcluster/빈DB·신규bootstrap/app역할비밀번호·CLI새secret. dumpowner이름은새클러스터역할객체에서만호환. 기존배포/volume/빈schema/image/SHAguard유지.",
+    "comparison": {
+      "status": "PASS",
+      "match": {
+        "counts": true,
+        "relations": true,
+        "tables": true,
+        "media": true,
+        "media_file_count": true,
+        "media_bytes": true,
+        "original_DB_owner": true
+      },
+      "account": true,
+      "tables_n": 58,
+      "rows_n": 536,
+      "counts": {
+        "BrandContent": 0,
+        "Branch": 0,
+        "Post": 0,
+        "Trainer": 0,
+        "ContentImage": 0,
+        "Rendition": 0,
+        "Revision": 0,
+        "User": 1
+      },
+      "relations": {
+        "BrandContent": {
+          "live": 0,
+          "revision_reference_failures": 0
+        },
+        "Branch": {
+          "live": 0,
+          "revision_reference_failures": 0
+        },
+        "Post": {
+          "live": 0,
+          "revision_reference_failures": 0
+        },
+        "Trainer": {
+          "live": 0,
+          "revision_reference_failures": 0
+        }
+      },
+      "media_n": 0,
+      "media_bytes": 0
+    },
+    "network_and_ownership": {
+      "resources_observed": 6,
+      "DB_internal": true,
+      "host_ports": 0,
+      "app_service_up": false,
+      "owner_labels_match": true
+    },
+    "private_source_files_copied_into_run_source_review": false,
+    "private_input_scope": "원dump/tar/verification파일복사0. 승인된새DB/volume로복구한데이터는정리. 비교자료는no-TTY stdin/프로세스메모리만사용하고 STATE 출력도StringIO에가둬 Docker/stdout로그에원값/digest를쓰지않았다.",
+    "serializer": "원DEV비교기의정확한row JSON/정렬/digest규칙을재사용. datetime/date/time/Decimal/UUID str·bytes/memoryview hex 지원을유지.",
+    "observer_source_sha256": "e6130e4638c56f04c73dcd4cc3d5107f4d2380d26f9a6bec09b87d51c8826083"
+  },
+  "passed_checks": [
+    "PC원본4파일종류/UID/mode/경로/크기·전체278006bytes·manifest2digests·privateverification integrity 일치",
+    "같은불변appID/amd64·고정PG17.11 및새빈복구guard를유지한restore1회exit0",
+    "58테이블·총536행의기준digest/행수전부일치·계정현재값포함auth_user비교true",
+    "public/draft/revision관계·modelcounts·media개수/크기/SHA모두일치; media0/0bytes",
+    "DBinternal·hostport0·소유label일치,자기Docker6개/QA폴더정리후남은자원0",
+    "PCprivate4파일의inode/mtime/size/mode/UID/SHA전후동일; 새공유근거에비어있지않은테이블digest노출없음"
+  ],
+  "findings_in_checked_scope": [],
+  "reused_DEV_history": {
+    "source": "backend/review/docker-01/server-backup-restore.json",
+    "source_sha256": "d4d0af39294b6eb3e5305ed6e0293d0592a70f48df22eb8c6e97131ef2bcf392",
+    "AWS": "실제export1회·app/proxy중단/재개58.29초·원DB/media/계정현재값과trustedHTTPS보존·serverstaging4제거는DEV인계근거. 이번실행0.",
+    "original_preflight_FAIL": "type-only/UUID직렬화TypeError원FAIL과별도보완readPASS보존. 이번serializer계약은보완된원규칙그대로.",
+    "original_restore_status": "FAIL_ISOLATED_RESTORE_NO_RETRY",
+    "original_restore_result": "58DB/media/revision비교PASS 후application internal-only로effectivepublishedport None/localhostURLErrorFAIL. 전체성공으로수정하지않음.",
+    "separate_network_diagnostic": "동일container/image/HTTPprocess에서일반bridge추가후127.0.0.1바인딩/200으로원인구분한별도근거.",
+    "approved_followup_status": "PASS_PRIVATE_PC_BACKUP_ISOLATED_RESTORE_WITH_LIMITS",
+    "approved_followup": "새run의QA application만기존일반bridge로정정한freshrestore/동일비교/5경로200·없는media404 PASS는같은backup/image의인계근거. 이번render재실행0.",
+    "DEV_cleanup": "4run/17소유자원정리는기록재사용이며이번독립정리6개와합산하지않음.",
+    "whole170": "이전170/170·191source/98build근거재사용. 새전체검사/AWS전체회귀/합산0."
+  },
+  "unverified_and_limits": [
+    "앱서비스/localhostrender·health/home/login/branch/news200·missingmedia404는이번직접검사가아닌같은backup/image의DEV유효후속재사용.",
+    "실제media/업무콘텐츠/revision0. 실사진내용/업로드복구/사진ACL/실콘텐츠관계복구를확인했다고주장하지않음.",
+    "현재계정데이터보존은private값비교이며관리자비밀번호읽기/재설정/로그인·기존session재사용0.",
+    "환경/secret파일·TLSprivatekeys·OS/전체서버이미지는백업범위밖. 완전서버복구·재부팅/갱신·최대용량·장애시RTO미검증.",
+    "자동주기/retention/RPO/RTO·PC외정기보관운영미정. PC사본1회를정기백업완료로확대하지않음.",
+    "기존sanitizer가긴성공status와rid/project표기를opaque로가림. 원archive유지; CLIexit0·개별비교PASS/일치bool로판정. 필터변경0."
+  ],
+  "evidence_and_cleanup": {
+    "CLI_evidence_path": "backend/review/qa-lifecycle/runs/qa-20261016T101544Z-7efb36033b4d/evidence-auto-result-17ea6512.json",
+    "CLI_evidence_sha256": "778f39af53212c3471e3e268cae3e8c2336d49083bfa23c6712354582c2f3308",
+    "own_run": {
+      "id": "qa-20261016T101544Z-7efb36033b4d",
+      "state": "DELETED",
+      "folder_absent": true,
+      "Docker_removed": 6,
+      "Docker_remaining": 0
+    },
+    "PC_backup_retained_unchanged": true,
+    "source_input_JSON_unchanged": true,
+    "current3_document_hash_match": {
+      "README.md": true,
+      "docs/OPERATIONS.md": true,
+      "docs/IMPLEMENTATION-PLAN.md": true
+    },
+    "private_data_exposure": "개별table/row/hash·계정/세션값·dump/media/verification본문·원비밀번호 출력/로그/review복사0. 공유요약은집계·일치bool뿐.",
+    "writes": "독립summary1개+관리CLI새ID표준근거만. 제품/문서/기존JSON/QA도구소스/Git/WWW/DNS/SG/AWS쓰기0.",
+    "root_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "index_empty": true
+  }
+}

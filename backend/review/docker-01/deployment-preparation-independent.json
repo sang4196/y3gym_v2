@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "date_KST": "2026-10-16",
+  "status": "PASS_WITH_INSTALLATION_GATES",
+  "latest_user_instruction": {
+    "server_setup": "ON_HOLD: 새 AWS 계정·다른 서버 사용 예정. 추가 검사·QA·원격 조회/변경·이미지 변경 중단.",
+    "old_target_calculation": "아래 용량·조건부 패키지 계획은 기존 대상의 당시 검토 기록이며 현재 실행 권고가 아닙니다.",
+    "no_approval_transfer": "기존 계정의 비용/Free plan·서버 사양/여유·설치·DNS/SG/TLS 승인 조건을 새 대상으로 자동 승계하지 않습니다.",
+    "certificate_email": "미정",
+    "prepared_image_code_data": "보존. 소유 QA 정리는 보류 지시 전에 완료했습니다."
+  },
+  "scope": "배포물 정체성·범위·공간 산술 검토. 전체170/로고167/Docker23 재실행0, AWS/SSH/원격 변경0.",
+  "identity": {
+    "developer_report": "backend/review/docker-01/deployment-preparation.json",
+    "developer_report_sha256": "81e3ed2bc71d178d348d4ee3919597c394371514a40815dffa333c2910d48f17",
+    "source191_manifest_sha256": "8bdc75ca1c44d88c920d02952e5b45e3041160b7c2b34cfdf84ed40a22ff69fc",
+    "source191_pre_post_mismatches": 0,
+    "root_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "root_dirty": true,
+    "root_index_empty": true,
+    "clean_worktree_HEAD": "e193cfff3091e68eaae93ee2f81bc89f9570ebec",
+    "logo_merge_tree": "f1321a7dcabc9dea3f4ad64267fbbcf3ec3c44e1",
+    "logo9_root_clean_worktree_merge_mismatches": 0,
+    "meaning": "HEAD628+dirty 결합 소스. 깨끗한 feature e193 및 merge f132의 로고9는 동일하며, clean main Docker release라는 뜻이 아닙니다.",
+    "tag": "y3gym-prepared:b59117b373c1-logo-f1321a7",
+    "actual_image_ID": "sha256:478d6a9fb51e94498427e06893c9915e7c83e182d80418d9b31082f60025c39e",
+    "os_arch": "linux/amd64",
+    "labels_match": {
+      "base_revision": true,
+      "dirty_true": true,
+      "logo_merge": true,
+      "source_fingerprint": "b59117b373c1fe90fdef8433ef7c5e40eebd214617097024734cf1039039660d"
+    }
+  },
+  "direct_image_probe": {
+    "run_id": "qa-20261016T060442Z-a11c4a04c23b",
+    "CLI": "qa_lifecycle.py auto --resource-backend docker --purpose 'Deployment preparation independent image identity files only' --command backend/.venv/bin/python -B -c <inline probe>",
+    "status": "PASS",
+    "core_required_files": 92,
+    "additional_manage_Gunicorn_files": 2,
+    "total_files_hashed": 94,
+    "mismatches": 0,
+    "logo_product5": [
+      "backend/news/home.py",
+      "backend/news/models.py",
+      "backend/news/templates/news/base.html",
+      "backend/news/templates/news/brand_wordmark.html",
+      "backend/news/static/news/brand.css"
+    ],
+    "prototype_HTML_CSS_JS_font_LICENSE": true,
+    "project_tests_QA_secrets_original_media_found": 0,
+    "private_media_empty": true,
+    "uid": 10001,
+    "read_only": true,
+    "network_none": true,
+    "bind_mounts": 0,
+    "container_exit": 0,
+    "DB_media_browser_service_creation": 0,
+    "checks_scope": "파일 검사1회만 수행. HTTP/CMS 기능 재검증이 아닙니다.",
+    "inspector_code_sha256": "f837763fcb00ed12e33dec156baaaddd2a143bfd38a34a527381f2683d9029af"
+  },
+  "reused_evidence": {
+    "whole170_archive": "backend/review/qa-lifecycle/runs/qa-20261016T053335Z-c7ec80bce2bd/evidence-auto-result-d961cd52.json",
+    "same191_source": true,
+    "archived_collected_run_pass": [
+      170,
+      170,
+      170
+    ],
+    "unique_executed_ids": 170,
+    "existing_optins4_actual_ids_present": true,
+    "fail_error_skip": [
+      0,
+      0,
+      0
+    ],
+    "developer_whole_once_seconds": 489.579,
+    "independent_whole_runs": 0,
+    "HTTP200": "DEV의 WSGI/health/home/logo/CSS 최소 smoke·내부CA. 전체 CMS/Docker 기능·실도메인 TLS로 확대하지 않습니다.",
+    "history": "옛189/Docker23·CLI15, 옛169/170 Trainer+별도narrow1, logo167,20.162초 원인 미확정, optional SECRET 누락error·별도후속PASS는 원기록 유지. 이번과 합산하거나 원인 해결로 보지 않습니다."
+  },
+  "arithmetic": {
+    "units": "bytes; MiB=1048576",
+    "layer_rows_filesystem_total": [
+      32,
+      37
+    ],
+    "compressed": 293447120,
+    "uncompressed_tar": 820275200,
+    "metadata": 6319254,
+    "image_base_sum": 1120041574,
+    "budget_without_swap": 2781705462,
+    "available_DEV_snapshot": 3030962176,
+    "snapshot_UTC": "2026-10-16T05:51:52Z",
+    "swap256": {
+      "total": 3050140918,
+      "shortfall": 19178742,
+      "shortfall_MiB": 18.2902736664
+    },
+    "swap512": {
+      "total": 3318576374,
+      "shortfall": 287614198,
+      "shortfall_MiB": 274.2902736664
+    },
+    "remote_archive_staging_extra": 292010334,
+    "package_phase_only": {
+      "installed4": 285807616,
+      "download4": 73524880,
+      "APT_deps_metadata_allowance": 67108864,
+      "total": 426441360,
+      "remaining_from_snapshot": 2604520816,
+      "remaining_above512MiB_reserve": 2067649904
+    },
+    "result": "기재 산술 일치. DEV 레이어·공간 행의 재계산이며 archive 재측정이나 현재 AWS 여유 공간 조회가 아닙니다.",
+    "assumptions": "imageFS128MiB/APT64MiB/DB256/media128/state64/log90/free512MiB는 계획 가정이며 quota·한 달 실측이 아닙니다. 실제 allocation/cold import peak/daemon RSS/필수deps/month growth는 미측정입니다."
+  },
+  "installation_plan": {
+    "verdict": "현재 사용자 지시로 서버 설정 보류. 당시 기존 대상의 최소 패키지 설치·측정 검토에는 산술상 차단 근거가 없었으나 실제 설치 가능 최종 보장은 아니며, 새 대상의 설치/import/swap/DB/Caddy/TLS 진행 승인으로 사용하지 않습니다.",
+    "conditions": [
+      {
+        "id": "PLAN-01",
+        "basis": "최소4 패키지·Recommends 제외 가정",
+        "file": "docs/OPERATIONS.md:50,57,65",
+        "review": "report.server_install_minimum.recommends_not_included=true와 실제 simulate/install argv 대조(원격실행0).",
+        "expected": "같은 고정버전·--no-install-recommends 옵션으로 simulate와 실제 설치. 필요한 deps closure와 download/unpack/APT metadata의 피크 포함. 불필요 upgrade/purge/add-on·안전여유 부족이면 설치 전 중단.",
+        "actual": "설계의 조건부 방안은 타당. 실제 동일 argv·deps closure·설치 공간 실측은 아직 없음.",
+        "classification": "진행 조건 보완이며 제품 결함 아님"
+      },
+      {
+        "id": "PLAN-02",
+        "basis": "패키지만 설치 후 df/MemAvailable/RSS 측정",
+        "file": "docs/OPERATIONS.md:48,63,65",
+        "review": "Ubuntu의 Docker 자동시작 및 daemon 초기 network/storage 동작은 공식 문서로 확인. 실제 target 측정0.",
+        "expected": "설치로 시작될 Docker/containerd의 OS 포함 RSS·초기 디렉터리/네트워크 오버헤드를 함께 계측. SSH IP 제한·SG/DNS 범위 유지. package gate에서 hello-world pull·앱/DB/Caddy 시작 없음.",
+        "actual": "daemon/coldload peak 미측정은 보고에 명시됨. 설치를 파일 복사만으로 표현하지 않도록 실행 범위에 포함해야 함.",
+        "classification": "설치 후 측정 조건이며 승인된 최소 설치의 재승인 요구 아님"
+      }
+    ],
+    "later_gate": "새 df 실측과 import 임시 피크를 보고 이미지별 결정. 전체 월 예산 부족을 숨기기 위한 reserve/자료 예산 축소나 원본 삭제 가정 금지."
+  },
+  "constraints": {
+    "t3_micro_1GiB_gp3_8GiB_unchanged": true,
+    "extra_spend_upgrade_snapshot_rejected": true,
+    "original_data_deletion_for_space_forbidden": true,
+    "user_display": "Free plan31일/credit29.76/expiry2027-05-01은 사용자 표시값. Billing API 검증·전체 무료 보장 아님.",
+    "approved_not_executed": "root y3gym.co.kr·SG80/443·자동HTTPS 승인. 실행0, 기존SSH IP제한 유지. AWS 배포/운영 검증 미완료.",
+    "CloudWatch": "설계 인계:2026-10-16 14:55KST CPU credits288·최근24hSurplusBalance/Charged0. 테스트 직접조회 아님, 전체 과금 보장 아님."
+  },
+  "cleanup": {
+    "state": "DELETED",
+    "own_auto_run": "qa-20261016T060442Z-a11c4a04c23b",
+    "owned_container_removed": 1,
+    "DB_volumes_created": 0,
+    "remaining": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "images": 0
+    },
+    "folder_absent": true,
+    "prepared_tag_ID_preserved": true,
+    "existing_Docker_resource_sets_same": true,
+    "DEV_build_timing_runs_DELETED_resources0_checked": true,
+    "global_prune_or_old_environment_control": 0,
+    "own_standard_exports": "아래 최소 결과·정리 metadata를 남긴 뒤 해당 새ID 중복 JSON만 정리.",
+    "records": [
+      {
+        "path": "backend/review/qa-lifecycle/runs/qa-20261016T060442Z-a11c4a04c23b/cleanup-1a6a2e8d.json",
+        "sha256": "610ed178f8d9bb99a90de8bc2b679c5fb1253615d289fe916ad8a1b3a9766618",
+        "bytes": 552
+      },
+      {
+        "path": "backend/review/qa-lifecycle/runs/qa-20261016T060442Z-a11c4a04c23b/evidence-auto-result-15f3cf13.json",
+        "sha256": "52a247e2c322f4cd54c767b5b2fb361561840da39adea40bdf89691d4ef25627",
+        "bytes": 1524
+      },
+      {
+        "path": "backend/review/qa-lifecycle/runs/qa-20261016T060442Z-a11c4a04c23b/evidence-explicit-cleanup-01cbd3c9.json",
+        "sha256": "a3b3aca3aafac6269bc582a4248a218cb1cf2a91cca90b6fd2957849ed99af85",
+        "bytes": 1527
+      }
+    ],
+    "own_standard_duplicate_exports_retired": true
+  },
+  "preservation": {
+    "source191_docs_report_unchanged": true,
+    "old_Docker_JSON2_unchanged": true,
+    "root_and_worktree_HEAD_index_Git_config_unchanged": true,
+    "product_tool_dependency_policy_edits": 0,
+    "only_new_independent_summary": true
+  },
+  "not_executed": [
+    "AWS/SSH/APT simulate/installation, actual dependency closure/daemon RSS/target disk/coldload/month growth",
+    "전체170·logo167·Docker23 및 새CMS/DB/media/browser/maximum upload/concurrency 검사",
+    "실domain TLS/DNS/SG·Billing/외부 서비스 변경",
+    "이전 PID·삭제된 /tmp 조사/복구"
+  ],
+  "references": [
+    "https://docs.docker.com/engine/storage/containerd/",
+    "https://docs.docker.com/engine/install/linux-postinstall/",
+    "https://docs.docker.com/engine/network/packet-filtering-firewalls/",
+    "/usr/share/man/man8/apt-get.8.gz (local APT3.2 manual: --no-install-recommends)"
+  ],
+  "reference_limit": "Debian web manpage fetch timeout 후 local APT manual 확인. 원격 APT 미실행.",
+  "writing_finished": true
+}

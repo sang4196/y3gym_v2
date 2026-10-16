@@ -8,6 +8,7 @@ dependencies = [
   "psycopg[binary]>=3.2,<4",
   "python-dotenv>=1.1,<2",
   "bleach>=6.2,<7",
+  "gunicorn==26.2.0",
 ]
 
 [dependency-groups]
