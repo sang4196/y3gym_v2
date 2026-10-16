@@ -135,6 +135,57 @@ class BrandTests(TestCase):
         with self.assertRaises(PermissionDenied):
             brand.serve_preview(request, "")
 
+    def test_admin_logo_replace_preview_publish_and_clear_preserve_public_boundaries(
+        self,
+    ):
+        old, new = picture("old-logo.png"), picture("draft-logo.png", "white")
+        brand = self.publish(self.brand(logo_image=old))
+        self.client.force_login(self.admin)
+        self.assertContains(self.client.get(self.url), "공통 헤더의 브랜드명 왼쪽")
+        payload = self.payload()
+        payload["logo_image"] = str(new.pk)
+        self.assertEqual(self.client.post(self.url, payload).status_code, 302)
+        brand.refresh_from_db()
+        draft = brand.get_latest_revision_as_object()
+        self.assertEqual(draft.logo_image_id, new.pk)
+        self.assertEqual(published_brand().logo_image_id, old.pk)
+        request = RequestFactory().get("/")
+        request.user = self.admin
+        preview = draft.serve_preview(request, "")
+        preview_header = BeautifulSoup(preview.content, "html.parser").select_one(
+            ".site-header .wordmark"
+        )
+        self.assertEqual(preview_header.select_one(".brand-name").text, brand.name)
+        new_url = preview_header.select_one(".brand-logo")["src"]
+        self.client.logout()
+        public_header = BeautifulSoup(
+            self.client.get("/").content, "html.parser"
+        ).select_one(".site-header .wordmark")
+        self.assertNotEqual(public_header.select_one(".brand-logo")["src"], new_url)
+        self.assertEqual(self.client.get(new_url).status_code, 404)
+        self.assertEqual(self.client.get(new.file.url).status_code, 404)
+        self.client.force_login(self.admin)
+        self.assertEqual(self.client.get(new_url).status_code, 200)
+        payload = self.payload()
+        payload["action-publish"] = "1"
+        self.assertEqual(self.client.post(self.url, payload).status_code, 302)
+        self.client.logout()
+        self.assertEqual(self.client.get(new_url).status_code, 200)
+        self.assertEqual(
+            self.client.get(old.get_rendition("max-80x80").url).status_code, 404
+        )
+        self.client.force_login(self.admin)
+        payload = self.payload()
+        payload.update(logo_image="", **{"action-publish": "1"})
+        self.assertEqual(self.client.post(self.url, payload).status_code, 302)
+        self.client.logout()
+        header = BeautifulSoup(self.client.get("/").content, "html.parser").select_one(
+            ".site-header .wordmark"
+        )
+        self.assertFalse(header.select(".brand-logo-slot"))
+        self.assertEqual(header.select_one(".brand-name").text, brand.name)
+        self.assertEqual(self.client.get(new_url).status_code, 404)
+
     def test_republish_replaces_brand_media_but_shared_post_image_remains(self):
         old, new = picture("old.png"), picture("new.png")
         brand = self.publish(self.brand(hero_image=old))

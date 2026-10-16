@@ -259,7 +259,7 @@ class BrandContent(
                 ),
                 FieldPanel(
                     "logo_image",
-                    help_text="선택 항목입니다. 없으면 브랜드명을 텍스트로 표시합니다.",
+                    help_text="선택 항목입니다. 공통 헤더의 브랜드명 왼쪽에 함께 표시합니다. 선택하지 않으면 브랜드명 텍스트만 표시합니다.",
                 ),
             ],
             heading="브랜드",

@@ -1,0 +1,484 @@
+{
+  "schema": 1,
+  "date_KST": "2026-10-16T14:16:00.916940+09:00",
+  "status": "PASS_WITH_ENVIRONMENT_AND_VISUAL_LIMITS",
+  "candidate_verification": "PASS",
+  "requirements_basis": [
+    "AGENTS.md: 최신 지시·검증과 보고·원본 보호·관리 CLI 정리",
+    "docs/PRD.md: LOGO-01 선택 로고+브랜드명 헤더 병기",
+    "prototype/DESIGN.md: LOGO-01 PC40/mobile32·비율·텍스트 fallback·원래 메뉴 유지",
+    "docs/IMPLEMENTATION-PLAN.md: LOGO-01",
+    "설계 최신 독립 지시: HEAD628aa66+로고13파일 후보178, 새 환경 전체1회, 현재 QA controller만 재사용"
+  ],
+  "scope": "Exact HEAD+logo-only candidate; no cumulative Docker/app/operations source, AWS or server preparation",
+  "run_id": "qa-20261016T045940Z-bfa6745bd492",
+  "base_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+  "candidate_identity": {
+    "HEAD_archive": true,
+    "owned_GNU_patch_fuzz0": true,
+    "exact13_changed_paths": [
+      "README.md",
+      "backend/news/home.py",
+      "backend/news/models.py",
+      "backend/news/static/news/brand.css",
+      "backend/news/templates/news/base.html",
+      "backend/news/templates/news/brand_wordmark.html",
+      "backend/news/tests/test_brand.py",
+      "backend/news/tests/test_header_home.py",
+      "backend/news/tests/test_logo_header_browser.py",
+      "backend/scripts/review-logo-header.mjs",
+      "docs/IMPLEMENTATION-PLAN.md",
+      "docs/PRD.md",
+      "prototype/DESIGN.md"
+    ],
+    "candidate178_SHA": "29b324fb9ebaa642e3c755fa78705ccfe58521adc9f42ead70940ba519dfbad4",
+    "settings_urls_dependencies_equal_HEAD": true,
+    "new_Docker_app_sources_absent": true,
+    "canonical_repo_patch_or_index_write": false,
+    "candidate_manifest_file_sha256": "437e1a708dd64cdbe646ded59cae4762640c6b00195fee22f85bc5ac0e702f1c",
+    "patch_sha256": "daa6995b3193c8f999f873d3ae5abda490c4a7b1ee7b77d8145e43a3d8090af7",
+    "candidate13_file_sha256": {
+      "backend/news/models.py": "d22ccd89ac302094b06bd0a8694b6eb1069d282e15adfe086c8f6473b6ed8745",
+      "backend/news/home.py": "db61045297878cd1c85fdd3a719b97ebad749ac0e5fca34c92a854fb71e918c8",
+      "backend/news/templates/news/brand_wordmark.html": "2dc0ad82568e3e2c8722aaddc946d903ab65d93db4bcd9fa47852a9a7de64d44",
+      "backend/news/templates/news/base.html": "6ebbd9a8ea03b24366f2a66d19824259d823efb6de0961a6b3638394e842cf42",
+      "backend/news/static/news/brand.css": "dc32aaff3bc3c040ec7988be5462ac2b1ab44911173db728aee2a5a39ee395ce",
+      "backend/news/tests/test_header_home.py": "469724a450a1400013ead384e034dac025a2eb3518730c132a58e6c56482f862",
+      "backend/news/tests/test_brand.py": "356eca85f324b1cb3f35adfdae8f6b943a9da0efa1d600398a1cd4415d2e384a",
+      "backend/news/tests/test_logo_header_browser.py": "4e92fba4b67ae741ae83f8da2fb601ea860605b071dd0f10c90268fc696a426e",
+      "backend/scripts/review-logo-header.mjs": "672e19a374c5b446d2a523d67902e1f4d07fa57295711a72fc85ffcdbe0160ca",
+      "docs/PRD.md": "642e7db56a2064a7e87a75e67c1d42f2357e504618237027d50b03dc2a4c996a",
+      "prototype/DESIGN.md": "7c3321854a78f9f923f11871ef9e8b092814b7b71f6df3886d5494e5f9be05e3",
+      "README.md": "6be7dd9dda3eb6d2f0a76b5d3361da908e2a64617610461be4c29fe7e1f0893e",
+      "docs/IMPLEMENTATION-PLAN.md": "95ed4669945b3598debc27a5b145141d2f7518590bdfaa038dae10cdbad3de07"
+    },
+    "source178_post_execution_match": true,
+    "candidate_reference_source_and_raw_logs_unchanged": true,
+    "README_PLAN_contain_HEAD_plus_only_LOGO_note": true
+  },
+  "fresh_runtime": {
+    "versions": {
+      "Python": "3.13.15",
+      "Django": "5.2.18",
+      "Wagtail": "7.4.3",
+      "candidate_settings_origin": true,
+      "fresh_venv_prefix": true,
+      "gunicorn_absent": true
+    },
+    "Node_existing_reused": {
+      "node": "v22.23.2",
+      "playwright": "1.64.0"
+    },
+    "Node_lock_actual_matches": true,
+    "Node_download_or_install": false,
+    "original_venv_sync": false,
+    "controller_tools_from_canonical_only": [
+      "qa_lifecycle.py",
+      "qa_docker.py",
+      "qa_test_runner.py",
+      "qa_redaction.py",
+      "qa_browser_loader.mjs",
+      "qa_browser_resolver.mjs",
+      "qa_browser_guard.mjs"
+    ],
+    "PYTHONPATH": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492:/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts:/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend",
+    "NODE_OPTIONS": "--import=/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/scripts/qa_browser_loader.mjs"
+  },
+  "executed_commands": [
+    {
+      "name": "patch-dry-run",
+      "argv": [
+        "patch",
+        "--batch",
+        "--forward",
+        "--fuzz=0",
+        "--dry-run",
+        "-p1",
+        "--directory",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/tmp/head-archive",
+        "--input",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/logo-01/logo-only.patch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "patch-apply-owned",
+      "argv": [
+        "patch",
+        "--batch",
+        "--forward",
+        "--fuzz=0",
+        "-p1",
+        "--directory",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/tmp/head-archive",
+        "--input",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/backend/review/logo-01/logo-only.patch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "fresh-uv-sync-locked",
+      "argv": [
+        "uv",
+        "sync",
+        "--locked",
+        "--no-python-downloads",
+        "--link-mode",
+        "copy"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "fresh-import-identity",
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend/.venv/bin/python",
+        "-B",
+        "-c",
+        "import sys,json,importlib.metadata as m,importlib.util;from pathlib import Path;assert Path(sys.prefix)==Path(sys.argv[1]);assert str(importlib.util.find_spec('config.settings').origin)==sys.argv[2];assert importlib.util.find_spec('gunicorn') is None;print(json.dumps({'Python':sys.version.split()[0],'Django':m.version('django'),'Wagtail':m.version('wagtail'),'candidate_settings_origin':True,'fresh_venv_prefix':True,'gunicorn_absent':True}))",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend/.venv",
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend/config/settings.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "fresh-Django-check",
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend/.venv/bin/python",
+        "-B",
+        "manage.py",
+        "check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "fresh-migration-check",
+      "argv": [
+        "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend/.venv/bin/python",
+        "-B",
+        "manage.py",
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "whole_command": {
+    "argv": [
+      "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend/.venv/bin/python",
+      "-B",
+      "manage.py",
+      "test",
+      "news.tests",
+      "--noinput",
+      "--verbosity",
+      "2"
+    ],
+    "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T045940Z-bfa6745bd492/source/backend",
+    "exit_code": 0,
+    "seconds": 568.836,
+    "four_opt_ins": true,
+    "new_output_at_start": true
+  },
+  "whole_test": {
+    "collected": 167,
+    "run": 167,
+    "pass": 167,
+    "fail": [],
+    "error": [],
+    "skip": [],
+    "whole_invocations": 1,
+    "no_retry": true,
+    "unique_executed_ids": 167,
+    "executed_ids_sha256": "e18272d0b117531b2d6099d5ad27700b1b088f75228cebf58469255afcd86c76",
+    "four_existing_optin_ids": [
+      "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes",
+      "news.tests.test_brand_browser.BrandBrowserTests.test_brand_editor_and_public_home",
+      "news.tests.test_home_news_browser.HomeNewsBrowserTests.test_home_news_navigation_empty_state_and_popup_regressions",
+      "news.tests.test_trainer_browser.TrainerBrowserTests.test_trainer_management_publication_and_cards"
+    ],
+    "four_existing_optins_executed": true,
+    "new_Logo_browser_id": "news.tests.test_logo_header_browser.LogoHeaderBrowserTests.test_logo_chooser_header_geometry_navigation_and_preview",
+    "new_Logo_browser_executed": true,
+    "new_three_logo_test_ids": [
+      "news.tests.test_brand.BrandTests.test_admin_logo_replace_preview_publish_and_clear_preserve_public_boundaries",
+      "news.tests.test_header_home.HeaderHomeTests.test_logo_renditions_keep_square_wide_and_tall_ratios_and_private_originals",
+      "news.tests.test_logo_header_browser.LogoHeaderBrowserTests.test_logo_chooser_header_geometry_navigation_and_preview"
+    ],
+    "sanitized_failure_stacks": [],
+    "suite_result_sha256": "f5477067907922aeecadaf593055a4bbea138b00b075fa35f0bb207aa5598bbf"
+  },
+  "logo_browser": {
+    "status": "PASS",
+    "actual_checks": [
+      "none: PC1440/mobile375/320 four routes, header home and no lightbox",
+      "Actual chooser selection, private preview and draft reopen without public leak",
+      "square: PC1440/mobile375/320 four routes, header home and no lightbox",
+      "wide: PC1440/mobile375/320 four routes, header home and no lightbox",
+      "tall: PC1440/mobile375/320 four routes, header home and no lightbox",
+      "long: PC1440/mobile375/320 four routes, header home and no lightbox",
+      "320px long brand mobile menu remains usable",
+      "Actual chooser clear and publish returns text without an empty frame"
+    ],
+    "geometries": 60,
+    "four_routes_three_widths": [
+      1440,
+      375,
+      320
+    ],
+    "admin_login_HTTP200_assertion_executed": true,
+    "draft_logo_anonymous_HTTP404_assertion_executed": true,
+    "original_logo_anonymous_HTTP404_assertions_executed": true,
+    "live_handler": "LogoHeaderBrowserTests.static_handler returns StaticFilesHandler(WSGIHandler()); no default filesystem media wrapper",
+    "original_images_private_and_public_revision_boundaries": "New unit cases plus actual Logo browser PASS",
+    "capture_files_generated_only_in_owned_run": 13,
+    "no_new_PNG_copied_to_review": true,
+    "visual_inspection_of_own_captures": [
+      "square-1440.png",
+      "long-375.png",
+      "long-320-menu-open.png"
+    ],
+    "visual_observation": "Logo precedes text; long text truncates; 320px open menu readable without horizontal overflow; synthetic images only",
+    "captures_refer_to_same_five_product_file_bytes_as_DEV": true
+  },
+  "static_direct": {
+    "status": "PASS",
+    "checks": {
+      "ruff_lint": {
+        "exit_code": 0,
+        "output": "All checks passed!"
+      },
+      "ruff_format": {
+        "exit_code": 0,
+        "output": "5 files already formatted"
+      },
+      "node_syntax": {
+        "exit_code": 0,
+        "output": ""
+      }
+    },
+    "logo_current_doc_links": 3,
+    "footer_popup_default_partial_body_identical_to_HEAD": true,
+    "source_or_expectations_edited": false
+  },
+  "browser_process_control": {
+    "signed_spawn_events": 7,
+    "signed_exit_events": 7,
+    "unmatched_births": 0,
+    "host_guard_reused_from_canonical": true
+  },
+  "original_setup_failure": {
+    "status": "FAIL",
+    "stage": "read-only original-protection baseline before candidate projection, fresh install or DB creation",
+    "whole_runs_started": 0,
+    "type": "FileNotFoundError",
+    "path": "/tmp/y3gym-kakao-map-iq9yoy7v/.local-credentials",
+    "supplied_PID3_not_present": [
+      714159,
+      1020914,
+      2910010
+    ],
+    "source_script_sha256": "7931dea973459029be413976c9cfd0c26bbe8ef4cf879b75d17239b43d49ff9b",
+    "original_log": "logs/independent-driver.log",
+    "classification": "Observer reused stale historical path; supplied original server PID protection baseline unavailable in current local environment",
+    "server_start_stop_performed": false,
+    "diagnostic": "Traceback (most recent call last):\n  File \"/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/[OPAQUE REDACTED]/output/independent-driver.py\", line 45, in <module>\n    private_before = {str(p): file_info(p) for p in private_paths}\n                              ~~~~~~~~~^^^\n  File \"/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/[OPAQUE REDACTED]/output/independent-driver.py\", line 39, in file_info\n    s = path.stat()\n  File \"/home/shlee/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/pathlib/_local.py\", line 515, in stat\n    return os.stat(self, [OPAQUE REDACTED])\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/y3gym-kakao-map-iq9yoy7v/.local-credentials'\n",
+    "followup": "Same new run. Latest design instruction confirmed absent historical PID/path is not a runtime precondition. Current root private3 and absent original listeners/PIDs were recorded; no old paths restored. No tests/source/DB had started at original setup failure."
+  },
+  "developer_history_not_our_reexecution": {
+    "reference": "backend/review/logo-01/verification.json",
+    "final_candidate_149PASS_1FAIL_17ERROR": "Original reused-output FileExistsError17 + HomeNews exclusive-directory failure1 preserved; our fresh output did not delete or move old evidence",
+    "old_candidate_167PASS_admin500": "Earlier fixture/observer source; not reused as final source PASS",
+    "accumulated170_Trainer_failure_and_separate_followup": "Out of current candidate scope; original cause remains unresolved and not claimed fixed by current candidate Trainer result",
+    "initial_observer3_and_Locale_error": "Historical failures and strict followup preserved, not merged into independent counts"
+  },
+  "preservation": {
+    "root_existing_file_hashes_checked": 528,
+    "root_existing_file_hashes_same": true,
+    "existing_root_private3_exact_inode_size_mode_mtime_ns_string_and_SHA_same": true,
+    "historical_protected_PID3_currently_absent_before_execution": [
+      714159,
+      1020914,
+      2910010
+    ],
+    "ports8767_8769_8776_no_listener_before": true,
+    "original_server_start_stop_or_missing_auth_restore": false,
+    "original_server_running_identity_verified": false,
+    "original_DB_rows_or_full_media_content_audit": false,
+    "HEAD_index_and_Git_config_same": true,
+    "index_empty": true,
+    "canonical_venv_not_synced": true,
+    "candidate_reference_not_cleaned": true
+  },
+  "cleanup": {
+    "status": "PASS",
+    "own_run_created": 1,
+    "own_main_and_runner_DB_count_before_cleanup": 2,
+    "owned_Docker_resources_before_cleanup": 2,
+    "no_original_host_PostgreSQL_connection": true,
+    "fresh_venv_cache_removed_without_following_aliases": 42,
+    "state": "DELETED",
+    "owned_resources_removed": 2,
+    "own_remaining": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "images": 0
+    },
+    "folder_media_cache_browser_profile_absent": true,
+    "existing_Docker_resource_sets_same": true,
+    "exact_current_plan_used": true,
+    "duplicate_cleanup_noop": true,
+    "commands": [
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "stop",
+          "qa-20261016T045940Z-bfa6745bd492"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "complete",
+          "qa-20261016T045940Z-bfa6745bd492",
+          "--reason",
+          "Independent exact logo candidate full suite finished once; minimal report preserved; own run unused"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261016T045940Z-bfa6745bd492",
+          "--dry-run"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261016T045940Z-bfa6745bd492",
+          "--plan",
+          "2977131d865c02c5231cff1068182a87840cbdc2894ba37a22c32e3b2ac2cc65"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "backend/.venv/bin/python",
+          "-B",
+          "backend/scripts/qa_lifecycle.py",
+          "cleanup",
+          "qa-20261016T045940Z-bfa6745bd492",
+          "--plan",
+          "2977131d865c02c5231cff1068182a87840cbdc2894ba37a22c32e3b2ac2cc65"
+        ],
+        "exit": 0
+      }
+    ],
+    "own_CLI_exports_negative_secret_scan": "PASS",
+    "generated_standard_records": [
+      {
+        "path": "backend/review/qa-lifecycle/runs/qa-20261016T045940Z-bfa6745bd492/cleanup-47e9c35c.json",
+        "sha256": "02e6ecefca009f9c52f0616acc42e9cf5280215d62d93cc92dc28413d833b5de",
+        "bytes": 552,
+        "phase": null,
+        "sanitized_log_hashes": []
+      },
+      {
+        "path": "backend/review/qa-lifecycle/runs/qa-20261016T045940Z-bfa6745bd492/evidence-explicit-cleanup-8374de5f.json",
+        "sha256": "4a9d6b3aac6004278fd7171e815d1f5360ad86fece8dc6a8185a84ad53428b3b",
+        "bytes": 86037,
+        "phase": "explicit-cleanup",
+        "sanitized_log_hashes": [
+          {
+            "file": "independent-driver.log",
+            "raw_sha256": "de9a1b09e0ab8c27961c15695ee2bf236a3ff24793cf41c4c46fa5dba7e88c1e",
+            "raw_bytes": 810
+          },
+          {
+            "file": "patch-apply-owned.log",
+            "raw_sha256": "629f3d323785ce3d22ba04f7ce62123d93dce699077d9d00314e300dc1c439a2",
+            "raw_bytes": 575
+          },
+          {
+            "file": "independent-driver-followup.log",
+            "raw_sha256": "d4c22c4669e40a5319e48b474c44219c640952b8dbaea72b0af0233449a5ca42",
+            "raw_bytes": 181
+          },
+          {
+            "file": "fresh-uv-sync-locked.log",
+            "raw_sha256": "241e8e3d01f1d149cd6cef5e63c8307e7e0421ee72cede3f78005c099b8677e3",
+            "raw_bytes": 1391
+          },
+          {
+            "file": "independent-ruff_format.log",
+            "raw_sha256": "f114d83b30c5c657ee43a847a45bafccaea255d82673feb87c26d252c61e29c1",
+            "raw_bytes": 26
+          },
+          {
+            "file": "fresh-Django-check.log",
+            "raw_sha256": "1e3e63f221bde88816c4a4ef7367691607b20cc1d194028a02ec9ae0586cf9b1",
+            "raw_bytes": 48
+          },
+          {
+            "file": "fresh-migration-check.log",
+            "raw_sha256": "a2bfa7b376c38062f77ce2b1e703876aaa04662f96355cdf5dc9d0d075302b05",
+            "raw_bytes": 20
+          },
+          {
+            "file": "independent-node_syntax.log",
+            "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "raw_bytes": 0
+          },
+          {
+            "file": "independent-ruff_lint.log",
+            "raw_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+            "raw_bytes": 19
+          },
+          {
+            "file": "patch-dry-run.log",
+            "raw_sha256": "ce32d971f69d54bf9320b9a471be57364ca39e1f46bc2acfb36c03b28367289c",
+            "raw_bytes": 575
+          },
+          {
+            "file": "fresh-import-identity.log",
+            "raw_sha256": "06dfb5b58f1464d03baddf1b17ca7bb6d8b3415f321538ebb53dc7c3a79ac00f",
+            "raw_bytes": 149
+          },
+          {
+            "file": "whole-once.log",
+            "raw_sha256": "573a64c513c0e66cc5a41e227cc687ccb59427ac8709a72446301ec32ac7b77c",
+            "raw_bytes": 69353
+          }
+        ]
+      }
+    ],
+    "duplicate_own_standard_exports_retired_after_minimum_preservation": true
+  },
+  "limits": [
+    "User visual approval and actual official logo remain pending; synthetic QA only",
+    "Actual devices/Whale/OS Korean IME/strict pixel approval and operation/integrations not tested",
+    "Original supplied PIDs and historical /tmp credential paths absent at start; no restart/restore attempted, root private3 preserved",
+    "Historical W01 and prior observer/performance limits remain; only modified Python5 lint/format was rerun",
+    "No independent keyboard-only Enter probe; native anchor semantics/code and actual native clicks reviewed",
+    "Existing QA lifecycle/runner/guard/Docker PostgreSQL controller from canonical checkout is execution management, not candidate app source",
+    "New report is review metadata outside the tested178 manifest; Git selection belongs to design/Git role"
+  ],
+  "canonical_product_tool_dependency_edits": 0,
+  "Git_AWS_server_configuration_actions": 0,
+  "minimal_evidence_policy": "One independent JSON only. Current own CLI export metadata/log hashes, actual results/failure stacks and cleanup proof preserved here before exact duplicate current-ID standard exports are retired. Existing evidence IDs, DEV source, patch, JSON and captures untouched.",
+  "writing_finished": true
+}

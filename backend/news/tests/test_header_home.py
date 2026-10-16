@@ -1,11 +1,14 @@
+import io
 import tempfile
 from urllib.parse import parse_qs, urlsplit
 
 from bs4 import BeautifulSoup
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase, override_settings
 from django.urls import include, path, reverse
+from PIL import Image
 
-from news.models import Branch, BrandContent, Post
+from news.models import Branch, BrandContent, ContentImage, Post
 from news.tests.test_publication import picture
 
 urlpatterns = [path("gym/", include("config.urls"))]
@@ -62,12 +65,26 @@ class HeaderHomeTests(TestCase):
                 self.assertEqual(header["href"], reverse("home"))
                 self.assertNotIn("data-branch-page", header.attrs)
                 self.assertEqual(len(header.select("img.brand-logo")), int(logo))
+                self.assertEqual(header.select_one(".brand-name").text, self.brand.name)
+                self.assertEqual(header["aria-label"], self.brand.name + " 홈")
+                self.assertEqual(len(header.select(".brand-logo-slot")), int(logo))
+                if logo:
+                    self.assertEqual(header.select_one("img.brand-logo")["alt"], "")
+                    self.assertEqual(
+                        header.select_one(".brand-logo-slot")["aria-hidden"], "true"
+                    )
+                    self.assertLess(
+                        str(header).index("brand-logo-slot"),
+                        str(header).index('class="brand-name"'),
+                    )
                 self.assertFalse(header.select("[data-image-full]"))
                 for link in soup.select("[data-branch-page]"):
                     self.assertEqual(
                         parse_qs(urlsplit(link["href"]).query)["branch"], ["second"]
                     )
                 footer = soup.select_one(".site-footer .wordmark")
+                self.assertEqual(len(footer.select("img.brand-logo")), int(logo))
+                self.assertEqual(bool(footer.select(".brand-name")), not logo)
                 if route == reverse("home"):
                     self.assertEqual(footer["href"], "#main")
                     self.assertEqual(soup.body["data-common-home"], reverse("home"))
@@ -86,6 +103,32 @@ class HeaderHomeTests(TestCase):
         self.brand.logo_image = picture("nav-logo.png")
         self.publish(self.brand)
         self.assert_header_navigation(logo=True)
+
+    def test_logo_renditions_keep_square_wide_and_tall_ratios_and_private_originals(
+        self,
+    ):
+        for width, height in [(400, 400), (640, 160), (160, 640)]:
+            with self.subTest(size=(width, height)):
+                data = io.BytesIO()
+                Image.new("RGB", (width, height), "navy").save(data, "PNG")
+                logo = ContentImage.objects.create(
+                    title="TEST ratio",
+                    file=SimpleUploadedFile(
+                        f"ratio-{width}.png", data.getvalue(), content_type="image/png"
+                    ),
+                )
+                self.brand.logo_image = logo
+                self.publish(self.brand)
+                soup = BeautifulSoup(self.client.get("/").content, "html.parser")
+                url = soup.select_one(".site-header .brand-logo")["src"]
+                response = self.client.get(url)
+                self.assertEqual(response.status_code, 200)
+                with Image.open(
+                    io.BytesIO(b"".join(response.streaming_content))
+                ) as decoded:
+                    self.assertEqual(decoded.width * height, decoded.height * width)
+                    self.assertLessEqual(max(decoded.size), 80)
+                self.assertEqual(self.client.get(logo.file.url).status_code, 404)
 
     @override_settings(ROOT_URLCONF=__name__)
     def test_header_resolves_named_home_under_a_route_prefix(self):
