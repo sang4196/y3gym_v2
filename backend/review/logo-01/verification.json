@@ -1,0 +1,415 @@
+{
+  "status": "DEVELOPMENT_CANDIDATE_READY_PENDING_INDEPENDENT_FULL_QA",
+  "base_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+  "scope": "Header optional logo beside brand name; existing CMS field/revisions/media policies reused; footer/popup unchanged",
+  "baseline": {
+    "HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "files": {
+      "backend/news/models.py": "53622093a88d84ba526b87b7d76913a087239ef81fa8010a71b221e41d5fe1ad",
+      "backend/news/home.py": "b6de50ec26df69220c9d50233d09fe15adbfdeeec193efbd27322aabc9e13f3c",
+      "backend/news/templates/news/brand_wordmark.html": "80e959acbd2a523d84de49381f594a00f17740dc49492c10f5c7d4f1145acf0f",
+      "backend/news/templates/news/base.html": "64379a9d7138ba18ae556fc4ad73cb29169c33abedae8305cb60d1fc4cfd1092",
+      "backend/news/static/news/brand.css": "22e11b7246a7c751540beafc2fe91a9efce4a7aa42d453e68aa7d8c0fee9ba48",
+      "backend/news/tests/test_header_home.py": "25e3c2022f59c905a07fb4331130ff84b366b2d9a15465ea2e41df22deced91c",
+      "backend/news/tests/test_brand.py": "dc2a03dbbc63e6b5d28279ae368fe259f5c4cb9bf5726c9876054b5a9a17bf5b",
+      "README.md": "b2bcdf453031a1e196a1bf821c98b4dce473c73127738b562e16aca838e4238f",
+      "docs/IMPLEMENTATION-PLAN.md": "a73ad8ba5b8acafe41ed705b8e1d1271f7487d22d2904de57ea7a438b0f427b3",
+      "docs/PRD.md": "e48592cc2dffbb9d9598737ac3363fc5088a2a3531c787bd479c5e3751a27b77",
+      "prototype/DESIGN.md": "30e68e9c2a38daa9d5a9ed781e8ad27bab87eb8beed2eaa29794f48ee4d084b7"
+    },
+    "tracked_preexisting_modified": [
+      "README.md",
+      "backend/.env.example",
+      "backend/README.md",
+      "backend/config/urls.py",
+      "backend/pyproject.toml",
+      "backend/scripts/qa_browser_guard.mjs",
+      "backend/scripts/qa_lifecycle.py",
+      "backend/scripts/qa_redaction.py",
+      "backend/uv.lock",
+      "docs/IMPLEMENTATION-PLAN.md",
+      "docs/OPERATIONS.md"
+    ]
+  },
+  "preexisting_Docker_ops_excluded_from_logo_commit": true,
+  "OPERATIONS_unchanged_in_logo_unit_sha256": "bbf42fe32ae490f7d1060def1e179261ec0f9974dd32f130fb2f1cdc9210e57a",
+  "original_failure": {
+    "run_id": "qa-20261016T040837Z-a2fb2f5fe57d",
+    "result": "FAIL",
+    "actual": "27/28 PASS; new browser chooser accessible-link name did not match composed img/text name; no layout failure",
+    "followup": "Use existing data-chooser-modal-choice hook and retain selected image-ID assertions/timeouts",
+    "cleanup": "DELETED; owned container+volume2 removed"
+  },
+  "visual_approval": "PENDING: synthetic QA logos only, no official logo supplied",
+  "AWS_actions_in_logo_unit": 0,
+  "Git_write_actions": 0,
+  "second_original_failure": {
+    "run_id": "qa-20261016T041123Z-989d8d5e5554",
+    "result": "FAIL",
+    "actual": "27/28 PASS; draft-image HTTP negative returned200 through default Django LiveServer media filesystem wrapper",
+    "followup": "Logo test only: static handler wraps actual WSGI directly, retaining protected_media and404 expectation; product access control unchanged",
+    "cleanup": "auto exact-owned cleanup"
+  },
+  "third_original_failure": {
+    "run_id": "qa-20261016T041341Z-cd8a1e2b59a9",
+    "result": "FAIL",
+    "actual": "27/28 PASS; after square logo preview/public checks passed, replacement chooser matched a visible and a hidden button",
+    "followup": "Use the visible actual chooser action; keep ID/geometry/privacy checks",
+    "cleanup": "DELETED; owned resources2 removed"
+  },
+  "initial_accumulated_whole": {
+    "run_id": "qa-20261016T041818Z-f62d19985fe3",
+    "result": "FAIL",
+    "collected": 170,
+    "pass": 169,
+    "fail": 1,
+    "actual_failure": "Existing trainer browser, exit1 with empty stderr and0 inner checks; exact cause not preserved before auto cleanup, NOT attributed to logo or claimed fixed",
+    "new_logo_browser": "PASS8/60 but admin initial500 observer gap",
+    "cleanup": "DELETED; owned resources2 removed"
+  },
+  "initial_HEAD_candidate_whole": {
+    "run_id": "qa-20261016T040418Z-023d2027a1ae",
+    "result": "PASS",
+    "tests": 167,
+    "skip": 0,
+    "observation": "Admin initial500 from missing page tree not asserted in initial logo observer; fixture correction and strict200 followup required",
+    "Docker_uncommitted_source_absent": true,
+    "resources_removed": 2,
+    "source_retained_for_Git_scope": true
+  },
+  "flush_followup_original_error": {
+    "run_id": "qa-20261016T043242Z-74f2097d93bf",
+    "result": "ERROR",
+    "tests": 2,
+    "passed": 1,
+    "error": 1,
+    "cause": "Own logo fixture recreating native Page after flush lacked native default Locale",
+    "trainer_followup": "PASS on existing unchanged test, original full failure cause remains unknown",
+    "followup": "Restore Locale for existing settings language before native Page root; no product/helper expectation change"
+  },
+  "strict_flush_logo_followup": {
+    "run_id": "qa-20261016T043554Z-b9b812722113",
+    "result": "PASS",
+    "tests": 1,
+    "checks": 8,
+    "geometries": 60,
+    "captures": 13,
+    "forced_flush": true,
+    "default_Locale": "settings.LANGUAGE_CODE=ko, get_or_create before Page root",
+    "native_Page_root": "Created if absent; no Site required for observed actual admin200",
+    "admin_login_destination_status": 200,
+    "private_preview_anonymous_image_status": 404,
+    "original_images_status": 404,
+    "proof": "Unchanged final Node assertions + sanitized successful run log; assertion failures retain nonzero exit",
+    "cleanup": "DELETED; own container and volume2 removed"
+  },
+  "final_candidate": {
+    "state": "TEST_COMPLETED_FAIL",
+    "run_id": "qa-20261016T040418Z-023d2027a1ae",
+    "source": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T040418Z-023d2027a1ae/source",
+    "base_HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "patch": "backend/review/logo-01/logo-only.patch",
+    "patch_sha256": "daa6995b3193c8f999f873d3ae5abda490c4a7b1ee7b77d8145e43a3d8090af7",
+    "manifest": "backend/review/logo-01/candidate-manifest.json",
+    "manifest_sha256": "437e1a708dd64cdbe646ded59cae4762640c6b00195fee22f85bc5ac0e702f1c",
+    "source_manifest_sha256": "29b324fb9ebaa642e3c755fa78705ccfe58521adc9f42ead70940ba519dfbad4",
+    "source_files": 178,
+    "source_hashes_unchanged_after_test": true,
+    "changed_source_and_docs": [
+      "backend/news/models.py",
+      "backend/news/home.py",
+      "backend/news/templates/news/brand_wordmark.html",
+      "backend/news/templates/news/base.html",
+      "backend/news/static/news/brand.css",
+      "backend/news/tests/test_header_home.py",
+      "backend/news/tests/test_brand.py",
+      "backend/news/tests/test_logo_header_browser.py",
+      "backend/scripts/review-logo-header.mjs",
+      "docs/PRD.md",
+      "prototype/DESIGN.md",
+      "README.md",
+      "docs/IMPLEMENTATION-PLAN.md"
+    ],
+    "Docker_uncommitted_code_and_cumulative_ops_docs_excluded": true,
+    "command": [
+      "backend/.venv/bin/python",
+      "-B",
+      "manage.py",
+      "test",
+      "news.tests",
+      "--noinput",
+      "--verbosity",
+      "2"
+    ],
+    "cwd": "/home/shlee/Workspace/ai/01.codex/y3gym_v2/.local/qa/qa-20261016T040418Z-023d2027a1ae/source/backend",
+    "four_existing_opt_ins": {
+      "Y3GYM_RUN_BRAND_BROWSER": "1",
+      "Y3GYM_RUN_BRANCH_BROWSER": "1",
+      "Y3GYM_RUN_TRAINER_BROWSER": "1",
+      "Y3GYM_RUN_HOME_NEWS_BROWSER": "1"
+    },
+    "actual_full_test": {
+      "status": "FAIL_QA_OUTPUT_COLLISION",
+      "evidence": "backend/review/qa-lifecycle/runs/qa-20261016T040418Z-023d2027a1ae/evidence-logo-HEAD-candidate-final-ec875a35.json",
+      "exit_code": 1,
+      "collected": 167,
+      "run": 167,
+      "pass": 149,
+      "fail": 1,
+      "error": 17,
+      "skip": 0,
+      "duration_seconds": 530.147,
+      "source_unchanged_after_execution": true,
+      "full_test_repeat_after_failure": false,
+      "home_news_and_withdrawal_summary_PASS_is_stale_initial_output": true
+    },
+    "all_five_browser_cases_executed": true,
+    "actual_browser_test_results": {
+      "news.tests.test_branch_browser.BranchBrowserTests.test_branch_editor_and_real_public_routes": "PASS",
+      "news.tests.test_brand_browser.BrandBrowserTests.test_brand_editor_and_public_home": "PASS",
+      "news.tests.test_home_news_browser.HomeNewsBrowserTests.test_home_news_navigation_empty_state_and_popup_regressions": "FAIL",
+      "news.tests.test_logo_header_browser.LogoHeaderBrowserTests.test_logo_chooser_header_geometry_navigation_and_preview": "PASS",
+      "news.tests.test_trainer_browser.TrainerBrowserTests.test_trainer_management_publication_and_cards": "PASS"
+    },
+    "admin500_count_in_final_log": 0,
+    "logo_current_inner_checks": 8,
+    "logo_current_geometries": 60,
+    "logo_current_strict_admin200_private404_assertions": "PASS",
+    "resources_removed": 2,
+    "source_retained_for_test_Git_review": true,
+    "current_candidate_prepared_for_independent_test": true
+  },
+  "static_checks": {
+    "candidate_modified_python_Ruff_lint": "PASS5",
+    "candidate_modified_python_Ruff_format": "PASS5",
+    "candidate_Node_syntax": "PASS",
+    "added_doc_links": "PASS3 actual repository",
+    "candidate_reverse_patch_dry_run": "PASS13"
+  },
+  "cleanup_checked_after_final_failure": [
+    {
+      "run_id": "qa-20261016T040837Z-a2fb2f5fe57d",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T041123Z-989d8d5e5554",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T041341Z-cd8a1e2b59a9",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T041602Z-b064cdb15dc6",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T041818Z-f62d19985fe3",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T043242Z-74f2097d93bf",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T043554Z-b9b812722113",
+      "state": "DELETED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T040418Z-023d2027a1ae",
+      "state": "RETAINED",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "Logo-only HEAD candidate plus pre-logo baseline retained for independent review and Git separation",
+      "cleanup_condition": "After independent/logo visual review and logo-only Git commit/merge, confirm no further use then explicit complete and exact-run cleanup"
+    },
+    {
+      "run_id": "qa-20261016T035910Z-aa69652d539b",
+      "state": "MANUAL_PENDING",
+      "live_owned_process_count": 0,
+      "owned_container_count": 0,
+      "owned_volume_count": 0,
+      "retention_reason": "manual review pending",
+      "cleanup_condition": "review complete, no live owned processes/connections, explicit exact-run cleanup"
+    }
+  ],
+  "private_runtime_cleanup": {
+    "run_id": "qa-20261016T040418Z-023d2027a1ae",
+    "removed_owned_runtime_contents": {
+      "media": {
+        "files_removed": 24,
+        "entries_removed": 26
+      },
+      "browser-profile": {
+        "files_removed": 0,
+        "entries_removed": 0
+      },
+      "cache": {
+        "files_removed": 20,
+        "entries_removed": 21
+      },
+      "tmp": {
+        "files_removed": 0,
+        "entries_removed": 0
+      }
+    },
+    "empty_directories_retained": true,
+    "source_logs_baseline_controls_retained_for_review_and_redaction": true,
+    "known_own_long_secret_text_scan": {
+      "values_checked": 6,
+      "artifact_files_checked": 27,
+      "matches": 0
+    },
+    "source_and_runtime_credentials_Git_ignored": true
+  },
+  "completion": {
+    "logo_implementation": "COMPLETE",
+    "strict_forced_flush_logo_QA": "PASS",
+    "logo_only_patch_and_hash_manifest": "COMPLETE",
+    "final_candidate_full_QA": "DEV actual FAIL149PASS/1FAIL/17ERROR; valid final full167 PASS pending TEST",
+    "ready_for_Git_handoff": false,
+    "independent_verification": "PENDING: TEST fresh unique managed run/DB/media/cache/output, exact frozen candidate full167",
+    "user_visual_approval": "PENDING",
+    "development_candidate_preparation": "COMPLETE"
+  },
+  "final_candidate_failure": {
+    "classification": "Developer execution preparation error; old evidence destinations were not separated when reusing the retained candidate run",
+    "home_news": {
+      "failures": 1,
+      "source": "backend/scripts/review-home-news.mjs:13",
+      "cause": "Existing output/home_news directory rejected before observer execution",
+      "observation": "No new home/news browser result; exported old PASS summaries must not be treated as current"
+    },
+    "withdrawal": {
+      "errors": 17,
+      "source": [
+        "backend/news/tests/test_withdrawal_concurrency.py:308",
+        "backend/news/tests/test_withdrawal_concurrency.py:572"
+      ],
+      "cause": "Prior output/withdrawal JSON files collided with unchanged exclusive open(x) writes",
+      "observation": "Old boundary-permissions PASS summary also stale; these 17 tests are errors in this actual run"
+    },
+    "whole_suite_repeated": false,
+    "no_product_permissions_Trainer_or_existing_expectations_changed": true,
+    "required_next_step": "Design hands off this exact frozen178-file candidate to TEST for full167 in a fresh unique managed run/DB/media/cache/output. DEV does not rerun the whole suite, change the source/expectations, or delete old failed output evidence."
+  },
+  "preservation_final": {
+    "HEAD": "628aa66c62d2ba6e967ed0d52c507cb25c0e7c70",
+    "branch": "main",
+    "staged_files": [],
+    "original_pre_logo_189_source_only_7_allowed_logo_files_changed": [
+      "backend/news/home.py",
+      "backend/news/models.py",
+      "backend/news/tests/test_brand.py",
+      "backend/news/tests/test_header_home.py",
+      "backend/news/templates/news/base.html",
+      "backend/news/templates/news/brand_wordmark.html",
+      "backend/news/static/news/brand.css"
+    ],
+    "prototype_HTML_CSS_assets_unchanged": true,
+    "OPERATIONS_sha256": "bbf42fe32ae490f7d1060def1e179261ec0f9974dd32f130fb2f1cdc9210e57a",
+    "Docker_verification_JSONs_unchanged": {
+      "backend/review/docker-01/verification.json": "0c3830f642db1ff3eec04b5e098d46976e0c831bca99e042565e2b6e7dff954b",
+      "backend/review/docker-01/independent-verification.json": "434dc0c8d5ff2f024e279bf2e37efe42105b0881c7bcd44bfaea1b9659087a83"
+    },
+    "historical_QA_archive_files_unchanged": true,
+    "schema_migrations_dependencies_settings_image_management_changes_in_logo_patch": false
+  },
+  "actual_final_source_other_checks": {
+    "django_check": {
+      "command": "backend/.venv/bin/python -B manage.py check",
+      "exit_code": 0
+    },
+    "migration_check": {
+      "command": "backend/.venv/bin/python -B manage.py makemigrations --check --dry-run",
+      "exit_code": 0,
+      "result": "No changes detected"
+    },
+    "ruff_and_Node_doc_patch": {
+      "ruff_check_modified_python_files": {
+        "files": 5,
+        "exit_code": 0
+      },
+      "ruff_format_check_modified_python_files": {
+        "files": 5,
+        "exit_code": 0
+      },
+      "node_syntax_review_logo_header": {
+        "exit_code": 0
+      },
+      "logo_added_doc_links": {
+        "links": 3,
+        "exit_code": 0,
+        "resolution": "Actual canonical repository; review artifacts intentionally excluded from QA source",
+        "earlier_harness_false_negative": "Candidate-source-only link resolution rejected existing review link excluded from source; corrected validation root without document changes"
+      },
+      "reverse_patch_dry_run": {
+        "files": 13,
+        "exit_code": 0
+      }
+    }
+  },
+  "limits": [
+    "Final exact-source whole167 failed from retained-output collisions; no valid final full PASS and no automatic retry",
+    "Accumulated170 remains169PASS/1FAIL; original trainer cause unknown; separate earlier Trainer1PASS and current candidate TrainerPASS do not explain or close it",
+    "Initial candidate167PASS/admin500 uses earlier fixture/observer source and is not reused as final-source validation",
+    "Synthetic QA logos and13 captures; official logo and user visual approval pending",
+    "Independent verification, real devices/Whale/OS IME, production protection/integrations/AWS deployment remain unverified by this unit; earlier warnings remain"
+  ],
+  "paused_AWS_preparation": {
+    "run_id": "qa-20261016T035910Z-aa69652d539b",
+    "state": "MANUAL_PENDING",
+    "initialized": false,
+    "builds_or_deployment_started": false,
+    "owned_resources_and_processes": 0,
+    "retained_untouched": true,
+    "release_condition": "Review complete and unused confirmation, then explicit complete and exact-run cleanup"
+  },
+  "cleanup_methods": {
+    "automatic_runs": "Existing qa_lifecycle auto export then exact owned cleanup; seven automatic logo/followup runs DELETED",
+    "manual_candidate_processes": "manage.py subprocess ended exit1; live-server and guarded browser children exited; qa_lifecycle.status confirms live_owned_processes0; no persistent start server and no CLI stop invocation needed",
+    "manual_candidate_Docker": "After sanitized evidence export, qa_docker.inspect_resources ownership check and remove_resources removed exactly own PostgreSQL container and named volume2; observed current0",
+    "manual_candidate_private_runtime": "After controller load/owner validation, no owned processes/resources, UID/no-symlink/single-link checks, removed own media24/cache20 files; empty media/browser-profile/cache/tmp directories remain",
+    "retention": "qa_lifecycle.retain keeps exact candidate source, baseline, logs and controls for TEST/Git/visual comparison; all private paths are Git ignored; failed output/home_news and output/withdrawal evidence was not deleted",
+    "original_environments": "No original DB/media/server/PID control; paused AWS preparation run untouched"
+  },
+  "DEV_further_whole_test_started": false,
+  "test_handoff_source_manifest_sha256": "29b324fb9ebaa642e3c755fa78705ccfe58521adc9f42ead70940ba519dfbad4",
+  "test_handoff_patch_sha256": "daa6995b3193c8f999f873d3ae5abda490c4a7b1ee7b77d8145e43a3d8090af7"
+}

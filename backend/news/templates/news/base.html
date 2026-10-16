@@ -23,7 +23,7 @@
   <body{% if page_kind != 'branches' %} class="content-page"{% endif %} data-page="{{ page_kind }}" data-site-root="/"{% if is_preview %} data-preview-branch="{{ branch }}"{% endif %}>
     <a class="skip-link" href="#main">본문으로 바로가기</a>
     <header class="site-header"><div class="container header-inner">
-      <a class="wordmark" href="{% url 'home' %}" aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
+      <a class="wordmark" href="{% url 'home' %}" aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' with header_brand=True %}</a>
       <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
         <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         <span class="menu-toggle-label">메뉴</span>

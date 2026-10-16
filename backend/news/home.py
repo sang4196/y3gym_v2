@@ -55,7 +55,15 @@ def apply_brand(document, branding, request, is_preview):
         wordmark.append(
             BeautifulSoup(
                 render_to_string(
-                    "news/brand_wordmark.html", {"branding": branding}, request=request
+                    "news/brand_wordmark.html",
+                    {
+                        "branding": branding,
+                        "header_brand": wordmark.find_parent(
+                            "header", class_="site-header"
+                        )
+                        is not None,
+                    },
+                    request=request,
                 ),
                 "html.parser",
             )

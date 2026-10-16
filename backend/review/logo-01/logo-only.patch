@@ -1,0 +1,520 @@
+--- a/backend/news/models.py
++++ b/backend/news/models.py
+@@ -259,7 +259,7 @@
+                 ),
+                 FieldPanel(
+                     "logo_image",
+-                    help_text="선택 항목입니다. 없으면 브랜드명을 텍스트로 표시합니다.",
++                    help_text="선택 항목입니다. 공통 헤더의 브랜드명 왼쪽에 함께 표시합니다. 선택하지 않으면 브랜드명 텍스트만 표시합니다.",
+                 ),
+             ],
+             heading="브랜드",
+--- a/backend/news/home.py
++++ b/backend/news/home.py
+@@ -55,7 +55,15 @@
+         wordmark.append(
+             BeautifulSoup(
+                 render_to_string(
+-                    "news/brand_wordmark.html", {"branding": branding}, request=request
++                    "news/brand_wordmark.html",
++                    {
++                        "branding": branding,
++                        "header_brand": wordmark.find_parent(
++                            "header", class_="site-header"
++                        )
++                        is not None,
++                    },
++                    request=request,
+                 ),
+                 "html.parser",
+             )
+--- a/backend/news/templates/news/brand_wordmark.html
++++ b/backend/news/templates/news/brand_wordmark.html
+@@ -1 +1 @@
+-{% load wagtailimages_tags %}{% if branding.logo_image %}{% image branding.logo_image max-360x64 class="brand-logo" alt=branding.name %}{% else %}<span class="brand-name">{{ branding.name|default:"Y3GYM" }}</span><span class="wordmark-dot" aria-hidden="true">.</span>{% endif %}
++{% load wagtailimages_tags %}{% if header_brand %}{% if branding.logo_image %}<span class="brand-logo-slot" aria-hidden="true">{% image branding.logo_image max-80x80 class="brand-logo" alt="" %}</span>{% endif %}<span class="brand-name">{{ branding.name|default:"Y3GYM" }}</span><span class="wordmark-dot" aria-hidden="true">.</span>{% elif branding.logo_image %}{% image branding.logo_image max-360x64 class="brand-logo" alt=branding.name %}{% else %}<span class="brand-name">{{ branding.name|default:"Y3GYM" }}</span><span class="wordmark-dot" aria-hidden="true">.</span>{% endif %}
+--- a/backend/news/templates/news/base.html
++++ b/backend/news/templates/news/base.html
+@@ -23,7 +23,7 @@
+   <body{% if page_kind != 'branches' %} class="content-page"{% endif %} data-page="{{ page_kind }}" data-site-root="/"{% if is_preview %} data-preview-branch="{{ branch }}"{% endif %}>
+     <a class="skip-link" href="#main">본문으로 바로가기</a>
+     <header class="site-header"><div class="container header-inner">
+-      <a class="wordmark" href="{% url 'home' %}" aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
++      <a class="wordmark" href="{% url 'home' %}" aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' with header_brand=True %}</a>
+       <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>
+         <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+         <span class="menu-toggle-label">메뉴</span>
+--- a/backend/news/static/news/brand.css
++++ b/backend/news/static/news/brand.css
+@@ -13,6 +13,54 @@
+   white-space: nowrap;
+ }
+ 
++.site-header .wordmark {
++  flex: 0 1 auto;
++  min-width: 0;
++  align-items: center;
++  gap: 8px;
++}
++
++.site-header .brand-logo-slot {
++  display: flex;
++  flex: 0 0 40px;
++  width: 40px;
++  height: 40px;
++  align-items: center;
++  justify-content: center;
++}
++
++.site-header .brand-logo-slot .brand-logo {
++  width: 100%;
++  height: 100%;
++  max-width: 100%;
++  max-height: 100%;
++  object-fit: contain;
++}
++
++.site-header .brand-name {
++  min-width: 0;
++}
++
++.site-header .wordmark-dot {
++  flex: 0 0 auto;
++  margin-left: -7px;
++}
++
++@media (max-width: 1023px) {
++  .site-header .wordmark {
++    flex: 1 1 0;
++    max-width: none;
++  }
++}
++
++@media (max-width: 767px) {
++  .site-header .brand-logo-slot {
++    flex-basis: 32px;
++    width: 32px;
++    height: 32px;
++  }
++}
++
+ .hero-copy {
+   min-width: 0;
+   overflow-wrap: anywhere;
+--- a/backend/news/tests/test_header_home.py
++++ b/backend/news/tests/test_header_home.py
+@@ -1,11 +1,14 @@
++import io
+ import tempfile
+ from urllib.parse import parse_qs, urlsplit
+ 
+ from bs4 import BeautifulSoup
++from django.core.files.uploadedfile import SimpleUploadedFile
+ from django.test import TestCase, override_settings
+ from django.urls import include, path, reverse
++from PIL import Image
+ 
+-from news.models import Branch, BrandContent, Post
++from news.models import Branch, BrandContent, ContentImage, Post
+ from news.tests.test_publication import picture
+ 
+ urlpatterns = [path("gym/", include("config.urls"))]
+@@ -62,12 +65,26 @@
+                 self.assertEqual(header["href"], reverse("home"))
+                 self.assertNotIn("data-branch-page", header.attrs)
+                 self.assertEqual(len(header.select("img.brand-logo")), int(logo))
++                self.assertEqual(header.select_one(".brand-name").text, self.brand.name)
++                self.assertEqual(header["aria-label"], self.brand.name + " 홈")
++                self.assertEqual(len(header.select(".brand-logo-slot")), int(logo))
++                if logo:
++                    self.assertEqual(header.select_one("img.brand-logo")["alt"], "")
++                    self.assertEqual(
++                        header.select_one(".brand-logo-slot")["aria-hidden"], "true"
++                    )
++                    self.assertLess(
++                        str(header).index("brand-logo-slot"),
++                        str(header).index('class="brand-name"'),
++                    )
+                 self.assertFalse(header.select("[data-image-full]"))
+                 for link in soup.select("[data-branch-page]"):
+                     self.assertEqual(
+                         parse_qs(urlsplit(link["href"]).query)["branch"], ["second"]
+                     )
+                 footer = soup.select_one(".site-footer .wordmark")
++                self.assertEqual(len(footer.select("img.brand-logo")), int(logo))
++                self.assertEqual(bool(footer.select(".brand-name")), not logo)
+                 if route == reverse("home"):
+                     self.assertEqual(footer["href"], "#main")
+                     self.assertEqual(soup.body["data-common-home"], reverse("home"))
+@@ -86,6 +103,32 @@
+         self.brand.logo_image = picture("nav-logo.png")
+         self.publish(self.brand)
+         self.assert_header_navigation(logo=True)
++
++    def test_logo_renditions_keep_square_wide_and_tall_ratios_and_private_originals(
++        self,
++    ):
++        for width, height in [(400, 400), (640, 160), (160, 640)]:
++            with self.subTest(size=(width, height)):
++                data = io.BytesIO()
++                Image.new("RGB", (width, height), "navy").save(data, "PNG")
++                logo = ContentImage.objects.create(
++                    title="TEST ratio",
++                    file=SimpleUploadedFile(
++                        f"ratio-{width}.png", data.getvalue(), content_type="image/png"
++                    ),
++                )
++                self.brand.logo_image = logo
++                self.publish(self.brand)
++                soup = BeautifulSoup(self.client.get("/").content, "html.parser")
++                url = soup.select_one(".site-header .brand-logo")["src"]
++                response = self.client.get(url)
++                self.assertEqual(response.status_code, 200)
++                with Image.open(
++                    io.BytesIO(b"".join(response.streaming_content))
++                ) as decoded:
++                    self.assertEqual(decoded.width * height, decoded.height * width)
++                    self.assertLessEqual(max(decoded.size), 80)
++                self.assertEqual(self.client.get(logo.file.url).status_code, 404)
+ 
+     @override_settings(ROOT_URLCONF=__name__)
+     def test_header_resolves_named_home_under_a_route_prefix(self):
+--- a/backend/news/tests/test_brand.py
++++ b/backend/news/tests/test_brand.py
+@@ -135,6 +135,57 @@
+         with self.assertRaises(PermissionDenied):
+             brand.serve_preview(request, "")
+ 
++    def test_admin_logo_replace_preview_publish_and_clear_preserve_public_boundaries(
++        self,
++    ):
++        old, new = picture("old-logo.png"), picture("draft-logo.png", "white")
++        brand = self.publish(self.brand(logo_image=old))
++        self.client.force_login(self.admin)
++        self.assertContains(self.client.get(self.url), "공통 헤더의 브랜드명 왼쪽")
++        payload = self.payload()
++        payload["logo_image"] = str(new.pk)
++        self.assertEqual(self.client.post(self.url, payload).status_code, 302)
++        brand.refresh_from_db()
++        draft = brand.get_latest_revision_as_object()
++        self.assertEqual(draft.logo_image_id, new.pk)
++        self.assertEqual(published_brand().logo_image_id, old.pk)
++        request = RequestFactory().get("/")
++        request.user = self.admin
++        preview = draft.serve_preview(request, "")
++        preview_header = BeautifulSoup(preview.content, "html.parser").select_one(
++            ".site-header .wordmark"
++        )
++        self.assertEqual(preview_header.select_one(".brand-name").text, brand.name)
++        new_url = preview_header.select_one(".brand-logo")["src"]
++        self.client.logout()
++        public_header = BeautifulSoup(
++            self.client.get("/").content, "html.parser"
++        ).select_one(".site-header .wordmark")
++        self.assertNotEqual(public_header.select_one(".brand-logo")["src"], new_url)
++        self.assertEqual(self.client.get(new_url).status_code, 404)
++        self.assertEqual(self.client.get(new.file.url).status_code, 404)
++        self.client.force_login(self.admin)
++        self.assertEqual(self.client.get(new_url).status_code, 200)
++        payload = self.payload()
++        payload["action-publish"] = "1"
++        self.assertEqual(self.client.post(self.url, payload).status_code, 302)
++        self.client.logout()
++        self.assertEqual(self.client.get(new_url).status_code, 200)
++        self.assertEqual(
++            self.client.get(old.get_rendition("max-80x80").url).status_code, 404
++        )
++        self.client.force_login(self.admin)
++        payload = self.payload()
++        payload.update(logo_image="", **{"action-publish": "1"})
++        self.assertEqual(self.client.post(self.url, payload).status_code, 302)
++        self.client.logout()
++        header = BeautifulSoup(self.client.get("/").content, "html.parser").select_one(
++            ".site-header .wordmark"
++        )
++        self.assertFalse(header.select(".brand-logo-slot"))
++        self.assertEqual(header.select_one(".brand-name").text, brand.name)
++        self.assertEqual(self.client.get(new_url).status_code, 404)
++
+     def test_republish_replaces_brand_media_but_shared_post_image_remains(self):
+         old, new = picture("old.png"), picture("new.png")
+         brand = self.publish(self.brand(hero_image=old))
+--- /dev/null
++++ b/backend/news/tests/test_logo_header_browser.py
+@@ -0,0 +1,105 @@
++import io
++import json
++import os
++import secrets
++import subprocess
++import unittest
++from pathlib import Path
++
++from django.conf import settings
++from django.contrib.auth import get_user_model
++from django.contrib.staticfiles.handlers import StaticFilesHandler
++from django.contrib.staticfiles.testing import StaticLiveServerTestCase
++from django.core.files.uploadedfile import SimpleUploadedFile
++from django.core.handlers.wsgi import WSGIHandler
++from django.core.management import call_command
++from PIL import Image, ImageDraw
++from wagtail.models import Locale, Page
++
++from news.models import Branch, BrandContent, ContentImage, Post, Trainer
++from news.tests.review_fixtures import ensure_collection_root
++
++
++@unittest.skipUnless(
++    os.environ.get("Y3GYM_RUN_BRAND_BROWSER") == "1",
++    "Logo browser uses the existing brand opt-in",
++)
++class LogoHeaderBrowserTests(StaticLiveServerTestCase):
++    @staticmethod
++    def static_handler(_media_handler):
++        # LiveServer's default media filesystem wrapper bypasses protected_media.
++        # Keep static assets, but send every media request through actual WSGI.
++        return StaticFilesHandler(WSGIHandler())
++
++    def test_logo_chooser_header_geometry_navigation_and_preview(self):
++        call_command("flush", interactive=False, verbosity=0)
++        ensure_collection_root()
++        locale, _ = Locale.objects.get_or_create(language_code=settings.LANGUAGE_CODE)
++        # Earlier TransactionTestCase browser fixtures flush migration tree rows.
++        if Page.get_first_root_node() is None:
++            Page.add_root(title="TEST page root", slug="root", locale=locale)
++        password = secrets.token_urlsafe(32)
++        get_user_model().objects.create_superuser("logo_editor", password=password)
++        brand = BrandContent.objects.create(
++            name="TEST Y3GYM", intro_title="TEST synthetic logo review"
++        )
++        brand.save_revision().publish()
++        branch = Branch.objects.create(
++            key="main",
++            name="TEST Main",
++            address="TEST address",
++            opening_hours="TEST hours",
++            phone="02-0000-0001",
++        )
++        branch.save_revision().publish()
++        trainer = Trainer.objects.create(name="TEST Trainer", branch=branch)
++        trainer.save_revision().publish()
++        post = Post.objects.create(title="TEST Logo post")
++        post.save_revision().publish()
++        logos = []
++        for label, size in [
++            ("square", (240, 240)),
++            ("wide", (480, 120)),
++            ("tall", (120, 480)),
++        ]:
++            image = Image.new("RGBA", size, (245, 248, 255, 255))
++            draw = ImageDraw.Draw(image)
++            draw.rectangle(
++                (0, 0, size[0] - 1, size[1] - 1), outline=(25, 80, 180), width=8
++            )
++            draw.text((10, 10), "QA", fill=(10, 30, 80))
++            data = io.BytesIO()
++            image.save(data, "PNG")
++            logo = ContentImage.objects.create(
++                title="TEST logo " + label,
++                file=SimpleUploadedFile(
++                    label + ".png", data.getvalue(), content_type="image/png"
++                ),
++            )
++            logos.append(
++                {"label": label, "id": logo.pk, "size": size, "original": logo.file.url}
++            )
++        run = Path(os.environ["Y3GYM_QA_RUN_DIR"])
++        private = run / ".local-credentials"
++        credentials = json.loads(private.read_text()) if private.exists() else {}
++        credentials["logo_editor"] = password
++        private.write_text(json.dumps(credentials))
++        private.chmod(0o600)
++        datafile = run / "logo-browser-input.json"
++        datafile.write_text(json.dumps({"logos": logos, "post_id": post.pk}))
++        datafile.chmod(0o600)
++        env = {
++            **os.environ,
++            "Y3GYM_BRAND_REVIEW_ORIGIN": self.live_server_url,
++            "Y3GYM_LOGO_REVIEW_PASSWORD": password,
++        }
++        result = subprocess.run(
++            ["node", "scripts/review-logo-header.mjs"],
++            cwd=settings.PROTOTYPE_DIR.parent / "backend",
++            env=env,
++            capture_output=True,
++            text=True,
++            timeout=180,
++        )
++        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
++        print(result.stdout)
+--- /dev/null
++++ b/backend/scripts/review-logo-header.mjs
+@@ -0,0 +1,127 @@
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++import path from 'node:path';
++import { chromium } from '../../prototype/node_modules/@playwright/test/index.mjs';
++
++const run = process.env.Y3GYM_QA_RUN_DIR;
++const origin = process.env.Y3GYM_BRAND_REVIEW_ORIGIN;
++const input = JSON.parse(fs.readFileSync(path.join(run, 'logo-browser-input.json'), 'utf8'));
++const output = path.join(run, 'output/logo-header');
++fs.mkdirSync(output, { recursive: true, mode: 0o700 });
++const report = { status: 'FAIL', checks: [], captures: [], geometries: [] };
++const browser = await chromium.launch({ headless: true });
++try {
++  const editorContext = await browser.newContext();
++  const visitorContext = await browser.newContext();
++  const editor = await editorContext.newPage();
++  const visitor = await visitorContext.newPage();
++  const edit = `${origin}/admin/snippets/news/brandcontent/edit/1/`;
++  await editor.goto(`${origin}/admin/login/`);
++  await editor.locator('#id_username').fill('logo_editor');
++  await editor.locator('#id_password').fill(process.env.Y3GYM_LOGO_REVIEW_PASSWORD);
++  const [loginResponse] = await Promise.all([editor.waitForNavigation(), editor.locator('button[type=submit]').click()]);
++  assert.equal(editor.url(), `${origin}/admin/`);
++  assert.equal(loginResponse.status(), 200);
++  async function reopen() { await editor.goto(edit); await editor.locator('#id_name').waitFor(); }
++  async function publish() {
++    await editor.locator('footer button[data-w-dropdown-target="toggle"]').click();
++    await Promise.all([editor.waitForNavigation(), editor.locator('button[name="action-publish"]').click()]);
++  }
++  async function capture(name, height = 96) {
++    await visitor.screenshot({ path: path.join(output, `${name}.png`), clip: { x: 0, y: 0, width: visitor.viewportSize().width, height } });
++    report.captures.push(`${name}.png`);
++  }
++  const routes = ['/', '/branches/?branch=main', '/news/?branch=main', `/news/${input.post_id}/?branch=main`];
++  async function inspect(label, logo, name = 'TEST Y3GYM') {
++    for (const width of [1440, 375, 320]) {
++      await visitor.setViewportSize({ width, height: 900 });
++      for (const route of routes) {
++        await visitor.goto(origin + route);
++        const header = visitor.locator('.site-header .wordmark');
++        assert.equal(await header.getAttribute('href'), '/');
++        assert.equal(await header.getAttribute('aria-label'), name + ' 홈');
++        assert.equal(await header.locator('.brand-name').textContent(), name);
++        assert.equal(await header.locator('.brand-logo').count(), logo ? 1 : 0);
++        if (logo) await header.locator('img').evaluate(image => image.decode());
++        const geometry = await header.evaluate((node) => {
++          const image = node.querySelector('img'), text = node.querySelector('.brand-name');
++          const rect = node.getBoundingClientRect(), menu = document.querySelector('.menu-toggle');
++          const slot = node.querySelector('.brand-logo-slot');
++          return { viewport: innerWidth, document: document.documentElement.scrollWidth, headerHeight: document.querySelector('.header-inner').getBoundingClientRect().height, image: image ? { fit: getComputedStyle(image).objectFit, alt: image.alt, ratio: image.naturalWidth / image.naturalHeight, slotWidth: slot.getBoundingClientRect().width, slotHeight: slot.getBoundingClientRect().height, full: image.hasAttribute('data-image-full'), x: image.getBoundingClientRect().x } : null, textX: text.getBoundingClientRect().x, textOverflow: getComputedStyle(text).textOverflow, truncated: text.scrollWidth > text.clientWidth, menuOverlap: !menu.hidden && rect.right > menu.getBoundingClientRect().left + 1 };
++        });
++        assert.equal(geometry.viewport, geometry.document);
++        assert.equal(geometry.menuOverlap, false);
++        assert.equal(geometry.headerHeight, width < 768 ? 64 : 80);
++        if (logo) {
++          assert.equal(geometry.image.fit, 'contain');
++          assert.equal(geometry.image.alt, '');
++          assert.equal(geometry.image.full, false);
++          assert.equal(geometry.image.slotWidth, width < 768 ? 32 : 40);
++          assert.equal(geometry.image.slotHeight, width < 768 ? 32 : 40);
++          assert.equal(geometry.image.ratio, logo.size[0] / logo.size[1]);
++          assert(geometry.image.x < geometry.textX);
++        }
++        if (label === 'long') { assert.equal(geometry.textOverflow, 'ellipsis'); assert(geometry.truncated); }
++        report.geometries.push({ label, width, route, ...geometry });
++        if (route === '/' && (width !== 320 || label === 'long')) await capture(`${label}-${width}`);
++        await header.click();
++        await visitor.waitForURL(origin + '/');
++        assert.equal(await visitor.locator('.content-image-viewer[open]').count(), 0);
++        assert.equal(await visitor.locator('.site-header .wordmark .brand-name').textContent(), name);
++      }
++    }
++    report.checks.push(`${label}: PC1440/mobile375/320 four routes, header home and no lightbox`);
++  }
++  await inspect('none', null);
++  for (const logo of input.logos) {
++    await reopen();
++    const chooser = editor.locator('#id_logo_image-chooser');
++    if (await chooser.locator('button[data-w-dropdown-target="toggle"]').isVisible()) {
++      await chooser.locator('button[data-w-dropdown-target="toggle"]').click();
++    }
++    await chooser.locator('button[data-chooser-action-choose]:visible').click();
++    await editor.locator('.modal a[data-chooser-modal-choice]').filter({ hasText: `TEST logo ${logo.label}` }).click();
++    await editor.locator('.modal').waitFor({ state: 'hidden' });
++    assert.equal(await editor.locator('#id_logo_image').inputValue(), String(logo.id));
++    if (logo.label === 'square') {
++      await editor.locator('#id_logo_image-chooser').screenshot({ path: path.join(output, 'admin-logo-chooser.png') });
++      report.captures.push('admin-logo-chooser.png');
++      await editor.locator('button[data-side-panel-toggle="preview"]').click();
++      await editor.frameLocator('iframe').first().locator('.site-header .brand-logo').waitFor();
++      await visitor.goto(origin);
++      assert.equal(await visitor.locator('.site-header .brand-logo').count(), 0);
++      const previewURL = await editor.frameLocator('iframe').first().locator('.site-header .brand-logo').getAttribute('src');
++      assert.equal((await visitorContext.request.get(origin + previewURL)).status(), 404);
++      await editor.locator('button[data-side-panel-toggle="preview"]').click();
++      await Promise.all([editor.waitForNavigation(), editor.getByRole('button', { name: '초안 저장', exact: true }).click()]);
++      await reopen();
++      assert.equal(await editor.locator('#id_logo_image').inputValue(), String(logo.id));
++      report.checks.push('Actual chooser selection, private preview and draft reopen without public leak');
++    }
++    await publish();
++    await inspect(logo.label, logo);
++    assert.equal((await visitorContext.request.get(origin + logo.original)).status(), 404);
++  }
++  const longName = 'TEST 아주 긴 브랜드 이름 '.repeat(4).slice(0, 80).trim();
++  await reopen(); await editor.locator('#id_name').fill(longName); await publish();
++  await inspect('long', input.logos.at(-1), longName);
++  await visitor.setViewportSize({ width: 320, height: 900 }); await visitor.goto(origin);
++  await visitor.locator('.menu-toggle').click();
++  await visitor.locator('.primary-navigation').waitFor({ state: 'visible' });
++  assert.equal(await visitor.evaluate(() => document.documentElement.scrollWidth), 320);
++  await capture('long-320-menu-open', 340);
++  report.checks.push('320px long brand mobile menu remains usable');
++  await reopen();
++  const chooser = editor.locator('#id_logo_image-chooser');
++  await chooser.locator('button[data-w-dropdown-target="toggle"]').click();
++  await chooser.locator('button[data-chooser-action-clear]').click();
++  assert.equal(await editor.locator('#id_logo_image').inputValue(), '');
++  await publish(); await visitor.goto(origin);
++  assert.equal(await visitor.locator('.brand-logo-slot').count(), 0);
++  report.checks.push('Actual chooser clear and publish returns text without an empty frame');
++  report.status = 'PASS';
++} finally {
++  await browser.close();
++  fs.writeFileSync(path.join(output, 'checks.json'), JSON.stringify(report, null, 2) + '\n', { mode: 0o600 });
++}
++console.log(JSON.stringify({ status: report.status, checks: report.checks.length, captures: report.captures.length, geometries: report.geometries.length }));
+--- a/docs/PRD.md
++++ b/docs/PRD.md
+@@ -61,6 +61,7 @@
+ 
+ ### FR-01 브랜드와 공통 콘텐츠
+ 
++- **2026-10-16 LOGO-01:** 공통 헤더는 선택 로고를 브랜드명 왼쪽에 함께 표시한다. 기존 브랜드·홈의 로고 필드와 선택기를 재사용하고 없으면 텍스트만 표시한다. 로고는 비율을 유지해 전체 표시하며 클릭은 공통 홈 이동이다. 푸터·게시글 팝업의 기존 워드마크와 공개/초안·권한·이미지 보호 정책은 유지한다. 실제 로고와 화면 시각 승인은 별도 확인한다.
+ - 브랜드명·로고·대표 사진·소개 제목·설명을 관리한다. 레이아웃·메뉴·색상을 자유 편집하는 페이지 빌더를 만들지 않는다.
+ - **M2-1:** 사이트 공통 한 묶음으로 브랜드명·선택 로고·소개 제목/설명·선택 대표 사진/대체 설명/사진 중심을 관리한다. 초안 → 권한 있는 홈 미리보기 → 명시적 공개·철회. 공개 홈·실제 소식/팝업의 공통 브랜드 표시는 현재 공개 리비전만 사용한다. M2-2에서 실제 지점 안내·홈의 지점/시설도 현재 공개 리비전으로 연결했다. 정적 원본은 보존한다.
+ - **이번 사용자 확인:** 공개 시 브랜드명·소개 제목만 필수이며 공백만 입력한 값은 허용하지 않는다. 설명·로고·대표 사진은 선택이다. 미완성 초안 저장은 허용한다. 로고가 없으면 텍스트 브랜드명, 대표 사진이 없으면 기존 텍스트 중심 배치를 사용한다. 공개본이 없으면 준비 중 안내와 기본 지점·소식 탐색을 남긴다.
+--- a/prototype/DESIGN.md
++++ b/prototype/DESIGN.md
+@@ -34,7 +34,9 @@
+ 
+ **2026-10-10 M2-1 브랜드·홈 연결:** 승인된 홈 배치·색상·글꼴·사진 비율은 유지하고 소개와 브랜드 표시의 데이터 원본을 현재 공개 리비전으로 바꿨다. 편집 항목은 브랜드명·선택 로고·소개 제목/설명·선택 대표 사진/대체 설명/사진 중심이다. 로고가 없으면 텍스트 브랜드명, 대표 사진이 없으면 기존 `hero-layout--text-only` 배치를 사용한다. 공개본이 없으면 준비 중 문구와 지점·소식 탐색을 남긴다. 실제 소식/팝업에도 공개 브랜드를 사용하며 당시 정적 지점 화면은 미연결이었으며 아래 M2-2에서 실제 지점 안내를 추가했다.
+ 
+-새 로고 파일의 시작 표시 기준은 최대 180×32px의 비율 유지이며 실제 로고 교체 검토 전이다. 긴 텍스트 워드마크는 폭을 제한하고 말줄임하며 전체 이름을 접근성 설명에 남긴다. 제목·설명은 일반 텍스트로 출력한다. 미리보기는 관리자 권한을 확인하고 자동 팝업을 실행하지 않는다. [M2-1의 실제 홈/관리자 캡처·검수 · 정리됨](../backend/review/README.md#정리-후-유지한-검증-요약)는 기존 정적 검수와 분리하며 관리자 사용성·공식 자료 교체의 사용자 승인으로 간주하지 않는다.
++M2-1 당시 로고 단독 표시 기준은 최대 180×32px의 비율 유지이며 실제 로고 교체 검토 전이다. 공통 헤더의 최신 병기 기준은 아래 LOGO-01을 따른다. 긴 텍스트 워드마크는 폭을 제한하고 말줄임하며 전체 이름을 접근성 설명에 남긴다. 제목·설명은 일반 텍스트로 출력한다. 미리보기는 관리자 권한을 확인하고 자동 팝업을 실행하지 않는다. [M2-1의 실제 홈/관리자 캡처·검수 · 정리됨](../backend/review/README.md#정리-후-유지한-검증-요약)는 기존 정적 검수와 분리하며 관리자 사용성·공식 자료 교체의 사용자 승인으로 간주하지 않는다.
++
++**2026-10-16 LOGO-01 공통 헤더:** 홈·지점 안내(트레이너 포함)·소식 목록/상세의 헤더는 선택 로고와 브랜드명을 함께 표시한다. 로고 영역은 PC40×40px·768px 미만 모바일32×32px, 간격8px이며 원본 비율을 유지하는 비크롭 max 렌디션과 contain 표시를 쓴다. 미선택 시 빈 틀이나 가짜 로고 없이 텍스트만 표시한다. 헤더 높이·색·글꼴·메뉴/문의는 유지하며 긴 브랜드명은 축소 가능한 영역에서 말줄임하고 전체 링크 접근성 이름을 보존한다. 로고는 장식용 빈 alt이며 확대 대상이 아니고 전체 브랜드 링크는 branch 없는 named home으로 이동한다. 푸터·게시글 팝업은 기존 표시를 유지한다. 기존 Wagtail 선택/교체/해제와 초안·권한 미리보기·공개/철회 정책을 재사용한다. 실제 공식 로고 미제공 상태의 합성 QA 캡처로 검토하며 사용자 시각 승인 전이다.
+ 
+ **2026-10-10 M2-2 지점·시설 연결:** `backend/`의 실제 홈·`/branches/`에 같은 지점 공개 리비전·시설 자식 목록을 연결했다. 기존 색상·Pretendard·간격·사진 비율·탭·자동 슬라이드 코드를 재사용하며 원본 HTML·스크립트·검수는 재생성하지 않는다. CMS 트레이너 0건으로 해당 영역을 숨기고 홈에 위치/트레이너 상세를 추가하지 않는다. 긴 CMS 지점명은 영역 안에서 줄바꿈하고 많은 탭의 현재 선택이 탭 줄 안에 보이도록 가로 위치만 보정한다.
+ 
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,6 @@
+ # Y3GYM
++
++**2026-10-16 LOGO-01 헤더 로고 병기:** 기존 Wagtail 로고 선택기를 재사용해 공통 헤더에서 선택 로고를 브랜드명 왼쪽에 함께 표시한다. 로고 미선택 시 기존 텍스트만 표시하며 푸터·게시글 팝업과 공개/초안·이미지 접근 정책은 유지한다. 개발 자체 검증의 결과·원실패·후보는 아래 근거에 기록하며 독립 검증·사용자 시각 승인 전이다. 합성 QA 캡처는 사용자 시각 승인을 뜻하지 않는다. [로고 단위 근거](backend/review/logo-01/verification.json). 이번 로고 변경은 누적 Docker/운영 준비 변경과 별도로 Git 후보를 구분한다.
+ 
+ **2026-10-15 현재 제품 개발 기준선 완료·커밋 준비 독립 조건부 통과:** 합의된 필수 제품 기능 중 확인된 미구현 C는 없다. 홈·지점/시설·트레이너·소식 CMS·팝업·지도/연락·사진 확대·공통 헤더는 기존 사용자 한정 승인(A)을 유지하고, 공개/초안·권한·충돌·QA 수명주기·dev/prod 설정은 로컬 구현·검증 완료와 잔여 한계(B)를 구분한다. 실제 자료·영업위치·운영권한·인프라·백업·배포는 후속 공개/운영 준비(D)다. 운영 비교·Docker·배포 준비는 사용자 우선순위로 잠시 중단했다. **운영 릴리스나 Git 커밋·푸시 완료를 뜻하지 않는다.** 이하 예전 날짜의 승인 대기·미구현 문구는 당시 단계 이력이며 현재 사용자 승인을 취소하거나 과거 판정을 변경하지 않는다.
+ 
+--- a/docs/IMPLEMENTATION-PLAN.md
++++ b/docs/IMPLEMENTATION-PLAN.md
+@@ -1,4 +1,6 @@
+ # Y3GYM 콘텐츠 관리·기술 설계
++
++**2026-10-16 LOGO-01 헤더 로고 병기:** 기존 Wagtail 로고 선택기를 재사용해 공통 헤더에서 선택 로고를 브랜드명 왼쪽에 함께 표시한다. 로고 미선택 시 기존 텍스트만 표시하며 푸터·게시글 팝업과 공개/초안·이미지 접근 정책은 유지한다. 개발 자체 검증의 결과·원실패·후보는 아래 근거에 기록하며 독립 검증·사용자 시각 승인 전이다. 합성 QA 캡처는 사용자 시각 승인을 뜻하지 않는다. [로고 단위 근거](../backend/review/logo-01/verification.json). 이번 로고 변경은 누적 Docker/운영 준비 변경과 별도로 Git 후보를 구분한다.
+ 
+ **2026-10-15 현재 제품 개발 기준선 완료·커밋 준비 독립 조건부 통과:** 합의된 필수 제품 기능 중 확인된 미구현 C는 없다. 홈·지점/시설·트레이너·소식 CMS·팝업·지도/연락·사진 확대·공통 헤더는 기존 사용자 한정 승인(A)을 유지하고, 공개/초안·권한·충돌·QA 수명주기·dev/prod 설정은 로컬 구현·검증 완료와 잔여 한계(B)를 구분한다. 실제 자료·영업위치·운영권한·인프라·백업·배포는 후속 공개/운영 준비(D)다. 운영 비교·Docker·배포 준비는 사용자 우선순위로 잠시 중단했다. **운영 릴리스나 Git 커밋·푸시 완료를 뜻하지 않는다.** 이하 예전 날짜의 승인 대기·미구현 문구는 당시 단계 이력이며 현재 사용자 승인을 취소하거나 과거 판정을 변경하지 않는다.
+ 
