@@ -31,6 +31,7 @@ function synchronize() {
     if (selected && element.matches('a, .mobile-contact-bar')) element.setAttribute('aria-label', `${selected.name} ${element.matches('a') ? element.textContent.trim() : '문의 안내'}`);
   });
   document.querySelectorAll('[data-selected-branch-name]').forEach(element => { element.textContent = selected?.name || '준비 중인 지점'; });
+  document.querySelectorAll('[data-footer-branch]').forEach(element => { element.hidden = element.dataset.footerBranch !== selected?.id; });
   const tab = selected && document.getElementById(`tab-${selected.id}`);
   const tabList = tab?.closest('[data-branch-tabs]');
   if (tabList) {

@@ -65,3 +65,7 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+.site-footer .footer-description {
+  font-size: 13px;
+}

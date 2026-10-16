@@ -11,11 +11,10 @@ export function createMobilePopup({ popup, post, onReady, onClose }) {
   dialog.setAttribute('aria-describedby', 'mobile-popup-description');
   dialog.innerHTML = `
     <div class="mobile-popup-body">
-      <p class="content-example">로컬 CMS 검토용 · 테스트 자료입니다.</p>
       <p class="eyebrow">공지 · 브랜드 공통 안내</p>
       <h2 id="mobile-popup-title"></h2>
       <div class="popup-image-frame" data-mobile-popup-image-frame hidden>
-        <img alt="가상의 헬스장 시설 전경 — 임시 합성 이미지" data-mobile-popup-image>
+        <img alt="" data-mobile-popup-image>
         <span class="image-fallback" data-mobile-popup-image-fallback hidden>사진을 불러오지 못했습니다.</span>
       </div>
       <p id="mobile-popup-description"></p>
@@ -50,7 +49,7 @@ export function createMobilePopup({ popup, post, onReady, onClose }) {
         resolve();
       }, { once: true });
       dialog.querySelector('[data-mobile-popup-image-frame]').hidden = false;
-      image.alt = `${popup.title} · 테스트 자료`;
+      image.alt = popup.title;
       for (const [name, value] of Object.entries(popup.imageFull || {})) image.setAttribute(name, value);
       image.src = popup.image;
     }) : Promise.resolve();

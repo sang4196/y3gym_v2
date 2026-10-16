@@ -1,0 +1,9 @@
+<footer class="site-footer"><div class="container">
+  <div class="footer-top">
+    <a class="wordmark" href="{% if page_kind == 'home' %}#main{% else %}/{% if branch %}?branch={{ branch }}{% endif %}{% endif %}"{% if page_kind != 'home' %} data-branch-page{% endif %} aria-label="{{ branding.name|default:'Y3GYM' }} 홈">{% include 'news/brand_wordmark.html' %}</a>
+    <nav class="footer-navigation" aria-label="하단 메뉴"><a href="{% url 'branches' %}{% if branch and page_kind != 'home' %}?branch={{ branch }}{% endif %}" data-branch-page>지점 안내</a><a href="{% url 'news:list' %}{% if branch and page_kind != 'home' %}?branch={{ branch }}{% endif %}" data-branch-page>소식</a></nav>
+  </div>
+  <p class="footer-description">1:1 프리미엄 프라이빗 PT센터</p>
+  {% for item in public_branches %}<p class="footer-description" data-footer-branch="{{ item.key }}"{% if item.key != branch %} hidden{% endif %}><strong>{{ branding.name|default:'Y3GYM' }}</strong><br>{% include 'news/branch_address.html' %}<br><a class="text-link" href="{% url 'branches' %}?branch={{ item.key }}#contact-{{ item.key }}">위치와 문의</a></p>{% endfor %}
+  <p class="footer-note">Copyright © {% now "Y" %} {{ branding.name|default:'Y3GYM' }}. All rights reserved.</p>
+</div></footer>

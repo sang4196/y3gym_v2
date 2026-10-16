@@ -3,7 +3,7 @@
 {% block content %}
 <article class="post-document container" aria-labelledby="post-title">
   <nav class="breadcrumb" aria-label="현재 위치"><a href="/{% if branch %}?branch={{ branch }}{% endif %}" data-branch-page>홈</a><span aria-hidden="true">/</span><a href="{% url 'news:list' %}?category={{ category|default:'all' }}&amp;page={{ return_page|default:1 }}{% if branch %}&amp;branch={{ branch }}{% endif %}" data-news-return>소식</a><span aria-hidden="true">/</span><span aria-current="page">{{ post.get_category_display }}</span></nav>
-  <header class="post-header"><p class="eyebrow">{{ post.get_category_display }} · 전체 지점 공통</p><h1 id="post-title">{{ post.title }}</h1><p class="post-meta">등록일 <time datetime="{{ post.first_published_at|date:'Y-m-d' }}">{{ post.first_published_at|date:'Y.m.d'|default:'공개 전' }}</time></p><p class="content-example">{% if is_preview %}초안 미리보기 · 운영자에게만 보이며 공개 화면은 바뀌지 않습니다.{% else %}로컬 CMS 검토용 · 제목·본문·사진은 테스트 자료입니다.{% endif %}</p></header>
+  <header class="post-header"><p class="eyebrow">{{ post.get_category_display }} · 전체 지점 공통</p><h1 id="post-title">{{ post.title }}</h1><p class="post-meta">등록일 <time datetime="{{ post.first_published_at|date:'Y-m-d' }}">{{ post.first_published_at|date:'Y.m.d'|default:'공개 전' }}</time></p>{% if is_preview %}<p class="content-example">초안 미리보기 · 운영자에게만 보이며 공개 화면은 바뀌지 않습니다.</p>{% endif %}</header>
   <div class="post-body">{% if post.cover_image %}{% content_image post.cover_image "width-1200" %}{% endif %}{{ post.body|richtext }}</div>
 </article>
 {% endblock %}

@@ -80,7 +80,7 @@ def apply_brand(document, branding, request, is_preview):
         image.attrs.pop("style", None)
         caption = figure.select(".photo-caption span")
         caption[0].string = "브랜드 소개 이미지"
-        caption[1].string = "로컬 CMS 검토 자료"
+        caption[1].decompose()
     else:
         figure.decompose()
         document.select_one(".hero-layout")["class"].append("hero-layout--text-only")
@@ -88,10 +88,11 @@ def apply_brand(document, branding, request, is_preview):
         "link", rel="stylesheet", href=static("news/brand.css")
     )
     document.head.append(stylesheet)
+    notice = document.select_one(".prototype-notice")
     if is_preview:
-        document.select_one(
-            ".prototype-notice"
-        ).string = "미리보기 · 저장·공개 전 내용입니다. 지점 정보는 임시 자료입니다."
+        notice.string = "미리보기 · 저장·공개 전 내용입니다."
+    else:
+        notice.decompose()
 
 
 def render_home(request, branding, is_preview=False):
@@ -107,6 +108,16 @@ def render_home(request, branding, is_preview=False):
         wordmark["href"] = reverse("home")
         wordmark.attrs.pop("data-branch-page", None)
     navigation = request_navigation(request)
+    document.select_one(".site-footer").replace_with(
+        BeautifulSoup(
+            render_to_string(
+                "news/footer.html",
+                {**navigation, "branding": branding, "page_kind": "home"},
+                request=request,
+            ),
+            "html.parser",
+        )
+    )
     recent_news = document.select_one("#news")
     recent_news.select_one(".news-list").replace_with(
         BeautifulSoup(
@@ -118,9 +129,7 @@ def render_home(request, branding, is_preview=False):
             "html.parser",
         )
     )
-    recent_news.select_one(
-        ".content-example"
-    ).string = "로컬 CMS 검토용 · 등록된 제목·내용·사진은 테스트 자료입니다."
+    recent_news.select_one(".content-example").decompose()
     document.select_one("[data-branch-browser]").replace_with(
         BeautifulSoup(
             branch_browser(request, navigation["public_branches"], home=True),
@@ -148,6 +157,11 @@ def render_home(request, branding, is_preview=False):
         elif value == "index.html":
             anchor["href"] = "/"
     selected = navigation["selected_branch"]
+    note = document.select_one(".hero-actions .contact-note")
+    note.clear()
+    branch_name = document.new_tag("span", attrs={"data-selected-branch-name": ""})
+    note.append(branch_name)
+    note.append("의 위치와 문의 안내를 확인하세요.")
     for control in document.select(
         ".header-contact, .mobile-contact-bar, .hero-actions .contact-note"
     ):

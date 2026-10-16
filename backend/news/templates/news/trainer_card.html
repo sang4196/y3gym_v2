@@ -1,5 +1,5 @@
 <article class="trainer{% if not trainer.photo %} trainer--text-only{% endif %}{% if trainer.biography %} trainer--with-biography{% endif %}" data-trainer-id="{{ trainer.pk }}" aria-labelledby="trainer-{{ trainer.pk }}-name">
-  {% if trainer.photo %}<figure class="trainer-portrait"><div class="profile-image-frame"><img src="{{ trainer.photo.url }}" alt="{{ trainer.photo_alt }}" width="{{ trainer.photo.width }}" height="{{ trainer.photo.height }}" loading="lazy" decoding="async"{% for name, value in trainer.expanded.items %} {{ name }}="{{ value }}"{% endfor %}></div><figcaption class="image-note">임시·검토용 사진</figcaption></figure>{% endif %}
+  {% if trainer.photo %}<figure class="trainer-portrait"><div class="profile-image-frame"><img src="{{ trainer.photo.url }}" alt="{{ trainer.photo_alt }}" width="{{ trainer.photo.width }}" height="{{ trainer.photo.height }}" loading="lazy" decoding="async"{% for name, value in trainer.expanded.items %} {{ name }}="{{ value }}"{% endfor %}></div></figure>{% endif %}
   <div class="trainer-copy">
     {% if trainer.branch %}<p class="eyebrow">{{ trainer.branch }}</p>{% endif %}
     <h4 id="trainer-{{ trainer.pk }}-name">{{ trainer.name }}</h4>
