@@ -9,7 +9,7 @@ class NoStoreContentMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        if request.path == "/" or request.path.startswith(
+        if request.path in {"/", "/favicon.png"} or request.path.startswith(
             ("/branches/", "/news/", "/popups/", "/media/", "/admin/")
         ):
             add_never_cache_headers(response)

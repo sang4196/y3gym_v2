@@ -1,12 +1,11 @@
-{% load static %}
+{% load static seo_tags %}
 <!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="color-scheme" content="light">
-    <meta name="description" content="{{ branding.name|default:'Y3GYM' }}의 지점·시설과 공지·이벤트를 확인하세요.">
-    <title>{% firstof title post.title "소식" %} · {{ branding.name|default:"Y3GYM" }}</title>
+    {% search_metadata %}
     <link rel="preload" href="{% static 'prototype/assets/fonts/PretendardVariable.woff2' %}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{% static 'prototype/styles.css' %}">
     <link rel="stylesheet" href="{% static 'news/content.css' %}">

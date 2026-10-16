@@ -1,7 +1,9 @@
-{% load static content_images %}
+{% load static content_images seo_tags %}
 <!doctype html><html lang="ko"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
 <title>{{ popup.title }} · {{ branding.name|default:"Y3GYM" }} 알림</title>
+{% site_favicon %}
 <link rel="stylesheet" href="{% static 'prototype/styles.css' %}">
 <link rel="stylesheet" href="{% static 'news/popup-window.css' %}">
 <link rel="stylesheet" href="{% static 'news/brand.css' %}">

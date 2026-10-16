@@ -206,6 +206,13 @@ def read_runtime(base_dir, environ=None):
     if level not in {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}:
         raise ImproperlyConfigured("Y3GYM_LOG_LEVEL is invalid")
     database.update(ENGINE="django.db.backends.postgresql", ATOMIC_REQUESTS=True)
+    verification = {}
+    for engine in ["NAVER", "GOOGLE"]:
+        name = f"Y3GYM_{engine}_SITE_VERIFICATION"
+        value = values.get(name, "").strip()
+        if value and not re.fullmatch(r"[A-Za-z0-9_=-]{1,200}", value):
+            raise ImproperlyConfigured(f"{name} must be the HTML meta content value")
+        verification[f"{engine.lower()}-site-verification"] = value
     return {
         "Y3GYM_ENV": mode,
         "SECRET_KEY": secret,
@@ -216,6 +223,7 @@ def read_runtime(base_dir, environ=None):
         "MEDIA_ROOT": media,
         "STATIC_ROOT": static,
         "KAKAO_MAP_JS_KEY": values.get("Y3GYM_KAKAO_MAP_JS_KEY", "").strip(),
+        "SEARCH_ENGINE_VERIFICATION": verification,
         "CSRF_TRUSTED_ORIGINS": trusted,
         "SESSION_COOKIE_SECURE": production,
         "CSRF_COOKIE_SECURE": production,

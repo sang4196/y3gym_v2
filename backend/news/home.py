@@ -10,6 +10,7 @@ from .branches import branch_browser, request_navigation
 from .content_images import image_attributes
 from .popups import eligible_popups, popup_content
 from .publication import published_brand, published_posts
+from .seo import page_metadata
 
 
 @never_cache
@@ -32,7 +33,6 @@ def set_lines(document, element, value, desktop_break=False):
 
 def apply_brand(document, branding, request, is_preview):
     name = branding.name if branding and branding.name else "Y3GYM"
-    document.title.string = f"{name} | 지점과 운동 공간 안내"
     title = document.select_one("#intro-title")
     description = document.select_one(".hero-description")
     set_lines(
@@ -48,7 +48,6 @@ def apply_brand(document, branding, request, is_preview):
     else:
         description.decompose()
     document.select_one(".hero-copy .eyebrow").string = f"{name} · 브랜드 공통 안내"
-    document.select_one('meta[name="description"]')["content"] = text.replace("\n", " ")
     for wordmark in document.select(".wordmark"):
         wordmark["aria-label"] = f"{name} 홈"
         wordmark.clear()
@@ -93,6 +92,26 @@ def apply_brand(document, branding, request, is_preview):
         notice.string = "미리보기 · 저장·공개 전 내용입니다."
     else:
         notice.decompose()
+    for tag in document.head.select('title, meta[name="description"]'):
+        tag.decompose()
+    document.head.append(
+        BeautifulSoup(
+            render_to_string(
+                "news/search_metadata.html",
+                {
+                    "seo": page_metadata(
+                        {
+                            "request": request,
+                            "branding": branding,
+                            "page_kind": "home",
+                            "is_preview": is_preview,
+                        }
+                    )
+                },
+            ),
+            "html.parser",
+        )
+    )
 
 
 def render_home(request, branding, is_preview=False):

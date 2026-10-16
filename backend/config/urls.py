@@ -4,9 +4,14 @@ from wagtail.admin import urls as wagtailadmin_urls
 from config.health import readiness
 from news import views
 from news.branches import branches
+from news.favicon import favicon
 from news.home import home
+from news.seo import robots_txt, sitemap_xml
 
 urlpatterns = [
+    path("favicon.png", favicon, name="favicon"),
+    path("robots.txt", robots_txt, name="robots"),
+    path("sitemap.xml", sitemap_xml, name="sitemap"),
     path("healthz/", readiness, name="readiness"),
     path("admin/", include(wagtailadmin_urls)),
     path("", home, name="home"),
